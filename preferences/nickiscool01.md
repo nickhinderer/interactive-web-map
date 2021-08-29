@@ -21,7 +21,7 @@
 1. __What happens if people have different opinions on the quality of the work?__ 
    * If my work isn't to someone else's standars, then I will work to improve it. 
 1. __How will you deal with different work habits of team members?__ 
-   * I can accommodate other people's schedules. I understand everyone is busy. I think everything will work out as long as we are all making constant progress. 
+   * I can accommodate for other schedules. I understand everyone is busy. I think everything will work out as long as we are all making constant progress. 
 1. __Do you want to have a standing meeting time outside of class?__ 
    * I am not oppossed to this idea. I think it might be useful to arrange a time if everyone is willing.
 1. __How often do you think the team will need to meet outside of class?__ 
