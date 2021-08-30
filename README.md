@@ -1,3 +1,19 @@
+#  t04 - 
+
+
+
+
+
+#  Member Information
+
+ First Name| Last Name | CSU eName|GitHub username|CSU email address
+------------ |------------ | -------------|------------ |------------  
+------------ |------------ | -------------|------------ |------------ 
+------------ |------------ | -------------|------------ |------------ 
+------------ |------------ | -------------|------------ |------------  
+------------ |------------ | -------------|------------ |------------ 
+
+
 # Team Preferences
 
 On top of communication through slack on a more professional and official basis, we created a text group chat for coordinating meeting times and other informal discussions. 
