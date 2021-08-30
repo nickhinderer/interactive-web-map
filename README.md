@@ -2,8 +2,9 @@
 
 
 
+![IMG_1971_Facetune_30-08-2021-16-12-52 (1)](https://user-images.githubusercontent.com/82910022/131413131-f9ac54da-2485-4c8c-80a4-c4393cb0801f.jpg)
 
-
+*Nick, Abby, Kay, Mallory*
 #  Member Information
 
  First Name| Last Name | CSU eName|GitHub username|CSU email address
