@@ -1,4 +1,4 @@
-# Kay
+# Preferences for Kay
 
 1. __Is it generally easier to reach you by text, electronic mail, voice mail or something else?  What hours?__ 
    * text, or snapchat
