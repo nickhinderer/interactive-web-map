@@ -14,7 +14,7 @@
  First Name| Last Name | CSU eName|GitHub username|CSU email address
 ------------ |------------ | -------------|------------ |------------  
   Kaiyan| Zeng |    kaiyan    |  kaiyanzzz  |kaiyan@rams.colostate.edu 
------------- |------------ | -------------|------------ |------------ 
+Mallory |Cahill | mcahill1|mcahill28 |mallory.cahill@colostate.edu 
 ------------ |------------ | -------------|------------ |------------  
 ------------ |------------ | -------------|------------ |------------ 
 Jacki | Hyatt | jachyatt | jachyatt | jachyatt@colostate.edu
