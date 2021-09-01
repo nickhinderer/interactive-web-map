@@ -15,7 +15,6 @@
 ------------ |------------ | -------------|------------ |------------  
   Kaiyan| Zeng |    kaiyan    |  kaiyanzzz  |kaiyan@rams.colostate.edu 
 Mallory |Cahill | mcahill1|mcahill28 |mallory.cahill@colostate.edu 
------------- |------------ | -------------|------------ |------------  
   Abigail | Williams | absarah | absarah | absarah@colostate.edu 
 Nicholas |Hinderer |nickiscool01 |nxhinde |nxhinde@colostate.edu 
 Jacki | Hyatt | jachyatt | jachyatt | jachyatt@colostate.edu
