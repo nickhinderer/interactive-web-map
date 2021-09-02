@@ -1,4 +1,4 @@
-# Sprint # - *t04* - *your team name*
+# Sprint # - *t04* - *Geek Velocity*
 
 ## Product Goal
 ### *The Product Goal is an easy-to-use mobile trip planning application that satisfies a global audience.*
@@ -35,8 +35,10 @@
 
 ## Planned Epics
 
-{REMOVE THIS:  Write paragraphs, not bullets.}
-
+  Our team plans to complete the "Team Identification Epic" specified under the Sprint Backlog pipeline. What this entails is the presentation of our identification as developers with our audience being as our application users. More specifically, we will express our team name to the rest of the organization as well as on the browser tab/HTML Title and the application header/footer. Roles within the group will also take form as the group work will be distributed accordingly among the team. As a result, all of our pull requests, commits, and separate issues will be compiled together by the end of Sprint 1 as finished work towards our  team's application.
+  
+  Similarly, our team will complete the designated "About" epic. Our user's want to know more about who we are as developer's. This plays a significant role in the Sprint because it factors into whether or not user's will choose our product or not. To accomplish this, we plan to provide the user with information as follows: an image and mission statement of the team; an individual image, name, and short biography for each member of the team; a maintained and consistent style, format, and voice throughout all content; and finally progressive disclosure to reduce screen clutter. We plan to utlitize this epic as practice for writing any sort of biography in our future as both students and soon to be software engineers. 
+  
 ## Metrics
 
 These metrics reflect what was planned at the beginning of the sprint and what we actually completed by the end of the sprint.
