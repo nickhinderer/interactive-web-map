@@ -3,6 +3,7 @@ import teamPic from "../../static/images/TeamImage.jpg";
 import kaiyanPic from "../../static/images/kaiyan.jpg";
 import abbyPic from "../../static/images/abby.jpg";
 import jackiPic from "../../static/images/jacki.jpg";
+import nicPic from "../../static/images/the-matrix(1).jpg"
 
 export const teamData =
     {
@@ -38,9 +39,9 @@ export const memberData = [
         imagePath: memberPic
     },
     {
-        name: "Team Member 5",
-        bio: "Bio Here",
-        homeTown: "Hometown",
-        imagePath: memberPic
+        name: "Nick Hinderer",
+        bio: "Undergraduate student studying Compter Science.",
+        homeTown: "Saint Paul, Minnesota",
+        imagePath: nicPic
     },
 ];
