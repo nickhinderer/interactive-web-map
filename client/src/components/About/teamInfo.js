@@ -4,6 +4,7 @@ import kaiyanPic from "../../static/images/kaiyan.jpg";
 import abbyPic from "../../static/images/abby.jpg";
 import jackiPic from "../../static/images/jacki.jpg";
 import nicPic from "../../static/images/the-matrix(1).jpg"
+import malloryPic from "../../static/images/mallory.jpg";
 
 export const teamData =
     {
@@ -33,10 +34,10 @@ export const memberData = [
         imagePath: jackiPic
     },
     {
-        name: "Team Member 4",
-        bio: "Bio Here",
-        homeTown: "Hometown",
-        imagePath: memberPic
+        name: "Mallory Cahill",
+        bio: "I am an undergraduate student pursuing a degree in Computer Science and minoring in Spanish. In the future, I hope to somehow combine these two disciplines in my career. Some of my favorite hobbies are playing the guitar, making jewelry, hiking, and reading.",
+        homeTown: "Chicago, Illinois",
+        imagePath: malloryPic
     },
     {
         name: "Nick Hinderer",
