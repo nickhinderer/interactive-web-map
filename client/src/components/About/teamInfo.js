@@ -2,6 +2,7 @@ import memberPic from "../../static/images/Placeholder.jpg";
 import teamPic from "../../static/images/TeamImage.jpg";
 import kaiyanPic from "../../static/images/kaiyan.jpg";
 import abbyPic from "../../static/images/abby.jpg";
+import jackiPic from "../../static/images/jacki.jpg";
 
 export const teamData =
     {
@@ -25,10 +26,10 @@ export const memberData = [
         imagePath: abbyPic
     },
     {
-        name: "Team Member 3",
-        bio: "Bio Here",
-        homeTown: "Hometown",
-        imagePath: memberPic
+        name: "Jacquelyn Hyatt",
+        bio: "I am a second bachelor’s degree student who is currently pursuing a degree in Computer Science. I completed a Bachelor of Science degree in Psychology in 2019. I have a keen interest in human-computer interaction and enjoy research on why and how humans interact with technology. In my free time I enjoy running, listening to true-crime podcasts, and playing Dungeons & Dragons with my friends.",
+        homeTown: "Martinez, Georgia",
+        imagePath: jackiPic
     },
     {
         name: "Team Member 4",
