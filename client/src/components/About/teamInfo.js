@@ -1,11 +1,12 @@
 import memberPic from "../../static/images/Placeholder.jpg";
 import teamPic from "../../static/images/PlaceholderTeam.jpg";
 import kaiyanPic from "../../static/images/kaiyan.jpg";
+import abbyPic from "../../static/images/abby.jpg";
 
 export const teamData =
     {
         teamName: "T04 Geek Velocity",
-        missionStatement: "Mission Statement",
+        missionStatement: "We strive to provide users the ability to access information and organize destinations for an overall great trip. ",
         imagePath: teamPic,
     };
 
@@ -18,10 +19,10 @@ export const memberData = [
         imagePath: kaiyanPic
     },
     {
-        name: "Team Member 2",
-        bio: "Bio Here",
-        homeTown: "Hometown",
-        imagePath: memberPic
+        name: "Abigail Williams",
+        bio: "I am a Junior pursing a degree in Computer Science. With my degree I plan to program embedded software within everyday appliances as well as machines in the medical industry. My favorite hobbies include running, dancing, playing the piano, speaking Spanish, and golfing.",
+        homeTown: "Broomfield, Colorado",
+        imagePath: abbyPic
     },
     {
         name: "Team Member 3",
