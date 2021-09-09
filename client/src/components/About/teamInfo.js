@@ -35,7 +35,7 @@ export const memberData = [
     },
     {
         name: "Mallory Cahill",
-        bio: "I am an undergraduate student pursuing a degree in Computer Science and minoring in Spanish. In the future, I hope to somehow combine these two disciplines in my career. Some of my favorite pastimes include playing the guitar, making jewelry, hiking, and reading.",
+        bio: "I am an undergraduate student pursuing a degree in Computer Science and minoring in Spanish. In the future, I hope to somehow combine these two disciplines in my career. Some of my favorite hobbies are playing the guitar, making jewelry, hiking, and reading.",
         homeTown: "Chicago, Illinois",
         imagePath: malloryPic
     },
