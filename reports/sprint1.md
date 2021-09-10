@@ -1,4 +1,4 @@
-# Sprint # - *t04* - *Geek Velocity*
+# Sprint 1 # - *t04* - *Geek Velocity*
 
 ## Product Goal
 ### *The Product Goal is an easy-to-use mobile trip planning application that satisfies a global audience.*
@@ -45,9 +45,9 @@ These metrics reflect what was planned at the beginning of the sprint and what w
 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
-| Epics | *2* | *count* |
-| Tasks |  *8*   | *count* | 
-| Story Points |  *11*  | *count* | 
+| Epics | *2* |  *2*|
+| Tasks |  *8*   | *6* | 
+| Story Points |  *11*  | *7* | 
 
 
 ## Scrums
