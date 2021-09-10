@@ -6,7 +6,7 @@
 
 
 
-![Team Pic](https://user-images.githubusercontent.com/82910022/131415271-fa530b6c-aac3-4251-a742-f249fc6ff692.jpg)
+![Team Pic](https://raw.githubusercontent.com/CSU-CS-314-Fall-2021/t04/main/client/src/static/images/TeamImage.jpg?token=AUYPENL6PJPMKJNEJEEOIMDBIPP5E)
 
 *Nick, Abby, Kay, Mallory*
 #  Member Information
