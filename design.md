@@ -152,6 +152,14 @@ There are five primary parts:
 * Add current location to trip
 * Highlight a specific place in trip list
 * See where a latitude/longitude is on the map
+
+### Client Components
+
+
+### Server Classes
+The server class structure will change as a result of this sprint to provide new components and features for the user. 
+* By enforcing the use of the find protocol for Epic #66 "Find Places", the server will change such that it supports valid find requests sent from the client. 
+
 # Sprint 3
 # Sprint 4 
 # Sprint 5
