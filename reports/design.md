@@ -26,7 +26,8 @@ The browser fetches the client files from the server on the specified port.
 ![overview](../images/BaseArchitecture.png)
 
 The browser loads the index.html file (by default) which in turn loads the bundled JavaScript single page application bundle.js.
-* The single page application makes RESTful API requests to the server on the same port using  JavaScript's asynchronous fetch.  
+* The single page a(https://user-images.githubusercontent.com/82910022/133346759-0d243517-04bb-4d1c-9f96-d52501c914b2.jpg)
+pplication makes RESTful API requests to the server on the same port using  JavaScript's asynchronous fetch.  
 * A protocol document describes the JSON format for the RESTful API requests and responses.
 * JSON Schemas are used to verify requests on the server side and responses on the client side.
 * On the client, ReactJS renders the application using ReactStrap, Leaflet, and application defined components.
@@ -153,6 +154,14 @@ There are two primary parts:
 When a user enters a simple string in a search bar, matching places and their details should appear in a list. 
 The user can then select one or more places from the list to add to their trip. 
 The user will be able to select and highlight a place in their trip list.
+
+#### Drawing for #68 Highlight Places Epic
+![User Interface Highlights Drawing](https://user-images.githubusercontent.com/82910022/133346881-60cf74e7-dce8-473c-9683-e482ed274b90.jpg)
+
+As the drawing shows, the highlighted place will have an H icon above it in the map portion of the interface. 
+To make the highlighted place stand out, we are going to change a bit of css from the base code by :
+* dropping the row css attribute that makes every other row of places bordered and filled in with a grey background. 
+* changing the background color within the borders to a beige/light-green brackground. For lack of a beige colored pencil, this was not demonstrated in the drawing.  
 
 ### Client Components
 
