@@ -155,7 +155,8 @@ The user can then select one or more places from the list to add to their trip.
 The user will be able to select and highlight a place in their trip list.
 
 #### Drawing for #68 Highlight Place Epic
-![User Interface Highlights Drawing](https://user-images.githubusercontent.com/82910022/133346881-60cf74e7-dce8-473c-9683-e482ed274b90.jpg)
+
+<img src="https://user-images.githubusercontent.com/82910022/133346881-60cf74e7-dce8-473c-9683-e482ed274b90.jpg" alt="User Interface Highlights Drawing" width="525"/>
 
 As the drawing shows, the highlighted place will have an H icon above it in the map portion of the interface. 
 To make the highlighted place stand out, we are going to change a bit of css from the base code by :
