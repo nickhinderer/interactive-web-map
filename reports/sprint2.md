@@ -37,6 +37,8 @@
 
 During Sprint 2, our team plans to first complete the epic "Find Places" listed under the product backog. This will entail adding the ability for a user to find places utilizing a string and then add those places to their trip. Adding this ability will involve utilizing the protocol find feature. In addition to this protocol, the team will work hard to ensure that the client can send proper find requests and the server can support such requests. The above tasks mean that the team will need to use progressive disclosure in order to create a pleasing flow of information for the user. Tasks for this epic will be split evenly among the team and all code, including commits, pull requests, and seperate issues, will be compiled together before the end of Sprint 2 in order to ensure proper completion of this epic. 
 
+In addition to completing the above epic, our team also plans to complete the epic "Highlight Place". This epic will entail us working on a way to add functionality that allows a marker to appear when the user selects a place on their trip. Adding this functionality will help with the usability of our site by providing a visual cue when a place is selected by the user. As stated previously, the team will split this epic into tasks that can be spread evenly among the team in order for us to be successful in completing this epic.
+
 ## Metrics
 
 | Statistic | # Planned | # Completed |
