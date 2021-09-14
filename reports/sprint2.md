@@ -35,6 +35,7 @@
 
 ## Planned Epics
 
+During Sprint 2, our team plans to first complete the epic "Find Places" listed under the product backog. This will entail adding the ability for a user to find places utilizing a string and then add those places to their trip. Adding this ability will involve utilizing the protocol find feature. In addition to this protocol, the team will work hard to ensure that the client can send proper find requests and the server can support such requests. The above tasks mean that the team will need to use progressive disclosure in order to create a pleasing flow of information for the user. Tasks for this epic will be split evenly among the team and all code, including commits, pull requests, and seperate issues, will be compiled together before the end of Sprint 2 in order to ensure proper completion of this epic. 
 
 ## Metrics
 
