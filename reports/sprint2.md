@@ -49,7 +49,7 @@
 
 | Date | Tasks closed  | Tasks in progress | Impediments |
 | :--- | :--- | :--- | :--- |
-| *date* | *#task, ...* | *#task, ...* |  | 
+| *9/13* | *#79, #85, #86, #87* | *#66, #75, #84* | internet problems | 
 
 
 ## Review
