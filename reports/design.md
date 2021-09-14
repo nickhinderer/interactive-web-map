@@ -146,12 +146,13 @@ Only minor changes to text constants are required.
 ### User Interface
 
 In this sprint, we will focus on adding new interface components to the map, and add features to trip configuration.
-There are five primary parts:
-* Finding places that match a string to add to trip
-* Use different services to plan trip
-* Add current location to trip
-* Highlight a specific place in trip list
-* See where a latitude/longitude is on the map
+There are two primary parts:
+* Find places
+* Highlight place
+
+When a user enters a simple string in a search bar, matching places and their details should appear in a list. 
+The user can then select one or more places from the list to add to their trip. 
+The user will be able to select and highlight a place in their trip list.
 
 ### Client Components
 
