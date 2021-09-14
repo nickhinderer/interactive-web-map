@@ -23,7 +23,7 @@ The client consists of a minimal index.html file that loads and executes the bun
 The client and server files are bundled into a single JAR file for execution on the Linux server at a specified port.
 The browser fetches the client files from the server on the specified port.
 
-![overview](images/BaseArchitecture.png)
+![overview](../images/BaseArchitecture.png)
 
 The browser loads the index.html file (by default) which in turn loads the bundled JavaScript single page application bundle.js.
 * The single page application makes RESTful API requests to the server on the same port using  JavaScript's asynchronous fetch.  
@@ -41,7 +41,7 @@ They will be added later in the semester.
 
 
 ### User Interface
-![base](images/Map.png)
+![base](../images/Map.png)
 
 The basic screen in black shows the view on a mobile device, with a header, footer, and trip.
 The header contains a earth logo and the team name obtained from the server when the client was loaded.
@@ -83,14 +83,14 @@ The component hierarchy for the base application depicted below shows the our to
 * Atlas renders a map.
 * About renders information about the team.
 
-![base component hierarchy](images/ComponentsBase.png)
+![base component hierarchy](../images/ComponentsBase.png)
 
 We do not show the many ReactStrap components in this hierarchy, even though they will appear when you are debugging on the client.
 
 ### Class Diagram
 The class diagram for the base application depicted below shows the basic structure of the web server application.
 
-![class diagram](images/serverclasses.png )
+![class diagram](../images/serverclasses.png )
 
 The classes in blue represent the classes specific to this application.  
 * WebApplication processes command line parameters and creates MicroServer.
@@ -121,7 +121,7 @@ The collapsible map should disappear so only the about or map are displayed.
 A simple toggle in state should be able to control this rendering.
 The about page should contain the team name as a heading. 
 
-![base](images/About.png)
+![base](../images/About.png)
 
 The team name in the browser tab, header and are simple changes to constants in the client and server.
 
@@ -134,7 +134,7 @@ We will add 3 new components to the base architecture on the client to support t
 
 The existing About component will be modified to control the layout of the Team and Person components on the page.
 
-![components1](images/ComponentsSprint1.png)
+![components1](../images/ComponentsSprint1.png)
 
 ### Server Classes
 There are no changes to the server class structure in this sprint.
