@@ -55,7 +55,8 @@ Based on our team's previous performance, taking on the task of two epics and si
 
 | Date | Tasks closed  | Tasks in progress | Impediments |
 | :--- | :--- | :--- | :--- |
-| *9/13* | *#79, #85, #86, #87* | *#66, #75, #84* | internet problems | 
+| *9/13* | *N/A* | *#66* | internet problems | 
+| *9/14* | *N/A* | *#66* | N/A |
 
 
 ## Review
