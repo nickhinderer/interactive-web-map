@@ -165,7 +165,7 @@ To make the highlighted place stand out, we are going to change a bit of css fro
 
 ### Drawing for #66 Find Places Epic
 
-<img source="https://user-images.githubusercontent.com/74014694/133350487-e2c7efe1-c115-4825-bb8b-e56683899c7e.jpg" alt="User Interface Find Places Drawing" width="525"/>
+<img src="https://user-images.githubusercontent.com/74014694/133350487-e2c7efe1-c115-4825-bb8b-e56683899c7e.jpg" alt="User Interface Find Places Drawing" width="525"/>
 
 There will be a search bar added in underneath the map portion on the site. When a string is input into the search bar, a list will pop up underneath the bar and the user will be able to add an item from the list to their trip. We will be changing the code by:
 * Adding in a search bar
