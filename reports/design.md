@@ -180,7 +180,7 @@ We will add one new component to the base architecture on the client to support 
 * Find component will render the trip location information based on what string is entered
 
 ### Server Classes
-![serverclassdiagram](../Images/ServerClassDiagram.jpg)
+![serverclassdiagram](../images/ServerClassDiagram.jpg)
 
 The server class structure will change as a result of this sprint to provide new components and features for the user. 
 * By enforcing the use of the find protocol for Epic #66 "Find Places", the server will change such that it supports valid find requests sent from the client. 
