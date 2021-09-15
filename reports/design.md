@@ -163,6 +163,7 @@ To make the highlighted place stand out, we are going to change a bit of css fro
 * dropping the row css attribute that makes every other row of places bordered and filled in with a grey background. 
 * changing the background color within the borders to a beige/light-green brackground. For lack of a beige colored pencil, this was not demonstrated in the drawing.  
 
+
 ### Drawing for #66 Find Places Epic
 
 <img src="https://user-images.githubusercontent.com/74014694/133350487-e2c7efe1-c115-4825-bb8b-e56683899c7e.jpg" alt="User Interface Find Places Drawing" width="525"/>
@@ -171,6 +172,7 @@ There will be a search bar added in underneath the map portion on the site. When
 * Adding in a search bar
 * Adding in a list 
 * Adding dynamic functionality to accomplish adding item from list
+
 
 ### Client Components
 
