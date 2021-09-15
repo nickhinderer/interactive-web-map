@@ -23,7 +23,7 @@ The client consists of a minimal index.html file that loads and executes the bun
 The client and server files are bundled into a single JAR file for execution on the Linux server at a specified port.
 The browser fetches the client files from the server on the specified port.
 
-![overview](images/BaseArchitecture.png)
+![overview](../images/BaseArchitecture.png)
 
 The browser loads the index.html file (by default) which in turn loads the bundled JavaScript single page application bundle.js.
 * The single page application makes RESTful API requests to the server on the same port using  JavaScript's asynchronous fetch.  
@@ -41,7 +41,7 @@ They will be added later in the semester.
 
 
 ### User Interface
-![base](images/Map.png)
+![base](../images/Map.png)
 
 The basic screen in black shows the view on a mobile device, with a header, footer, and trip.
 The header contains a earth logo and the team name obtained from the server when the client was loaded.
@@ -83,14 +83,14 @@ The component hierarchy for the base application depicted below shows the our to
 * Atlas renders a map.
 * About renders information about the team.
 
-![base component hierarchy](images/ComponentsBase.png)
+![base component hierarchy](../images/ComponentsBase.png)
 
 We do not show the many ReactStrap components in this hierarchy, even though they will appear when you are debugging on the client.
 
 ### Class Diagram
 The class diagram for the base application depicted below shows the basic structure of the web server application.
 
-![class diagram](images/serverclasses.png )
+![class diagram](../images/serverclasses.png )
 
 The classes in blue represent the classes specific to this application.  
 * WebApplication processes command line parameters and creates MicroServer.
@@ -121,7 +121,7 @@ The collapsible map should disappear so only the about or map are displayed.
 A simple toggle in state should be able to control this rendering.
 The about page should contain the team name as a heading. 
 
-![base](images/About.png)
+![base](../images/About.png)
 
 The team name in the browser tab, header and are simple changes to constants in the client and server.
 
@@ -134,7 +134,7 @@ We will add 3 new components to the base architecture on the client to support t
 
 The existing About component will be modified to control the layout of the Team and Person components on the page.
 
-![components1](images/ComponentsSprint1.png)
+![components1](../images/ComponentsSprint1.png)
 
 ### Server Classes
 There are no changes to the server class structure in this sprint.
@@ -146,12 +146,26 @@ Only minor changes to text constants are required.
 ### User Interface
 
 In this sprint, we will focus on adding new interface components to the map, and add features to trip configuration.
-There are five primary parts:
-* Finding places that match a string to add to trip
-* Use different services to plan trip
-* Add current location to trip
-* Highlight a specific place in trip list
-* See where a latitude/longitude is on the map
+There are two primary parts:
+* Find places
+* Highlight place
+
+When a user enters a simple string in a search bar, matching places and their details should appear in a list. 
+The user can then select one or more places from the list to add to their trip. 
+The user will be able to select and highlight a place in their trip list.
+
+#### Drawing for #68 Highlight Place Epic
+
+<img src="https://user-images.githubusercontent.com/82910022/133346881-60cf74e7-dce8-473c-9683-e482ed274b90.jpg" alt="User Interface Highlights Drawing" width="525"/>
+
+As the drawing shows, the highlighted place will have an H icon above it in the map portion of the interface. 
+To make the highlighted place stand out, we are going to change a bit of css from the base code by :
+* dropping the row css attribute that makes every other row of places bordered and filled in with a grey background. 
+* changing the background color within the borders to a beige/light-green brackground. For lack of a beige colored pencil, this was not demonstrated in the drawing.  
+
+### Drawing for #66 Find Places Epic
+
+<img source="https://github.com/jachyatt/Project-Items/blob/385f8148c1d6930544d39e9adba70b84cb498564/PXL_20210914_235858468.jpg" alt="User Interface Find Places Drawing" width="525"/>
 
 ### Client Components
 
