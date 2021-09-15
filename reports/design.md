@@ -165,7 +165,7 @@ To make the highlighted place stand out, we are going to change a bit of css fro
 
 ### Drawing for #66 Find Places Epic
 
-<img source="https://github.com/jachyatt/Project-Items/blob/385f8148c1d6930544d39e9adba70b84cb498564/PXL_20210914_235858468.jpg" alt="User Interface Find Places Drawing" width="525"/>
+<img source="https://user-images.githubusercontent.com/74014694/133350487-e2c7efe1-c115-4825-bb8b-e56683899c7e.jpg" alt="User Interface Find Places Drawing" width="525"/>
 
 ### Client Components
 
