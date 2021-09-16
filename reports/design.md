@@ -175,6 +175,7 @@ There will be a search bar added in underneath the map portion on the site. When
 
 
 ### Client Components
+![componenthierarchy](../images/componenthierarchy.jpg)
 
 We will add one new component to the base architecture on the client to support the planner page.
 * Find component will render the trip location information based on what string is entered
