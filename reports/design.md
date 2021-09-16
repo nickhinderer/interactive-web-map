@@ -177,8 +177,12 @@ There will be a search bar added in underneath the map portion on the site. When
 ### Client Components
 ![componenthierarchy](../images/componenthierarchy.jpg)
 
-We will add one new component to the base architecture on the client to support the planner page.
-* Find component will render the trip location information based on what string is entered
+We will add five new component to the base architecture on the client to support the planner page.
+* The Find component will render the Match and Results components
+* The Match component will render the information from the match box
+* The Results component will render the list of results when the user searches for a place
+* The Result component will render each individual result from the Results component
+* The Highlight component will render the map information 
 
 ### Server Classes
 ![serverclassdiagram](../images/ServerClassDiagram.jpg)
