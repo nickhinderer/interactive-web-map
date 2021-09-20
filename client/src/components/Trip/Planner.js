@@ -10,11 +10,9 @@ export default function Planner() {
 
     return (
         <Container>
-            <Row>
-            <Col sm={12} md={{ size: 10, offset: 1 }}>
-                {props.children} <Map places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
-            </Col>
-            </Row>
+            <Section>
+                <Find places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
+            </Section>
             <Section>
                 <Map places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
             </Section>
