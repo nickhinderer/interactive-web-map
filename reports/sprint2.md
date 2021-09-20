@@ -46,8 +46,8 @@ In addition to completing the above epic, our team also plans to complete the ep
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
 | Epics | *2* | *count* |
-| Tasks |  *6*   | *count* | 
-| Story Points |  *14*  | *sum* | 
+| Tasks |  *15*   | *count* | 
+| Story Points |  *26*  | *sum* | 
 
 Based on our team's previous performance, taking on the task of two epics and six tasks will be manageable. In the previous sprint our team was able to complete both epics assigned on the product backlog. Our team was not able to complete all tasks previously due to some impediments, but the team is more than capable of taking on the current tasks at hand.
 
@@ -57,7 +57,7 @@ Based on our team's previous performance, taking on the task of two epics and si
 | :--- | :--- | :--- | :--- |
 | *9/13* | *N/A* | *#66* | internet problems | 
 | *9/14* | *N/A* | *#66* | N/A |
-| *9/20* | *N/A* | *#83, #114, #116, #117* | lack of knowledge |
+| *9/20* | *N/A* | *#66, #114, #116, #117* | lack of knowledge |
 
 
 ## Review
