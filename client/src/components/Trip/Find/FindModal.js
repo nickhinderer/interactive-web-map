@@ -21,7 +21,7 @@ const FindModal = () => {
     return (
         <div className="searchButton">
             <Button className = "mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
-            <Modal isOpen={modal} toggle={toggle} className={findModal}>
+            <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>Find Places</ModalHeader>
                 <ModalBody>
                     TODO: Search box here
