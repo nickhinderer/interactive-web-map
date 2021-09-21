@@ -14,18 +14,13 @@ Questions:
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const FindModal = (props) => {
-    const {
-        searchButton,
-        findModal
-    } = props;
-
+const FindModal = () => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
     return (
-        <div>
-            <Button color="secondary" onClick={toggle}>{searchButton}</Button>
+        <div className="searchButton">
+            <Button className = "mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
             <Modal isOpen={modal} toggle={toggle} className={findModal}>
                 <ModalHeader toggle={toggle}>Find Places</ModalHeader>
                 <ModalBody>
