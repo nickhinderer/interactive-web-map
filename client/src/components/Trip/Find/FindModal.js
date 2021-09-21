@@ -15,6 +15,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { ReactComponent as SearchImage } from '~/client/src/static/images/geo.svg';
 import { ReactComponent as Exit } from '~/client/src/static/images/x.svg';
+import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 
 const FindModal = () => {
     const [modal, setModal] = useState(false);
@@ -25,9 +26,15 @@ const FindModal = () => {
             <Button onClick={toggle}><SearchImage />Search</Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Search
-                    <Button onClick={toggle}><Exit /></Button>
+                    <Button onClick={toggle}><Exit />Close</Button>
                 </ModalHeader>
-                <ModalBody>Search Bar Goes Here</ModalBody>
+                <ModalBody>
+                    <InputGroup>
+                        <InputGroupAddon addonType="append">
+                            <InputGroupText>Search</InputGroupText>
+                        </InputGroupAddon>
+                    </InputGroup>
+                </ModalBody>
                 <ModalFooter>
                     <Button onclick={toggle}>Done</Button>
                 </ModalFooter>
