@@ -31,3 +31,5 @@ const FindModal = () => {
         </div>
     );
 }
+
+export default FindModal;
