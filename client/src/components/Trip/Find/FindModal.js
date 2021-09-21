@@ -18,6 +18,9 @@ const FindModal = () => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
-    return {
-    }
+    return (
+        <div>
+            <Button onClick={toggle}></Button>
+        </div>
+    )
 }
