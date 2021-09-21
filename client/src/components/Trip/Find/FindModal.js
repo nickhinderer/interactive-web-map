@@ -13,7 +13,7 @@ LOOK INTO "useState" as a form of managing places
 
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { ReactComponent as Search } from './static/images/geo.svg'
+import { ReactComponent as SearchImage } from '../client/src/static/images/geo.svg'
 
 const FindModal = () => {
     const [modal, setModal] = useState(false);
@@ -21,7 +21,7 @@ const FindModal = () => {
 
     return (
         <div>
-            <Button onClick={toggle}><Search />Search</Button>
+            <Button onClick={toggle}><SearchImage />Search</Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Search</ModalHeader>
                 <ModalBody>Search Bar Goes Here</ModalBody>
