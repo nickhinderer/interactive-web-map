@@ -13,8 +13,8 @@ LOOK INTO "useState" as a form of managing places
 
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { ReactComponent as SearchImage } from '~/client/src/static/images/geo.svg';
-import { ReactComponent as Exit } from '~/client/src/static/images/x.svg';
+import { ReactComponent as SearchImage } from '../../../static/images/geo.svg';
+import { ReactComponent as Exit } from '../../../static/images/x.svg';
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 
 const FindModal = () => {
