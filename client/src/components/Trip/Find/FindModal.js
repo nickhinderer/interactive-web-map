@@ -20,10 +20,10 @@ const FindModal = () => {
 
     return (
         <div>
-            <Button onClick={toggle}></Button>
+            <Button onClick={toggle}>Search</Button>
             <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader>Find Places</ModalHeader>
-                <ModalBody></ModalBody>
+                <ModalHeader>Search</ModalHeader>
+                <ModalBody>Search Bar Goes Here</ModalBody>
                 <ModalFooter>
                     <Button onclick={toggle}>Done</Button>
                 </ModalFooter>
