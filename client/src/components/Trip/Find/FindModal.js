@@ -21,6 +21,13 @@ const FindModal = () => {
     return (
         <div>
             <Button onClick={toggle}></Button>
+            <Modal isOpen={modal} toggle={toggle}>
+                <ModalHeader>Find Places</ModalHeader>
+                <ModalBody></ModalBody>
+                <ModalFooter>
+                    <Button onclick={toggle}>Done</Button>
+                </ModalFooter>
+            </Modal>
         </div>
-    )
+    );
 }
