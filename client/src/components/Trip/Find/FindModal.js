@@ -41,6 +41,6 @@ const FindModal = () => {
             </Modal>
         </div>
     );
-}
+};
 
 export default FindModal;
