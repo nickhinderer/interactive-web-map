@@ -1,4 +1,4 @@
-# Sprint # - *t04* - *Geek Velocity*
+# Sprint 1 # - *t04* - *Geek Velocity*
 
 ## Product Goal
 ### *The Product Goal is an easy-to-use mobile trip planning application that satisfies a global audience.*
@@ -45,9 +45,9 @@ These metrics reflect what was planned at the beginning of the sprint and what w
 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
-| Epics | *2* | *count* |
-| Tasks |  *8*   | *count* | 
-| Story Points |  *11*  | *count* | 
+| Epics | *2* |  *2*|
+| Tasks |  *8*   | *6* | 
+| Story Points |  *11*  | *7* | 
 
 
 ## Scrums
@@ -58,15 +58,14 @@ The #*task* numbers refer to the issue numbers in GitHub.
 | Date | Tasks closed  | Tasks in progress | Impediments |
 | :--- | :--- | :--- | :--- |
 | 9/8 | #14, #19, #21,  #28|  #14, #24, #25, #29, #30 | missing design.md, sickness |
-| 9/11 |  |  |  | 
+| 9/11 | #14, #19, #21,  #28, #29, #30 | N/A | cs machine servers when working with black bottle temporarily | 
 
 
 ## Review
 
 ### Epics completed
-After distributing the tasks accordingly, our group was able to finish Epic #13 Team Identification. We were able to have one each member work on the various forms of identification within the website on either the server, client, or browser side. 
+After distributing the tasks accordingly, our group was able to finish Epic #13 Team Identification. We were able to have one each member work on the various forms of identification within the website on either the server, client, or browser side. We also completed Epic #22 About with our personal photos, short bios, and home town while also maintaining mobile compatibility. 
 
-(In progress) Epic #22 About …. 
 ### Epics not completed
 ### Things we did well (regarding the product)
 Our group did a good job of distributing the work evenly. We were able to immediately start our individual assigned tasks and come together at the end of the day with our commits and pushes to main. All pull requests were accounted for and merged in a timely fashion. 

@@ -11,20 +11,29 @@ LOOK INTO "useState" as a form of managing places
 Questions:
     What is the setModal() component doing?
 */
+
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+
 
 const FindModal = () => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
     return (
+
         <div className="searchButton">
             <Button className = "mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
             <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Find Places</ModalHeader>
+                <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
-                    TODO: Search box here
+                    <InputGroup>
+                        <InputGroupAddon addonType="append">
+                            <Button onClick={toggle}>Search</Button>
+                        </InputGroupAddon>
+                        <Input>Search</Input>
+                    </InputGroup>
                 </ModalBody>
                 <ModalFooter>
                     <Button color="success" onClick={toggle}>Done</Button>{' '}
@@ -34,6 +43,5 @@ const FindModal = () => {
         </div>
     );
 }
+
 export default FindModal;
-
-
