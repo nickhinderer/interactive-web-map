@@ -23,7 +23,7 @@ const FindModal = () => {
 
     return (
         <div>
-            <Button onClick={toggle}>Search</Button>
+            <SearchImage /><Button onClick={toggle}>Search</Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
