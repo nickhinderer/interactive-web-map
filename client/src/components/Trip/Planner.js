@@ -1,15 +1,18 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
+import Find from './Find/FindModal';
 import Map from './Map/Map';
 import Itinerary from './Itinerary/Itinerary';
 import { usePlaces } from '../../hooks/usePlaces';
-import Find from './Find/FindModal';
 
 export default function Planner() {
     const {places, selectedIndex, placeActions} = usePlaces();
 
     return (
         <Container>
+             <Section>
+                <Find places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
+            </Section>
             <Section>
                 <Find places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
             </Section>

@@ -7,21 +7,24 @@ Renders result (potentially use list component)
 Getting data for Planner
 - callback function to get parent
 - Button - use ReactStract 
-- Good for longevity
 LOOK INTO "useState" as a form of managing places
+Questions:
+    What is the setModal() component doing?
 */
 
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 
+
 const FindModal = () => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
     return (
-        <div>
-            <Button onClick={toggle}>Search</Button>
+
+        <div className="searchButton">
+            <Button className = "mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
@@ -33,12 +36,12 @@ const FindModal = () => {
                     </InputGroup>
                 </ModalBody>
                 <ModalFooter>
-                    <Button onclick={toggle}>Done</Button>
-                    <Button onClick={toggle}>Close</Button>
+                    <Button color="success" onClick={toggle}>Done</Button>{' '}
+                    <Button color="danger" onClick={toggle}>Cancel</Button>
                 </ModalFooter>
             </Modal>
         </div>
     );
-};
+}
 
 export default FindModal;
