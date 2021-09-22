@@ -13,8 +13,10 @@ Questions:
 */
 
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { LOG } from '../../../utils/constants';
+import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 
 
 const FindModal = () => {
@@ -24,15 +26,15 @@ const FindModal = () => {
     return (
 
         <div className="searchButton">
-            <Button className = "mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
+            <Button className = "mx-1" outline-color="secondary" onClick={toggle}>Search</Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
                     <InputGroup>
                         <InputGroupAddon addonType="append">
-                            <Button onClick={toggle}>Search</Button>
+                            <InputGroupText>Search</InputGroupText>
                         </InputGroupAddon>
-                        <Input>Search</Input>
+                        <Input placeholder="place..." onChange={sendAPIRequest}/>
                     </InputGroup>
                 </ModalBody>
                 <ModalFooter>
@@ -43,5 +45,21 @@ const FindModal = () => {
         </div>
     );
 }
-
 export default FindModal;
+
+function processServerFindSuccess(find, url) {
+    LOG.info("Looking for matches.", url);
+    setServerFind(find);
+    setServerUrl(url);
+}
+
+async function sendFindRequest() {
+    const findResponse = await sendAPIRequest({ requestType: "find" }, serverUrl)
+    if (findResponse) {
+        processServerFindSuccess(findResponse, serverUrl);
+    } else {
+        setServerFind(null);
+        showMessage('Sorry! No search requests found.');
+    }
+    return [{ serverUrl: serverUrl, serverFind: serverFind}, processServerFindSuccess];
+}
