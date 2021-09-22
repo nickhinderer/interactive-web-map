@@ -25,9 +25,7 @@ const FindModal = () => {
         <div>
             <Button onClick={toggle}><SearchImage />Search</Button>
             <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader>Search
-                    <Button onClick={toggle}><Exit />Close</Button>
-                </ModalHeader>
+                <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
                     <InputGroup>
                         <InputGroupAddon addonType="append">
@@ -37,6 +35,7 @@ const FindModal = () => {
                 </ModalBody>
                 <ModalFooter>
                     <Button onclick={toggle}>Done</Button>
+                    <Button onClick={toggle}><Exit />Close</Button>
                 </ModalFooter>
             </Modal>
         </div>
