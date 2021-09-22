@@ -10,3 +10,35 @@ Getting data for Planner
 - Good for longevity
 LOOK INTO "useState" as a form of managing places
 */
+
+import React, { useState } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+
+const FindModal = () => {
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
+
+    return (
+        <div>
+            <Button onClick={toggle}>Search</Button>
+            <Modal isOpen={modal} toggle={toggle}>
+                <ModalHeader>Find Places</ModalHeader>
+                <ModalBody>
+                    <InputGroup>
+                        <InputGroupAddon addonType="append">
+                            <Button onClick={toggle}>Search</Button>
+                        </InputGroupAddon>
+                        <Input>Search</Input>
+                    </InputGroup>
+                </ModalBody>
+                <ModalFooter>
+                    <Button onclick={toggle}>Done</Button>
+                    <Button onClick={toggle}>Close</Button>
+                </ModalFooter>
+            </Modal>
+        </div>
+    );
+};
+
+export default FindModal;
