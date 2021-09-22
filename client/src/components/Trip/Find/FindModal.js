@@ -23,7 +23,7 @@ const FindModal = () => {
 
     return (
         <div>
-            <Button onClick={toggle}><SearchImage />Search</Button>
+            <Button onClick={toggle}>Search</Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
@@ -35,7 +35,7 @@ const FindModal = () => {
                 </ModalBody>
                 <ModalFooter>
                     <Button onclick={toggle}>Done</Button>
-                    <Button onClick={toggle}><Exit />Close</Button>
+                    <Button onClick={toggle}>Close</Button>
                 </ModalFooter>
             </Modal>
         </div>
