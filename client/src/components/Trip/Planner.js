@@ -4,7 +4,6 @@ import Find from './Find/FindModal';
 import Map from './Map/Map';
 import Itinerary from './Itinerary/Itinerary';
 import { usePlaces } from '../../hooks/usePlaces';
-import Find from './Find/FindModal';
 
 export default function Planner() {
     const {places, selectedIndex, placeActions} = usePlaces();
