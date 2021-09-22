@@ -16,6 +16,8 @@ public class FindRequest extends Request {
 
     @Override
     public void buildResponse() {
+        limit = 0;
+        match = "";
         found = queryFound();
         places = queryMatch();
         log.trace("buildResponse -> {}", this);
@@ -46,4 +48,16 @@ public class FindRequest extends Request {
         place.put("longitude", longitude);
         return place;
     }
+      /* this is for test*/
+
+      public int getlimit() {
+        return limit;
+    }
+
+    public String getMatch(){
+
+        return match;
+    }
+
+    
 }
