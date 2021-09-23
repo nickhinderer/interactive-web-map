@@ -26,7 +26,7 @@ const FindModal = () => {
     return (
 
         <div className="searchButton">
-            <Button className = "mx-1" outline-color="secondary" onClick={toggle}>Search</Button>
+            <Button className = "mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
@@ -34,7 +34,7 @@ const FindModal = () => {
                         <InputGroupAddon addonType="append">
                             <InputGroupText>Search</InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="place..." onChange={sendAPIRequest}/>
+                        <Input placeholder="Place..." onChange={toggle}/>
                     </InputGroup>
                 </ModalBody>
                 <ModalFooter>
@@ -47,19 +47,9 @@ const FindModal = () => {
 }
 export default FindModal;
 
-function processServerFindSuccess(find, url) {
-    LOG.info("Looking for matches.", url);
-    setServerFind(find);
-    setServerUrl(url);
-}
-
 async function sendFindRequest() {
-    const findResponse = await sendAPIRequest({ requestType: "find" }, serverUrl)
-    if (findResponse) {
-        processServerFindSuccess(findResponse, serverUrl);
-    } else {
-        setServerFind(null);
-        showMessage('Sorry! No search requests found.');
-    }
-    return [{ serverUrl: serverUrl, serverFind: serverFind}, processServerFindSuccess];
+    const requestResponse = await sendAPIRequest({ requestType: "find", match: " ", limit: " " }, serverUrl);
+    /*if (requestResponse) {
+        processServerFindSuccess(requestResponse, serverUrl);
+    }*/
 }
