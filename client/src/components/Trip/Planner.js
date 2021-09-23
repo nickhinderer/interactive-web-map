@@ -10,9 +10,6 @@ export default function Planner() {
 
     return (
         <Container>
-             <Section>
-                <Find places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
-            </Section>
             <Section>
                 <Find places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
             </Section>

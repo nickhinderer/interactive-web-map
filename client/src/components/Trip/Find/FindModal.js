@@ -13,7 +13,7 @@ Questions:
 */
 
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 
 
@@ -30,9 +30,9 @@ const FindModal = () => {
                 <ModalBody>
                     <InputGroup>
                         <InputGroupAddon addonType="append">
-                            <Button onClick={toggle}>Search</Button>
+                            <InputGroupText>Search</InputGroupText>
                         </InputGroupAddon>
-                        <Input>Search</Input>
+                        <Input placeholder = "Place..." onChange={toggle} />
                     </InputGroup>
                 </ModalBody>
                 <ModalFooter>
@@ -45,3 +45,20 @@ const FindModal = () => {
 }
 
 export default FindModal;
+
+function processServerFindSuccess(find, url) {
+    LOG.info("Looking for matches.", url);
+    setServerFind(find);
+    setServerUrl(url);
+}
+
+async function sendFindRequest() {
+    const findResponse = await sendAPIRequest({ requestType: "find" }, serverUrl)
+    if (findResponse) {
+        processServerFindSuccess(findResponse, serverUrl);
+    } else {
+        setServerFind(null);
+        showMessage('Sorry! No search requests found.');
+    }
+    return [{ serverUrl: serverUrl, serverFind: serverFind}, processServerFindSuccess];
+}
