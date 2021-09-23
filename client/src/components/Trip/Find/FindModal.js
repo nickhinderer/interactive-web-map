@@ -45,3 +45,10 @@ const FindModal = () => {
 }
 
 export default FindModal;
+
+async function sendFindRequest() {
+    const requestResponse = await sendAPIRequest({ requestType: "find", match: " ", limit: " " }, serverUrl);
+    /*if (requestResponse) {
+        processServerFindSuccess(requestResponse, serverUrl);
+    }*/
+}
