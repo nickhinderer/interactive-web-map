@@ -34,7 +34,8 @@ const FindModal = () => {
                         <InputGroupAddon addonType="append">
                             <InputGroupText>Search</InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Place..." onChange={toggle}/>
+
+                        <Input placeholder = "Place..." onChange={toggle} />
                     </InputGroup>
                 </ModalBody>
                 <ModalFooter>
@@ -47,9 +48,20 @@ const FindModal = () => {
 }
 export default FindModal;
 
+
+function processServerFindSuccess(find, url) {
+    LOG.info("Looking for matches.", url);
+    setServerFind(find);
+    setServerUrl(url);
+}
+
 async function sendFindRequest() {
-    const requestResponse = await sendAPIRequest({ requestType: "find", match: " ", limit: " " }, serverUrl);
-    /*if (requestResponse) {
-        processServerFindSuccess(requestResponse, serverUrl);
-    }*/
+    const findResponse = await sendAPIRequest({ requestType: "find" }, serverUrl)
+    if (findResponse) {
+        processServerFindSuccess(findResponse, serverUrl);
+    } else {
+        setServerFind(null);
+        showMessage('Sorry! No search requests found.');
+    }
+    return [{ serverUrl: serverUrl, serverFind: serverFind}, processServerFindSuccess];
 }
