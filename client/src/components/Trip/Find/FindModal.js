@@ -15,6 +15,8 @@ Questions:
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { LOG } from '../../../utils/constants';
+import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 
 
 const FindModal = () => {
@@ -32,6 +34,7 @@ const FindModal = () => {
                         <InputGroupAddon addonType="append">
                             <InputGroupText>Search</InputGroupText>
                         </InputGroupAddon>
+
                         <Input placeholder = "Place..." onChange={toggle} />
                     </InputGroup>
                 </ModalBody>
@@ -43,8 +46,8 @@ const FindModal = () => {
         </div>
     );
 }
-
 export default FindModal;
+
 
 function processServerFindSuccess(find, url) {
     LOG.info("Looking for matches.", url);

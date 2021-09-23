@@ -58,6 +58,7 @@ Based on our team's previous performance, taking on the task of two epics and si
 | *9/13* | *N/A* | *#66* | internet problems | 
 | *9/14* | *N/A* | *#66* | N/A |
 | *9/20* | *N/A* | *#66, #114, #116, #117* | lack of knowledge |
+| *9/21* | *#116, #120, #126, #127, #129, #132, #133* | *#114, #136, #138, #140, #141* | N/A |
 
 
 ## Review
