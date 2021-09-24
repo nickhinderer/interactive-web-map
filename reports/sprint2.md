@@ -60,6 +60,7 @@ Based on our team's previous performance, taking on the task of two epics and si
 | *9/20* | *N/A* | *#66, #114, #116, #117* | lack of knowledge |
 | *9/21* | *#116, #120, #126, #127, #129, #132, #133* | *#114, #136, #138, #140, #141* | N/A |
 | *9/22* |  *#138, #144, #151, #153, #156, #157, #158, #161* | *#136, #140*| N/A| 
+| *9/24* | ** | ** | |
 
 
 ## Review
