@@ -19,16 +19,18 @@ public class Query {
     }
 
     private static String getSQL(String match, Integer limit) {
-        if(limit != -1) {
+        if(limit == -1) {
             return
-                    "SELECT " + "iso_country "//not very useful, change in future as well as convertQu..Results in Database.java (and COLUMN etc.)
-                            + "FROM world WHERE iso_country = '" + match
-                            + "' LIMIT "  + limit.toString()  + ";";
+                    "SELECT " + "name, lattitude, longitude, altitude, type, country, home_link "
+                            + "FROM world WHERE name LIKE '%" + match
+                            + "%';";
         } else {
+
             return
-                    "SELECT " + "iso_country "
-                            + "FROM world WHERE iso_country = '" + match
-                            + "';";
-        }
+                    "SELECT " + "name, lattitude, longitude, altitude, type, country, home_link, "//
+                            + "FROM world WHERE name like '" + match
+                            + "%' LIMIT "  + limit.toString()  + ";";
+        }//add join table too
+
     }
 }

@@ -44,14 +44,24 @@ public class Database {
             int count = 0;
             Places places = new Places();
             while (results.next()) {
+                //results.
                 Place place = new Place();
-                place.put(COLUMN, results.getString(COLUMN));
+                place.put("name", results.getString("name"));
                 place.put("index", String.format("%d",++count));
+                place.put("lattitude", results.getString("lattitude"));
+                place.put("longitude",results.getString("altitude"));
+                place.put("type",results.getString("type"));
+                place.put("country",results.getString("iso_country"));
+                place.put("url",results.getString("home_link"));
                 places.add(place);
             }
             return places;
         } catch (SQLException e) {
             throw new BadRequestException();//should this be 400 or 500?
         }
+    }
+
+    private Integer getNumberOfQueryResults() {
+
     }
 }

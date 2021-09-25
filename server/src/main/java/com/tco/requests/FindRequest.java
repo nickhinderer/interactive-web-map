@@ -18,11 +18,7 @@ public class FindRequest extends Request {
 
     @Override
     public void buildResponse() throws BadRequestException {
-        if(match == null) {
-            limit = 0;
-            match = "";
-        }
-        //validateInput(); //redundant after adding above statement
+        validateInput();
         found = queryFound(match);
         places = queryMatch(match, limit);
         log.trace("buildResponse -> {}", this);
@@ -42,9 +38,7 @@ public class FindRequest extends Request {
     }
 
     private Places queryMatch(String match, Integer limit) throws BadRequestException {
-        if(match.equals(""))
-            return new Places();
-        Query query = new Query(match, limit);
+        Query query = new Query(match, limit);//going to be between 0 and 100
         return query.findMatchingPlaces();
     }
 
@@ -53,6 +47,8 @@ public class FindRequest extends Request {
 
     public FindRequest() {
         this.requestType = "find";
+        this.match = "";
+        this.limit = 0;
     }
 
     private Place samplePlace(String name, String lattitude, String longitude) {
