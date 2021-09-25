@@ -1,5 +1,6 @@
 package com.tco.requests;
 
+import com.tco.misc.BadRequestException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +15,11 @@ public class TestFindRequest {
     @BeforeEach
     public void createConfigurationForTestCases() {
         conf = new FindRequest();
-        conf.buildResponse();
+        try { //nick_ come back and handle in a better way
+            conf.buildResponse();
+        } catch (BadRequestException e) {
+
+        }
     }
 
     @Test
