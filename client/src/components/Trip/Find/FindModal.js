@@ -1,27 +1,14 @@
-/* 
-Approach for FindModal.js
-
-Renders input box in the Modal (keeps it contained external to the main page)
-Renders result (potentially use list component)
-- Progressive Disclosure
-Getting data for Planner
-- callback function to get parent
-- Button - use ReactStract 
-LOOK INTO "useState" as a form of managing places
-Questions:
-    What is the setModal() component doing?
-*/
-
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import { LOG } from '../../../utils/constants';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 
-
-const FindModal = () => {
+export default function FindModal(props) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+
+    const [byte, setByte] = useState();
 
     return (
 
@@ -34,8 +21,10 @@ const FindModal = () => {
                         <InputGroupAddon addonType="append">
                             <InputGroupText>Search</InputGroupText>
                         </InputGroupAddon>
-
-                        <Input placeholder = "Place..." onChange={toggle} />
+                        <Input placeholder = "Place..." onChange={c => setByte(c.target.value)} />
+                        {
+                            //<Button onclick={sendFindRequest(byte)}/>
+                        }
                     </InputGroup>
                 </ModalBody>
                 <ModalFooter>
@@ -46,22 +35,20 @@ const FindModal = () => {
         </div>
     );
 }
-export default FindModal;
 
 
 function processServerFindSuccess(find, url) {
-    LOG.info("Looking for matches.", url);
-    setServerFind(find);
-    setServerUrl(url);
+    const [placeList, setPlaceList] = useState();
+    setPlaceList(placeList.push(find));
 }
 
-async function sendFindRequest() {
-    const findResponse = await sendAPIRequest({ requestType: "find" }, serverUrl)
+async function sendFindRequest(byte) {
+    const findResponse = await sendAPIRequest({ requestType: "find", match: byte, limit: 10 }, serverUrl)
     if (findResponse) {
-        processServerFindSuccess(findResponse, serverUrl);
+        processServerFindSuccess(findResponse, serverUrl, setServerUrl());
     } else {
         setServerFind(null);
         showMessage('Sorry! No search requests found.');
     }
-    return [{ serverUrl: serverUrl, serverFind: serverFind}, processServerFindSuccess];
+    return [{placeList: placeList}, processServerFindSuccess];
 }
