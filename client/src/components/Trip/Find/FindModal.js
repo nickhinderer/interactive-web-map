@@ -5,23 +5,62 @@ import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import { LOG } from '../../../utils/constants';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 
-const FindModal = () => {
+const FindModal = (props) => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+    const [Address, setAddress] = useState("Place");
+    const [State, setState] = useState("State");
+    const [City, setCity] = useState("City");
+    let place = [{ id: 'Address', value: Address },
+    { id: 'City', value: City },
+    { id: 'State', value: State }];
+
+
+
+
+
+    function updatePlace() {
+        place = ([{ id: 'Address', value: Address },
+        { id: 'City', value: City },
+        { id: 'State', value: State }]);
+        //this is for test the storage of input value;
+        console.log(place);
+
+    }
 
     return (
 
         <div className="searchButton">
-            <Button className = "mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
+            <Button className="mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
                     <InputGroup>
                         <InputGroupAddon addonType="append">
-                            <InputGroupText>Search</InputGroupText>
+                            <InputGroupText color="green" > Address</InputGroupText>
+
                         </InputGroupAddon>
-                        <Input placeholder = "Place..." onClick={progressiveDisclosure()}/>
+                        <Input placeholder={Address} onChange={e => setAddress(e.target.value)} />
                     </InputGroup>
+
+                    <InputGroup>
+                        <InputGroupAddon addonType="append">
+                            <InputGroupText>City</InputGroupText>
+
+                        </InputGroupAddon>
+                        <Input placeholder={City} onChange={e => setCity(e.target.value)} />
+
+                        <InputGroupAddon addonType="append">
+                            <InputGroupText>State</InputGroupText>
+                        </InputGroupAddon>
+                        <Input placeholder={State} onChange={e => setState(e.target.value)} />
+                    </InputGroup>
+
+                    <Button color="primary" id="button-addon1" outline type="button" onClick={() => updatePlace()}>
+                        Search
+
+                    </Button>
+
                 </ModalBody>
                 <ModalFooter>
                     <Button color="success" onClick={toggle}>Done</Button>{' '}
@@ -33,11 +72,11 @@ const FindModal = () => {
 }
 export default FindModal;
 
-function progressiveDisclosure() {    
+function progressiveDisclosure() {
     const [places, setPlaces] = useState([]);
 
     <div>
-        <RenderList placesList={places} setPlacesList={setPlaces}/>
+        <RenderList placesList={places} setPlacesList={setPlaces} />
     </div>
 }
 
@@ -59,7 +98,7 @@ function RenderList(props) {
         setServerUrl(url);
         props.setPlacesList(find);
     }
-    
+
     async function sendFindRequest() {
         const findResponse = await sendAPIRequest({ requestType: "find", match: " ", limit: " " }, serverUrl)
         if (findResponse) {
@@ -73,4 +112,4 @@ function RenderList(props) {
     return (
         <ul>{listPlaces}</ul>
     );
-} 
+}
