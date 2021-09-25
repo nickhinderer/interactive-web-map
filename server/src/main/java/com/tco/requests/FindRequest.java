@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.tco.misc.BadRequestException;
+import com.tco.database.*;
 
 public class FindRequest extends Request {
 
@@ -15,12 +17,35 @@ public class FindRequest extends Request {
     private Places places;
 
     @Override
-    public void buildResponse() {
-        limit = 0;
-        match = "";
-        found = queryFound();
-        places = queryMatch();
+    public void buildResponse() throws BadRequestException {
+        if(match == null) {
+            limit = 0;
+            match = "";
+        }
+        //validateInput(); //redundant after adding above statement
+        found = queryFound(match);
+        places = queryMatch(match, limit);
         log.trace("buildResponse -> {}", this);
+    }
+
+    private void validateInput() throws BadRequestException {
+        if (this.limit < 0 || this.match == null) {
+            throw new BadRequestException();
+        }
+    }
+
+    private Integer queryFound(String match) throws BadRequestException {
+        if(match.equals(""))
+            return 0;
+        Query query = new Query(match, -1);
+        return query.findMatchingPlaces().size();
+    }
+
+    private Places queryMatch(String match, Integer limit) throws BadRequestException {
+        if(match.equals(""))
+            return new Places();
+        Query query = new Query(match, limit);
+        return query.findMatchingPlaces();
     }
 
     /* The following methods exist only for testing purposes and are not used
@@ -30,17 +55,6 @@ public class FindRequest extends Request {
         this.requestType = "find";
     }
 
-    private Integer queryFound() {
-        return 1;
-    }
-
-    private Places queryMatch() {
-        places = new Places();
-
-        places.add(samplePlace("COse", "41","-102"));
-        return places;
-    }
-
     private Place samplePlace(String name, String lattitude, String longitude) {
         Place place = new Place();
         place.put("name", name);
@@ -48,16 +62,15 @@ public class FindRequest extends Request {
         place.put("longitude", longitude);
         return place;
     }
-      /* this is for test*/
 
-      public int getlimit() {
+    /* The following methods exist only for testing purposes and are not used
+  during normal execution, including the constructor. */
+
+    public int getlimit() {
         return limit;
     }
 
-    public String getMatch(){
-
-        return match;
-    }
+    public String getMatch() { return match; }
 
     
 }
