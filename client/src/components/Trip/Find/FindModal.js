@@ -1,11 +1,9 @@
-
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText, ListGroup, ListGroupItem } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
-import { LOG } from '../../../utils/constants';
-import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
+import { sendAPIRequest } from '../../../utils/restfulAPI';
 
-const FindModal = (props) => {
+export default function FindModal(props) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const [Address, setAddress] = useState("Place");
@@ -14,11 +12,7 @@ const FindModal = (props) => {
     let place = [{ id: 'Address', value: Address },
     { id: 'City', value: City },
     { id: 'State', value: State }];
-
-
-
-
-
+  
     function updatePlace() {
         place = ([{ id: 'Address', value: Address },
         { id: 'City', value: City },
@@ -27,6 +21,8 @@ const FindModal = (props) => {
         console.log(place);
 
     }
+
+    const [searchInput, setsearchInput] = useState();
 
     return (
 
@@ -37,8 +33,7 @@ const FindModal = (props) => {
                 <ModalBody>
                     <InputGroup>
                         <InputGroupAddon addonType="append">
-                            <InputGroupText color="green" > Address</InputGroupText>
-
+                            <InputGroupText color="green">Address</InputGroupText>
                         </InputGroupAddon>
                         <Input placeholder={Address} onChange={e => setAddress(e.target.value)} />
                     </InputGroup>
@@ -46,7 +41,6 @@ const FindModal = (props) => {
                     <InputGroup>
                         <InputGroupAddon addonType="append">
                             <InputGroupText>City</InputGroupText>
-
                         </InputGroupAddon>
                         <Input placeholder={City} onChange={e => setCity(e.target.value)} />
 
@@ -55,11 +49,13 @@ const FindModal = (props) => {
                         </InputGroupAddon>
                         <Input placeholder={State} onChange={e => setState(e.target.value)} />
                     </InputGroup>
-
-                    <Button color="primary" id="button-addon1" outline type="button" onClick={() => updatePlace()}>
-                        Search
-
-                    </Button>
+                    <Button  color="primary" id="button-addon1" outline type="button" onClick={() => sendFindRequest(searchInput, props.serverSettings.serverUrl)}/> 
+                    { 
+                       /* Testing:
+                       <Button color="primary" id="button-addon1" outline type="button" onClick={() => updatePlace()}>
+                       Search
+                       </Button>*/ 
+                    }
 
                 </ModalBody>
                 <ModalFooter>
@@ -70,46 +66,19 @@ const FindModal = (props) => {
         </div>
     );
 }
-export default FindModal;
 
-function progressiveDisclosure() {
-    const [places, setPlaces] = useState([]);
-
-    <div>
-        <RenderList placesList={places} setPlacesList={setPlaces} />
-    </div>
+function processServerFindSuccess(find) {
+    const [placeList, setPlaceList] = useState();
+    setPlaceList(placeList.push(find));
 }
 
-function RenderList(props) {
-    const [serverUrl, setServerUrl] = useState(getOriginalServerUrl());
-
-    const listPlaces = props.placesList.map((place) =>
-        <li key={place.toString()}>
-            {place}
-        </li>
-    );
-
-    useEffect(() => {
-        sendFindRequest();
-    }, []);
-
-    function processServerFindSuccess(find, url) {
-        LOG.info("Looking for matches.", url);
-        setServerUrl(url);
-        props.setPlacesList(find);
+async function sendFindRequest(searchInput, serverUrl) {
+    const findResponse = await sendAPIRequest({ requestType: "find", match: searchInput, limit: 10 }, serverUrl)
+    if (findResponse) {
+        processServerFindSuccess(findResponse, serverUrl, setServerUrl());
+    } else {
+        setServerFind(null);
+        showMessage('Sorry! No search requests found.');
     }
-
-    async function sendFindRequest() {
-        const findResponse = await sendAPIRequest({ requestType: "find", match: " ", limit: " " }, serverUrl)
-        if (findResponse) {
-            processServerFindSuccess(findResponse, serverUrl);
-        } else {
-            setServerUrl(null);
-            showMessage('Sorry! No search requests found.');
-        }
-        return [{ serverUrl: serverUrl, places: places }, processServerFindSuccess];
-    }
-    return (
-        <ul>{listPlaces}</ul>
-    );
+    return [{placeList: placeList}, processServerFindSuccess];
 }
