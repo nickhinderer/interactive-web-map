@@ -8,7 +8,7 @@ export default function FindModal(props) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
-    const [byte, setByte] = useState();
+    const [searchInput, setsearchInput] = useState();
 
     return (
 
@@ -21,10 +21,9 @@ export default function FindModal(props) {
                         <InputGroupAddon addonType="append">
                             <InputGroupText>Search</InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder = "Place..." onChange={c => setByte(c.target.value)} />
-                        {
-                            //<Button onclick={sendFindRequest(byte)}/>
-                        }
+                        <Input placeholder = "Place..." onChange={str => setsearchInput(str.target.value)} />
+                        <Button onClick={() => sendFindRequest(searchInput, props.serverSettings.serverUrl)}/> 
+                        
                     </InputGroup>
                 </ModalBody>
                 <ModalFooter>
@@ -37,13 +36,13 @@ export default function FindModal(props) {
 }
 
 
-function processServerFindSuccess(find, url) {
+function processServerFindSuccess(find) {
     const [placeList, setPlaceList] = useState();
     setPlaceList(placeList.push(find));
 }
 
-async function sendFindRequest(byte) {
-    const findResponse = await sendAPIRequest({ requestType: "find", match: byte, limit: 10 }, serverUrl)
+async function sendFindRequest(searchInput, serverUrl) {
+    const findResponse = await sendAPIRequest({ requestType: "find", match: searchInput, limit: 10 }, serverUrl)
     if (findResponse) {
         processServerFindSuccess(findResponse, serverUrl, setServerUrl());
     } else {

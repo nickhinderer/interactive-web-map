@@ -5,13 +5,13 @@ import Map from './Map/Map';
 import Itinerary from './Itinerary/Itinerary';
 import { usePlaces } from '../../hooks/usePlaces';
 
-export default function Planner() {
+export default function Planner(props) {
     const {places, selectedIndex, placeActions} = usePlaces();
 
     return (
         <Container>
             <Section>
-                <Find places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
+                <Find places={places} selectedIndex={selectedIndex} placeActions={placeActions} serverSettings={props.serverSettings}/>
             </Section>
             <Section>
                 <Map places={places} selectedIndex={selectedIndex} placeActions={placeActions} />
