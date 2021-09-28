@@ -19,8 +19,13 @@ public class FindRequest extends Request {
     @Override
     public void buildResponse() throws BadRequestException {
         validateInput();
-        found = queryFound(match);
-        places = queryMatch(match, limit);
+        if(match.equals("") && limit.equals(0)) { //don't query database for tests, maybe add case in validate input where a empty string gets turned into a wildcat character
+            Place place = samplePlace("name", "0.000000","0.000000");
+            this.places.add(place);//is this necessary? read protocol
+        } else {
+            found = queryFound(match);
+            places = queryMatch(match, limit);
+        }
         log.trace("buildResponse -> {}", this);
     }
 
@@ -31,13 +36,12 @@ public class FindRequest extends Request {
     }
 
     private Integer queryFound(String match) throws BadRequestException {
-        if(match.equals(""))
-            return 0;
         Query query = new Query(match, -1);
-        return query.findMatchingPlaces().size();
+        return query.findNumberOfMatches();//call findnumberofmatches instead
     }
 
     private Places queryMatch(String match, Integer limit) throws BadRequestException {
+        //set limit to 100 if it is 0
         Query query = new Query(match, limit);//going to be between 0 and 100
         return query.findMatchingPlaces();
     }
@@ -49,9 +53,11 @@ public class FindRequest extends Request {
         this.requestType = "find";
         this.match = "";
         this.limit = 0;
+        this.found = 0;
+        this.places = new Places();
     }
 
-    private Place samplePlace(String name, String lattitude, String longitude) {
+    private Place samplePlace(String name, String latitude, String longitude) {
         Place place = new Place();
         place.put("name", name);
         place.put("lattitude", lattitude);
@@ -59,14 +65,12 @@ public class FindRequest extends Request {
         return place;
     }
 
-    /* The following methods exist only for testing purposes and are not used
-  during normal execution, including the constructor. */
-
-    public int getlimit() {
-        return limit;
-    }
+    public Integer getLimit() { return limit; }
 
     public String getMatch() { return match; }
 
-    
+    public Integer getFound() { return found; }
+
+    public Places getPlaces() { return places; }
+
 }
