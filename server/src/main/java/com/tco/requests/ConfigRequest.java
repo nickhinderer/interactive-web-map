@@ -16,6 +16,7 @@ public class ConfigRequest extends Request {
         serverName = "t04 Geek Velocity";
         features = new ArrayList<>();
         features.add("config");
+        features.add("find");
         log.trace("buildResponse -> {}", this);
     }
 
