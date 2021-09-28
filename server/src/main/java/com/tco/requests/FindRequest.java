@@ -9,7 +9,7 @@ import com.tco.database.*;
 
 public class FindRequest extends Request {
 
-    private final transient Logger log = LoggerFactory.getLogger(ConfigRequest.class);
+    private final transient Logger log = LoggerFactory.getLogger(FindRequest.class);
 
     private String match;
     private Integer limit;
@@ -60,7 +60,7 @@ public class FindRequest extends Request {
     private Place samplePlace(String name, String latitude, String longitude) {
         Place place = new Place();
         place.put("name", name);
-        place.put("lattitude", lattitude);
+        place.put("latitude", latitude);
         place.put("longitude", longitude);
         return place;
     }
