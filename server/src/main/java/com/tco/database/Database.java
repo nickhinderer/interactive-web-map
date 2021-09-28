@@ -42,9 +42,11 @@ public class Database {
     }
 
     private Integer getNumberOfQueryResults(ResultSet results) throws BadRequestException {
-        Integer numberOfQueryResults; // = -1; ?
+        Integer numberOfQueryResults = -1; // = -1; ?
         try {
-            numberOfQueryResults = results.getInt("COUNT(*)");
+            while(results.next()) {
+                numberOfQueryResults = results.getInt("COUNT(*)");
+            }
         } catch (SQLException e) {
             throw new BadRequestException();
         }
@@ -61,10 +63,11 @@ public class Database {
                 place.put("name", results.getString("name"));
                 place.put("index", String.format("%d",++count));
                 place.put("latitude", results.getString("latitude"));
-                place.put("longitude",results.getString("altitude"));
-                place.put("type",results.getString("type"));
-                place.put("country",results.getString("iso_country"));
-                place.put("url",results.getString("home_link"));
+                place.put("longitude", results.getString("longitude"));
+                place.put("altitude", results.getString("altitude"));
+                place.put("type", results.getString("type"));
+                place.put("country", results.getString("iso_country"));
+                place.put("url", results.getString("home_link"));
                 places.add(place);
             }
             return places;
