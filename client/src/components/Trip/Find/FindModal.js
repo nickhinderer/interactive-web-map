@@ -1,26 +1,38 @@
+
+
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText, ListGroup, ListGroupItem } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
-import { sendAPIRequest } from '../../../utils/restfulAPI';
 
-export default function FindModal(props) {
+
+const FindModal = () => {
     const [modal, setModal] = useState(false);
+    const [inputLinkClicked, setInputLinkClicked] = useState(false);
     const toggle = () => setModal(!modal);
-    const [Address, setAddress] = useState("Place");
+    const [display, setDisplay] = useState(false);
+    const [Address, setAddress] = useState("Address");
     const [State, setState] = useState("State");
     const [City, setCity] = useState("City");
-    let place = [{ id: 'Address', value: Address },
+    let match = [{ id: 'Address', value: Address },
     { id: 'City', value: City },
     { id: 'State', value: State }];
-  
-    function updatePlace() {
-        place = ([{ id: 'Address', value: Address },
+
+
+   
+
+
+    function updatematch() {
+        match = ([{ id: 'Address', value: Address },
         { id: 'City', value: City },
         { id: 'State', value: State }]);
         //this is for test the storage of input value;
-        console.log(place);
-
+        console.log(match);
+        setDisplay(!display);
+        
+       
     }
+    
+    
 
     const [searchInput, setsearchInput] = useState();
 
@@ -47,15 +59,13 @@ export default function FindModal(props) {
                         <InputGroupAddon addonType="append">
                             <InputGroupText>State</InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder={State} onChange={e => setState(e.target.value)} />
+                        <Input placeholder={State} onChange={e => {setState(e.target.value);updatematch();}} />
                     </InputGroup>
-                    <Button  color="primary" id="button-addon1" outline type="button" onClick={() => sendFindRequest(searchInput, props.serverSettings.serverUrl)}/> 
-                    { 
-                       /* Testing:
-                       <Button color="primary" id="button-addon1" outline type="button" onClick={() => updatePlace()}>
-                       Search
-                       </Button>*/ 
-                    }
+
+
+                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>setInputLinkClicked(true) }>Search </Button>
+                    <br/>
+                
 
                 </ModalBody>
                 <ModalFooter>
@@ -66,19 +76,6 @@ export default function FindModal(props) {
         </div>
     );
 }
+export default FindModal;
 
-function processServerFindSuccess(find) {
-    const [placeList, setPlaceList] = useState();
-    setPlaceList(placeList.push(find));
-}
 
-async function sendFindRequest(searchInput, serverUrl) {
-    const findResponse = await sendAPIRequest({ requestType: "find", match: searchInput, limit: 10 }, serverUrl)
-    if (findResponse) {
-        processServerFindSuccess(findResponse, serverUrl, setServerUrl());
-    } else {
-        setServerFind(null);
-        showMessage('Sorry! No search requests found.');
-    }
-    return [{placeList: placeList}, processServerFindSuccess];
-}
