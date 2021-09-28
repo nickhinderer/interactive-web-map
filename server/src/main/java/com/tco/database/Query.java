@@ -15,6 +15,8 @@ public class Query {
     }
 
     public Places findMatchingPlaces() throws BadRequestException {
+        if(limit == 0)
+            limit = 100;
         String sql = getSQL(this.match, this.limit);
         return (Places) database.query(sql);
     }
@@ -35,7 +37,7 @@ public class Query {
 
             return
                     "SELECT "
-                            + "name, latitude, longitude, altitude, type, country, home_link, "//
+                            + "name, latitude, longitude, altitude, type, iso_country, home_link "
                             + "FROM world WHERE name like '%" + match
                             + "%' LIMIT "  + limit.toString()  + ";";
         }//add join table too. and type and where
