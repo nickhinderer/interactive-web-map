@@ -5,11 +5,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestFindRequest {
-
+    private final transient Logger log = LoggerFactory.getLogger(TestConfigRequest.class);
     private FindRequest conf;
 
     @BeforeEach
@@ -18,7 +20,7 @@ public class TestFindRequest {
         try { //nick_ come back and handle in a better way //log it. log
             conf.buildResponse();
         } catch (BadRequestException e) {
-
+            log.error("buildResponse() failed!");
         }
     }
 
