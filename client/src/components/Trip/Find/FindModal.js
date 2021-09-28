@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText, ListGroup, ListGroupItem } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
@@ -33,6 +34,8 @@ const FindModal = () => {
     
     
 
+    const [searchInput, setsearchInput] = useState();
+
     return (
 
         <div className="searchButton">
@@ -42,8 +45,7 @@ const FindModal = () => {
                 <ModalBody>
                     <InputGroup>
                         <InputGroupAddon addonType="append">
-                            <InputGroupText color="green" > Address</InputGroupText>
-
+                            <InputGroupText color="green">Address</InputGroupText>
                         </InputGroupAddon>
                         <Input placeholder={Address} onChange={e => setAddress(e.target.value)} />
                     </InputGroup>
@@ -51,7 +53,6 @@ const FindModal = () => {
                     <InputGroup>
                         <InputGroupAddon addonType="append">
                             <InputGroupText>City</InputGroupText>
-
                         </InputGroupAddon>
                         <Input placeholder={City} onChange={e => setCity(e.target.value)} />
 
@@ -61,10 +62,10 @@ const FindModal = () => {
                         <Input placeholder={State} onChange={e => {setState(e.target.value);updatematch();}} />
                     </InputGroup>
 
+
                     <Button color="primary" id="button-addon1" outline type="button" onClick={() =>setInputLinkClicked(true) }>Search </Button>
                     <br/>
                     {inputLinkClicked?<List match={match}/> :<div></div>}
-                    
 
                 </ModalBody>
                 <ModalFooter>
@@ -76,4 +77,5 @@ const FindModal = () => {
     );
 }
 export default FindModal;
+
 

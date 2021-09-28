@@ -20,7 +20,7 @@ export default function Page(props) {
 					<About closePage={toggleAbout} />
 				</Collapse>
 				<Collapse isOpen={!showAbout} data-testid="planner-collapse">
-					<Planner showMessage={props.showMessage} />
+					<Planner showMessage={props.showMessage} serverSettings={serverSettings}/>
 				</Collapse>
 			</div>
 			<Footer
@@ -54,6 +54,5 @@ function useServerSettings(showMessage) {
 			showMessage(`Config request to ${serverUrl} failed. Check the log for more details.`, "error");
 		}
 	}
-
 	return [{ serverUrl: serverUrl, serverConfig: serverConfig }, processServerConfigSuccess];
 }

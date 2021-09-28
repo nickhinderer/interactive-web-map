@@ -17,6 +17,7 @@ export async function sendAPIRequest(requestBody, serverUrl) {
     if (isJsonResponseValid(response, SCHEMAS[requestBody.requestType])) {
         return response;
     }
+    
     LOG.error(`Server ${requestBody.requestType} response json is invalid. Check the Server.`);
     return null;
 }
