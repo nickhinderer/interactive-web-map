@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText, ListGroup, ListGroupItem } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
-import List from './List';
+
 
 const FindModal = () => {
     const [modal, setModal] = useState(false);
@@ -65,7 +65,7 @@ const FindModal = () => {
 
                     <Button color="primary" id="button-addon1" outline type="button" onClick={() =>setInputLinkClicked(true) }>Search </Button>
                     <br/>
-                    {inputLinkClicked?<List match={match}/> :<div></div>}
+                
 
                 </ModalBody>
                 <ModalFooter>
