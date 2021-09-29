@@ -16,7 +16,7 @@ export default function display(props) {
     const sendFindRequest = useCallback(async() => {
         
         const serverUrl = getOriginalServerUrl();
-        const findResponse = await sendAPIRequest({ requestType: "find", match:"", limit: 0 }, serverUrl);
+        const findResponse = await sendAPIRequest({ requestType: "find", match:props.match, limit: 0 }, serverUrl);
         setPlaces(findResponse);
         console.log(findResponse);
         
