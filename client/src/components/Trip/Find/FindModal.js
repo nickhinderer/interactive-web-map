@@ -8,7 +8,7 @@ const FindModal = () => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const [display, setDisplay] = useState(false);
-    const [match, setMatch] = useState("Address");
+    const [match, setMatch] = useState("");
  
     
     return (
@@ -23,7 +23,7 @@ const FindModal = () => {
                             <InputGroupText color="green" > Address</InputGroupText>
 
                         </InputGroupAddon>
-                        <Input placeholder={match} onChange={e => setMatch(e.target.value)} />
+                        <Input placeholder={"Places..."} onChange={e => setMatch(e.target.value)} />
                     </InputGroup>
 
                     
