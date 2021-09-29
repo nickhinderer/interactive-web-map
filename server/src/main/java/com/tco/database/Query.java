@@ -6,29 +6,49 @@ import com.tco.misc.BadRequestException;
 public class Query {
     private String match;
     private Integer limit;
+    private Database database;
 
     public Query(String match, Integer limit) {
         this.match = match;
         this.limit = limit;
+        this.database = new Database();
     }
 
     public Places findMatchingPlaces() throws BadRequestException {
+        if(limit == 0)
+            limit = 100;
         String sql = getSQL(this.match, this.limit);
-        Database db = new Database();
-        return db.query(sql);
+        return (Places) database.query(sql);
+    }
+
+    public Integer findNumberOfMatches() throws BadRequestException {
+        String sql = getSQL(this.match, this.limit);
+        return (Integer) database.query(sql);
     }
 
     private static String getSQL(String match, Integer limit) {
-        if(limit != -1) {
+        if(limit == -1) {
             return
-                    "SELECT " + "iso_country "//not very useful, change in future as well as convertQu..Results in Database.java (and COLUMN etc.)
-                            + "FROM world WHERE iso_country = '" + match
-                            + "' LIMIT "  + limit.toString()  + ";";
+                    "SELECT "
+                            + "COUNT(*) "
+                            + "FROM world WHERE name "
+                            + "LIKE '%" + match
+                            + "%';";
+        } else if(match.equals("")) {
+            return
+                    "SELECT "
+                            + "name, TRUNCATE(latitude,6), TRUNCATE(longitude,6), altitude, type, iso_country, home_link "
+                            + "FROM world ORDER BY RAND() "
+                            + "LIMIT "  + limit.toString()  + ";";
+
         } else {
             return
-                    "SELECT " + "iso_country "
-                            + "FROM world WHERE iso_country = '" + match
-                            + "';";
-        }
+                    "SELECT "
+                            + "name, TRUNCATE(latitude,6), TRUNCATE(longitude,6), altitude, type, iso_country, home_link "
+                            + "FROM world WHERE name "
+                            + "LIKE '%" + match
+                            + "%' LIMIT "  + limit.toString()  + ";";
+        }//add join table too. and type and where
+
     }
 }

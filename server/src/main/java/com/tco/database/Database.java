@@ -27,7 +27,7 @@ public class Database {
         }
     }
 
-    public Places query(String sql) throws BadRequestException {//think about what type of exception to throw
+    public Object query(String sql) throws BadRequestException {//think about what type of exception to throw
         try (
                 Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
                 Statement query = conn.createStatement();
