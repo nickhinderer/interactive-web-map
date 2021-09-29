@@ -14,7 +14,7 @@ const FindModal = () => {
     return (
 
         <div className="searchButton">
-            <Button className="mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
+            <Button className="mx-1" outline-color="secondary" onClick={toggle}><img src='../../../images/magnifying-glass.svg' /> Search </Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
