@@ -43,6 +43,18 @@ public class Database {
         }
     }
 
+    private Integer getNumberOfQueryResults(ResultSet results) throws BadRequestException {
+        Integer numberOfQueryResults = -1; // = -1; ?
+        try {
+            while(results.next()) {
+                numberOfQueryResults = results.getInt("COUNT(*)");
+            }
+        } catch (SQLException e) {
+            throw new BadRequestException();
+        }
+        return numberOfQueryResults;
+    }
+
     private Places convertQueryResultsToPlaces(ResultSet results) throws BadRequestException {
         try {
             int count = 0;
