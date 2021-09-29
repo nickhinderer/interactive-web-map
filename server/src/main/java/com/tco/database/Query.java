@@ -8,7 +8,7 @@ public class Query {
     private Integer limit;
     private Database database;
 
-    public Query(String match, Integer limit) throws BadRequestException {
+    public Query(String match, Integer limit) {
         this.match = match;
         this.limit = limit;
         this.database = new Database();
@@ -30,15 +30,17 @@ public class Query {
         if(limit == -1) {
             return
                     "SELECT "
-                            + "COUNT(*)"
-                            + "FROM world WHERE name LIKE '%" + match
+                            + "COUNT(*) "
+                            + "FROM world WHERE name "
+                            + "LIKE '%" + match
                             + "%';";
         } else {
 
             return
                     "SELECT "
-                            + "name, latitude, longitude, altitude, type, iso_country, home_link "
-                            + "FROM world WHERE name like '%" + match
+                            + "name, TRUNCATE(latitude,6), TRUNCATE(longitude,6), altitude, type, iso_country, home_link "
+                            + "FROM world WHERE name "
+                            + "LIKE '%" + match
                             + "%' LIMIT "  + limit.toString()  + ";";
         }//add join table too. and type and where
 

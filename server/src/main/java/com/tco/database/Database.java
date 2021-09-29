@@ -16,7 +16,7 @@ public class Database {
     private static String PASSWORD = "eiK5liet1uej";
     private String URL;//sub/separate class?
 
-    public Database() throws BadRequestException {
+    public Database() {
         String useTunnel = System.getenv("CS314_USE_DATABASE_TUNNEL");
         if(useTunnel != null && useTunnel.equals("true")) {
             URL = "jdbc:mariadb://127.0.0.1:56247/cs314";
@@ -62,8 +62,8 @@ public class Database {
                 Place place = new Place();
                 place.put("name", results.getString("name"));
                 place.put("index", String.format("%d",++count));
-                place.put("latitude", results.getString("latitude"));
-                place.put("longitude", results.getString("longitude"));
+                place.put("latitude", results.getString("TRUNCATE(latitude,6)"));
+                place.put("longitude", results.getString("TRUNCATE(longitude,6)"));
                 place.put("altitude", results.getString("altitude"));
                 place.put("type", results.getString("type"));
                 place.put("country", results.getString("iso_country"));
