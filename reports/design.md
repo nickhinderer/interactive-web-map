@@ -178,10 +178,11 @@ There will be a search bar added in underneath the map portion on the site. When
 
 
 ### Client Components
-![componenthierarchy](../images/componenthierarchy.jpg)
+![componenthierarchy](../images/componentHierarchySprint2.png)
 
-We will add one new component to the base architecture on the client to support the planner page.
+We will add two new components to the base architecture on the client to support the planner page.
 * The FindModal component will render the search bar information
+* The List component will render the information found when the user searches for a location
 
 ### Server Classes
 ![serverclassdiagram](../images/ServerClassDiagram.jpg)
