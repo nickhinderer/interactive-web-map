@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText, ListGroup, ListGroupItem } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import List from './List';
+import mag from '../../../static/images/search.svg';
 
 const FindModal = () => {
     const [modal, setModal] = useState(false);
@@ -14,7 +15,7 @@ const FindModal = () => {
     return (
 
         <div className="searchButton">
-            <Button className="mx-1" outline-color="secondary" onClick={toggle}> Search </Button>
+            <Button className="mx-1" outline-color="secondary" onClick={toggle}><img src={mag} alt='search'/></Button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
