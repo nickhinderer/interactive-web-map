@@ -66,11 +66,13 @@ public class FindRequest extends Request {
     /* The following methods exist only for testing purposes and are not used
   during normal execution, including the constructor. */
 
-    public int getlimit() {
-        return limit;
-    }
+    public Integer getLimit() { return limit; }
 
     public String getMatch() { return match; }
 
-    
+    public Integer getFound() { return found; }
+
+    public Places getPlaces() { return places; }
+
+
 }
