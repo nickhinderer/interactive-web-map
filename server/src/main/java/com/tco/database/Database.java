@@ -62,6 +62,12 @@ public class Database {
                 Place place = new Place();
                 place.put("name", results.getString("name"));
                 place.put("index", String.format("%d",++count));
+                place.put("latitude", results.getString("TRUNCATE(latitude,6)"));
+                place.put("longitude", results.getString("TRUNCATE(longitude,6)"));
+                place.put("altitude", results.getString("altitude"));
+                place.put("type", results.getString("type"));
+                place.put("country", results.getString("iso_country"));
+                place.put("url", results.getString("home_link"));
                 places.add(place);
             }
             return places;
