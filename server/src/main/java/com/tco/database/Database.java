@@ -16,8 +16,6 @@ public class Database {
     private static String PASSWORD = "eiK5liet1uej";
     private String URL;//sub/separate class?
 
-    private final static String COLUMN = "iso_country"; //temporary
-
     public Database() {
         String useTunnel = System.getenv("CS314_USE_DATABASE_TUNNEL");
         if(useTunnel != null && useTunnel.equals("true")) {
@@ -33,10 +31,26 @@ public class Database {
                 Statement query = conn.createStatement();
                 ResultSet results = query.executeQuery(sql);
         ){
-            return convertQueryResultsToPlaces(results);
+            if(sql.contains("COUNT(*)")) {
+                return getNumberOfQueryResults(results);// seperate duplicate method
+            } else {
+                return convertQueryResultsToPlaces(results);
+            }
         } catch (BadRequestException | SQLException e) {
             throw new BadRequestException();//or should this be 500 error?
         }
+    }
+
+    private Integer getNumberOfQueryResults(ResultSet results) throws BadRequestException {
+        Integer numberOfQueryResults = -1; // = -1; ?
+        try {
+            while(results.next()) {
+                numberOfQueryResults = results.getInt("COUNT(*)");
+            }
+        } catch (SQLException e) {
+            throw new BadRequestException();
+        }
+        return numberOfQueryResults;
     }
 
     private Places convertQueryResultsToPlaces(ResultSet results) throws BadRequestException {
@@ -44,9 +58,16 @@ public class Database {
             int count = 0;
             Places places = new Places();
             while (results.next()) {
+                //results.
                 Place place = new Place();
-                place.put(COLUMN, results.getString(COLUMN));
+                place.put("name", results.getString("name"));
                 place.put("index", String.format("%d",++count));
+                place.put("latitude", results.getString("TRUNCATE(latitude,6)"));
+                place.put("longitude", results.getString("TRUNCATE(longitude,6)"));
+                place.put("altitude", results.getString("altitude"));
+                place.put("type", results.getString("type"));
+                place.put("country", results.getString("iso_country"));
+                place.put("url", results.getString("home_link"));
                 places.add(place);
             }
             return places;
@@ -54,4 +75,6 @@ public class Database {
             throw new BadRequestException();//should this be 400 or 500?
         }
     }
+
+
 }
