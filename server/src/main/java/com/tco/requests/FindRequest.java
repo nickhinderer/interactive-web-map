@@ -9,7 +9,7 @@ import com.tco.database.*;
 
 public class FindRequest extends Request {
 
-    private final transient Logger log = LoggerFactory.getLogger(ConfigRequest.class);
+    private final transient Logger log = LoggerFactory.getLogger(FindRequest.class);
 
     private String match;
     private Integer limit;
@@ -18,13 +18,16 @@ public class FindRequest extends Request {
 
     @Override
     public void buildResponse() throws BadRequestException {
-        if(match == null) {
-            limit = 0;
-            match = "";
+
+        if(limit.equals(-2)) {
+            Place place = samplePlace("name", "0.000000","0.000000");
+            this.places.add(place);
+            found = 0;
+        } else {
+            validateInput();
+            found = queryFound(match);
+            places = queryMatch(match, limit);
         }
-        //validateInput(); //redundant after adding above statement
-        found = queryFound(match);
-        places = queryMatch(match, limit);
         log.trace("buildResponse -> {}", this);
     }
 
@@ -35,16 +38,13 @@ public class FindRequest extends Request {
     }
 
     private Integer queryFound(String match) throws BadRequestException {
-        if(match.equals(""))
-            return 0;
         Query query = new Query(match, -1);
-        return query.findMatchingPlaces().size();
+        return query.findNumberOfMatches();//call findnumberofmatches instead
     }
 
     private Places queryMatch(String match, Integer limit) throws BadRequestException {
-        if(match.equals(""))
-            return new Places();
-        Query query = new Query(match, limit);
+        //set limit to 100 if it is 0
+        Query query = new Query(match, limit);//going to be between 0 and 100
         return query.findMatchingPlaces();
     }
 
@@ -53,18 +53,19 @@ public class FindRequest extends Request {
 
     public FindRequest() {
         this.requestType = "find";
+        this.match = "";
+        this.limit = -2;
+        this.found = 0;
+        this.places = new Places();
     }
 
-    private Place samplePlace(String name, String lattitude, String longitude) {
+    private Place samplePlace(String name, String latitude, String longitude) {
         Place place = new Place();
         place.put("name", name);
-        place.put("lattitude", lattitude);
+        place.put("latitude", latitude);
         place.put("longitude", longitude);
         return place;
     }
-
-    /* The following methods exist only for testing purposes and are not used
-  during normal execution, including the constructor. */
 
     public Integer getLimit() { return limit; }
 
@@ -73,6 +74,5 @@ public class FindRequest extends Request {
     public Integer getFound() { return found; }
 
     public Places getPlaces() { return places; }
-
 
 }
