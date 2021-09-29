@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText, ListGroup, ListGroupItem } from 'reactstrap';
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import List from './List';
-import mag from '../../../static/images/geo.svg'
+import mag from '../../../static/images/search.svg';
 
 const FindModal = () => {
     const [modal, setModal] = useState(false);
