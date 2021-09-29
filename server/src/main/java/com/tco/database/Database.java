@@ -33,7 +33,11 @@ public class Database {
                 Statement query = conn.createStatement();
                 ResultSet results = query.executeQuery(sql);
         ){
-            return convertQueryResultsToPlaces(results);
+            if(sql.contains("COUNT(*)")) {
+                return getNumberOfQueryResults(results);// seperate duplicate method
+            } else {
+                return convertQueryResultsToPlaces(results);
+            }
         } catch (BadRequestException | SQLException e) {
             throw new BadRequestException();//or should this be 500 error?
         }
