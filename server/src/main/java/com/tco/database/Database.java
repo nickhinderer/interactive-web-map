@@ -58,6 +58,7 @@ public class Database {
             int count = 0;
             Places places = new Places();
             while (results.next()) {
+                //results.
                 Place place = new Place();
                 place.put(COLUMN, results.getString(COLUMN));
                 place.put("index", String.format("%d",++count));
