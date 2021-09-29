@@ -16,8 +16,6 @@ public class Database {
     private static String PASSWORD = "eiK5liet1uej";
     private String URL;//sub/separate class?
 
-    private final static String COLUMN = "iso_country"; //temporary
-
     public Database() {
         String useTunnel = System.getenv("CS314_USE_DATABASE_TUNNEL");
         if(useTunnel != null && useTunnel.equals("true")) {
