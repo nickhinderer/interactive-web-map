@@ -34,8 +34,14 @@ public class Query {
                             + "FROM world WHERE name "
                             + "LIKE '%" + match
                             + "%';";
-        } else {
+        } else if(match.equals("")) {
+            return
+                    "SELECT "
+                            + "name, TRUNCATE(latitude,6), TRUNCATE(longitude,6), altitude, type, iso_country, home_link "
+                            + "FROM world ORDER BY RAND() "
+                            + "LIMIT "  + limit.toString()  + ";";
 
+        } else {
             return
                     "SELECT "
                             + "name, TRUNCATE(latitude,6), TRUNCATE(longitude,6), altitude, type, iso_country, home_link "

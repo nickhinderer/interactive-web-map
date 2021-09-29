@@ -18,11 +18,13 @@ public class FindRequest extends Request {
 
     @Override
     public void buildResponse() throws BadRequestException {
-        validateInput();
-        if(match.equals("") && limit.equals(0)) { //don't query database for tests, maybe add case in validate input where a empty string gets turned into a wildcat character
+
+        if(limit.equals(-2)) { //don't query database for tests, maybe add case in validate input where a empty string gets turned into a wildcat character
             Place place = samplePlace("name", "0.000000","0.000000");
             this.places.add(place);//is this necessary? read protocol
+            found = 0;
         } else {
+            validateInput();
             found = queryFound(match);
             places = queryMatch(match, limit);
         }
@@ -52,7 +54,7 @@ public class FindRequest extends Request {
     public FindRequest() {
         this.requestType = "find";
         this.match = "";
-        this.limit = 0;
+        this.limit = -2;
         this.found = 0;
         this.places = new Places();
     }
