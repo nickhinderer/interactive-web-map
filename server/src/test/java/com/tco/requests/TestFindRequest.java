@@ -5,20 +5,22 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestFindRequest {
-
+    private final transient Logger log = LoggerFactory.getLogger(TestConfigRequest.class);
     private FindRequest conf;
 
     @BeforeEach
     public void createConfigurationForTestCases() {
         conf = new FindRequest();
-        try { //nick_ come back and handle in a better way
+        try { //nick_ come back and handle in a better way //log it. log
             conf.buildResponse();
         } catch (BadRequestException e) {
-
+            log.error("buildResponse() failed!");
         }
     }
 
@@ -30,9 +32,9 @@ public class TestFindRequest {
     }
 
     @Test
-    @DisplayName("limit received")
+    @DisplayName("Limit received")
     public void testLimit(){
-        int limit = conf.getlimit();
+        int limit = conf.getLimit();
         assertEquals(0, limit);
     }
 
@@ -40,6 +42,20 @@ public class TestFindRequest {
     @DisplayName("Match received")
     public void testMatch() {
         String match = conf.getMatch();
-        assert match.length()>=0;
+        assertNotNull(match);
+    }
+
+    @Test
+    @DisplayName("Found received")
+    public void testFound() {
+        Integer found = conf.getFound();
+        assertEquals(0, found);
+    }
+
+    @Test
+    @DisplayName("Places received")
+    public void testPlaces() {
+        Places places = conf.getPlaces();
+        assertNotNull(places);
     }
 }
