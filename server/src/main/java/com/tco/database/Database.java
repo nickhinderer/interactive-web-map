@@ -60,7 +60,7 @@ public class Database {
             while (results.next()) {
                 //results.
                 Place place = new Place();
-                place.put(COLUMN, results.getString(COLUMN));
+                place.put("name", results.getString("name"));
                 place.put("index", String.format("%d",++count));
                 places.add(place);
             }
