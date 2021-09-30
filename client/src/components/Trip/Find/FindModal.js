@@ -20,13 +20,12 @@ const FindModal = () => {
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
                     <InputGroup>
-                        <InputGroupAddon addonType="append">
-                            <InputGroupText color="green" > Address</InputGroupText>
-
-                        </InputGroupAddon>
                         <Input placeholder={"Place..."} onChange={e => {setMatch(e.target.value),setDisplay(false)}} />
+                        <InputGroupAddon addonType="append">
+                            <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search </Button>
+                        </InputGroupAddon>
                     </InputGroup>
-                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search </Button>
+                    
                     {display? <List match={match}/> :<div></div>}
                 </ModalBody>
                 <ModalFooter>
