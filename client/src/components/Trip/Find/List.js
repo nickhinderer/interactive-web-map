@@ -50,4 +50,5 @@ function AddToTrip(props){
     //Add place to intinerary?
     //Maybe use TableRow
     //Maybe use placeToLatLng or latLngToPlace
+    //Could UsePlaces class help?
 }
