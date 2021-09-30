@@ -1,6 +1,8 @@
 import React from 'react';
 import  { useCallback,useEffect,useState } from 'react';
 import { getOriginalServerUrl, sendAPIRequest }  from '../../../utils/restfulAPI';
+import bookmark from '../../../static/images/bookmark-plus-fill.svg';
+import { Button } from 'reactstrap';
 
 
 //what is left?
@@ -31,8 +33,12 @@ export default function display(props) {
     return(
         <div className='List'>
             {places.map((place) => (
-                <div className='list-preview' key={place.index}>
-                    <li>Name: {place.name} Latitude: {place.latitude} Longitude: {place.longitude} Country: {place.country}</li>
+                <div key={place.index}>
+                    <ul><Button color='primary'><img src={bookmark} alt='add'/> Add </Button>
+                    <div><b>Name:</b> {place.name}</div>
+                    <div><b>Latitude:</b> {place.latitude}</div>
+                    <div><b>Longitude:</b> {place.longitude}</div>
+                    <div><b>Country:</b> {place.country}</div></ul>
                 </div>
             ))}
         </div>

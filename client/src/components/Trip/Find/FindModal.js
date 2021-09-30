@@ -4,6 +4,8 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText, Lis
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import List from './List';
 import mag from '../../../static/images/search.svg';
+import check from '../../../static/images/check.svg';
+import x from '../../../static/images/x.svg';
 
 const FindModal = () => {
     const [modal, setModal] = useState(false);
@@ -21,7 +23,7 @@ const FindModal = () => {
                 <ModalBody>
                     <InputGroup>
                         <InputGroupAddon addonType="append">
-                            <InputGroupText color="green" > Address</InputGroupText>
+                            <InputGroupText color="green"><img src={mag} alt='search'/></InputGroupText>
 
                         </InputGroupAddon>
                         <Input placeholder={"Place..."} onChange={e => {setMatch(e.target.value),setDisplay(false)}} />
@@ -30,8 +32,8 @@ const FindModal = () => {
                     {display? <List match={match}/> :<div></div>}
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="success" onClick={toggle}>Done</Button>{' '}
-                    <Button color="danger" onClick={toggle}>Cancel</Button>
+                    <Button color="primary" onClick={toggle}><img src={check}/> Done </Button>{' '}
+                    <Button color="danger" onClick={toggle}><img src={x}/> Cancel </Button>
                 </ModalFooter>
             </Modal>
         </div>
