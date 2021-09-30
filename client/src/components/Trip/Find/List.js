@@ -32,7 +32,7 @@ export default function display(props) {
         <div className='List'>
             {places.map((place) => (
                 <div className='list-preview' key={place.index}>
-                    <li>{place.name}</li>
+                    <li>Name: {place.name} Latitude: {place.latitude} Longitude: {place.longitude} Country: {place.country}</li>
                 </div>
             ))}
         </div>
