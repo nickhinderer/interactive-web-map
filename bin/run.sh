@@ -3,7 +3,7 @@
 umask 077;
 
 if [[ -z "$S_PORT" ]]; then
-  export S_PORT=31404;
+  export S_PORT=8000;
 fi
 if [[ -z "$C_PORT" ]]; then
   export C_PORT=3000;
