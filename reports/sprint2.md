@@ -45,9 +45,9 @@ In addition to completing the above epic, our team also plans to complete the ep
 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
-| Epics | *2* | *count* |
-| Tasks |  *15*   | *count* | 
-| Story Points |  *26*  | *sum* | 
+| Epics | *2* | *0* |
+| Tasks |  *15*   | *59* | 
+| Story Points |  *26*  | *55* | 
 
 Based on our team's previous performance, taking on the task of two epics and six tasks will be manageable. In the previous sprint our team was able to complete both epics assigned on the product backlog. Our team was not able to complete all tasks previously due to some impediments, but the team is more than capable of taking on the current tasks at hand.
 
@@ -71,10 +71,18 @@ Based on our team's previous performance, taking on the task of two epics and si
 
 ### Epics not completed 
 
+During this sprint, the team was also unable to complete the Highlight Places epic as we had planned. The team stayed focused on the Find Places epic throughout the sprint and found the epic to be more challenging than initially expected. This led to a lack of time and focus that could be dedicated to approaching the Highlight Places epic.
+
 ## Retrospective
 
 ### Things that went well
 
+During this sprint, team members became more aquainted with one another and were more willing to reach out for help when needed. As a team, we did better than last sprint when it came to communicating with each other. Team members, such as Abby, did a great job at reaching out to TA's for guidance when stuck on a problem. Similar to the previous sprint, Kaiyan made sure team members were on task and checked in with team mebers often. Nick worked hard to make up for the team's lack of server knowledge and did a great job getting our database set up and running. Mallory did a great job keeping our design.md file updated as we changed our UI during this sprint. 
+
 ### Things we need to improve
 
+As a team, we need to work a little more on communication and planning. We really struggled with planning at the beginning of this sprint and that definitely hurt our team. 
+
 ### One thing we will change next time
+
+One thing the team could change next time is to start working on more code together as opposed to coding seperately and then adding it to the team repo. As a team we could come together more in order to ensure that all team members understand how the code works in order to keep building off our base code. This could be through simple updates on slack or discussions in person. 
