@@ -29,14 +29,13 @@ export default function display(props) {
 
 // this part for render the found place.
     return(
-        <>
-            <ul>
-                <li>
-                    {JSON.stringify(places)}
-                </li>
-            </ul>
-             
-        </>
+        <div className='List'>
+            {places.map((place) => (
+                <div className='list-preview' key={place.index}>
+                    <li>{place.name}</li>
+                </div>
+            ))}
+        </div>
     )
 }
     
