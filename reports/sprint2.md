@@ -55,13 +55,14 @@ Based on our team's previous performance, taking on the task of two epics and si
 
 | Date | Tasks closed  | Tasks in progress | Impediments |
 | :--- | :--- | :--- | :--- |
-| *9/13* | *N/A* | *#66* | internet problems | 
+| *9/13* | *N/A* | *#66* | Internet problems | 
 | *9/14* | *N/A* | *#66* | N/A |
-| *9/20* | *N/A* | *#66, #114, #116, #117* | lack of knowledge |
+| *9/20* | *N/A* | *#66, #114, #116, #117* | Lack of knowledge |
 | *9/21* | *#116, #120, #126, #127, #129, #132, #133* | *#114, #136, #138, #140, #141* | N/A |
 | *9/22* |  *#138, #144, #151, #153, #156, #157, #158, #161* | *#71, #136, #139, #140*| N/A| 
 | *9/24* | *#117, #114, #136, #167, #174, #176* | *#140, #139* | Lack of TA hours |
 | *9/27* | *#115, #140, #173, #180, #182, #183* | *#139, #184, #187* | N/A |
+| *9/29* | *#177, #188, #193, #195, #199, #219* | *#191, #71, #163* | Knowledge, computer troubles |
 
 
 ## Review
