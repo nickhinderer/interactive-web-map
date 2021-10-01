@@ -46,8 +46,8 @@ In addition to completing the above epic, our team also plans to complete the ep
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
 | Epics | *2* | *0* |
-| Tasks |  *15*   | *59* | 
-| Story Points |  *26*  | *55* | 
+| Tasks |  *15*   | *62* | 
+| Story Points |  *26*  | *59* | 
 
 Based on our team's previous performance, taking on the task of two epics and six tasks will be manageable. In the previous sprint our team was able to complete both epics assigned on the product backlog. Our team was not able to complete all tasks previously due to some impediments, but the team is more than capable of taking on the current tasks at hand.
 
@@ -71,7 +71,9 @@ Based on our team's previous performance, taking on the task of two epics and si
 
 ### Epics not completed 
 
-During this sprint, the team was also unable to complete the Highlight Places epic as we had planned. The team stayed focused on the Find Places epic throughout the sprint and found the epic to be more challenging than initially expected. This led to a lack of time and focus that could be dedicated to approaching the Highlight Places epic.
+During this sprint, the team was unable to fully complete the Find Places epic. The epic entailed more planning and knowledge than previously perceived. 
+
+The team was also unable to complete the Highlight Places epic as we had planned. The team stayed focused on the Find Places epic throughout the sprint and found the epic to be more challenging than initially expected. This led to a lack of time and focus that could be dedicated to approaching the Highlight Places epic.
 
 ## Retrospective
 
@@ -81,7 +83,7 @@ During this sprint, team members became more aquainted with one another and were
 
 ### Things we need to improve
 
-As a team, we need to work a little more on communication and planning. We really struggled with planning at the beginning of this sprint and that definitely hurt our team. 
+As a team, we need to work a little more on communication and planning. We really struggled with planning at the beginning of this sprint and that definitely hurt our team's progress. Taking the time to review the upcoming sprint in Zybooks would prove helpful for the planning phase. Another area that we could improve on is starting tasks ealier in order to get help earlier from each other and TAs. Included in this would be to make sure we have questions prepped for TAs in order to get proper help in a timely manner. 
 
 ### One thing we will change next time
 
