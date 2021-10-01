@@ -170,7 +170,10 @@ To make the highlighted place stand out, we are going to change a bit of css fro
 
 
 <img src="https://user-images.githubusercontent.com/82910022/134398817-fbeebd31-4e0f-4362-9620-7528f03a88c9.jpg" alt="findPlacesDrawing" width="525"/>
-There will be a search bar added in underneath the map portion on the site. When a string is input into the search bar, a list will pop up underneath the bar and the user will be able to add an item from the list to their trip. We will be changing the code by:
+
+<img src="https://user-images.githubusercontent.com/74014694/135551810-0de23c3c-acf7-4b8c-92eb-4c103546b053.jpg" width="525" alt="findPlacesList"/>
+
+There will be a search button above the map. When clicked, a modal opens and contains a search bar in which a string may be input. When a string is input into the search bar and the button is clicked, a list will pop up underneath the bar and the user will be able to add an item from the list to their trip. We will be changing the code by:
 * Adding a search button that pops up a modal 
 * Adding in a search bar in the modal
 * Adding in a list 
