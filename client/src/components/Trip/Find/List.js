@@ -34,7 +34,7 @@ export default function display(props) {
         <div className='List'>
             {places.map((place) => (
                 <div key={place.index}>
-                    <ul><Button color='primary'><img src={bookmark} alt='add'/> Add </Button>
+                    <ul><Button color='primary' onClick={() => props.placeActions.append(place)}><img src={bookmark} alt='add'/> Add </Button>
                     <div><b>Name:</b> {place.name}</div>
                     <div><b>Latitude:</b> {place.latitude}</div>
                     <div><b>Longitude:</b> {place.longitude}</div>
