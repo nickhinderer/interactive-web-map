@@ -200,5 +200,19 @@ The server class structure will change as a result of this sprint to provide new
 * By enforcing the use of the find protocol for Epic #66 "Find Places", the server will change such that it supports valid find requests sent from the client. 
 
 # Sprint 3
+
+### User Interface
+In this sprint, we will continue working on aspects that we started in the previous sprint as well as adding more features to the trip configuration. 
+There will be 5 primary parts:
+* Finish Find Places
+* Finish Interoperability
+* Trip Distances
+* Where I am?
+* 
+
+### Client Components
+
+### Server Classes
+
 # Sprint 4 
 # Sprint 5
