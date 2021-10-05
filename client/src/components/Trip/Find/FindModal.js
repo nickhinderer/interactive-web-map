@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroupText, ListGroup, ListGroupItem } from 'reactstrap';
-import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, InputGroup, InputGroupAddon} from 'reactstrap';
 import List from './List';
 import mag from '../../../static/images/search.svg';
 import check from '../../../static/images/check.svg';

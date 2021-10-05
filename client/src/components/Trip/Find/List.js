@@ -4,13 +4,6 @@ import { getOriginalServerUrl, sendAPIRequest }  from '../../../utils/restfulAPI
 import bookmark from '../../../static/images/bookmark-plus-fill.svg';
 import { Button } from 'reactstrap';
 
-
-//what is left?
-    //convert(could use .map) match to string and  pass it  (use props.match could get match variable)
-    // setup the details of the Places ( the return found place from server);
-    //create a new file(function) for select place
-    //create a new file(function) for add place
-
 export default function display(props) {
 
     // this part for sending the findrequest.
