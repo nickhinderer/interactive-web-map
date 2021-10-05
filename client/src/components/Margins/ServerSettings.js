@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button, Col, Container, Input, Modal, ModalBody, ModalFooter, ModalHeader, Row } from 'reactstrap';
 import { useServerInputValidation } from '../../hooks/useServerInputValidation';
+import ListServer from './ListServer';
+import {sendAPIRequest} from '../../utils/restfulAPI';
+import  { useCallback,useEffect,useState } from 'react';
 
 export default function ServerSettings(props) {
     const [serverInput, setServerInput, config, validServer, resetModal]
@@ -46,20 +49,45 @@ function Header(props) {
 }
 
 function Body(props) {
+    const [displayConfig,setConfig] = useState("Config");
+    const [displayFind,setFind] = useState("Find");
+
+
+
+
     const urlInput =
         <Input
             value={props.serverInput}
             placeholder={props.serverSettings.serverUrl}
-            onChange={(e) => { props.setServerInput(e.target.value) }}
+            onChange={(e) => { props.setServerInput(e.target.value);}}
             valid={props.validServer}
             invalid={!props.validServer}
         />;
 
+        const sendFindRequest = useCallback(async(newURL) => {
+        
+            const findResponse = await sendAPIRequest({ requestType: "find", match:"abc", limit:100 }, newURL);
+            findResponse? setFind("Find"):setFind("");
+            const configResponse = await sendAPIRequest({ requestType: "config"}, newURL);
+            configResponse? setConfig("Config"):setConfig("");
+          },[])
+    
+          
+    function handleChange(newURL){ 
+        props.setServerInput(newURL);
+        sendFindRequest(newURL);
+            
+    }
+
+        
     return (
         <ModalBody>
             <Container>
                 <SettingsRow label="Name" value={props.serverName} />
-                <SettingsRow label="URL" value={urlInput} />
+                <SettingsRow label="URL"  value={urlInput} />
+                <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange} onClick={()=>checkConfig()}/>} />
+                <SettingsRow label="Available Feature"  value={<div>"{ displayConfig}"    "{displayFind}"</div>} />
+
             </Container>
         </ModalBody>
     );
@@ -85,6 +113,7 @@ function Footer(props) {
             <Button color="primary" onClick={() => {
                 props.processServerConfigSuccess(props.config, props.serverInput);
                 props.resetModal(props.serverInput);
+                
             }}
                 disabled={!props.validServer}
             >
