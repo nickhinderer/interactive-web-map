@@ -29,31 +29,39 @@ public class Query {
     private static String getSQL(String match, Integer limit) {
         if(limit == -1) {
             return
-                    "SELECT "
-                            + "COUNT(*) "
-                            + "FROM world "
-                            + "WHERE name LIKE '%" + match + "%' "
-                            + "OR municipality LIKE '%" + match + "%' "
-                            + "OR iso_region LIKE '%" + match + "%' "
-                            + "OR iso_country LIKE '%" + match
-                            + "%';";
+                "SELECT COUNT(*) "
+                        + "FROM world "
+                        + "INNER JOIN continent ON world.continent = continent.id "
+                        + "INNER JOIN country ON world.iso_country = country.id "
+                        + "INNER JOIN region ON world.iso_region = region.id "
+                        + "WHERE world.name LIKE '%" + match + "%' "
+                        + "OR world.municipality LIKE '%" + match + "%' "
+                        + "OR country.name LIKE '%" + match + "%' "
+                        + "OR region.name LIKE '%" + match + "%';";
         } else if(match.equals("")) {
             return
-                    "SELECT "
-                            + "name, TRUNCATE(latitude,6), TRUNCATE(longitude,6), altitude, type, iso_country, home_link "
-                            + "FROM world ORDER BY RAND() "
+                    "SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link "
+                            + "FROM world "
+                            + "INNER JOIN continent ON world.continent = continent.id "
+                            + "INNER JOIN country ON world.iso_country = country.id "
+                            + "INNER JOIN region ON world.iso_region = region.id "
+                            + "ORDER BY RAND() "
                             + "LIMIT "  + limit.toString()  + ";";
 
         } else {
             return
-                    "SELECT "
-                            + "name, TRUNCATE(latitude,6), TRUNCATE(longitude,6), altitude, type, iso_country, home_link "
-                            + "FROM world "
-                            + "WHERE name LIKE '%" + match + "%' "
-                            + "OR municipality LIKE '%" + match + "%' "
-                            + "OR iso_region LIKE '%" + match + "%' "
-                            + "OR iso_country LIKE '%" + match + "%' "
-                            + "%' LIMIT "  + limit.toString()  + ";";
+                "SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link "
+                        + "FROM world "
+                        + "INNER JOIN continent ON world.continent = continent.id "
+                        + "INNER JOIN country ON world.iso_country = country.id "
+                        + "INNER JOIN region ON world.iso_region = region.id "
+                        + "WHERE world.name LIKE '%" + match + "%' "
+                        + "OR world.municipality LIKE '%" + match + "%' "
+                        + "OR country.name LIKE '%" + match + "%' "
+                        + "OR region.name LIKE '%" + match + "%' "
+                        + "LIMIT " + limit.toString() + ";";
+
+            //WHERE world.name LIKE "%ter%" OR world.municipality like '%ter%' OR region.name like '%nick%' OR country.name like '%ter%'
         }//add join table too. and type and where
 
     }
