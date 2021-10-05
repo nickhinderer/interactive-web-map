@@ -215,7 +215,7 @@ There will be 5 primary parts:
 The user will be able to add items from a list to the trip itinerary. 
 The user will be able to see distances between each location on the trip itinerary. 
 
-## Drawing for #238 Distances Epic
+### Drawing for #238 Distances Epic
 
 <img src=https://user-images.githubusercontent.com/74014694/136080738-6ee093ed-ce2c-4b9a-857b-a49721c20ff0.jpg width="525" alt="Distances Interface"/>
 
