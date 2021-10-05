@@ -31,8 +31,11 @@ public class Query {
             return
                     "SELECT "
                             + "COUNT(*) "
-                            + "FROM world WHERE name "
-                            + "LIKE '%" + match
+                            + "FROM world "
+                            + "WHERE name LIKE '%" + match + "%' "
+                            + "OR municipality LIKE '%" + match + "%' "
+                            + "OR iso_region LIKE '%" + match + "%' "
+                            + "OR iso_country LIKE '%" + match
                             + "%';";
         } else if(match.equals("")) {
             return
@@ -45,8 +48,11 @@ public class Query {
             return
                     "SELECT "
                             + "name, TRUNCATE(latitude,6), TRUNCATE(longitude,6), altitude, type, iso_country, home_link "
-                            + "FROM world WHERE name "
-                            + "LIKE '%" + match
+                            + "FROM world "
+                            + "WHERE name LIKE '%" + match + "%' "
+                            + "OR municipality LIKE '%" + match + "%' "
+                            + "OR iso_region LIKE '%" + match + "%' "
+                            + "OR iso_country LIKE '%" + match + "%' "
                             + "%' LIMIT "  + limit.toString()  + ";";
         }//add join table too. and type and where
 
