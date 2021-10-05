@@ -186,6 +186,7 @@ There will be a search button above the map. When clicked, a modal opens and con
 * Adding dynamic functionality to accomplish adding item from list
 
 
+
 ### Client Components
 ![componenthierarchy](../images/componentHierarchySprint2.png)
 
@@ -200,5 +201,33 @@ The server class structure will change as a result of this sprint to provide new
 * By enforcing the use of the find protocol for Epic #66 "Find Places", the server will change such that it supports valid find requests sent from the client. 
 
 # Sprint 3
+
+### User Interface
+
+In this sprint, we will continue working on aspects that we started in the previous sprint as well as adding more features to the trip configuration. 
+There will be 5 primary parts:
+* Finish Find Places
+* Finish Interoperability
+* Trip Distances
+* Where I am?
+* Load Trip
+
+The user will be able to add items from a list to the trip itinerary. 
+The user will be able to see distances between each location on the trip itinerary. 
+
+### Drawing for #238 Distances Epic
+
+<img src=https://user-images.githubusercontent.com/74014694/136080738-6ee093ed-ce2c-4b9a-857b-a49721c20ff0.jpg width="525" alt="Distances Interface"/>
+
+Updates to the interface for this epic will add new features to the itinerary list. There will be an area for distance between each location added to the trip as well as the total distance of the trip. We will be changing the code by: 
+* Adding a new column on the itinerary
+* Adding a new row on the itinerary 
+* Add a label for "Total:"
+
+
+### Client Components
+
+### Server Classes
+
 # Sprint 4 
 # Sprint 5
