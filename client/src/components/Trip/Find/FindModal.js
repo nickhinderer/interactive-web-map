@@ -7,7 +7,7 @@ import mag from '../../../static/images/search.svg';
 import check from '../../../static/images/check.svg';
 import x from '../../../static/images/x.svg';
 
-const FindModal = () => {
+export default function FindModal(props) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const [display, setDisplay] = useState(false);
@@ -38,5 +38,4 @@ const FindModal = () => {
         </div>
     );
 }
-export default FindModal;
 
