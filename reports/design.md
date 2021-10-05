@@ -99,11 +99,17 @@ The classes in blue represent the classes specific to this application.
 * ConfigRequest is a specific request that allows the server to respond with its configuration to allow interoperability between clients and servers. 
 * Request defines the basic components of all requests.
 * BadReqeustException allows us to distinguish bad requests from other types of exceptions that may occur.
+* Place is a class that extends a hashmap of two strings
+* Places is a class that extends arraylist of type place
+* FindRequest is a specific request that allows the server to respond with a query from the database containing the number of matches and a list of Places
+* Query takes the parameters given to FindRequest and creates a search for the database
+* Database creates a connection to the database, sends the query, and then processes and returns results
 
 These test classes provide automated tests for unit testing.
 * TestWebApplication
 * TestConfigRequest
 * TestJSONValidator
+* TestFindRequest
 
 
 # Sprint 1
@@ -170,7 +176,10 @@ To make the highlighted place stand out, we are going to change a bit of css fro
 
 
 <img src="https://user-images.githubusercontent.com/82910022/134398817-fbeebd31-4e0f-4362-9620-7528f03a88c9.jpg" alt="findPlacesDrawing" width="525"/>
-There will be a search bar added in underneath the map portion on the site. When a string is input into the search bar, a list will pop up underneath the bar and the user will be able to add an item from the list to their trip. We will be changing the code by:
+
+<img src="https://user-images.githubusercontent.com/74014694/135551810-0de23c3c-acf7-4b8c-92eb-4c103546b053.jpg" width="525" alt="findPlacesList"/>
+
+There will be a search button above the map. When clicked, a modal opens and contains a search bar in which a string may be input. When a string is input into the search bar and the button is clicked, a list will pop up underneath the bar and the user will be able to add an item from the list to their trip. We will be changing the code by:
 * Adding a search button that pops up a modal 
 * Adding in a search bar in the modal
 * Adding in a list 

@@ -45,9 +45,9 @@ In addition to completing the above epic, our team also plans to complete the ep
 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
-| Epics | *2* | *count* |
-| Tasks |  *15*   | *count* | 
-| Story Points |  *26*  | *sum* | 
+| Epics | *2* | *0* |
+| Tasks |  *15*   | *62* | 
+| Story Points |  *26*  | *59* | 
 
 Based on our team's previous performance, taking on the task of two epics and six tasks will be manageable. In the previous sprint our team was able to complete both epics assigned on the product backlog. Our team was not able to complete all tasks previously due to some impediments, but the team is more than capable of taking on the current tasks at hand.
 
@@ -71,10 +71,33 @@ Based on our team's previous performance, taking on the task of two epics and si
 
 ### Epics not completed 
 
+Although our team was able to successfully send requests and recieve responses through the server to the
+database, we were unable to finish the Find Places # 66 epic in its entirity. The epic entailed more planning and knowledge than previously perceived. 
+Granted, our team came very close to finishing the epic. We are still in the process of making the places in the list addable to the trip. 
+
+The team was also unable to complete the Highlight Places epic as we had planned. The team stayed focused on the Find Places epic throughout the sprint and found the epic to be more challenging than initially expected. This led to a lack of time and focus that could be dedicated to approaching the Highlight Places epic.
+
+### Things we did well (regarding the product)
+
+In terms of the product, our team executed our individually assigned tasks thouroughly and to the best of our ability.
+Our backend implementation was handled well, and was the necessary boost that the client developers needed to get going 
+on the #163 Make each place addable task. Our team did a good job of contributing incremental work throughout the sprint as 
+well as meeting the designated amount of story points. 
+
 ## Retrospective
 
 ### Things that went well
 
+During this sprint, team members became more aquainted with one another and were more willing to reach out for help when needed. As a team, we did better than last sprint when it came to communicating with each other. Team members, such as Abby, did a great job at reaching out to TA's for guidance when stuck on a problem. Similar to the previous sprint, Kaiyan made sure team members were on task and checked in with team mebers often. Nick worked hard to make up for the team's lack of server knowledge and did a great job getting our database set up and running. Mallory did a great job keeping our design.md file updated as we changed our UI during this sprint. 
+
 ### Things we need to improve
 
+As a team, we need to work a little more on communication and planning. We really struggled with planning at the beginning of this sprint and that definitely hurt our team's progress. Taking the time to review the upcoming sprint in Zybooks would prove helpful for the planning phase. Another area that we could improve on is starting tasks ealier in order to get help earlier from each other and TAs. Included in this would be to make sure we have questions prepped for TAs in order to get proper help in a timely manner. 
+
+We could also improve on individually preparing ourselves on the material for the upcoming sprint. This could 
+help us stay efficient in our daily scrum meetings and provide us the opportunity to distribute the knowledge we acquired
+on our own to share with our teamamtes. This is a win-win for everybody moving forward as a team.  
+
 ### One thing we will change next time
+
+One thing the team could change next time is to start working on more code together as opposed to coding seperately and then adding it to the team repo. As a team we could come together more in order to ensure that all team members understand how the code works in order to keep building off our base code. This could be through simple updates on slack or discussions in person. 

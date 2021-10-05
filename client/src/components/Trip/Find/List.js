@@ -35,11 +35,5 @@ export default function display(props) {
                 </div>
             ))}
         </div>
-    )
+    );
 }
-    
-
-    
-
-   
-
