@@ -238,12 +238,12 @@ We will have a file explorer popup for the user to use however their heart desir
 
 ### Drawing for #244 Where Am I?
 
-<img src=https://user-images.githubusercontent.com/82910022/136130691-c582c4fc-f7cb-4f4d-9b28-b07864974470.jpg width="525" alt="Save File Drawing"/>
+<img src=https://user-images.githubusercontent.com/82910022/136131291-f865ccbb-80ef-4e36-9fc3-050d52c802b9.jpg width="525" alt="Where Am I front"/>
 
 When a user would like to update the map to mark their current location, the My Trip hamburger will have an option to do so. 
 This will update the default location of the Oval to their current location. 
 
-<img src=https://user-images.githubusercontent.com/82910022/136130691-c582c4fc-f7cb-4f4d-9b28-b07864974470.jpg width="525" alt="Save File Drawing"/>
+<img src=https://user-images.githubusercontent.com/82910022/136131301-b45b6378-fef2-48fd-82f9-ca88fd4331d7.jpg width="525" alt="Where Am I back"/>
 
 The user will be prompted by the browser to allow their location. This will add a marker to the map relative to their current 
 location and be displayed in the itinerary list. 
