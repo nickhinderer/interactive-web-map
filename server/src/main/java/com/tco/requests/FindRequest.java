@@ -1,7 +1,7 @@
 package com.tco.requests;
 
-import java.util.ArrayList;
-
+import com.tco.misc.Place;
+import com.tco.misc.Places;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.tco.misc.BadRequestException;

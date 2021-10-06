@@ -6,7 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
-import com.tco.requests.*;
+import com.tco.misc.Place;
+import com.tco.misc.Places;
 import com.tco.misc.BadRequestException;
 
 

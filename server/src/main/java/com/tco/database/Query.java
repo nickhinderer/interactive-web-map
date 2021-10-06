@@ -1,6 +1,6 @@
 package com.tco.database;
 
-import com.tco.requests.*;
+import com.tco.misc.Places;
 import com.tco.misc.BadRequestException;
 
 public class Query {
@@ -66,3 +66,5 @@ public class Query {
 
     }
 }
+
+   // SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent   FROM world  INNER JOIN continent ON world.continent = continent.id   INNER JOIN country ON world.iso_country = country.id  INNER JOIN region ON world.iso_region = region.id  WHERE world.name LIKE "%ter%" OR world.municipality like '%ter%' OR region.name like '%nick%' OR country.name like '%ter%' ORDER BY continent.name, country.name, region.name, world.municipality, world.name ASC  LIMIT 10;
