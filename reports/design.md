@@ -227,6 +227,11 @@ Updates to the interface for this epic will add new features to the itinerary li
 
 ### Client Components
 
+We will be adding the following components to the client:
+* Distance class to render the distance between locations
+
+![sp3components](../images/Sprint3Components.png)
+
 ### Server Classes
 
 # Sprint 4 
