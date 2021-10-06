@@ -258,6 +258,10 @@ We will be adding the following components to the client:
 ![sp3components](../images/Sprint3Components.png)
 
 ### Server Classes
-
+![server_classes](../images/serverclassesSprint3.png)
+Adding the following classes to the server:
+* DistanceRequest.java
+* Distance.java
+* TestDistanceRequest.java
 # Sprint 4 
 # Sprint 5
