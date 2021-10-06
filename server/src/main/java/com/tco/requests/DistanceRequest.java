@@ -1,4 +1,10 @@
 package com.tco.requests;
 
-public class DistanceRequest {
+import com.tco.misc.BadRequestException;
+
+public class DistanceRequest extends Request {
+    @Override
+    public void buildResponse() throws BadRequestException {
+
+    }
 }
