@@ -1,6 +1,7 @@
 package com.tco.requests;
 
 import com.tco.misc.BadRequestException;
+import com.tco.misc.Places;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
