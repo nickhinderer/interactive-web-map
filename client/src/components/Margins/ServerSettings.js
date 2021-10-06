@@ -51,6 +51,7 @@ function Header(props) {
 function Body(props) {
     const [displayConfig,setConfig] = useState("Config");
     const [displayFind,setFind] = useState("Find");
+    const [displayDistances,setDistances] = useState("");
 
 
 
@@ -70,6 +71,9 @@ function Body(props) {
             findResponse? setFind("Find"):setFind("");
             const configResponse = await sendAPIRequest({ requestType: "config"}, newURL);
             configResponse? setConfig("Config"):setConfig("");
+            const distancesResponse = await sendAPIRequest({ requestType: "distances",places: [{"name":"place1", "latitude":  "40.6",  "longitude": "-105.1"},{"name": "place2", "latitude":  "-33.9", "longitude": "151.2"},{"name": "place3", "latitude":  "-57.9", "longitude": "175.2"}], earthRadius   : 6371.0}, newURL);
+            console.log(distancesResponse);
+            distancesResponse? setDistances("Distances"):setDistances("");
           },[])
     
           
@@ -86,7 +90,7 @@ function Body(props) {
                 <SettingsRow label="Name" value={props.serverName} />
                 <SettingsRow label="URL"  value={urlInput} />
                 <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange} onClick={()=>checkConfig()}/>} />
-                <SettingsRow label="Available Feature"  value={<div>"{ displayConfig}"    "{displayFind}"</div>} />
+                <SettingsRow label="Available Feature"  value={<div>"{ displayConfig}"    "{displayFind}"    "{displayDistances}"</div>} />
 
             </Container>
         </ModalBody>
