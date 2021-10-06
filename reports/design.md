@@ -237,6 +237,16 @@ Updates to the interface for this epic will add new features to the itinerary li
 * Adding a new row on the itinerary 
 * Add a label for "Total:"
 
+### Drawing for #253 Save Epic
+
+<img src=https://user-images.githubusercontent.com/82910022/136130691-c582c4fc-f7cb-4f4d-9b28-b07864974470.jpg width="525" alt="Save File Drawing"/>
+
+For the Save File epic, the user will have the ability to save a trip to their local file system. The hamburger dropdown will have a save file option icon.
+
+By clicking save file, the user will be able to add a trip object to any desired location in their system. When they press done this should either send the user an alert success or failure for their attempt to save a trip. 
+
+We will have a file explorer popup for the user to use however their heart desires. 
+
 
 ### Client Components
 
