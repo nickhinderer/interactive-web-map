@@ -99,20 +99,11 @@ The classes in blue represent the classes specific to this application.
 * ConfigRequest is a specific request that allows the server to respond with its configuration to allow interoperability between clients and servers. 
 * Request defines the basic components of all requests.
 * BadReqeustException allows us to distinguish bad requests from other types of exceptions that may occur.
-* Place is a class that extends a hashmap of two strings
-* Places is a class that extends arraylist of type place
-* FindRequest is a specific request that allows the server to respond with a query from the database containing the number of matches and a list of Places
-* Query takes the parameters given to FindRequest and creates a search for the database
-* Database creates a connection to the database, sends the query, and then processes and returns results
-* DistanceRequest
-* TestDistanceRequest
 
 These test classes provide automated tests for unit testing.
 * TestWebApplication
 * TestConfigRequest
 * TestJSONValidator
-* TestFindRequest
-* TestDistanceRequest
 
 # Sprint 1
 
@@ -267,6 +258,10 @@ We will be adding the following components to the client:
 ![sp3components](../images/Sprint3Components.png)
 
 ### Server Classes
-
+![server_classes](../images/serverclassesSprint3.png)
+Adding the following classes to the server:
+* DistanceRequest.java
+* Distance.java
+* TestDistanceRequest.java
 # Sprint 4 
 # Sprint 5
