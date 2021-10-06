@@ -1,7 +1,7 @@
 # Sprint 3 # - *t04* - *Geek Velocity*
 
-## Sprint Goal
-### *The Sprint Goal is able to switch to other servers and check their feature, find the distance betwen two place, find user's current location,and able to upload user saved trip*
+## Goal
+### *How far is it?*
 
 ## Scrum Master
 ### *Kaiyan Zeng*
@@ -10,7 +10,7 @@
 
 * The Increment release for `v3.x` created as a GitHub Release and deployed on black-bottle under SPRINT.
 * The design document (`design.md`) is updated.
-* The sprint document (`sprint3.md`) is updated with scrums, completed metrics, review, and retrospective.
+* The sprint document (`sprint.md`) is updated with scrums, completed metrics, review, and retrospective.
 
 
 ## Policies
@@ -20,10 +20,16 @@
 * Use ReactStrap for a consistent user experience (no HTML, CSS, style, etc.).
 
 ### Clean Code
+* Code Climate technical debt ratio less than 3.
+* Minimize code smells and duplication.
 
 ### Test Driven Development
+* Write the tests before the code.
+* Unit tests are fully automated.
+* Code coverage is 70%
 
 ### Processes
+* Incremental development.  No big bangs.
 * Main is never broken. 
 * All pull request builds and tests for Main are successful.
 * All dependencies managed using Maven, npm, and WebPack.
@@ -60,8 +66,8 @@ Other members will offer help when needed.The tasks related to the client-side w
 In the last epic, we plan on finishing "Load Trip". This epic will consider a bonus epic to finish if we can the first four done. In this epic, we will give the user the 
 ability to upload their saved trip and go over all the trip then display it on the map and itinerary. It will relate to creating a new file to save uploaded trips. 
 And new class to handleadd this trip to the correct place. This task will split evenly between all team members and see who is available and able to handle the tasks.
-## Metric
 
+## Metric
 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
@@ -82,7 +88,7 @@ The #*task* numbers refer to the issue numbers in GitHub.
 | Date | Tasks closed  | Tasks in progress | Impediments |
 | :--- | :--- | :--- | :--- |
 | 10/4 | #247, #163|  | N/A |
-| 10/5 | #277, #272, #263, #262, #261 | #276, #282, #283, #285 |  | 
+| 10/5 | #277, #272, #263, #262, #261,#281,#285,#286,#282 | #276,#267, #268 |  | 
 
 
 ## Review
@@ -91,14 +97,11 @@ The #*task* numbers refer to the issue numbers in GitHub.
 
 ### Epics not completed
 
-### Things we did well (regarding the product)
-
 ## Retrospective
 
 ### Things that went well
 
 ### Things that we need to improve 
-
 
 #### One thing we will change next time
 
