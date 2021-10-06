@@ -104,13 +104,15 @@ The classes in blue represent the classes specific to this application.
 * FindRequest is a specific request that allows the server to respond with a query from the database containing the number of matches and a list of Places
 * Query takes the parameters given to FindRequest and creates a search for the database
 * Database creates a connection to the database, sends the query, and then processes and returns results
+* DistanceRequest
+* TestDistanceRequest
 
 These test classes provide automated tests for unit testing.
 * TestWebApplication
 * TestConfigRequest
 * TestJSONValidator
 * TestFindRequest
-
+* TestDistanceRequest
 
 # Sprint 1
 
