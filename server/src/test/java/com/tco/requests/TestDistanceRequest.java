@@ -1,5 +1,8 @@
 package com.tco.requests;
 
+import com.tco.misc.Places;
+import com.tco.misc.Distances;
+
 import com.tco.misc.BadRequestException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -41,8 +44,8 @@ public class TestDistanceRequest {
     @Test
     @DisplayName("Earth radius received")
     public void testEarthRadius(){
-        Number earthRadius = conf.getEarthRadius(); //TODO: Maybe change units for radius
-        assertEquals(-2.000000, earthRadius); 
+        int earthRadius = conf.getEarthRadius(); //TODO: Maybe change units for radius
+        assertEquals(-2, earthRadius); 
     }
 
     @Test
