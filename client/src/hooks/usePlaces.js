@@ -11,6 +11,7 @@ export function usePlaces() {
 
     const placeActions = {
         append: async (place) => append(place, context),
+        moveToHome: async () => moveToHome(context),
         removeAtIndex: (index) => removeAtIndex(index, context),
         removeAll: () => removeAll(context),
         selectIndex: (index) => selectIndex(index, context)
@@ -30,6 +31,23 @@ async function append(place, context) {
     setPlaces(newPlaces);
     setSelectedIndex(newPlaces.length - 1);
 }
+
+async function moveToHome(context) {
+    if (navigator.geolocation) {
+      await navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+    
+    function onSuccess({coords}) {
+      const place = {latitude: coords.latitude, longitude: coords.longitude};
+      append(place, context);
+  
+      LOG.info(`The user is located at ${JSON.stringify(place)}.`);
+    }
+  
+    function onError(error) {
+      console.log(error.message);
+    }
+  }
 
 function removeAtIndex(index, context) {
     const { places, setPlaces, selectedIndex, setSelectedIndex } = context;
