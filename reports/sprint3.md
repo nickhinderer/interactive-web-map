@@ -72,8 +72,8 @@ And new class to handleadd this trip to the correct place. This task will split 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
 | Epics | *5* |  |
-| Tasks |  *46*   |  | 
-| Story Points |  *55*  |  | 
+| Tasks |  *49*   |  | 
+| Story Points |  *58*  |  | 
 
 Based on our team's previous performance, it would be achievable to finish at least 4 epics. From what we left last, we can finish the "Find My place" pretty soon, which is 
 already done mostly on the starting date of this sprint. And "Interoperability" already done most part on the starting date of sprint3 also. What we left will be "Where I am"
@@ -89,6 +89,7 @@ The #*task* numbers refer to the issue numbers in GitHub.
 | :--- | :--- | :--- | :--- |
 | 10/4 | #247, #163|  | N/A |
 | 10/5 | #277, #272, #263, #262, #261,#281,#285,#286,#276,#282,#298,#300,#292,#290,#283 |  #191,#267, #268 | N/A | 
+| 10/6 | #312, #311, #279, #251, #264, #266, #268, #267,#315 | #191, #303 | N/A |
 
 
 ## Review
