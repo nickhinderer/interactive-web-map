@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import { Table,Button } from 'reactstrap';
 import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToText } from '../../../utils/transformers';
 
@@ -17,7 +17,7 @@ function Header(props) {
         <thead>
             <tr>
                 <th/>
-                <th>My Trip</th>
+                <th>My Trip  <Button>Find Trip Distances</Button></th>
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
                 </th>
