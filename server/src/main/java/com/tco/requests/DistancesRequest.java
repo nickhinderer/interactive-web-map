@@ -16,7 +16,8 @@ public class DistancesRequest extends Request {
 
     @Override
     public void buildResponse() throws BadRequestException {
-
+        Distances distanceList = new Distances(places, earthRadius);
+        distances = distanceList.computeDistances();
     }
 
     /* The following methods exist only for testing purposes and are not used
