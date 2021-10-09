@@ -26,6 +26,12 @@ public class Distances {
     }
 
     public ArrayList<Integer> computeDistances() {
+        int n = this.places.size();
+        for(int i = 1; i < n-1; i++) { //outer loop to measure difference in index of the two points you're comparing
+            for(int j = 0; j+i < n; j++) { //inner loop to compare each pair of points starting at a distance of 1 between each point, outer loop then increments until the first and last element are compared
+
+            }
+        }
         return new ArrayList<>();
     }
 }
