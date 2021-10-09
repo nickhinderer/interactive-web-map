@@ -3,6 +3,7 @@ package com.tco.server;
 import com.tco.misc.BadRequestException;
 import com.tco.misc.JSONValidator;
 import com.tco.requests.ConfigRequest;
+import com.tco.requests.DistancesRequest;
 import com.tco.requests.FindRequest;
 import com.tco.requests.Request;
 
@@ -38,6 +39,7 @@ class MicroServer {
             before("/*", (req, res) -> logRequest(req));
             post("/config", (req, res) -> processHttpRequest(req, res, ConfigRequest.class));
             post("/find", (req, res) -> processHttpRequest(req, res, FindRequest.class));
+            post("/distances", (req, res) -> processHttpRequest(req, res, DistancesRequest.class));
         });
     }
 
