@@ -48,6 +48,14 @@ public class FindRequest extends Request {
         return query.findMatchingPlaces();
     }
 
+    private Place samplePlace(String name, String latitude, String longitude) {
+        Place place = new Place();
+        place.put("name", name);
+        place.put("latitude", latitude);
+        place.put("longitude", longitude);
+        return place;
+    }
+
     /* The following methods exist only for testing purposes and are not used
   during normal execution, including the constructor. */
 
@@ -57,14 +65,6 @@ public class FindRequest extends Request {
         this.limit = -2;
         this.found = 0;
         this.places = new Places();
-    }
-
-    private Place samplePlace(String name, String latitude, String longitude) {
-        Place place = new Place();
-        place.put("name", name);
-        place.put("latitude", latitude);
-        place.put("longitude", longitude);
-        return place;
     }
 
     public Integer getLimit() { return limit; }
