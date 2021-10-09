@@ -2,12 +2,11 @@ package com.tco.requests;
 
 import com.tco.misc.Place;
 import com.tco.misc.Places;
-import com.tco.misc.Distance;
 import com.tco.misc.Distances;
 
 import com.tco.misc.BadRequestException;
 
-public class DistanceRequest extends Request {
+public class DistancesRequest extends Request {
 
     private Places places; 
     private int earthRadius;
@@ -21,7 +20,7 @@ public class DistanceRequest extends Request {
     /* The following methods exist only for testing purposes and are not used
   during normal execution, including the constructor. */
     
-    public DistanceRequest() { 
+    public DistancesRequest() {
         this.requestType = "distances";
         this.earthRadius = -2;
         this.distances = new Distances();
