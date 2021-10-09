@@ -19,9 +19,18 @@ public class Distances {
         double latitude1 = coordinates.get("latitude1");
         double latitude2 = coordinates.get("latitude2");
         double longitudeDifference = Math.abs(coordinates.get("longitude1") - coordinates.get("longitude2"));
-        double a = Math.sqrt(Math.pow((Math.cos(latitude2) * Math.sin(longitudeDifference)), 2)
-                + Math.pow(((Math.sin(latitude1) * Math.sin(latitude2)) - (Math.sin(latitude1) * Math.cos(latitude2) * Math.cos(longitudeDifference))), 2));
-        double b = (Math.sin(latitude1) * Math.sin(latitude2)) + (Math.sin(latitude1) * Math.cos(latitude2) * Math.cos(longitudeDifference));
+        double cosineLatitude1 = Math.cos(Math.toRadians(latitude1));
+        double cosineLatitude2 = Math.cos(Math.toRadians(latitude2));
+        double sineLatitude1 = Math.sin(Math.toRadians(latitude1));
+        double sineLatitude2 = Math.sin(Math.toRadians(latitude2));
+        double cosineLongitudeDifference = Math.cos(Math.toRadians(longitudeDifference));
+        double sineLongitudeDifference = Math.sin(Math.toRadians(longitudeDifference));
+
+
+        double a = Math.sqrt(
+                Math.pow((cosineLatitude2 * sineLongitudeDifference), 2) + Math.pow((cosineLatitude1 * sineLatitude2 - sineLatitude1 * cosineLatitude2 * cosineLongitudeDifference), 2)
+        ) ;
+        double b = (sineLatitude1 * sineLatitude2) + (cosineLatitude1 * cosineLatitude2 * cosineLongitudeDifference);
         return Math.atan2(a, b);
     }
 
