@@ -15,9 +15,9 @@ public class DistancesRequest extends Request {
     private ArrayList<Integer> distances;
 
     @Override
-    public void buildResponse() throws BadRequestException {
-        Distances distanceList = new Distances(places, earthRadius);
-        distances = distanceList.computeDistances();
+    public void buildResponse() {
+        Distances distancesList = new Distances(places, earthRadius);
+        distances = distancesList.computeDistances();
     }
 
     /* The following methods exist only for testing purposes and are not used
@@ -25,7 +25,7 @@ public class DistancesRequest extends Request {
     
     public DistancesRequest() {
         this.requestType = "distances";
-        this.earthRadius = -2;
+        this.earthRadius = 0;
         this.distances = new ArrayList<>();
         this.places = new Places();
     }    

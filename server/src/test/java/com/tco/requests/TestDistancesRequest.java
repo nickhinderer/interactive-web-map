@@ -22,38 +22,30 @@ public class TestDistancesRequest {
     @BeforeEach
     public void createConfigurationForTestCases() {
         conf = new DistancesRequest();
-        try { // TODO: come back and handle better
-            conf.buildResponse();
-        } catch (BadRequestException e) {
-            log.error("buildResponse() failed!");
-        }
+        conf.buildResponse();
     }
 
     @Test
     @DisplayName("Request type is \"distances\"")
     public void testType() {
-        String type = conf.getRequestType();
-        assertEquals("distances", type);
+        assertEquals("distances", conf.getRequestType());
     }
     
     @Test
     @DisplayName("Places received")
     public void testPlaces() {
-        Places places = conf.getPlaces();
-        assertNotNull(places);
+        assertNotNull(conf.getPlaces());
     }
 
     @Test
     @DisplayName("Earth radius received")
     public void testEarthRadius(){
-        int earthRadius = conf.getEarthRadius(); //TODO: Maybe change units for radius
-        assertEquals(-2, earthRadius); 
+        assertEquals(0, conf.getEarthRadius());
     }
 
     @Test
     @DisplayName("Distances received")
     public void testDistances() {
-        ArrayList<Integer> distances = conf.getDistances();
-        assertNotNull(distances);
+        assertNotNull(conf.getDistances());
     }
 }
