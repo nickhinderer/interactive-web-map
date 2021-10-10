@@ -13,13 +13,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestDistanceRequest {    
-    private final transient Logger log = LoggerFactory.getLogger(TestConfigRequest.class);
-    private DistanceRequest conf;
+public class TestDistancesRequest {
+    private final transient Logger log = LoggerFactory.getLogger(TestDistancesRequest.class);
+    private DistancesRequest conf;
 
     @BeforeEach
     public void createConfigurationForTestCases() {
-        conf = new DistanceRequest();
+        conf = new DistancesRequest();
         try { // TODO: come back and handle better
             conf.buildResponse();
         } catch (BadRequestException e) {
