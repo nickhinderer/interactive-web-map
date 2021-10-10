@@ -10,7 +10,7 @@ export function useServerInputValidation(serverUrl, close) {
     const context = { serverInput, setServerInput, validServer, setValidServer, config, setConfig, inputUrl };
 
     const updateServerInput = (newUrl) => updateServerInputImpl(newUrl, context);
-    const resetModal = () => resetModalImpl(serverUrl, close, context);
+    const resetModal = (url) => resetModalImpl(url, close, context);
 
     useEffect(() => {
         updateServerInput(serverUrl);
