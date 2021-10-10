@@ -1,14 +1,14 @@
 package com.tco.requests;
 
 import java.util.ArrayList;
-
-import com.tco.misc.Place;
 import com.tco.misc.Places;
 import com.tco.misc.Distances;
-
-import com.tco.misc.BadRequestException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DistancesRequest extends Request {
+
+    private final transient Logger log = LoggerFactory.getLogger(DistancesRequest.class);
 
     private Places places; 
     private Integer earthRadius;
@@ -18,6 +18,7 @@ public class DistancesRequest extends Request {
     public void buildResponse() {
         Distances distancesList = new Distances(places, earthRadius);
         distances = distancesList.computeDistances();
+        log.trace("buildResponse -> {}", this);
     }
 
     /* The following methods exist only for testing purposes and are not used

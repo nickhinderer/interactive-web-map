@@ -1,9 +1,5 @@
 package com.tco.requests;
 
-import com.tco.misc.Places;
-import com.tco.misc.Distances;
-
-import com.tco.misc.BadRequestException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -11,12 +7,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestDistancesRequest {
-    private final transient Logger log = LoggerFactory.getLogger(TestDistancesRequest.class);
+
     private DistancesRequest conf;
 
     @BeforeEach
@@ -39,7 +33,7 @@ public class TestDistancesRequest {
 
     @Test
     @DisplayName("Earth radius received")
-    public void testEarthRadius(){
+    public void testEarthRadius() {
         assertEquals(0, conf.getEarthRadius());
     }
 

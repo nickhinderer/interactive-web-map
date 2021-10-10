@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestFindRequest {
+
     private final transient Logger log = LoggerFactory.getLogger(TestConfigRequest.class);
     private FindRequest conf;
 
