@@ -11,6 +11,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestDistancesRequest {
@@ -51,7 +53,7 @@ public class TestDistancesRequest {
     @Test
     @DisplayName("Distances received")
     public void testDistances() {
-        Distances distances = conf.getDistances();
+        ArrayList<Integer> distances = conf.getDistances();
         assertNotNull(distances);
     }
 }

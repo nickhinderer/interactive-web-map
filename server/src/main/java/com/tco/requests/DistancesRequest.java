@@ -1,5 +1,7 @@
 package com.tco.requests;
 
+import java.util.ArrayList;
+
 import com.tco.misc.Place;
 import com.tco.misc.Places;
 import com.tco.misc.Distances;
@@ -9,8 +11,8 @@ import com.tco.misc.BadRequestException;
 public class DistancesRequest extends Request {
 
     private Places places; 
-    private int earthRadius;
-    private Distances distances;
+    private Integer earthRadius;
+    private ArrayList<Integer> distances;
 
     @Override
     public void buildResponse() throws BadRequestException {
@@ -23,24 +25,18 @@ public class DistancesRequest extends Request {
     public DistancesRequest() {
         this.requestType = "distances";
         this.earthRadius = -2;
-        this.distances = new Distances();
+        this.distances = new ArrayList<>();
         this.places = new Places();
     }    
     
-    private Place samplePlace(String name, String latitude, String longitude) {
-        Place place = new Place();
-        place.put("name", name);
-        place.put("latitude", latitude);
-        place.put("longitude", longitude);
-        return place;
-    }
+
 
     public String getRequestType() { return requestType; }
 
     public Places getPlaces() { return places; }
     
-    public int getEarthRadius() { return earthRadius; }
+    public Integer getEarthRadius() { return earthRadius; }
 
-    public Distances getDistances() { return distances; }
+    public ArrayList<Integer> getDistances() { return distances; }
 
 }
