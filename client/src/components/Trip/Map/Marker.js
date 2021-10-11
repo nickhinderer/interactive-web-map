@@ -1,10 +1,10 @@
 import React from 'react';
 import { Marker as LeafletMarker, Popup } from 'react-leaflet';
 import { latLngToText } from '../../../utils/transformers';
-import icon from 'leaflet/dist/images/marker-icon.png';
+import markIcon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-const MARKER_ICON = L.icon({ iconUrl: icon, shadowUrl: iconShadow, iconAnchor: [12, 40] });
+const MARKER_ICON = L.icon({ iconUrl: markIcon, shadowUrl: iconShadow, iconAnchor: [12, 40] });
 
 export default function Marker(props) {
     function showMarkerPopup(ref) {
@@ -18,7 +18,7 @@ export default function Marker(props) {
     }
 
     return (
-        <LeafletMarker ref={(ref) => showMarkerPopup(ref)} position={props.place} icon={MARKER_ICON}>
+        <LeafletMarker ref={(ref) => showMarkerPopup(ref)} position={props.place} markIcon={MARKER_ICON}>
             <Popup offset={[0, -18]} className="font-weight-bold">
                 {props.place.name}
                 <br/>
