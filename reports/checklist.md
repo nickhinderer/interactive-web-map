@@ -38,3 +38,6 @@ The checklist will be updated as we identify new faults in our code that we wish
 ### Exception faults
 * Have all possible error conditions been considered?
 * Are error messages user-friendly?
+
+### Testing and Coverage
+* Are there some test cases, input, or edge cases that should be tested in addition?
