@@ -34,8 +34,8 @@ async function append(place, context) {
 
 async function moveToHome(context) {
     if (navigator.geolocation) {
-      await navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    }
+      navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    } // Prompt user to accept browser geolocation access
     
     function onSuccess({coords}) {
       const place = {latitude: coords.latitude, longitude: coords.longitude};
