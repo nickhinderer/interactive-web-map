@@ -1,23 +1,24 @@
 package com.tco.requests;
 
 import java.util.ArrayList;
-
-import com.tco.misc.Place;
 import com.tco.misc.Places;
 import com.tco.misc.Distances;
-
-import com.tco.misc.BadRequestException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DistancesRequest extends Request {
+
+    private final transient Logger log = LoggerFactory.getLogger(DistancesRequest.class);
 
     private Places places; 
     private Integer earthRadius;
     private ArrayList<Integer> distances;
 
     @Override
-    public void buildResponse() throws BadRequestException {
-        Distances distanceList = new Distances(places, earthRadius);
-        distances = distanceList.computeDistances();
+    public void buildResponse() {
+        Distances distancesList = new Distances(places, earthRadius);
+        distances = distancesList.computeDistances();
+        log.trace("buildResponse -> {}", this);
     }
 
     /* The following methods exist only for testing purposes and are not used
@@ -25,7 +26,7 @@ public class DistancesRequest extends Request {
     
     public DistancesRequest() {
         this.requestType = "distances";
-        this.earthRadius = -2;
+        this.earthRadius = 0;
         this.distances = new ArrayList<>();
         this.places = new Places();
     }    
