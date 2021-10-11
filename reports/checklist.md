@@ -41,3 +41,6 @@ The checklist will be updated as we identify new faults in our code that we wish
 
 ### Testing and Coverage
 * Are there some test cases, input, or edge cases that should be tested in addition?
+
+### User Interface and Accessibility
+* Does the UI accommodate for color blindness?
