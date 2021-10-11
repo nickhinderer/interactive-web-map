@@ -7,7 +7,7 @@ We first identify the code we wish to inspect, determine the time we wish to mee
 | ----- | ----- |
 | Subject | *file and methods/line range to review for meeting* |
 | Meeting | *date, time, location* |
-| Checklist | *reference, URL, etc.* |
+| Checklist | https://www.michaelagreiler.com/code-review-checklist-2/ |
 
 ### Roles
 
