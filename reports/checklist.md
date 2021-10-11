@@ -44,3 +44,6 @@ The checklist will be updated as we identify new faults in our code that we wish
 
 ### User Interface and Accessibility
 * Does the UI accommodate for color blindness?
+
+### Implementation faults
+* Does similar functionality already exist in the codebase? If so, why isn’t this functionality reused?
