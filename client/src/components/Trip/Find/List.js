@@ -12,9 +12,15 @@ export default function display(props) {
         
         const serverUrl = getOriginalServerUrl();
         const findResponse = await sendAPIRequest({ requestType: "find", match:props.match, limit: 10 }, serverUrl);
-        setPlaces(findResponse.places);
-        console.log(findResponse);
-        
+        if(findResponse) {   
+            setPlaces(findResponse.places);
+            console.log(findResponse);
+        }
+        else {
+            setPlaces(null);
+            showMessage('Find Request failed with' + findResponse + '.', "error");
+        }
+
       },[])
 
       useEffect(() => {
