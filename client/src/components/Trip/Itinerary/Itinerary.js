@@ -34,7 +34,7 @@ function Header(props) {
         //this is for test;
         console.log(data);
         const serverUrl = getOriginalServerUrl();
-        const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 3959 }, serverUrl);
+        const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 6371 }, serverUrl);
         if (distancesResponse!=null) {
             distancesResponse.distances.length==0? alert("Require at least two place to calculate distances.") :setDistances(distancesResponse.distances); 
             
