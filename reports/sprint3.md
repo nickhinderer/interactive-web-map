@@ -72,8 +72,8 @@ And new class to handleadd this trip to the correct place. This task will split 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
 | Epics | *5* |  |
-| Tasks |  *56*   |  | 
-| Story Points |  *65*  |  | 
+| Tasks |  *75*   |  | 
+| Story Points |  *81*  |  | 
 
 Based on our team's previous performance, it would be achievable to finish at least 4 epics. From what we left last, we can finish the "Find My place" pretty soon, which is 
 already done mostly on the starting date of this sprint. And "Interoperability" already done most part on the starting date of sprint3 also. What we left will be "Where I am"
