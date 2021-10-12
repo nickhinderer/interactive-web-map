@@ -56,7 +56,7 @@ function Header(props) {
 function Body(props) {
     const [displayConfig,setConfig] = useState("Config");
     const [displayFind,setFind] = useState("Find");
-    const [displayDistances,setDistances] = useState("");
+    const [displayDistances,setDistances] = useState("Distances");
 
 
 
@@ -94,7 +94,7 @@ function Body(props) {
             <Container>
                 <SettingsRow label="Name" value={props.serverName} />
                 <SettingsRow label="URL"  value={urlInput} />
-                <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange} onClick={()=>checkConfig()}/>} />
+                <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange}  onClick={()=>checkConfig()}/>} />
                 <SettingsRow label="Available Feature"  value={<div>"{ displayConfig}"    "{displayFind}"    "{displayDistances}"</div>} />
 
             </Container>
