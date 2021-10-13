@@ -7,9 +7,9 @@ import java.lang.Math;
 public class Distances {
     private Places places;
     private ArrayList<Integer> distances;
-    private Integer earthRadius;
+    private Double earthRadius;
 
-    public Distances(Places places, Integer earthRadius) { //no default constructor.
+    public Distances(Places places, Double earthRadius) { //no default constructor.
         this.places = places;
         this.earthRadius = earthRadius;
         this.distances = new ArrayList<>();
@@ -60,15 +60,15 @@ public class Distances {
         places.add(place);
         places.add(place);
 
-        this.earthRadius = 0;
+        this.earthRadius = 0.0;
         this.places = places;
         this.distances = new ArrayList<>();
     }
 
-    public Places getPlaces() { return this.places; }
+    public Places getPlaces() { return places; }
 
-    public Integer getEarthRadius() { return this.earthRadius; }
+    public Double getEarthRadius() { return earthRadius; }
 
-    public ArrayList<Integer> getDistances() { return this.distances; }
+    public ArrayList<Integer> getDistances() { return distances; }
 
 }
