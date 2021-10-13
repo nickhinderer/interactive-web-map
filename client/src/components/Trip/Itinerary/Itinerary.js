@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Table, Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
+import { Table, Button,Alert} from 'reactstrap';
 import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
@@ -29,6 +29,7 @@ export default function Itinerary(props) {
 
 function Header(props) {
     const [distances, setDistances] = useState([]);
+    const [err,setERR] = useState([false]);
 
     const sendDistancesRequest = useCallback(async (data) => {
         //this is for test;
@@ -36,7 +37,7 @@ function Header(props) {
         const serverUrl = getOriginalServerUrl();
         const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 6371 }, serverUrl);
         if (distancesResponse!=null) {
-            distancesResponse.distances.length==0? alert("Require at least two place to calculate distances.") :setDistances(distancesResponse.distances); 
+            distancesResponse.distances.length==0? setERR(true):setERR(false),setDistances(distancesResponse.distances); 
             
         }
         //this is for test purpose;
@@ -54,9 +55,10 @@ function Header(props) {
             <tr>
                 <th />
                 <th>My Trip {'  '}
-                    <Button size="sm" onClick={()=>sendDistancesRequest(props.trips) }>
+                    <Button id="Popover1" type="button" size="sm" onClick={()=>sendDistancesRequest(props.trips) }>
                         Find Distances
                     </Button>
+                    {err? <Alert color="primary"> Choose at least two places to calculate distances.</Alert>:<div></div>}
                 </th>
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
