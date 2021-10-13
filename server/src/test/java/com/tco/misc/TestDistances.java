@@ -12,9 +12,11 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class TestDistances {
 
+    private Distances conf;
+
     @BeforeEach
     public void createConfigurationForTestCases() {
-        Distances conf = new Distances(new Places(), 0);
+        conf = new Distances();
         conf.computeDistances();
     }
 }
