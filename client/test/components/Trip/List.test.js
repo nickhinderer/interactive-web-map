@@ -5,20 +5,18 @@ import { beforeEach, describe, expect, it, test } from '@jest/globals';
 import List from '../../../src/components/Trip/Find/List';
 
 describe('List', () =>{
-   const processServerDistancesSuccess = jest.fn()
-   processServerDistancesSuccess=>Promise.resolve({data:null});
+   
     beforeEach(() =>{
         render(<List/>)
     });
+
+    //still need a fake request to test line 16-25
 
     it('renders an Add button', async ()=> {
         expect(screen.findByRole('button', { name: /Add/i })).toBeDefined();
         
     });
 
-    //it('contains a Add button image', () =>{
-        //expect(screen.getByRole('img', { name: /add/i })).toBeDefined();
-    //});
 
     it('contain expected information', async ()=> {
         screen.findByText(/Name:/i);
