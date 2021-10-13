@@ -24,18 +24,12 @@ public class FindRequest extends Request {
             this.places.add(place);
             found = 0;
         } else {
-            validateInput();
             found = queryFound(match);
             places = queryMatch(match, limit);
         }
         log.trace("buildResponse -> {}", this);
     }
 
-    private void validateInput() throws BadRequestException {
-        if (this.limit < 0 || this.match == null) {
-            throw new BadRequestException();
-        }
-    }
 
     private Integer queryFound(String match) throws BadRequestException {
         Query query = new Query(match, -1);
