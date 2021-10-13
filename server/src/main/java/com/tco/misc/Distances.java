@@ -50,4 +50,9 @@ public class Distances {
         }
         return distances;
     }
+
+    /* The following methods exist only for testing purposes and are not used
+  during normal execution */
+
+    public Places getPlaces() { return this.places; }
 }
