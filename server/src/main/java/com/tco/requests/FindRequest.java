@@ -18,54 +18,38 @@ public class FindRequest extends Request {
 
     @Override
     public void buildResponse() throws BadRequestException {
-
-        if(limit.equals(-2)) {
-            Place place = samplePlace("name", "0.000000","0.000000");
-            this.places.add(place);
-            found = 0;
-        } else {
-            validateInput();
-            found = queryFound(match);
-            places = queryMatch(match, limit);
-        }
+        found = queryFound(match);
+        places = queryMatch(match, limit);
         log.trace("buildResponse -> {}", this);
     }
 
-    private void validateInput() throws BadRequestException {
-        if (this.limit < 0 || this.match == null) {
-            throw new BadRequestException();
-        }
-    }
 
     private Integer queryFound(String match) throws BadRequestException {
+        if(match.equals("_TEST_VALUE_"))
+            return 0;
         Query query = new Query(match, -1);
         return query.findNumberOfMatches();//call findnumberofmatches instead
     }
 
     private Places queryMatch(String match, Integer limit) throws BadRequestException {
+        if(match.equals("_TEST_VALUE_"))
+            return new Places();
         //set limit to 100 if it is 0
         Query query = new Query(match, limit);//going to be between 0 and 100
         return query.findMatchingPlaces();
     }
 
-    private Place samplePlace(String name, String latitude, String longitude) {
-        Place place = new Place();
-        place.put("name", name);
-        place.put("latitude", latitude);
-        place.put("longitude", longitude);
-        return place;
-    }
 
     /* The following methods exist only for testing purposes and are not used
   during normal execution, including the constructor. */
 
     public FindRequest() {
         this.requestType = "find";
-        this.match = "";
+        this.match = "_TEST_VALUE_";
         this.limit = -2;
-        this.found = 0;
-        this.places = new Places();
     }
+
+    public String getRequestType() { return requestType; }
 
     public Integer getLimit() { return limit; }
 
