@@ -57,9 +57,6 @@ function Header(props) {
                     <Button size="sm" onClick={()=>sendDistancesRequest(props.trips) }>
                         Find Distances
                     </Button>
-
-
-
                 </th>
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
