@@ -18,24 +18,22 @@ public class FindRequest extends Request {
 
     @Override
     public void buildResponse() throws BadRequestException {
-
-        if(limit.equals(-2)) {
-
-            found = 0;
-        } else {
-            found = queryFound(match);
-            places = queryMatch(match, limit);
-        }
+        found = queryFound(match);
+        places = queryMatch(match, limit);
         log.trace("buildResponse -> {}", this);
     }
 
 
     private Integer queryFound(String match) throws BadRequestException {
+        if(match.equals("_TEST_VALUE_"))
+            return 0;
         Query query = new Query(match, -1);
         return query.findNumberOfMatches();//call findnumberofmatches instead
     }
 
     private Places queryMatch(String match, Integer limit) throws BadRequestException {
+        if(match.equals("_TEST_VALUE_"))
+            return new Places();
         //set limit to 100 if it is 0
         Query query = new Query(match, limit);//going to be between 0 and 100
         return query.findMatchingPlaces();
@@ -47,7 +45,7 @@ public class FindRequest extends Request {
 
     public FindRequest() {
         this.requestType = "find";
-        this.match = "";
+        this.match = "_TEST_VALUE_";
         this.limit = -2;
     }
 
