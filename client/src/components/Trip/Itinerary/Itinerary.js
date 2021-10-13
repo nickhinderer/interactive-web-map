@@ -53,10 +53,8 @@ function Header(props) {
         <thead>
             <tr>
                 <th />
-                <th>My Trip
-                </th>
-                <th>
-                    <Button onClick={()=>sendDistancesRequest(props.trips)}>
+                <th>My Trip {'  '}
+                    <Button size="sm" onClick={()=>sendDistancesRequest(props.trips) }>
                         Find Distances
                     </Button>
                 </th>
