@@ -11,7 +11,7 @@ public class DistancesRequest extends Request {
     private final transient Logger log = LoggerFactory.getLogger(DistancesRequest.class);
 
     private Places places; 
-    private Integer earthRadius;
+    private Double earthRadius;
     private ArrayList<Integer> distances;
 
     @Override
@@ -26,7 +26,7 @@ public class DistancesRequest extends Request {
     
     public DistancesRequest() {
         this.requestType = "distances";
-        this.earthRadius = 0;
+        this.earthRadius = 0.0;
         this.distances = new ArrayList<>();
         this.places = new Places();
     }    
@@ -37,7 +37,7 @@ public class DistancesRequest extends Request {
 
     public Places getPlaces() { return places; }
     
-    public Integer getEarthRadius() { return earthRadius; }
+    public Double getEarthRadius() { return earthRadius; }
 
     public ArrayList<Integer> getDistances() { return distances; }
 

@@ -7,9 +7,9 @@ import java.lang.Math;
 public class Distances {
     private Places places;
     private ArrayList<Integer> distances;
-    private Integer earthRadius;
+    private Double earthRadius;
 
-    public Distances(Places places, Integer earthRadius) { //no default constructor.
+    public Distances(Places places, Double earthRadius) { //no default constructor.
         this.places = places;
         this.earthRadius = earthRadius;
         this.distances = new ArrayList<>();
@@ -36,17 +36,15 @@ public class Distances {
 
     public ArrayList<Integer> computeDistances() {
         int n = this.places.size();
-        for(int i = 1; i < n; i++) { //outer loop to measure difference in index of the two points you're comparing
-            for(int j = 0; j+i < n; j++) { //inner loop to compare each pair of points starting at a distance of 1 between each point, outer loop then increments until the first and last element are compared
-                HashMap<String, Double> coordinates= new HashMap<>();
-                coordinates.put("latitude1", Double.valueOf(places.get(j).get("latitude")));
-                coordinates.put("latitude2", Double.valueOf(places.get(j+i).get("latitude")));
-                coordinates.put("longitude1", Double.valueOf(places.get(j).get("longitude")));
-                coordinates.put("longitude2", Double.valueOf(places.get(j+i).get("longitude")));
-                double centralAngle = computeCentralAngle(coordinates);
-                Double distance = earthRadius * centralAngle;
-                distances.add(distance.intValue());
-            }
+        for(int i = 1; i < n; i++) {
+            HashMap<String, Double> coordinates= new HashMap<>();
+            coordinates.put("latitude1", Double.valueOf(places.get(0).get("latitude")));
+            coordinates.put("latitude2", Double.valueOf(places.get(i).get("latitude")));
+            coordinates.put("longitude1", Double.valueOf(places.get(0).get("longitude")));
+            coordinates.put("longitude2", Double.valueOf(places.get(i).get("longitude")));
+            double centralAngle = computeCentralAngle(coordinates);
+            Double distance = earthRadius * centralAngle;
+            distances.add(distance.intValue());
         }
         return distances;
     }
@@ -62,15 +60,15 @@ public class Distances {
         places.add(place);
         places.add(place);
 
-        this.earthRadius = 0;
+        this.earthRadius = 0.0;
         this.places = places;
         this.distances = new ArrayList<>();
     }
 
-    public Places getPlaces() { return this.places; }
+    public Places getPlaces() { return places; }
 
-    public Integer getEarthRadius() { return this.earthRadius; }
+    public Double getEarthRadius() { return earthRadius; }
 
-    public ArrayList<Integer> getDistances() { return this.distances; }
+    public ArrayList<Integer> getDistances() { return distances; }
 
 }
