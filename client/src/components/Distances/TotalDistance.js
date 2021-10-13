@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Table } from 'reactstrap';
-import distances from "../../../../server/src/main/java/com/tco/misc/Distances.java"
+//import Distances from "../../../../server/src/main/java/com/tco/misc/Distances.java"
 
 export default function TotalDistance(props){
-    <Table>
-        <Row></Row>
-    </Table>
+    return(
+        <Table>
+            <Row></Row>
+        </Table>
+    );
 }
 
 function Sum(props){
