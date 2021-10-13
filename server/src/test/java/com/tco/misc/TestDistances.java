@@ -26,13 +26,13 @@ public class TestDistances {
     }
 
     @Test
-    @DisplayName("Places is correct")
+    @DisplayName("earthRadius is correct")
     public void testEarthRadius() {
         assertEquals(0, conf.getEarthRadius());
     }
 
     @Test
-    @DisplayName("Places is correct")
+    @DisplayName("Distances is correct")
     public void testDistances() {
         assertNotNull(conf.getDistances());
         assertEquals(1, conf.getDistances().size());
