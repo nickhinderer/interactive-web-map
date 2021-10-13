@@ -54,7 +54,17 @@ public class Distances {
     /* The following methods exist only for testing purposes and are not used
   during normal execution */
     public Distances() {
+        Place place = new Place();
+        Places places = new Places();
 
+        place.put("latitude", "0.0");
+        place.put("longitude", "0.0");
+        places.add(place);
+        places.add(place);
+
+        this.earthRadius = 0;
+        this.places = places;
+        this.distances = new ArrayList<>();
     }
 
     public Places getPlaces() { return this.places; }
