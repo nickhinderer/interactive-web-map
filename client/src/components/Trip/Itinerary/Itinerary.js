@@ -30,6 +30,7 @@ export default function Itinerary(props) {
 function Header(props) {
     const [distances, setDistances] = useState([]);
     const [err,setERR] = useState([false]);
+    
 
     const sendDistancesRequest = useCallback(async (data) => {
         //this is for test;
@@ -45,6 +46,12 @@ function Header(props) {
 
     }, [])
 
+    function getSum(){
+        let SUM = 0;
+        distances.map((distance)=>SUM+=distance);
+        return SUM;
+    }
+
     useEffect(() => {
         sendDistancesRequest()
     }, [sendDistancesRequest])
@@ -58,7 +65,7 @@ function Header(props) {
                     <Button id="Popover1" type="button" size="sm" onClick={()=>sendDistancesRequest(props.trips) }>
                         Find Distances
                     </Button>
-                    {err? <Alert color="primary"> Choose at least two places to calculate distances.</Alert>:<div></div>}
+                    {err? <Alert color="primary"> Choose at least two places to calculate distances.</Alert>:<Alert><b>Your total Distance :</b>{getSum()} miles</Alert>}
                 </th>
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
