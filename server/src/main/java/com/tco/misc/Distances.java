@@ -58,4 +58,6 @@ public class Distances {
 
     public Integer getEarthRadius() { return this.earthRadius; }
 
+    public ArrayList<Integer> getDistances() { return this.distances; }
+
 }
