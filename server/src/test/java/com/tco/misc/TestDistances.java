@@ -25,5 +25,12 @@ public class TestDistances {
         assertNotNull(conf.getPlaces());
     }
 
+    @Test
+    @DisplayName("Places is correct")
+    public void testEarthRadius() {
+        assertEquals(0, conf.getEarthRadius());
+    }
+
+    
 
 }
