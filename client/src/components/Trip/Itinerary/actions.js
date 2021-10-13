@@ -13,6 +13,7 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => props.placeActions.removeAll()} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
+            <Button> Load File </Button>
         </ActionsDropdown>
     );
 }
