@@ -55,4 +55,7 @@ public class Distances {
   during normal execution */
 
     public Places getPlaces() { return this.places; }
+
+    public Integer getEarthRadius() { return this.earthRadius; }
+
 }
