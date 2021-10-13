@@ -54,12 +54,11 @@ function Header(props) {
             <tr>
                 <th />
                 <th>My Trip
-                    <Button onClick={()=>sendDistancesRequest(props.trips) }>
+                </th>
+                <th>
+                    <Button onClick={()=>sendDistancesRequest(props.trips)}>
                         Find Distances
                     </Button>
-
-
-
                 </th>
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
