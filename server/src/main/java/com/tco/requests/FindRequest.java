@@ -20,8 +20,7 @@ public class FindRequest extends Request {
     public void buildResponse() throws BadRequestException {
 
         if(limit.equals(-2)) {
-            Place place = samplePlace("name", "0.000000","0.000000");
-            this.places.add(place);
+
             found = 0;
         } else {
             found = queryFound(match);
@@ -42,13 +41,6 @@ public class FindRequest extends Request {
         return query.findMatchingPlaces();
     }
 
-    private Place samplePlace(String name, String latitude, String longitude) {
-        Place place = new Place();
-        place.put("name", name);
-        place.put("latitude", latitude);
-        place.put("longitude", longitude);
-        return place;
-    }
 
     /* The following methods exist only for testing purposes and are not used
   during normal execution, including the constructor. */
