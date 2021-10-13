@@ -57,9 +57,9 @@ public class FindRequest extends Request {
         this.requestType = "find";
         this.match = "";
         this.limit = -2;
-        this.found = 0;
-        this.places = new Places();
     }
+
+    public String getRequestType() { return requestType; }
 
     public Integer getLimit() { return limit; }
 
