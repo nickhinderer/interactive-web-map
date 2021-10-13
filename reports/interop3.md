@@ -10,8 +10,9 @@ We will discuss these issues with the other team and create defects in GitHub fo
 This table lists each student in the team, the team they verified interoperability with, and the time to complete the testing.
 
 | Name | Team | Time |
-| Kaiyan | ---- | ---- |
-|  |  |  |
+| ---- | ---- | ---- |
+| Kaiyan | | |
+|  |  | |
 
 
 ### Client Problems found
