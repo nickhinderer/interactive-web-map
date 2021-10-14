@@ -54,9 +54,15 @@ function Header(props) {
 }
 
 function Body(props) {
-    const [displayConfig,setConfig] = useState("Config");
-    const [displayFind,setFind] = useState("Find");
-    const [displayDistances,setDistances] = useState("Distances");
+    const [displayConfig,setConfig] = useState('"Config"');
+    const [displayFind,setFind] = useState('"Find"');
+    const [displayDistances,setDistances] = useState('"Distances"');
+    const [displayTour,setTour] = useState('"Tour"');
+    const [displayType,setType] = useState('"Type"');
+    const [displayWhere,setWhere] = useState('"Where"');
+    const [displayUnits,setUnits] = useState('"Units"');
+    const [displayTitle,setTitle] = useState('"Title"');
+ 
 
 
 
@@ -70,32 +76,39 @@ function Body(props) {
             invalid={!props.validServer}
         />;
 
-        const sendFindRequest = useCallback(async(newURL) => {
+        const sendRequest = useCallback(async(newURL) => {
         
-            const findResponse = await sendAPIRequest({ requestType: "find", match:"abc", limit:100 }, newURL);
-            findResponse? setFind("Find"):setFind("");
             const configResponse = await sendAPIRequest({ requestType: "config"}, newURL);
-            configResponse? setConfig("Config"):setConfig("");
-            const distancesResponse = await sendAPIRequest({ requestType: "distances",places: [{"name":"place1", "latitude":  "40.6",  "longitude": "-105.1"},{"name": "place2", "latitude":  "-33.9", "longitude": "151.2"},{"name": "place3", "latitude":  "-57.9", "longitude": "175.2"}], earthRadius   : 6371.0}, newURL);
-            console.log(distancesResponse);
-            distancesResponse? setDistances("Distances"):setDistances("");
+            var features= configResponse.features;
+            console.log(features);
+           
+            features[0]? setConfig('"Config"'):setConfig("");
+            features[1]? setFind('"Find"'):setFind("");
+            features[2]? setDistances('"Distances"'):setDistances("");
+            features[3]? setTour('"Tour"'):setDistances("");
+           /* uncommon it when more features avaialbe on other server;
+            features[4]? setType('"Type"'):setDistances("");
+            features[5]? setWhere('"Where"'):setDistances("");
+            features[6]? setUnits('"Units"'):setDistances("");
+            features[7]? setTitle('"Title"'):setDistances("");*/
+            
           },[])
-    
+   
           
     function handleChange(newURL){ 
         props.setServerInput(newURL);
-        sendFindRequest(newURL);
+        sendRequest(newURL);
             
     }
 
         
     return (
-        <ModalBody>
-            <Container>
+        <ModalBody >
+            <Container >
                 <SettingsRow label="Name" value={props.serverName} />
                 <SettingsRow label="URL"  value={urlInput} />
-                <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange}  onClick={()=>checkConfig()}/>} />
-                <SettingsRow label="Available Feature"  value={<div>"{ displayConfig}"    "{displayFind}"    "{displayDistances}"</div>} />
+                <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange} />} />
+                <SettingsRow label="Available Feature"   value={<div>{displayConfig} {displayFind} {displayDistances}</div>} />
 
             </Container>
         </ModalBody>
