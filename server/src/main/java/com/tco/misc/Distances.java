@@ -36,12 +36,17 @@ public class Distances {
 
     public ArrayList<Integer> computeDistances() {
         int n = this.places.size();
-        for(int i = 1; i < n; i++) {
+        int other;
+        for(int i = 0; i < n; i++) {
+            if(i == n-1)
+                other = 0;
+            else
+                other = i+1;
             HashMap<String, Double> coordinates= new HashMap<>();
-            coordinates.put("latitude1", Double.valueOf(places.get(0).get("latitude")));
-            coordinates.put("latitude2", Double.valueOf(places.get(i).get("latitude")));
-            coordinates.put("longitude1", Double.valueOf(places.get(0).get("longitude")));
-            coordinates.put("longitude2", Double.valueOf(places.get(i).get("longitude")));
+            coordinates.put("latitude1", Double.valueOf(places.get(i).get("latitude")));
+            coordinates.put("latitude2", Double.valueOf(places.get(other).get("latitude")));
+            coordinates.put("longitude1", Double.valueOf(places.get(i).get("longitude")));
+            coordinates.put("longitude2", Double.valueOf(places.get(other).get("longitude")));
             double centralAngle = computeCentralAngle(coordinates);
             Double distance = earthRadius * centralAngle;
             distances.add(distance.intValue());

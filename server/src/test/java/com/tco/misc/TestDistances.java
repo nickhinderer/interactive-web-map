@@ -35,7 +35,7 @@ public class TestDistances {
     @DisplayName("Distances is correct")
     public void testDistances() {
         assertNotNull(conf.getDistances());
-        assertEquals(1, conf.getDistances().size());
+        assertEquals(2, conf.getDistances().size());
         assertEquals(0, conf.getDistances().get(0));
     }
 
