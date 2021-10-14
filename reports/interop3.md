@@ -24,7 +24,7 @@ This table lists each student in the team, the team they verified interoperabili
 We found these problems when connecting our client to another team's server.
 
 | team | problem | github# |
-| :--- |  :--- | --- |
+| 08 |  Find feature not fully functional; find request could not be made; incorrect find response in the body of search modal; distances not supported | --- |
 | 1 | None Found | |
 |  |  |  |
 
