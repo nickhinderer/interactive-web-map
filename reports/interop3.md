@@ -11,7 +11,7 @@ This table lists each student in the team, the team they verified interoperabili
 
 | Name | Team | Time |
 | ---- | ---- | ---- |
-| Kaiyan | ---- | ---- |
+| Kaiyan | 13 | 15 min |
 | Abby | 12 | 15 min. |
 | Nick | ---- | ---- |
 | Mallory | ---- | ---- |
@@ -24,9 +24,10 @@ This table lists each student in the team, the team they verified interoperabili
 We found these problems when connecting our client to another team's server.
 
 | team | problem | github# |
+| ---- | ---- | ---- |
 | 12 | Config request was not supported; could not connect to team 12's server to test find or distance features  | |
 | 1 | None Found | |
-|  |  |  |
+| 13| Non Found | kaiyanzzz |
 
 
 ### Server Problems found
@@ -34,6 +35,7 @@ We found these problems when connecting our client to another team's server.
 We found these problems when connecting the other team's client to our server.
 
 | team |  problem | github# |
+| ---- | ---- | ---- |
 | 12 | Config request to localhost:31412 failed; could not connect team 12's client to our server; unsupported config request for testing | |
 | 1 | None Found | |
-|  |  |  |
+| 13 | Config features to localhost:31413 failed with invalid json response | kaiyanzzz |
