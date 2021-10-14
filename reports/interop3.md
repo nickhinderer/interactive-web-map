@@ -34,6 +34,6 @@ We found these problems when connecting our client to another team's server.
 We found these problems when connecting the other team's client to our server.
 
 | team |  problem | github# |
-| :--- |  :--- | --- |
+| 08 |  Team 08's client could not send a find response or receive back a request; same for distances | --- |
 | 1 | None Found | |
 |  |  |  |
