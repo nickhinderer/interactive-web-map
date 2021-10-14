@@ -5,7 +5,7 @@ We first identify the code we wish to inspect, determine the time we wish to mee
 
 |  | Details |
 | ----- | ----- |
-| Subject | *file and methods/line range to review for meeting* |
+| Subject | Database.java, Query.java, FindRequest.java |
 | Meeting | *October 14, 2021, 5:00PM, Morgan Library: Study Room 29A* |
 | Checklist | https://www.michaelagreiler.com/code-review-checklist-2/ |
 
