@@ -15,7 +15,7 @@ This table lists each student in the team, the team they verified interoperabili
 | Abby | ---- | ---- |
 | Nick | ---- | ---- |
 | Mallory | ---- | ---- |
-| Jacki | ---- | ---- |
+| Jacki | 1 | 30 min. |
 |  |  | |
 
 
@@ -25,6 +25,7 @@ We found these problems when connecting our client to another team's server.
 
 | team | problem | github# |
 | :--- |  :--- | --- |
+| 1 | None Found | |
 |  |  |  |
 
 
@@ -34,4 +35,5 @@ We found these problems when connecting the other team's client to our server.
 
 | team |  problem | github# |
 | :--- |  :--- | --- |
+| 1 | None Found | |
 |  |  |  |
