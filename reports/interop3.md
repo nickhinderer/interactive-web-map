@@ -12,7 +12,7 @@ This table lists each student in the team, the team they verified interoperabili
 | Name | Team | Time |
 | ---- | ---- | ---- |
 | Kaiyan | ---- | ---- |
-| Abby | ---- | ---- |
+| Abby | 08 | 21 min. |
 | Nick | ---- | ---- |
 | Mallory | ---- | ---- |
 | Jacki | 1 | 30 min. |
@@ -24,7 +24,7 @@ This table lists each student in the team, the team they verified interoperabili
 We found these problems when connecting our client to another team's server.
 
 | team | problem | github# |
-| :--- |  :--- | --- |
+| 08 |  Find feature not fully functional; find request could not be made; incorrect find response in the body of search modal; distances not supported | --- |
 | 1 | None Found | |
 |  |  |  |
 
@@ -34,6 +34,6 @@ We found these problems when connecting our client to another team's server.
 We found these problems when connecting the other team's client to our server.
 
 | team |  problem | github# |
-| :--- |  :--- | --- |
+| 08 |  Team 08's client could not send a find response or receive back a request; same for distances | --- |
 | 1 | None Found | |
 |  |  |  |
