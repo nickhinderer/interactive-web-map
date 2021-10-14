@@ -12,7 +12,7 @@ This table lists each student in the team, the team they verified interoperabili
 | Name | Team | Time |
 | ---- | ---- | ---- |
 | Kaiyan | ---- | ---- |
-| Abby | ---- | ---- |
+| Abby | 08 | 21 min. |
 | Nick | ---- | ---- |
 | Mallory | ---- | ---- |
 | Jacki | 1 | 30 min. |
