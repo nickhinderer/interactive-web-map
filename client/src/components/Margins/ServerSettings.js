@@ -85,8 +85,8 @@ function Body(props) {
             features[0]? setConfig('"Config"'):setConfig("");
             features[1]? setFind('"Find"'):setFind("");
             features[2]? setDistances('"Distances"'):setDistances("");
+            /*uncommon it when more features avaialbe on other server;
             features[3]? setTour('"Tour"'):setDistances("");
-           /* uncommon it when more features avaialbe on other server;
             features[4]? setType('"Type"'):setDistances("");
             features[5]? setWhere('"Where"'):setDistances("");
             features[6]? setUnits('"Units"'):setDistances("");
