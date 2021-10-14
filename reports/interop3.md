@@ -25,7 +25,7 @@ We found these problems when connecting our client to another team's server.
 
 | team | problem | github# |
 | ---- | ---- | ---- |
-| 12 | Config request was not supported; could not connect to team 12's server to test find or distance features  | |
+| 12 | Config request was not supported; could not connect to team 12's server to test find or distance features; unable to hit "Save" button | |
 | 1 | None Found | |
 | 13| Non Found | kaiyanzzz |
 
@@ -36,6 +36,6 @@ We found these problems when connecting the other team's client to our server.
 
 | team |  problem | github# |
 | ---- | ---- | ---- |
-| 12 | Config request to localhost:31412 failed; could not connect team 12's client to our server; unsupported config request for testing | |
+| 12 | Config request to localhost:31412 failed; Once connected to our server at localhost: 31404, config requests were successful | |
 | 1 | None Found | |
 | 13 | Config features to localhost:31413 failed with invalid json response | kaiyanzzz |
