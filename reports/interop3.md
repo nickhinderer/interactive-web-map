@@ -11,10 +11,10 @@ This table lists each student in the team, the team they verified interoperabili
 
 | Name | Team | Time |
 | ---- | ---- | ---- |
-| Kaiyan | ---- | ---- |
+| Kaiyan | 13 | 15 min |
 | Abby | 12 | 15 min. |
 | Nick | ---- | ---- |
-| Mallory | ---- | ---- |
+| Mallory | 22 | 15 min |
 | Jacki | 1 | 30 min. |
 |  |  | |
 
@@ -24,9 +24,11 @@ This table lists each student in the team, the team they verified interoperabili
 We found these problems when connecting our client to another team's server.
 
 | team | problem | github# |
-| 12 | Config request was not supported; could not connect to team 12's server to test find or distance features  | #444 |
+| ---- | ---- | ---- |
+| 12 | Config request was not supported; could not connect to team 12's server to test find or distance features; unable to hit "Save" button | #444, #421 |
 | 1 | None Found | |
-|  |  |  |
+| 13| None Found | #433, #443 |
+| 22 | None Found | |
 
 
 ### Server Problems found
@@ -34,6 +36,8 @@ We found these problems when connecting our client to another team's server.
 We found these problems when connecting the other team's client to our server.
 
 | team |  problem | github# |
-| 12 | Config request to localhost:31412 failed; could not connect team 12's client to our server; unsupported config request for testing | #455 |
+| ---- | ---- | ---- |
+| 12 | Config request to localhost:31412 failed; Once connected to our server at localhost: 31404, config requests were successful | #455, #428, #435 |
 | 1 | None Found | |
-|  |  |  |
+| 13 | Config features to localhost:31413 failed with invalid json response | kaiyanzzz |
+| 22 | None Found | |
