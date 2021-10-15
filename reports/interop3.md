@@ -13,7 +13,7 @@ This table lists each student in the team, the team they verified interoperabili
 | ---- | ---- | ---- |
 | Kaiyan | 13 | 15 min |
 | Abby | 12 | 15 min. |
-| Nick | ---- | ---- |
+| Nick | 23 | 15 min |
 | Mallory | 22 | 15 min |
 | Jacki | 1 | 15 min |
 |  |  | |
@@ -29,6 +29,7 @@ We found these problems when connecting our client to another team's server.
 | 1 | Distance request returns 404 Error instead of 400 | |
 | 13| None Found | #433, #443 |
 | 22 | None Found | |
+| 23 | No problems found |
 
 
 ### Server Problems found
@@ -41,3 +42,4 @@ We found these problems when connecting the other team's client to our server.
 | 1 | None Found | |
 | 13 | Config features to localhost:31413 failed with invalid json response | kaiyanzzz |
 | 22 | None Found | |
+| 23 | No problems found  | |
