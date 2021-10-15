@@ -27,7 +27,7 @@ We found these problems when connecting our client to another team's server.
 | ---- | ---- | ---- |
 | 12 | Config request was not supported; could not connect to team 12's server to test find or distance features; unable to hit "Save" button | |
 | 1 | None Found | |
-| 13| Non Found | kaiyanzzz |
+| 13| None Found | #433, #443 |
 | 22 | None Found | |
 
 
