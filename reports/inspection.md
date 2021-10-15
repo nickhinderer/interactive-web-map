@@ -18,6 +18,7 @@ We note the amount of time each person spent reviewing the code in preparation f
 | Kaiyan | 30 min |
 | Abby | 45 min |
 | Jacki | 45 min |
+| Mallory | 40 min |
 
 
 ### Problems found
@@ -30,3 +31,4 @@ We add a GitHub issue for each defect that requires a modification to the system
 | Query.java:30 | ambiguous parameter| low | Kaiyan | #446 |
 | Query.java:11,17,24,29 | Add Query Tests | med | Abby | #442 |
 | Query.java:29-68 | Split into multiple functions | low | Jacki | #448 |
+| Database.java:29, 45, 57 | Add Database tests | med | Mallory | #447 |
