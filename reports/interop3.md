@@ -27,7 +27,7 @@ We found these problems when connecting our client to another team's server.
 | ---- | ---- | ---- |
 | 12 | Config request was not supported; could not connect to team 12's server to test find or distance features; unable to hit "Save" button | #444, #421 |
 | 1 | Distance request returns 404 Error instead of 400 | |
-| 13| None Found | #414, #415 |
+| 13| None Found | |
 | 22 | None Found | |
 
 
