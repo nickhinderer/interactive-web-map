@@ -26,5 +26,5 @@ We add a GitHub issue for each defect that requires a modification to the system
 
 | file:line | problem | hi/med/low | who found | github#  |
 | --- | --- | :---: | :---: | --- |
-| Query.java:30 | ambiguous parameter| low | Kaiyan | #438 |
+| Query.java:30 | ambiguous parameter| low | Kaiyan | #446 |
 | Query.java:11,17,24,29 | Add Query Tests | med | Abby | #442 |
