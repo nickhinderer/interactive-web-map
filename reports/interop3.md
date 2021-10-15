@@ -24,7 +24,7 @@ This table lists each student in the team, the team they verified interoperabili
 We found these problems when connecting our client to another team's server.
 
 | team | problem | github# |
-| 12 | Config request was not supported; could not connect to team 12's server to test find or distance features  | |
+| 12 | Config request was not supported; could not connect to team 12's server to test find or distance features  | #444 |
 | 1 | None Found | |
 |  |  |  |
 
@@ -34,6 +34,6 @@ We found these problems when connecting our client to another team's server.
 We found these problems when connecting the other team's client to our server.
 
 | team |  problem | github# |
-| 12 | Config request to localhost:31412 failed; could not connect team 12's client to our server; unsupported config request for testing | |
+| 12 | Config request to localhost:31412 failed; could not connect team 12's client to our server; unsupported config request for testing | #455 |
 | 1 | None Found | |
 |  |  |  |
