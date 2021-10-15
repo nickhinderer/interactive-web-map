@@ -15,7 +15,7 @@ This table lists each student in the team, the team they verified interoperabili
 | Abby | 12 | 15 min. |
 | Nick | ---- | ---- |
 | Mallory | 22 | 15 min |
-| Jacki | 1 | 30 min. |
+| Jacki | 1 | 15 min |
 |  |  | |
 
 
@@ -26,7 +26,7 @@ We found these problems when connecting our client to another team's server.
 | team | problem | github# |
 | ---- | ---- | ---- |
 | 12 | Config request was not supported; could not connect to team 12's server to test find or distance features; unable to hit "Save" button | #444, #421 |
-| 1 | None Found | |
+| 1 | Distance request returns 404 Error instead of 400 | |
 | 13| None Found | #433, #443 |
 | 22 | None Found | |
 
