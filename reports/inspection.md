@@ -16,6 +16,7 @@ We note the amount of time each person spent reviewing the code in preparation f
 | Name | Preparation Time |
 | ---- | ---- |
 | Kaiyan | 30 min |
+| Abby | 45 min |
 
 
 ### Problems found
@@ -25,4 +26,5 @@ We add a GitHub issue for each defect that requires a modification to the system
 
 | file:line | problem | hi/med/low | who found | github#  |
 | --- | --- | :---: | :---: | --- |
-| Query.java:30 | ambiguous parameter| low| Kaiyan | #438 |
+| Query.java:30 | ambiguous parameter| low | Kaiyan | #438 |
+| Query.java:11,17,24,29 | Add Query Tests | med | Abby | #442 |
