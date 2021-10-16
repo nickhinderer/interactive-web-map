@@ -54,20 +54,9 @@ function Header(props) {
 }
 
 function Body(props) {
-    const [displayConfig,setConfig] = useState('"Config"');
-    const [displayFind,setFind] = useState('"Find"');
-    const [displayDistances,setDistances] = useState('"Distances"');
-    const [displayTour,setTour] = useState('"Tour"');
-    const [displayType,setType] = useState('"Type"');
-    const [displayWhere,setWhere] = useState('"Where"');
-    const [displayUnits,setUnits] = useState('"Units"');
-    const [displayTitle,setTitle] = useState('"Title"');
- 
-
-
-
-
+    const [display,setDisplay]=useState(['"config" ', '"find" ', '"distance"']);
     const urlInput =
+    
         <Input
             value={props.serverInput}
             placeholder={props.serverSettings.serverUrl}
@@ -76,22 +65,23 @@ function Body(props) {
             invalid={!props.validServer}
         />;
 
+         function check(arr,feature){
+            return arr.indexOf(feature) > -1;
+        }
+      
         const sendRequest = useCallback(async(newURL) => {
-        
             const configResponse = await sendAPIRequest({ requestType: "config"}, newURL);
             var features= configResponse.features;
             console.log(features);
+            var Display = [];
+            var feature = ['config','find','distances','tour','type','where','units','title'];
+            for(var i =0; i <feature.length; i++){
+                if(check(features,feature[i])){
+                    Display.push('"'+feature[i]+'"');
+                }
+            }
+            setDisplay(Display);
            
-            features[0]? setConfig('"Config"'):setConfig("");
-            features[1]? setFind('"Find"'):setFind("");
-            features[2]? setDistances('"Distances"'):setDistances("");
-            /*uncommon it when more features avaialbe on other server;
-            features[3]? setTour('"Tour"'):setDistances("");
-            features[4]? setType('"Type"'):setDistances("");
-            features[5]? setWhere('"Where"'):setDistances("");
-            features[6]? setUnits('"Units"'):setDistances("");
-            features[7]? setTitle('"Title"'):setDistances("");*/
-            
           },[])
    
           
@@ -108,7 +98,7 @@ function Body(props) {
                 <SettingsRow label="Name" value={props.serverName} />
                 <SettingsRow label="URL"  value={urlInput} />
                 <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange} />} />
-                <SettingsRow label="Available Feature"   value={<div>{displayConfig} {displayFind} {displayDistances}</div>} />
+                <SettingsRow label="Available Feature"   value={<div>{display}</div>} />
 
             </Container>
         </ModalBody>
