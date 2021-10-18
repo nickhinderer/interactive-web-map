@@ -20,13 +20,13 @@ public class TestQuery {
     @Test
     @DisplayName("Match is correct")
     public void testMatch() {
-        assertEquals("", query.getMatch());
+        assertEquals("_TEST_VALUE_", query.getMatch());
     }
 
     @Test
     @DisplayName("Limit is correct")
     public void testLimit() {
-        assertEquals(0, query.getLimit());
+        assertEquals(-1, query.getLimit());
     }
 
     @Test
@@ -38,19 +38,36 @@ public class TestQuery {
     @Test
     @DisplayName("Random SQL works")
     public void testRandomSQL() {
-        assertEquals("SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id ORDER BY RAND() LIMIT 0;", query.getRandomSQL());
+        assertEquals("SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id ORDER BY RAND() LIMIT -1;", query.testRandomSQL());
     }
 
     @Test
     @DisplayName("Match SQL works")
     public void testMatchingSQL() {
-        assertEquals("SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id WHERE world.name LIKE '%%' OR world.municipality LIKE '%%' OR country.name LIKE '%%' OR region.name LIKE '%%' LIMIT 0;", query.getMatchingSQL());
+        assertEquals("SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id WHERE world.name LIKE '%_TEST_VALUE_%' OR world.municipality LIKE '%_TEST_VALUE_%' OR country.name LIKE '%_TEST_VALUE_%' OR region.name LIKE '%_TEST_VALUE_%' LIMIT -1;", query.testMatchingSQL());
     }
 
     @Test
     @DisplayName("Count SQL works")
     public void testCountSQL() {
-        assertEquals("SELECT COUNT(*) FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id WHERE world.name LIKE '%%' OR world.municipality LIKE '%%' OR country.name LIKE '%%' OR region.name LIKE '%%';", query.getCountSQL());
+        assertEquals("SELECT COUNT(*) FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id WHERE world.name LIKE '%_TEST_VALUE_%' OR world.municipality LIKE '%_TEST_VALUE_%' OR country.name LIKE '%_TEST_VALUE_%' OR region.name LIKE '%_TEST_VALUE_%';", query.testCountSQL());
+    }
 
+    @Test
+    @DisplayName("findMatchingPlaces works")
+    public void testFindMatchingPlaces() {
+        assertNotNull(query.testFindMatchingPlaces());
+    }
+
+    @Test
+    @DisplayName("findRandomPlaces works")
+    public void testFindRandomPlaces() {
+        assertNotNull(query.testFindRandomPlaces());
+    }
+
+    @Test
+    @DisplayName("findNumberOfMatches works")
+    public void testFindNumberOfMatches() {
+        assertEquals(0, query.testFindNumberOfMatches());
     }
 }

@@ -83,8 +83,8 @@ public class Query {
   during normal execution, including the constructor. */
 
     public Query() {
-        this.match = "";
-        this.limit = 0;
+        this.match = "_TEST_VALUE_";
+        this.limit = -1;
         this.database = new Database();
     }
 
@@ -94,9 +94,39 @@ public class Query {
 
     public Database getDatabase() { return database; }
 
-    public String getRandomSQL() { return getRandomSQL(0); }
+    public String testRandomSQL() {
+        return getRandomSQL(limit);
+    }
 
-    public String getMatchingSQL() { return getMatchingSQL("", 0); }
+    public String testMatchingSQL() {
+        return getMatchingSQL(match, limit);
+    }
 
-    public String getCountSQL() { return getCountSQL(""); }
+    public String testCountSQL() {
+        return getCountSQL(match);
+    }
+
+    public Places testFindMatchingPlaces() {
+        try {
+            return this.findMatchingPlaces();
+        } catch (BadRequestException e) {
+            return null;
+        }
+    }
+
+    public Places testFindRandomPlaces() {
+        try {
+            return this.findRandomPlaces();
+        } catch (BadRequestException e) {
+            return null;
+        }
+    }
+
+    public Integer testFindNumberOfMatches() {
+        try {
+            return this.findNumberOfMatches();
+        } catch (BadRequestException e) {
+            return null;
+        }
+    }
 }
