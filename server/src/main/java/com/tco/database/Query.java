@@ -78,4 +78,21 @@ public class Query {
                         + "OR country.name LIKE '%" + match + "%' "
                         + "OR region.name LIKE '%" + match + "%';";
     }
+
+    /* The following methods exist only for testing purposes and are not used
+  during normal execution, including the constructor. */
+
+    public Query() {
+        this.match = "";
+        this.limit = 0;
+        this.database = new Database();
+    }
+
+    public String getMatch() { return match; }
+
+    public Integer getLimit() { return limit; }
+
+    public Database getDatabase() { return database; }
+
+    public String getSql() { return sql; }
 }
