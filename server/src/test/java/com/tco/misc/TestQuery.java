@@ -10,4 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestQuery {
 
+    private Query query;
+
+    @BeforeEach
+    public void createQueryForTestCases() {
+        query = new Query();
+    }
 }
