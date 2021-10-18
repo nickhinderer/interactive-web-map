@@ -94,5 +94,9 @@ public class Query {
 
     public Database getDatabase() { return database; }
 
-    public String getSql() { return sql; }
+    public String getRandomSQL() { return getRandomSQL(0); }
+
+    public String getMatchingSQL() { return getMatchingSQL("", 0); }
+
+    public String getCountSQL() { return getCountSQL(""); }
 }
