@@ -6,7 +6,7 @@ import java.lang.Math;
 
 public class Distances {
     private Places places;
-    private ArrayList<Integer> distances;
+    private ArrayList<Long> distances;
     private Double earthRadius;
 
     public Distances(Places places, Double earthRadius) { //no default constructor.
@@ -34,7 +34,7 @@ public class Distances {
         return Math.atan2(a, b);
     }
 
-    public ArrayList<Integer> computeDistances() {
+    public ArrayList<Long> computeDistances() {
         int n = this.places.size();
         int other;
         for(int i = 0; i < n; i++) {
@@ -49,7 +49,7 @@ public class Distances {
             coordinates.put("longitude2", Double.valueOf(places.get(other).get("longitude")));
             double centralAngle = computeCentralAngle(coordinates);
             Double distance = Math.ceil(Math.abs(earthRadius * centralAngle));
-            distances.add(distance.intValue());
+            distances.add(distance.longValue());
         }
         return distances;
     }
@@ -74,6 +74,6 @@ public class Distances {
 
     public Double getEarthRadius() { return earthRadius; }
 
-    public ArrayList<Integer> getDistances() { return distances; }
+    public ArrayList<Long> getDistances() { return distances; }
 
 }

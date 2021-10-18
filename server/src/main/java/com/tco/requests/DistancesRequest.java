@@ -12,7 +12,7 @@ public class DistancesRequest extends Request {
 
     private Places places; 
     private Double earthRadius;
-    private ArrayList<Integer> distances;
+    private ArrayList<Long> distances;
 
     @Override
     public void buildResponse() {
@@ -39,6 +39,6 @@ public class DistancesRequest extends Request {
     
     public Double getEarthRadius() { return earthRadius; }
 
-    public ArrayList<Integer> getDistances() { return distances; }
+    public ArrayList<Long> getDistances() { return distances; }
 
 }
