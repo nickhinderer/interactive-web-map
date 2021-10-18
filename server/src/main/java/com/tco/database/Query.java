@@ -83,7 +83,7 @@ public class Query {
   during normal execution, including the constructor. */
 
     public Query() {
-        this.match = "_TEST_VALUE_";
+        this.match = "_QUERY_TEST_VALUE_";
         this.limit = -1;
         this.database = new Database();
     }
