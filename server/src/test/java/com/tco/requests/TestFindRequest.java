@@ -37,7 +37,7 @@ public class TestFindRequest {
     @DisplayName("Limit received")
     public void testLimit(){
         int limit = conf.getLimit();
-        assertEquals(-2, limit);
+        assertEquals(0, limit);
     }
 
     @Test
