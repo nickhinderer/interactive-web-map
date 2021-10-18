@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { Table } from 'reactstrap';
-//import Distances from "../../../../server/src/main/java/com/tco/misc/Distances.java"
+//import Distances from "../../../../server/src/main/java/com/tco/misc/Distances.java";
 
-export default function TotalDistance(props){
+export default function TotalDistance(){
+    //const distances = Distances.getDistances();
     return(
-        <Table>
-            <Row></Row>
-        </Table>
+        <Row/>
     );
 }
 
 function Sum(props){
-    for(i = 0; i < props.size; ++i){
+    let sum = 0;
+    for(let i = 0; i < props.size-1; ++i){
         sum += props[i];
     }
 
@@ -19,11 +18,11 @@ function Sum(props){
 }
 
 function Row(props){
-    const [sum] = Sum(props.distances);
+    
     return (
         <tr>
-            <td>Table:</td>
-            <td>{props.sum}</td>
+            <td>Trip Distance:</td>
+            <td>{0} Miles</td>
         </tr>
     );
 }
