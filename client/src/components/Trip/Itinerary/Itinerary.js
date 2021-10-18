@@ -4,6 +4,7 @@ import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 import { Handler } from 'leaflet';
+import TotalDistance from '../../Distances/TotalDistance.js';
 
 export default function Itinerary(props) {
     const [trips, setTrips] = useState([]);
@@ -22,6 +23,7 @@ export default function Itinerary(props) {
     return (
         <Table responsive striped>
             <Header placeActions={props.placeActions} trips={trips} />
+            <TotalDistance />
             <Body trips={hanldeTrips} places={props.places} placeActions={props.placeActions} />
         </Table>
     );
