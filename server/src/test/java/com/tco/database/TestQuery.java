@@ -1,4 +1,4 @@
-package com.tco.misc;
+package com.tco.database;
 
 import com.tco.database.Query;
 
@@ -20,7 +20,7 @@ public class TestQuery {
     @Test
     @DisplayName("Match is correct")
     public void testMatch() {
-        assertEquals("_TEST_VALUE_", query.getMatch());
+        assertEquals("_QUERY_TEST_VALUE_", query.getMatch());
     }
 
     @Test
@@ -44,13 +44,13 @@ public class TestQuery {
     @Test
     @DisplayName("Match SQL works")
     public void testMatchingSQL() {
-        assertEquals("SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id WHERE world.name LIKE '%_TEST_VALUE_%' OR world.municipality LIKE '%_TEST_VALUE_%' OR country.name LIKE '%_TEST_VALUE_%' OR region.name LIKE '%_TEST_VALUE_%' LIMIT -1;", query.testMatchingSQL());
+        assertEquals("SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id WHERE world.name LIKE '%_QUERY_TEST_VALUE_%' OR world.municipality LIKE '%_QUERY_TEST_VALUE_%' OR country.name LIKE '%_QUERY_TEST_VALUE_%' OR region.name LIKE '%_QUERY_TEST_VALUE_%' LIMIT -1;", query.testMatchingSQL());
     }
 
     @Test
     @DisplayName("Count SQL works")
     public void testCountSQL() {
-        assertEquals("SELECT COUNT(*) FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id WHERE world.name LIKE '%_TEST_VALUE_%' OR world.municipality LIKE '%_TEST_VALUE_%' OR country.name LIKE '%_TEST_VALUE_%' OR region.name LIKE '%_TEST_VALUE_%';", query.testCountSQL());
+        assertEquals("SELECT COUNT(*) FROM world INNER JOIN continent ON world.continent = continent.id INNER JOIN country ON world.iso_country = country.id INNER JOIN region ON world.iso_region = region.id WHERE world.name LIKE '%_QUERY_TEST_VALUE_%' OR world.municipality LIKE '%_QUERY_TEST_VALUE_%' OR country.name LIKE '%_QUERY_TEST_VALUE_%' OR region.name LIKE '%_QUERY_TEST_VALUE_%';", query.testCountSQL());
     }
 
     @Test

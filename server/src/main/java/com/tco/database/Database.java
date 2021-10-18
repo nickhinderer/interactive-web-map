@@ -27,7 +27,7 @@ public class Database {
     }
 
     public Object query(String sql) throws BadRequestException {//think about what type of exception to throw
-        if(sql.contains("_TEST_VALUE_") || sql.contains("ORDER BY RAND() LIMIT -1"))
+        if(sql.contains("_QUERY_TEST_VALUE_") || sql.contains("ORDER BY RAND() LIMIT -1"))
             if(sql.contains("COUNT(*)"))
                 return 0;
             else
