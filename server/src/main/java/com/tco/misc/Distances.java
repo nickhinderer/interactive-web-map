@@ -48,7 +48,7 @@ public class Distances {
             coordinates.put("longitude1", Double.valueOf(places.get(i).get("longitude")));
             coordinates.put("longitude2", Double.valueOf(places.get(other).get("longitude")));
             double centralAngle = computeCentralAngle(coordinates);
-            Double distance = earthRadius * centralAngle;
+            Double distance = Math.ceil(Math.abs(earthRadius * centralAngle));
             distances.add(distance.intValue());
         }
         return distances;
