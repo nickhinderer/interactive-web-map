@@ -89,8 +89,6 @@ function readFile(fileName, fileObject) {
     reader.readAsText(fileObject, "UTF-8");
     reader.onload = event => {
       const file = { name: fileName, text: event.target.result };
-      // An alternative to setting the file state could be to
-      // setPlaces with your parsed places (if you are extending usePlaces.js).
       setFile(file);
     };
   }
