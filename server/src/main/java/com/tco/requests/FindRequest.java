@@ -25,15 +25,11 @@ public class FindRequest extends Request {
 
 
     private Integer queryFound(String match) throws BadRequestException {
-        if(match.equals("_TEST_VALUE_"))
-            return 0;
         Query query = new Query(match, -1);
         return query.findNumberOfMatches();//call findnumberofmatches instead
     }
 
     private Places queryMatch(String match, Integer limit) throws BadRequestException {
-        if(match.equals("_TEST_VALUE_"))
-            return new Places();
         //set limit to 100 if it is 0
         Query query = new Query(match, limit);//going to be between 0 and 100
         if(match.equals(""))
