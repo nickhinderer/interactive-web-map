@@ -14,7 +14,8 @@ export function usePlaces() {
         moveToHome: async () => moveToHome(context),
         removeAtIndex: (index) => removeAtIndex(index, context),
         removeAll: () => removeAll(context),
-        selectIndex: (index) => selectIndex(index, context)
+        selectIndex: (index) => selectIndex(index, context),
+        readFile: (fileName, fileObject) => readFile(fileName, fileObject)
     };
 
     return {places, selectedIndex, placeActions};
@@ -85,10 +86,10 @@ function selectIndex(index, context) {
 }
 
 function readFile(fileName, fileObject) {
-    const reader = new FileReader();
-    reader.readAsText(fileObject, "UTF-8");
-    reader.onload = event => {
-      const file = { name: fileName, text: event.target.result };
-      setFile(file);
-    };
-  }
+  const reader = new FileReader();
+  reader.readAsText(fileObject, "UTF-8");
+  reader.onload = event => {
+    const file = { name: fileName, text: event.target.result };
+    setFile(file);
+  };
+}
