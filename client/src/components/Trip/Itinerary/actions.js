@@ -1,10 +1,19 @@
 import React from 'react';
-import { Button, ButtonGroup, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from 'reactstrap';
+import { ButtonGroup, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaHome, FaTrash, FaTrashAlt } from 'react-icons/fa';
 import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
 
+const FILE_FORMATS = ".json, .csv, application/json, text/csv";
+
 export function ItineraryActionsDropdown(props) {
+    
+    function handleFileUpload(event) {
+        const fileName = event.target.files[0].name;
+        const fileObject = event.target.files[0];
+        props.placeActions.readFile(fileName, fileObject)
+    }
+
     return (
         <ActionsDropdown {...props}>
             <DropdownItem onClick={() => props.placeActions.moveToHome()} data-testid='home-button'>
@@ -13,8 +22,9 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => props.placeActions.removeAll()} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
-            <Button size="sm" > Load File </Button>
-        </ActionsDropdown>
+            <Input type="file" accept={FILE_FORMATS} onChange={handleFileUpload}>
+            </Input>
+        </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
     );
 }
 
@@ -30,14 +40,17 @@ export function PlaceActionsDropdown(props) {
 
 function ActionsDropdown(props) {
     return (
-        <UncontrolledDropdown direction="left">
-            <DropdownToggle tag="div" data-testid={`row-toggle-${props.index}`}>
+        <UncontrolledDropdown direction="left" >
+            <DropdownToggle tag="div" data-testid={`row-toggle-${props.index}`} >
                 <BiDotsVerticalRounded size="1.5em" />
-            </DropdownToggle>
+            </DropdownToggle >
             <DropdownMenu>
-                <ButtonGroup>
+                {/*<ButtonGroup >
                     {props.children}
-                </ButtonGroup>
+                </ButtonGroup> */}
+                <InputGroup >
+                    {props.children}
+                </InputGroup>
             </DropdownMenu>
         </UncontrolledDropdown>
     );

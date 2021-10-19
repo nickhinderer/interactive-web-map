@@ -4,9 +4,8 @@ import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 import { Handler } from 'leaflet';
-import  TotalDistance from '../../Distances/TotalDistance.js';
-import { sendDistancesRequest } from '../../Distances/TotalDistance.js';
-
+import TotalDistance from '../../Distances/TotalDistance.js';
+import { LOG } from '../../../utils/constants';
 
 export default function Itinerary(props) {
     const [trips, setTrips] = useState([]);
@@ -38,15 +37,15 @@ function Header(props) {
 
     const sendDistancesRequest = useCallback(async (data) => {
         //this is for test;
-        console.log(data);
+        LOG.info(data);
         const serverUrl = getOriginalServerUrl();
-        const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 6371 }, serverUrl);
+        const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 3959 }, serverUrl);
         if (distancesResponse!=null) {
             distancesResponse.distances.length==0? setERR(true):setERR(false),setDistances(distancesResponse.distances); 
             
         }
         //this is for test purpose;
-       console.log(distancesResponse);
+       LOG.info(distancesResponse);
 
     }, [])
 

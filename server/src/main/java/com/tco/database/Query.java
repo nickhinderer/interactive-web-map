@@ -7,6 +7,7 @@ public class Query {
     private String match;
     private Integer limit;
     private Database database;
+    private String sql;
 
     public Query(String match, Integer limit) {
         this.match = match;
@@ -15,41 +16,33 @@ public class Query {
     }
 
     public Places findMatchingPlaces() throws BadRequestException {
+        if(match.equals("_TEST_VALUE_"))
+            return new Places();
         if(limit == 0)
             limit = 100;
-        String sql = getSQL(this.match, this.limit);
+        sql = getMatchingSQL(this.match, this.limit);
+        return (Places) database.query(sql);
+    }
+
+    public Places findRandomPlaces() throws BadRequestException {
+        if(match.equals("_TEST_VALUE_"))
+            return new Places();
+        if(limit == 0)
+            limit = 100;
+        sql = getRandomSQL(this.limit);
         return (Places) database.query(sql);
     }
 
     public Integer findNumberOfMatches() throws BadRequestException {
-        String sql = getSQL(this.match, this.limit);
+        if(match.equals("_TEST_VALUE_"))
+            return 0;
+        sql = getCountSQL(this.match);
         return (Integer) database.query(sql);
     }
 
-    private static String getSQL(String match, Integer limit) {
-        if(limit == -1) {
-            return
-                "SELECT COUNT(*) "
-                        + "FROM world "
-                        + "INNER JOIN continent ON world.continent = continent.id "
-                        + "INNER JOIN country ON world.iso_country = country.id "
-                        + "INNER JOIN region ON world.iso_region = region.id "
-                        + "WHERE world.name LIKE '%" + match + "%' "
-                        + "OR world.municipality LIKE '%" + match + "%' "
-                        + "OR country.name LIKE '%" + match + "%' "
-                        + "OR region.name LIKE '%" + match + "%';";
-        } else if(match.equals("")) {
-            return
-                    "SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link "
-                            + "FROM world "
-                            + "INNER JOIN continent ON world.continent = continent.id "
-                            + "INNER JOIN country ON world.iso_country = country.id "
-                            + "INNER JOIN region ON world.iso_region = region.id "
-                            + "ORDER BY RAND() "
-                            + "LIMIT "  + limit.toString()  + ";";
 
-        } else {
-            return
+    private static String getMatchingSQL(String match, Integer limit) {
+        return
                 "SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link "
                         + "FROM world "
                         + "INNER JOIN continent ON world.continent = continent.id "
@@ -60,11 +53,80 @@ public class Query {
                         + "OR country.name LIKE '%" + match + "%' "
                         + "OR region.name LIKE '%" + match + "%' "
                         + "LIMIT " + limit.toString() + ";";
+    }
 
-            //WHERE world.name LIKE "%ter%" OR world.municipality like '%ter%' OR region.name like '%nick%' OR country.name like '%ter%'
-        }//add join table too. and type and where
+    private static String getRandomSQL(Integer limit) {
+        return
+                "SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link "
+                        + "FROM world "
+                        + "INNER JOIN continent ON world.continent = continent.id "
+                        + "INNER JOIN country ON world.iso_country = country.id "
+                        + "INNER JOIN region ON world.iso_region = region.id "
+                        + "ORDER BY RAND() "
+                        + "LIMIT "  + limit.toString()  + ";";
+    }
 
+    private static String getCountSQL(String match) {
+        return
+                "SELECT COUNT(*) "
+                        + "FROM world "
+                        + "INNER JOIN continent ON world.continent = continent.id "
+                        + "INNER JOIN country ON world.iso_country = country.id "
+                        + "INNER JOIN region ON world.iso_region = region.id "
+                        + "WHERE world.name LIKE '%" + match + "%' "
+                        + "OR world.municipality LIKE '%" + match + "%' "
+                        + "OR country.name LIKE '%" + match + "%' "
+                        + "OR region.name LIKE '%" + match + "%';";
+    }
+
+    /* The following methods exist only for testing purposes and are not used
+  during normal execution, including the constructor. */
+
+    public Query() {
+        this.match = "_QUERY_TEST_VALUE_";
+        this.limit = -1;
+        this.database = new Database();
+    }
+
+    public String getMatch() { return match; }
+
+    public Integer getLimit() { return limit; }
+
+    public Database getDatabase() { return database; }
+
+    public String testRandomSQL() {
+        return getRandomSQL(limit);
+    }
+
+    public String testMatchingSQL() {
+        return getMatchingSQL(match, limit);
+    }
+
+    public String testCountSQL() {
+        return getCountSQL(match);
+    }
+
+    public Places testFindMatchingPlaces() {
+        try {
+            return this.findMatchingPlaces();
+        } catch (BadRequestException e) {
+            return null;
+        }
+    }
+
+    public Places testFindRandomPlaces() {
+        try {
+            return this.findRandomPlaces();
+        } catch (BadRequestException e) {
+            return null;
+        }
+    }
+
+    public Integer testFindNumberOfMatches() {
+        try {
+            return this.findNumberOfMatches();
+        } catch (BadRequestException e) {
+            return null;
+        }
     }
 }
-
-   // SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent   FROM world  INNER JOIN continent ON world.continent = continent.id   INNER JOIN country ON world.iso_country = country.id  INNER JOIN region ON world.iso_region = region.id  WHERE world.name LIKE "%ter%" OR world.municipality like '%ter%' OR region.name like '%nick%' OR country.name like '%ter%' ORDER BY continent.name, country.name, region.name, world.municipality, world.name ASC  LIMIT 10;

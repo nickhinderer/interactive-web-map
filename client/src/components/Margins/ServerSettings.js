@@ -54,14 +54,9 @@ function Header(props) {
 }
 
 function Body(props) {
-    const [displayConfig,setConfig] = useState("Config");
-    const [displayFind,setFind] = useState("Find");
-    const [displayDistances,setDistances] = useState("Distances");
-
-
-
-
+    const [display,setDisplay]=useState(['"config" ', '"find" ', '"distance"']);
     const urlInput =
+    
         <Input
             value={props.serverInput}
             placeholder={props.serverSettings.serverUrl}
@@ -70,32 +65,40 @@ function Body(props) {
             invalid={!props.validServer}
         />;
 
-        const sendFindRequest = useCallback(async(newURL) => {
-        
-            const findResponse = await sendAPIRequest({ requestType: "find", match:"abc", limit:100 }, newURL);
-            findResponse? setFind("Find"):setFind("");
+         function check(arr,feature){
+            return arr.indexOf(feature) > -1;
+        }
+      
+        const sendRequest = useCallback(async(newURL) => {
             const configResponse = await sendAPIRequest({ requestType: "config"}, newURL);
-            configResponse? setConfig("Config"):setConfig("");
-            const distancesResponse = await sendAPIRequest({ requestType: "distances",places: [{"name":"place1", "latitude":  "40.6",  "longitude": "-105.1"},{"name": "place2", "latitude":  "-33.9", "longitude": "151.2"},{"name": "place3", "latitude":  "-57.9", "longitude": "175.2"}], earthRadius   : 6371.0}, newURL);
-            console.log(distancesResponse);
-            distancesResponse? setDistances("Distances"):setDistances("");
+            var features= configResponse.features;
+            console.log(features);
+            var Display = [];
+            var feature = ['config','find','distances','tour','type','where','units','title'];
+            for(var i =0; i <feature.length; i++){
+                if(check(features,feature[i])){
+                    Display.push('"'+feature[i]+'"');
+                }
+            }
+            setDisplay(Display);
+           
           },[])
-    
+   
           
     function handleChange(newURL){ 
         props.setServerInput(newURL);
-        sendFindRequest(newURL);
+        sendRequest(newURL);
             
     }
 
         
     return (
-        <ModalBody>
-            <Container>
+        <ModalBody >
+            <Container >
                 <SettingsRow label="Name" value={props.serverName} />
                 <SettingsRow label="URL"  value={urlInput} />
-                <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange}  onClick={()=>checkConfig()}/>} />
-                <SettingsRow label="Available Feature"  value={<div>"{ displayConfig}"    "{displayFind}"    "{displayDistances}"</div>} />
+                <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange} />} />
+                <SettingsRow label="Available Feature"   value={<div>{display}</div>} />
 
             </Container>
         </ModalBody>
