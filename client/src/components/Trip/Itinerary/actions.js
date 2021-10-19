@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, ButtonGroup, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from 'reactstrap';
+import { ButtonGroup, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaHome, FaTrash, FaTrashAlt } from 'react-icons/fa';
 import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
@@ -22,10 +22,9 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => props.placeActions.removeAll()} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
-            <Input type="file" accept={FILE_FORMATS} onChange={handleFileUpload} data-testid='load-file-button'/>
-            {/*<Button size="sm" onClick={() => props.placeActions.FileLoaderApp()} > Load File </Button> 
-            <Button size="sm" > Load File </Button> */}
-        </ActionsDropdown>
+            <Input type="file" accept={FILE_FORMATS} onChange={handleFileUpload}>
+            </Input>
+        </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
     );
 }
 
@@ -45,10 +44,13 @@ function ActionsDropdown(props) {
             <DropdownToggle tag="div" data-testid={`row-toggle-${props.index}`} >
                 <BiDotsVerticalRounded size="1.5em" />
             </DropdownToggle >
-            <DropdownMenu >
-                <ButtonGroup >
+            <DropdownMenu>
+                {/*<ButtonGroup >
                     {props.children}
-                </ButtonGroup>
+                </ButtonGroup> */}
+                <InputGroup >
+                    {props.children}
+                </InputGroup>
             </DropdownMenu>
         </UncontrolledDropdown>
     );
