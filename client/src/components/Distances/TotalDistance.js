@@ -1,9 +1,9 @@
-import React, { useState, Alert } from 'react';
+import React, { useState, Alert, Button } from 'react';
+import { getOriginalServerUrl, sendAPIRequest } from '../../utils/restfulAPI';
 
-const[distances, setDistances] = useState([]);
-const[err, setErr] = useState(false);
-
-export default function TotalDistance(){
+export default function TotalDistance(props){
+    //const trips = props.trips;
+    //figure out how to pass trip to distance request when button clicked
 
     return(
         <Row/>
@@ -20,16 +20,20 @@ function Sum(props){
 }
 
 function Row(props){
-    
+    //need to pass distances to Sum() then show here
     return (
-        <tr>
-            <td>Trip Distance:</td>
-            <td>{0} Miles</td>
-        </tr>
+        <thead>
+            <tr>
+                <td>Trip Distance:</td>
+                <td>{0} Miles</td>
+            </tr>
+        </thead>
     );
 }
 
 async function sendDistancesRequest(data) {
+    const[distances, setDistances] = useState([]);
+    const[err, setErr] = useState(false);
 
     const serverUrl = getOriginalServerUrl();
     const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 3959 }, serverUrl);
@@ -37,10 +41,15 @@ async function sendDistancesRequest(data) {
         distancesResponse.distances.length==0? setErr(true):setErr(false),setDistances(distancesResponse.distances); 
     }
 
+    return(
+        distances
+    );
 }
 
-function returnTotal(){
+function returnTotal(props){
     return (
-        err ? <Alert color="primary"> Choose at least two places to calculate distances.</Alert>:<Alert><b>Total Trip Distance: </b>{getSum()} miles</Alert>
+        //err ? <Alert color="primary"> Choose at least two places to calculate distances!</Alert>:
+        //figure out how to grab err from distance request
+        <Alert>{Sum(props)} Miles</Alert>
     );
 }
