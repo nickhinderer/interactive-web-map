@@ -15,7 +15,7 @@ export function usePlaces() {
         removeAtIndex: (index) => removeAtIndex(index, context),
         removeAll: () => removeAll(context),
         selectIndex: (index) => selectIndex(index, context),
-        readFile: (fileName, fileObject) => readFile(fileName, fileObject)
+        readFile: (fileName, fileObject) => readFile(fileName, fileObject, context)
     };
 
     return {places, selectedIndex, placeActions};
@@ -85,11 +85,20 @@ function selectIndex(index, context) {
     setSelectedIndex(index);
 }
 
-function readFile(fileName, fileObject) {
+function readFile(fileName, fileObject, context) {
   const reader = new FileReader();
   reader.readAsText(fileObject, "UTF-8");
   reader.onload = event => {
     const file = { name: fileName, text: event.target.result };
-    setFile(file);
+    
+    const filePlaces = parseFile(file); // Parse the list of places within the file 
+    
+    const {setPlaces, setSelectedIndex } = context;    
+    setPlaces(filePlaces);
+    setSelectedIndex(newPlaces.length - 1);
   };
+  
+  function parseFile(file) {
+    return { file, readfile} ;
+  }
 }
