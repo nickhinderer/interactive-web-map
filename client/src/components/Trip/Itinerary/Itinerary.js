@@ -71,7 +71,7 @@ function Header(props) {
                         Find Distances
                     </Button>
                 </th>
-                {err? <th>Choose <b>Two</b> Places</th>:<th><b>Total:</b>{getSum()} Miles</th>}
+                {err? <th>Choose <b>Two</b> Places</th>:<th><b>Total: </b>{getSum()} Miles</th>}
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
                 </th>
