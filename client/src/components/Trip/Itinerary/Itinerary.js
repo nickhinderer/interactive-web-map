@@ -57,11 +57,6 @@ function Header(props) {
     }
 
 
-    useEffect(() => {
-        sendDistancesRequest()
-    }, [sendDistancesRequest])
-
-
     return (
         <thead>
             <tr>
