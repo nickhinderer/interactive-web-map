@@ -5,6 +5,7 @@ import { latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
+import { sendDistancesRequest } from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 
 export default function Itinerary(props) {
@@ -24,7 +25,7 @@ export default function Itinerary(props) {
     return (
         <Table responsive striped>
             <Header placeActions={props.placeActions} trips={trips} />
-            <TotalDistance/>
+            <TotalDistance />
             <Body trips={hanldeTrips} places={props.places} placeActions={props.placeActions} />
         </Table>
     );
@@ -55,6 +56,7 @@ function Header(props) {
         return SUM;
     }
 
+
     useEffect(() => {
         sendDistancesRequest()
     }, [sendDistancesRequest])
@@ -65,11 +67,11 @@ function Header(props) {
             <tr>
                 <th>My Trip</th>
                 <th>
-                    <Button id="Popover1" type="button" size="sm" onClick={()=>sendDistancesRequest(props.trips) }>
+                    <Button id="Popover1" type="button" size="sm" onClick={() => sendDistancesRequest(props.trips)}>
                         Find Distances
                     </Button>
-                    {err? <div></div>:<Alert><b>Your total Distance :</b>{getSum()} miles</Alert>}
                 </th>
+                {err? <th>Choose <b>Two</b> Places</th>:<th><b>Total: </b>{getSum()} Miles</th>}
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
                 </th>

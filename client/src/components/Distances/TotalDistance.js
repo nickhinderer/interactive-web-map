@@ -1,5 +1,19 @@
-import React, { useState, Alert, Button } from 'react';
+import React, { useState, Alert, Button, useCallback } from 'react';
 import { getOriginalServerUrl, sendAPIRequest } from '../../utils/restfulAPI';
+
+//Need to fix these so that err/distances update
+//Very close to working
+
+const distances = [];
+const err = false;
+
+function setErr(boolVal){
+    err = boolVal;
+}
+
+function setDistances(listVal){
+    distances = listVal;
+}
 
 export default function TotalDistance(props){
     //const trips = props.trips;
@@ -10,46 +24,43 @@ export default function TotalDistance(props){
     );
 }
 
-function Sum(props){
-    let sum = 0;
-    for(let i = 0; i < props.length; ++i){
-        sum += props[i];
+export async function sendDistancesRequest(data){
+
+        const serverUrl = getOriginalServerUrl();
+        const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 3959 }, serverUrl);
+        if (distancesResponse!=null) {
+            distancesResponse.distances.length==0? setErr(true):setErr(false),setDistances(distancesResponse.distances); 
+        }
+        
     }
 
-    return sum;
-}
+    function Row(){
+        //need to pass distances to Sum() then show here
+        //const trips = props.trips
+            return (
+                <thead>
+                    <tr>
+                        <td><b>Trip Distance:</b></td>
+                        <td>{returnTotal()}</td>
+                    </tr>
+                </thead>
+            );
+        }
 
-function Row(props){
-    //need to pass distances to Sum() then show here
-    return (
-        <thead>
-            <tr>
-                <td>Trip Distance:</td>
-                <td>{0} Miles</td>
-            </tr>
-        </thead>
-    );
-}
+        function returnTotal(){
 
-async function sendDistancesRequest(data) {
-    const[distances, setDistances] = useState([]);
-    const[err, setErr] = useState(false);
+            return (
+                err ? "Choose at least two places to calculate distances!": Sum(distances) + " Miles"
+            );
+        }
 
-    const serverUrl = getOriginalServerUrl();
-    const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 3959 }, serverUrl);
-    if (distancesResponse!=null) {
-        distancesResponse.distances.length==0? setErr(true):setErr(false),setDistances(distancesResponse.distances); 
-    }
-
-    return(
-        distances
-    );
-}
-
-function returnTotal(props){
-    return (
-        //err ? <Alert color="primary"> Choose at least two places to calculate distances!</Alert>:
-        //figure out how to grab err from distance request
-        <Alert>{Sum(props)} Miles</Alert>
-    );
-}
+        function Sum(distances){
+            let sum = 0;
+            for (let i = 0; i < distances.length; ++i) {
+                sum += distances[i];
+            }
+    
+            return (
+                sum
+            );
+        }
