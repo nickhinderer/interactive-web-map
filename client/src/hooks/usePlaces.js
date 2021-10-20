@@ -109,6 +109,9 @@ function readFile(fileName, fileObject, context) {
         const fullPlace = await reverseGeocode(placeToLatLng(jsonList.places[i]));
         newPlaces.push(fullPlace);
       }
+
+      setPlaces(newPlaces);
+      setSelectedIndex(newPlaces.length - 1);
       /* 
           You might check against the TripFile schema using
           isJSONResponseValid(JSON.parse(file.text), tripFileSchema)
