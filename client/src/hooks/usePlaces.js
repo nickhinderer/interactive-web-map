@@ -90,15 +90,24 @@ function readFile(fileName, fileObject, context) {
   reader.readAsText(fileObject, "UTF-8");
   reader.onload = event => {
     const file = { name: fileName, text: event.target.result };
-    
-    const filePlaces = parseFile(file); // Parse the list of places within the file 
-    
-    const {setPlaces, setSelectedIndex } = context;    
-    setPlaces(filePlaces);
-    setSelectedIndex(newPlaces.length - 1);
+
+    parseFile(file, context);
+
   };
   
-  function parseFile(file) {
-    return { file, readfile} ;
+  function parseFile(file, context) {
+    const { setPlaces, setSelectedIndex } = context;
+
+    const extension = file.name.split('.').pop();
+    if (extension === "json") {      
+      console.log("Building trip from JSON file.");
+
+      /* 
+          You might check against the TripFile schema using
+          isJSONResponseValid(JSON.parse(file.text), tripFileSchema)
+          This function is in the base code. Import tripFileSchema (TripFile.json schema). 
+          Look at restfulAPI.js for reference.
+      */
+    }
   }
 }
