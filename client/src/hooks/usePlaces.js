@@ -15,7 +15,7 @@ export function usePlaces() {
         removeAtIndex: (index) => removeAtIndex(index, context),
         removeAll: () => removeAll(context),
         selectIndex: (index) => selectIndex(index, context),
-        readFile: (fileName, fileObject) => readFile(fileName, fileObject)
+        readFile: (fileName, fileObject) => readFile(fileName, fileObject, context)
     };
 
     return {places, selectedIndex, placeActions};
@@ -85,11 +85,39 @@ function selectIndex(index, context) {
     setSelectedIndex(index);
 }
 
-function readFile(fileName, fileObject) {
+function readFile(fileName, fileObject, context) {
   const reader = new FileReader();
   reader.readAsText(fileObject, "UTF-8");
   reader.onload = event => {
     const file = { name: fileName, text: event.target.result };
-    setFile(file);
+
+    parseFile(file, context);
+
   };
+  
+  async function parseFile(file, context) {
+    const { setPlaces, setSelectedIndex } = context;
+
+    const extension = file.name.split('.').pop();
+    if (extension === "json") {      
+      console.log("Building trip from JSON file.");
+      
+      var jsonList = JSON.parse(file.text);
+      var newPlaces = [];
+
+      for (var i = 0; i < jsonList.places.length; i++) {
+        const fullPlace = await reverseGeocode(placeToLatLng(jsonList.places[i]));
+        newPlaces.push(fullPlace);
+      }
+
+      setPlaces(newPlaces);
+      setSelectedIndex(newPlaces.length - 1);
+      /* 
+          You might check against the TripFile schema using
+          isJSONResponseValid(JSON.parse(file.text), tripFileSchema)
+          This function is in the base code. Import tripFileSchema (TripFile.json schema). 
+          Look at restfulAPI.js for reference.
+      */
+    }
+  }
 }
