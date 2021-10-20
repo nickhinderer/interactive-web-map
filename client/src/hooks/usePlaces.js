@@ -95,13 +95,20 @@ function readFile(fileName, fileObject, context) {
 
   };
   
-  function parseFile(file, context) {
+  async function parseFile(file, context) {
     const { setPlaces, setSelectedIndex } = context;
 
     const extension = file.name.split('.').pop();
     if (extension === "json") {      
       console.log("Building trip from JSON file.");
+      
+      var jsonList = JSON.parse(file.text);
+      var newPlaces = [];
 
+      for (var i = 0; i < jsonList.places.length; i++) {
+        const fullPlace = await reverseGeocode(placeToLatLng(jsonList.places[i]));
+        newPlaces.push(fullPlace);
+      }
       /* 
           You might check against the TripFile schema using
           isJSONResponseValid(JSON.parse(file.text), tripFileSchema)
