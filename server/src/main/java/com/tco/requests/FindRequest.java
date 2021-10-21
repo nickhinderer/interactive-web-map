@@ -13,11 +13,15 @@ public class FindRequest extends Request {
 
     private String match;
     private Integer limit;
+    private String type;
+    private String where;
     private Integer found;
     private Places places;
 
     @Override
     public void buildResponse() throws BadRequestException {
+        if(type != null || where != null)
+            throw new BadRequestException();
         found = queryFound(match);
         places = queryMatch(match, limit);
         log.trace("buildResponse -> {}", this);
