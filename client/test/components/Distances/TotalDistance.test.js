@@ -6,9 +6,8 @@ import TotalDistance, { Row, Sum, returnTotal } from '../../../src/components/Di
 describe('TotalDistance', () =>{
     beforeEach(() => {
         render(<TotalDistance distances={[1,2,3]} err={true}/>)
-        //Fix TotalDistance class
     });
-
+    
     it('tests that sum returns correct total', () =>{
         const distances = [1, 2, -1];
         const total = Sum(distances);
