@@ -128,6 +128,7 @@ function readFile(fileName, fileObject, context) {
       var items = csvList.data[0];
       for (var i = 1; i < csvList.data.length; i++) {
         for (var j = 0; j < numItems; j++) {
+          indPlace[items[j]] = csvList.data[i][j];
         }
       }
 
