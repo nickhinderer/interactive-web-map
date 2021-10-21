@@ -25,7 +25,7 @@ describe('TotalDistance', () =>{
         const err = false;
         const distances = [-1, -3, 6];
         const response = returnTotal(distances, err);
-        expect(response).toEqual('2 Miles');
+        expect(response).toEqual('2 Mile(s)');
     });
 
 });
