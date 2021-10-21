@@ -32,7 +32,7 @@ export default function Itinerary(props) {
         }
     
         //For testing purposes
-        LOG.info(distancesResponse);
+        //LOG.info(distancesResponse);
         //LOG.info(distances);
     }
 
