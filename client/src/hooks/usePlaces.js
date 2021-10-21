@@ -116,12 +116,6 @@ function readFile(fileName, fileObject, context) {
       setPlaces(newPlaces);
       setSelectedIndex(newPlaces.length - 1);
     }
-      /* 
-          You might check against the TripFile schema using
-          isJSONResponseValid(JSON.parse(file.text), tripFileSchema)
-          This function is in the base code. Import tripFileSchema (TripFile.json schema). 
-          Look at restfulAPI.js for reference.
-      */
     }
   }
 }
