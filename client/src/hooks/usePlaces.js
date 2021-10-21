@@ -119,6 +119,11 @@ function readFile(fileName, fileObject, context) {
       }
     } else if (extension === "csv") {
       console.log("Building trip from CSV file.");
+
+      var indPlace = {};   
+      var csvList = Papa.parse(file.text);
+      console.log(csvList);
+      
     }
   }
 }
