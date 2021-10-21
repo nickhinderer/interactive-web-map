@@ -224,8 +224,8 @@ The interface of this epic would be add new line to the ServerSetting.js Bodyfun
 <img src="https://user-images.githubusercontent.com/74014694/138351606-b52a4556-c114-43cf-8845-16cd5cc59c4d.jpg" width="525" alt="Distances Interface"/>
 
 Updates to the interface for this epic will add new features to the itinerary list. There will be an area for distance between each location added to the trip as well as the total distance of the trip. We will be changing the code by: 
-* Adding a new table data to show distance between each place
-* Adding a new row at the top of the table to should round trip distance
+* Add new table data to show distance between each place
+* Add a new row at the top of the table to should round trip distance
 * Add a label for "Round Trip Distance: "
 * Add a button that generates distances array
 
