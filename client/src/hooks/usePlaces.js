@@ -126,6 +126,9 @@ function readFile(fileName, fileObject, context) {
       
       var numItems = csvList.data[0].length;
       var items = csvList.data[0];
+      for (var i = 1; i < csvList.data.length; i++) {
+        
+      }
 
     }
   }
