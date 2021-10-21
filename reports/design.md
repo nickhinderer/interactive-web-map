@@ -221,12 +221,13 @@ The interface of this epic would be add new line to the ServerSetting.js Bodyfun
 
 ### Drawing for #238 Distances Epic
 
-<img src=https://user-images.githubusercontent.com/74014694/136080738-6ee093ed-ce2c-4b9a-857b-a49721c20ff0.jpg width="525" alt="Distances Interface"/>
+<img src="https://user-images.githubusercontent.com/74014694/138351606-b52a4556-c114-43cf-8845-16cd5cc59c4d.jpg" width="525" alt="Distances Interface"/>
 
 Updates to the interface for this epic will add new features to the itinerary list. There will be an area for distance between each location added to the trip as well as the total distance of the trip. We will be changing the code by: 
-* Adding a new column on the itinerary
-* Adding a new row on the itinerary 
-* Add a label for "Total:"
+* Add new table data to show distance between each place
+* Add a new row at the top of the table to should round trip distance
+* Add a label for "Round Trip Distance: "
+* Add a button that generates distances array
 
 ### Drawing for #253 Save Epic
 
@@ -253,7 +254,9 @@ location and be displayed in the itinerary list.
 ### Client Components
 
 We will be adding the following components to the client:
-* Distance class to render the distance between locations
+* TotalDistance file to help render the distance between locations
+* Functions to Itinerary to show distances on page
+* Testing file for TotalDistance file
 
 ![sp3components](../images/Sprint3Components.png)
 
