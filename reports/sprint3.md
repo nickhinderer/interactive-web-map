@@ -72,8 +72,8 @@ And new class to handleadd this trip to the correct place. This task will split 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
 | Epics | *5* |  |
-| Tasks |  *125*   |  | 
-| Story Points |  *125*  |  | 
+| Tasks |  *134*   |  | 
+| Story Points |  *129*  |  | 
 
 Based on our team's previous performance, it would be achievable to finish at least 4 epics. From what we left last, we can finish the "Find My place" pretty soon, which is 
 already done mostly on the starting date of this sprint. And "Interoperability" already done most part on the starting date of sprint3 also. What we left will be "Where I am"
@@ -92,7 +92,9 @@ The #*task* numbers refer to the issue numbers in GitHub.
 | 10/6 | #312, #311, #279, #251, #264, #266, #268, #267,#315 | #191, #303 | N/A |
 | 10/8 | #323, #325, #321, #259, #257, #317, #329  | #191, #303 | N/A |
 | 10/11 | #343, #249, #338, #318, #280, #358, #365, #362, #355, #352, #357, #351, #353, #349, #275, #367, #191, #363, #369  |  #303,#363, #332,#333, #294, #241, #242  | N/A |
-| 10/14 | #444, #455, #439, #437, #442, #443, #435, #433, #425, #430, #428,#423, #373, #421, #265, #419, #416, #414, #415, #412, #410, #408, #402, #331, #398, #391. #397, #394, #392, #244, #388, #390, #386, #383, #294, #382, #242, #377, #375, #285 | #332, #303, #333, #241, #240 | N/A |
+| 10/14 | #444, #455, #439, #437, #442, #443, #435, #433, #425, #430, #428, #423, #373, #421, #265, #419, #416, #414, #415, #412, #410, #408, #402, #331, #398, #391. #397, #394, #392, #244, #388, #390, #386, #383, #294, #382, #242, #377, #375, #285 | #332, #303, #333, #241, #240 | N/A |
+| 10/18 | #483,#488,#486,#487,#255, #480, #477, #475, #488, #466, #440, #471, #403, #450, #380, #463, #459, #456   |#332, #303, #333, #241, #240, #274| N/A |
+| 10/20 | #472, #497, #499, #493, #273, #481, #489, #274, #380, #489,  |#293, #240, #491 | Lack of Knowledge |
 ## Review
 
 ### Epics completed
