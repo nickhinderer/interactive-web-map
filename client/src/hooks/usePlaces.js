@@ -124,6 +124,9 @@ function readFile(fileName, fileObject, context) {
       var csvList = Papa.parse(file.text);
       console.log(csvList);
       
+      var numItems = csvList.data[0].length;
+      var items = csvList.data[0];
+
     }
   }
 }
