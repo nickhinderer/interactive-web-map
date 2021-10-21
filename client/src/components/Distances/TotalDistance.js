@@ -9,7 +9,7 @@ export default function TotalDistance(props){
     );
 }
 
-function Row(props){
+export function Row(props){
     
         return (
             <thead>
@@ -21,14 +21,14 @@ function Row(props){
         );
 }
 
-function returnTotal(distances, err){
+export function returnTotal(distances, err){
 
     return (
         err ? "Choose at least two places to calculate distances!": Sum(distances) + " Miles"
     );
 }
 
-function Sum(distances){
+export function Sum(distances){
     let sum = 0;
         for (let i = 0; i < distances.length; ++i) {
             sum += distances[i];
