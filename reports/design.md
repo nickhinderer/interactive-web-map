@@ -254,8 +254,9 @@ location and be displayed in the itinerary list.
 ### Client Components
 
 We will be adding the following components to the client:
-* TotalDistance class to help render the distance between locations
+* TotalDistance file to help render the distance between locations
 * Functions to Itinerary to show distances on page
+* Testing file for TotalDistance file
 
 ![sp3components](../images/Sprint3Components.png)
 
