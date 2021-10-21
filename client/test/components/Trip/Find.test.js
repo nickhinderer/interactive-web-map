@@ -42,17 +42,7 @@ describe('FindModal', () =>{
 
 	});
 
-    it('result update triggered on search input', async () => {
-		act(() => {
-			fireEvent.click(screen.findByRole("button", {
-				name: "Search"
-			}));
-		});
-
-		await waitFor(() => {
-			expect(screen.getByText("No results found"));
-		});
-    });
+    
 
 
 
