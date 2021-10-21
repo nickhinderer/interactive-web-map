@@ -32,10 +32,13 @@ export default function Itinerary(props) {
 }
 
 function Header(props) {
+//Remove once TotalDistance properly renders
+/*
     const [distances, setDistances] = useState([]);
     const [err,setERR] = useState([false]);
+*/
     
-
+/*
     const sendDistancesRequest = useCallback(async (data) => {
         //this is for test;
         LOG.info(data);
@@ -49,19 +52,21 @@ function Header(props) {
        LOG.info(distancesResponse);
 
     }, [])
-
+*/
+/*
     function getSum(){
         let SUM = 0;
         distances.map((distance)=>SUM+=distance);
         return SUM;
     }
-
+*/
+/*
 
     useEffect(() => {
         sendDistancesRequest()
     }, [sendDistancesRequest])
 
-
+*/
     return (
         <thead>
             <tr>
@@ -71,7 +76,6 @@ function Header(props) {
                         Find Distances
                     </Button>
                 </th>
-                {err? <th>Choose <b>Two</b> Places</th>:<th><b>Total: </b>{getSum()} Miles</th>}
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
                 </th>
