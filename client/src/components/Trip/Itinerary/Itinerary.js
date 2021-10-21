@@ -1,15 +1,16 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Table, Button,Alert} from 'reactstrap';
+import React, { useState, useEffect } from 'react';
+import { Table, Button} from 'reactstrap';
 import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
-import { sendDistancesRequest } from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 
 export default function Itinerary(props) {
     const [trips, setTrips] = useState([]);
+    const [err, setErr] = useState(true);
+    const [distances, setDistances]=useState([]);
 
 
 
@@ -22,60 +23,49 @@ export default function Itinerary(props) {
         }, [size != trips.length]);
     }
 
+    async function sendDistancesRequest(data){
+
+        const serverUrl = getOriginalServerUrl();
+        const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 3959 }, serverUrl);
+        if (distancesResponse!=null) {
+            distancesResponse.distances.length==0? setErr(true):setErr(false),setDistances(distancesResponse.distances); 
+        }
+    
+        //For testing purposes
+        LOG.info(distancesResponse);
+        //LOG.info(distances);
+    }
+
     return (
         <Table responsive striped>
-            <Header placeActions={props.placeActions} trips={trips} />
-            <TotalDistance />
+            <Header placeActions={props.placeActions} send={sendDistancesRequest} trips={trips} />
+            <TotalDistance distances={distances} err={err}/>
             <Body trips={hanldeTrips} places={props.places} placeActions={props.placeActions} />
         </Table>
     );
 }
 
 function Header(props) {
-//Remove once TotalDistance properly renders
-/*
+
     const [distances, setDistances] = useState([]);
-    const [err,setERR] = useState([false]);
-*/
+    const [err,setERR] = useState([true]);
+
+    LOG.info(distances);
+    LOG.info(err);
     
-/*
-    const sendDistancesRequest = useCallback(async (data) => {
-        //this is for test;
-        LOG.info(data);
-        const serverUrl = getOriginalServerUrl();
-        const distancesResponse = await sendAPIRequest({ requestType: "distances", places: data, earthRadius: 3959 }, serverUrl);
-        if (distancesResponse!=null) {
-            distancesResponse.distances.length==0? setERR(true):setERR(false),setDistances(distancesResponse.distances); 
-            
-        }
-        //this is for test purpose;
-       LOG.info(distancesResponse);
-
-    }, [])
-*/
-/*
-    function getSum(){
-        let SUM = 0;
-        distances.map((distance)=>SUM+=distance);
-        return SUM;
+    function hanldeChange(data){
+        props.send(data);
     }
-*/
-/*
 
-    useEffect(() => {
-        sendDistancesRequest()
-    }, [sendDistancesRequest])
-
-*/
     return (
         <thead>
             <tr>
                 <th>My Trip</th>
                 <th>
-                    <Button id="Popover1" type="button" size="sm" onClick={() => sendDistancesRequest(props.trips)}>
+                    <Button id="Popover1" type="button" size="sm" onClick={() => hanldeChange(props.trips)}>
                         Find Distances
                     </Button>
-                </th>
+                </th> 
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
                 </th>
