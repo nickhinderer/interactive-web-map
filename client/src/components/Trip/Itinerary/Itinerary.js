@@ -40,7 +40,7 @@ export default function Itinerary(props) {
         <Table responsive striped>
             <Header placeActions={props.placeActions} send={sendDistancesRequest} trips={trips} />
             <TotalDistance distances={distances} err={err}/>
-            <Body trips={hanldeTrips} places={props.places} placeActions={props.placeActions} />
+            <Body trips={hanldeTrips} places={props.places} placeActions={props.placeActions} distances={distances} />
         </Table>
     );
 }
@@ -86,6 +86,7 @@ function Body(props) {
                     place={place}
                     placeActions={props.placeActions}
                     index={index}
+                    distance={props.distances[index]}
                 />
             )}
         </tbody>
@@ -95,10 +96,12 @@ function Body(props) {
 function TableRow(props) {
     const name = props.place.name ? props.place.name : "-";
     const location = latLngToText(props.place);
+    const distance = props.distance;
 
     return (
         <tr>
             <th scope="row">{props.index + 1}</th>
+            <td>{distance!=null ? distance : 0} Mile(s)</td>
             <td>
                 {name}
                 <br />

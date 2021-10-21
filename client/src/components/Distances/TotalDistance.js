@@ -24,7 +24,7 @@ export function Row(props){
 export function returnTotal(distances, err){
 
     return (
-        err ? "Choose at least two places to calculate distances!": Sum(distances) + " Miles"
+        err ? "Choose at least two places to calculate distances!": Sum(distances) + " Mile(s)"
     );
 }
 
