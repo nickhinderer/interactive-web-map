@@ -1,9 +1,7 @@
 import React from 'react';
-import { Button, Col, Container, Input, Modal, ModalBody, ModalFooter, ModalHeader, Row } from 'reactstrap';
+import { Button, Col, Container, Input, Modal, ModalBody, ModalFooter, ModalHeader, Row,Alert } from 'reactstrap';
 import { useServerInputValidation } from '../../hooks/useServerInputValidation';
 import ListServer from './ListServer';
-import {sendAPIRequest} from '../../utils/restfulAPI';
-import  { useCallback,useEffect,useState } from 'react';
 
 export default function ServerSettings(props) {
     const [serverInput, setServerInput, config, validServer, resetModal]
@@ -17,6 +15,7 @@ export default function ServerSettings(props) {
         <Modal isOpen={props.isOpen} toggle={closeModalWithoutSaving}>
             <Header toggleOpen={closeModalWithoutSaving} />
             <Body
+                config={config}
                 serverInput={serverInput}
                 setServerInput={setServerInput}
                 serverSettings={props.serverSettings}
@@ -45,6 +44,13 @@ function getCurrentServerName(config, serverSettings) {
     return "";
 }
 
+function getFeatures(config){
+    if(config){
+        return config.features;
+    }
+    return [];
+}
+
 function Header(props) {
     return (
         <ModalHeader className="ml-2" toggle={props.toggleOpen}>
@@ -54,7 +60,6 @@ function Header(props) {
 }
 
 function Body(props) {
-    const [display,setDisplay]=useState(['"config" ', '"find" ', '"distance"']);
     const urlInput =
     
         <Input
@@ -64,34 +69,12 @@ function Body(props) {
             valid={props.validServer}
             invalid={!props.validServer}
         />;
-
-         function check(arr,feature){
-            return arr.indexOf(feature) > -1;
-        }
-      
-        const sendRequest = useCallback(async(newURL) => {
-            const configResponse = await sendAPIRequest({ requestType: "config"}, newURL);
-            var features= configResponse.features;
-            console.log(features);
-            var Display = [];
-            var feature = ['config','find','distances','tour','type','where','units','title'];
-            for(var i =0; i <feature.length; i++){
-                if(check(features,feature[i])){
-                    Display.push('"'+feature[i]+'"');
-                }
-            }
-            setDisplay(Display);
-           
-          },[])
-   
-          
+     
     function handleChange(newURL){ 
         props.setServerInput(newURL);
-        sendRequest(newURL);
-            
     }
 
-        
+    let display = getFeatures(props.config).join(", ");    
     return (
         <ModalBody >
             <Container >
@@ -99,6 +82,7 @@ function Body(props) {
                 <SettingsRow label="URL"  value={urlInput} />
                 <SettingsRow label="Other Server"   value={<ListServer onChange={handleChange} />} />
                 <SettingsRow label="Available Feature"   value={<div>{display}</div>} />
+
 
             </Container>
         </ModalBody>
