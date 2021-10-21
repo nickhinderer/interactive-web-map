@@ -14,7 +14,7 @@ export function Row(props){
         return (
             <thead>
                 <tr>
-                    <td><b>Trip Distance:</b></td>
+                    <td><b>Round Trip Distance:</b></td>
                     <td>{returnTotal(props.distances, props.err)}</td>
                 </tr>
             </thead>
