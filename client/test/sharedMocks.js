@@ -4,6 +4,20 @@ export const VALID_CONFIG_RESPONSE = JSON.stringify({
     features: ['config']
 });
 
+export const VALID_FIND_RESPONSE = JSON.stringify({
+    "match": "VALID_FIND_REPONSE",
+	"limit": 0,
+	"found": 1,
+	"places": [
+		{
+			"name": "VALID_FIND_REPONSE",
+			"latitude": "10",
+			"longitude": "-10"
+		}
+	],
+	"requestType": "find"
+
+})
 export const INVALID_REQUEST = JSON.stringify({
     invalid: 'this is an invalid response to fail the schema'
 });

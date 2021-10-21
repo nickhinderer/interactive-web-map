@@ -1,28 +1,50 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor,fireEvent,userEvent  } from '@testing-library/react';
 import user from '@testing-library/user-event';
-import { beforeEach, describe, expect, it, test } from '@jest/globals';
+import { VALID_FIND_RESPONSE } from '../../sharedMocks';
+import { beforeEach, describe, expect, it} from '@jest/globals';
 import FindModal from '../../../src/components/Trip/Find/FindModal';
 
 describe('FindModal', () =>{
+    const places=[];
+    const selectedIndex = 1;
+    const validUrl = 'http://localhost:8000';
+    const serverSettings = { 'serverUrl': validUrl, 'serverConfig': null};
+   
+    let findButton;
+    let inputBox;
+    let searchButtom;
     beforeEach(() =>{
-        render(<FindModal/>)
+        fetch.resetMocks();
+        fetch.mockResponse(VALID_FIND_RESPONSE);
+        render(<FindModal selectedIndex={selectedIndex} placeActions={jest.fn()} serverSettings={serverSettings}/>)
     });
 
-    it('contains a search button image', () =>{
-        expect(screen.getByRole('img', { name: /search/i })).toBeDefined();
-    });
+    
+    
+    it('display inputbox and button', async () => {
+        screen.findByRole("ModalHeader",{name:/Find Places/i});
+        screen.findByRole("input");
+	    screen.findByRole('button', { name: /Search/i });     
+        
+	});
 
-    it('contains a search button', () =>{
-        expect(screen.getByRole('button', { toggle: false })).toBeDefined();
-    });
 
-    it('toggles modal when clicked', () =>{
-        const searchButton = screen.getByRole('img', { name: /search/i });
-        //Add correct testing for modal here
+    it('user able to type text', async () => {
+        
+	    inputBox = screen.findByRole("input");
+        user.type(inputBox, "VALID_FIND_RESPONSE");
 
-    });
+        await waitFor(() => {
+           expect(screen.findByPlaceholderText('VALID_FIND_RESPONSE'));
+            
+        });
 
-    //Add testing for input box here
+	});
+
+    
+
+
+
 
 });
