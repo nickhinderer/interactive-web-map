@@ -9,11 +9,24 @@ describe('TotalDistance', () =>{
         //Fix TotalDistance class
     });
 
-    it('sum returns correct total', () =>{
-        //Add tests later
+    it('tests that sum returns correct total', () =>{
         const distances = [1, 2, -1];
         const total = Sum(distances);
         expect(total).toEqual(2);
+    });
+
+    it('tests totalReturn returns correct value for true err', () =>{
+        const err = true;
+        const distances = [-1, -3, 6];
+        const response = returnTotal(distances, err);
+        expect(response).toEqual('Choose at least two places to calculate distances!');
+    });
+
+    it('tests totalReturn returns correct value for false err', () =>{
+        const err = false;
+        const distances = [-1, -3, 6];
+        const response = returnTotal(distances, err);
+        expect(response).toEqual('2 Miles');
     });
 
 });
