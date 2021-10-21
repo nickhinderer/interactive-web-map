@@ -101,7 +101,7 @@ function TableRow(props) {
     return (
         <tr>
             <th scope="row">{props.index + 1}</th>
-            <td>{distance!=null ? distance : 0} Mile(s)</td>
+            <td>{ props.index != 0 && distance != 0 ? distance : 0} Mile(s)</td>
             <td>
                 {name}
                 <br />
