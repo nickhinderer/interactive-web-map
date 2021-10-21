@@ -46,12 +46,6 @@ export default function Itinerary(props) {
 }
 
 function Header(props) {
-
-    const [distances, setDistances] = useState([]);
-    const [err,setERR] = useState([true]);
-
-    LOG.info(distances);
-    LOG.info(err);
     
     function hanldeChange(data){
         props.send(data);
