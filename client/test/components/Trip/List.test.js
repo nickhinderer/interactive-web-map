@@ -15,15 +15,14 @@ describe('List', () =>{
 
     //still need a fake request to test line 16-25
 
-    it('renders an Add button', async ()=> {
-        addButton = screen.findByRole('button', { name: /Add/i });
-        await waitFor(() => {
-            expect(screen.findByText(/Name:/i));
-            expect(screen.findByText(/Country:/i));
-            expect(screen.findByText(/Latitude:/i));
-            expect(screen.findByText(/Latitude:/i));
+    it('renders buttons', async ()=> {
+        expect(screen.findByRole('button', { name: /Add/i }));
+        expect(screen.findByText(/Name:/i));
+        expect(screen.findByText(/Country:/i));
+        expect(screen.findByText(/Latitude:/i));
+        expect(screen.findByText(/Latitude:/i));
              
-         });
+     
         
     });
 
@@ -33,7 +32,7 @@ describe('List', () =>{
     
 
     it('contain not result found', async () => {
-        screen.findByText(/No results found /i);
+        expect( screen.findByText(/No results found /i));
              
     });
 
