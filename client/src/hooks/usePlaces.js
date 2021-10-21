@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { placeToLatLng } from '../utils/transformers';
 import { reverseGeocode } from '../utils/reverseGeocode';
 import { LOG } from '../utils/constants';
+import { isJsonResponseValid } from '../utils/restfulAPI';
+import * as tripFileSchema from '../../schemas/TripFile';
 
 export function usePlaces() {
     const [places, setPlaces] = useState([]);
@@ -99,7 +101,8 @@ function readFile(fileName, fileObject, context) {
     const { setPlaces, setSelectedIndex } = context;
 
     const extension = file.name.split('.').pop();
-    if (extension === "json") {      
+    if (extension === "json") { 
+           if (isJsonResponseValid(JSON.parse(file.text), tripFileSchema)){
       console.log("Building trip from JSON file.");
       
       var jsonList = JSON.parse(file.text);
@@ -112,12 +115,7 @@ function readFile(fileName, fileObject, context) {
 
       setPlaces(newPlaces);
       setSelectedIndex(newPlaces.length - 1);
-      /* 
-          You might check against the TripFile schema using
-          isJSONResponseValid(JSON.parse(file.text), tripFileSchema)
-          This function is in the base code. Import tripFileSchema (TripFile.json schema). 
-          Look at restfulAPI.js for reference.
-      */
+    }
     }
   }
 }
