@@ -122,6 +122,7 @@ function readFile(fileName, fileObject, context) {
 
       var indPlace = {};   
       var csvList = Papa.parse(file.text);
+      var csvList;
       console.log(csvList);
       
       var numItems = csvList.data[0].length;
