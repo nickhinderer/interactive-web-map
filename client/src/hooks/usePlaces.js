@@ -127,11 +127,18 @@ function readFile(fileName, fileObject, context) {
       var numItems = csvList.data[0].length;
       var items = csvList.data[0];
       for (var i = 1; i < csvList.data.length; i++) {
+
         for (var j = 0; j < numItems; j++) {
           indPlace[items[j]] = csvList.data[i][j];
         }
-      }
 
+        const fullPlace = await reverseGeocode(placeToLatLng(indPlace));
+        newPlaces.push(fullPlace);
+        indPlace = {};
+      }
+      
+      setPlaces(newPlaces);
+      setSelectedIndex(newPlaces.length - 1); 
     }
   }
 }
