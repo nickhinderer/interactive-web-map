@@ -4,6 +4,7 @@ import { reverseGeocode } from '../utils/reverseGeocode';
 import { LOG } from '../utils/constants';
 import { isJsonResponseValid } from '../utils/restfulAPI';
 import * as tripFileSchema from '../../schemas/TripFile';
+import Papa from 'papaparse'
 
 export function usePlaces() {
     const [places, setPlaces] = useState([]);
@@ -99,23 +100,46 @@ function readFile(fileName, fileObject, context) {
   
   async function parseFile(file, context) {
     const { setPlaces, setSelectedIndex } = context;
+    var newPlaces = [];
 
     const extension = file.name.split('.').pop();
     if (extension === "json") { 
-           if (isJsonResponseValid(JSON.parse(file.text), tripFileSchema)){
-      console.log("Building trip from JSON file.");
-      
-      var jsonList = JSON.parse(file.text);
-      var newPlaces = [];
+      if (isJsonResponseValid(JSON.parse(file.text), tripFileSchema)) {
+        console.log("Building trip from JSON file.");
+        
+        var jsonList = JSON.parse(file.text);
 
-      for (var i = 0; i < jsonList.places.length; i++) {
-        const fullPlace = await reverseGeocode(placeToLatLng(jsonList.places[i]));
-        newPlaces.push(fullPlace);
+        for (var i = 0; i < jsonList.places.length; i++) {
+          const fullPlace = await reverseGeocode(placeToLatLng(jsonList.places[i]));
+          newPlaces.push(fullPlace);
+        }
+
+        setPlaces(newPlaces);
+        setSelectedIndex(newPlaces.length - 1);
       }
+    } else if (extension === "csv") {
+      console.log("Building trip from CSV file.");
 
+      var indPlace = {};   
+      var csvList = Papa.parse(file.text);
+      var csvList;
+      console.log(csvList);
+      
+      var numItems = csvList.data[0].length;
+      var items = csvList.data[0];
+      for (var i = 1; i < csvList.data.length; i++) {
+
+        for (var j = 0; j < numItems; j++) {
+          indPlace[items[j]] = csvList.data[i][j];
+        }
+
+        const fullPlace = await reverseGeocode(placeToLatLng(indPlace));
+        newPlaces.push(fullPlace);
+        indPlace = {};
+      }
+      
       setPlaces(newPlaces);
-      setSelectedIndex(newPlaces.length - 1);
-    }
+      setSelectedIndex(newPlaces.length - 1); 
     }
   }
 }
