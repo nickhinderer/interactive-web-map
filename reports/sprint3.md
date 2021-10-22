@@ -44,7 +44,7 @@ completely done by shows the total miles between two places and incorporate it w
 upload their saved trip to the system and display it in the right place, and mark it on the map. For "Where I am", a little button will handle this function. This epic will 
 get users able to find their location on click.
 
-We plan on finishing "Find my Place" first by update the List file to add the "add" function. Also, add more details to show "No Result Found" when there are no places 
+We plan on finishing "Find Places" first by update the List file to add the "add" function. Also, add more details to show "No Result Found" when there are no places 
 found in the database.And there are two existing bugs. One is matching places only show up when we close the search modal. This is related to the set display function 
 inside the findModal not working well.The task for fixing this one will be assigned to either Abby or Jacki. The second bug is that the server response doesn't send back 
 the right data with a specific match. The task for adding more details will assign to whoever can handle it. These tasks will be done by Nick since he handle most part of 
@@ -72,8 +72,8 @@ And new class to handleadd this trip to the correct place. This task will split 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
 | Epics | *5* | *5* |
-| Tasks |  *40*   | *122*  | 
-| Story Points |  *49*  | *119*  | 
+| Tasks |  *40*   | *133*  | 
+| Story Points |  *49*  | *135*  | 
 
 Based on our team's previous performance, it would be achievable to finish at least 4 epics. From what we left last, we can finish the "Find My place" pretty soon, which is 
 already done mostly on the starting date of this sprint. And "Interoperability" already done most part on the starting date of sprint3 also. What we left will be "Where I am"
@@ -98,14 +98,18 @@ The #*task* numbers refer to the issue numbers in GitHub.
 ## Review
 
 ### Epics completed
+In this sprint, our group was able to finish all the epics: "Interoperability", "Where Am I", "Distance", "Load Trip", and "Find Places". We can add matched places to the page and shows them correctly on the map. We hold a home button where users can locate themselves on the map of the trip. And the interoperability can connect to other servers and show available features and website addresses. To be user friendly we also provide a list of server can be chosen.  And the distances between each place and round trip distances will be shown by one click of the "Find Distances" button, which could be improved in the future by showing the distances onChange. And Load Trip works perfectly with only specific types of JSON and CSV files with validation.
 
 ### Epics not completed
 
 ## Retrospective
 
 ### Things that went well
+As a team, I think we did really well at splitting work and updating work to each other at this time compare to last sprint. We incorporate together at the some epices but also split it resonally between each other to make this 5 epices much achievable. We also did really good at break down the epices to little task. And our communication skill get better during the scrum meeting which only mentioned the main point and progress everyone made to make meeting short and precise. 
 
 ### Things that we need to improve 
+Regarding the product, one thing that we can do better is always writing a test with the code we wrote instead of writing it after the cod merged. Another things would be writing better code, checking the code climate before creating a pull request. Also, test more of the functionality of the part we wrote instead of checking or finding the bug on the due day.  Regarding the team, we can do better at responding to each other's messages on Slack.
 
-#### One thing we will change next time
+### One thing we will change next time
+Regarding the product, our team could change next time by testing and checking bugs of the product frequently, writing more test code, and writing much cleaner code. Also, we should spend more time together to understand both the client-side and server-side of the product
 
