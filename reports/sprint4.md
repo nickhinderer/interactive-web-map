@@ -1,10 +1,10 @@
-# Sprint 4 - *your team number* - *your team name*
+# Sprint 4 - *4* - *Geek Velocity*
 
 ## Goal
 ### *Shorter tours!*
 
 ## Sprint Leader: 
-### *firstname lastname*
+### *Nick Hinderer*
 
 ## Definition of Done
 
