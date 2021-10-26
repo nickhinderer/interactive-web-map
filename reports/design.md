@@ -266,5 +266,14 @@ Adding the following classes to the server:
 * DistanceRequest.java
 * Distance.java
 * TestDistanceRequest.java
+
 # Sprint 4 
+
+### User Interface
+
+### Client Components
+
+### Server Classes
+
+
 # Sprint 5
