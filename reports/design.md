@@ -229,15 +229,11 @@ Updates to the interface for this epic will add new features to the itinerary li
 * Add a label for "Round Trip Distance: "
 * Add a button that generates distances array
 
-### Drawing for #253 Save Epic
+### Drawing for #253 Load Trip
 
-<img src=https://user-images.githubusercontent.com/82910022/136130691-c582c4fc-f7cb-4f4d-9b28-b07864974470.jpg width="525" alt="Save File Drawing"/>
+<img src=https://user-images.githubusercontent.com/82910022/138926440-7fb4afae-db95-4e9d-ad0c-c57729074f66.jpg width="525" alt="LoadFileDrawing"/>
 
-For the Save File epic, the user will have the ability to save a trip to their local file system. The hamburger dropdown will have a save file option icon.
-
-By clicking save file, the user will be able to add a trip object to any desired location in their system. When they press done this should either send the user an alert success or failure for their attempt to save a trip. 
-
-We will have a file explorer popup for the user to use however their heart desires. 
+Changes to the User Interface are indicated by the lines and explanatory text. 
 
 ### Drawing for #244 Where Am I?
 
@@ -279,7 +275,16 @@ There will be 3 primary parts:
 
 The user will be able to save trips created via the itinerary. The user will also be able to create shorter, more efficient trips. Overall user experience will also be improved via outside feedback.
 
+#### UI Improvements
+
+The "Choose File" button to upload a file is not the most appealing feature compared to the other hamburger options in the "My Trip" dropdown. 
+We will improve this by adding an icon for the user to click. By doing so, we are enhancing the overall User Interface.
+
 ### Drawing for #529 Save Trip 
+
+<img src="https://user-images.githubusercontent.com/82910022/138925322-f8c72516-2bf4-49ea-b8f0-33a3385a0dd8.jpg" width="525" alt="SaveFileDrawing"/>
+
+Changes to the User Interface are indicated by the lines and explanatory text. 
 
 ### Drawing for #525 Shorter Trip
 
