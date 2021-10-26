@@ -279,6 +279,12 @@ There will be 3 primary parts:
 
 The user will be able to save trips created via the itinerary. The user will also be able to create shorter, more efficient trips. Overall user experience will also be improved via outside feedback.
 
+### Drawing for #529 Save Trip 
+
+### Drawing for #525 Shorter Trip
+
+### Drawing for #527 User Experience
+
 ### Client Components
 
 ### Server Classes
