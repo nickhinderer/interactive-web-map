@@ -266,5 +266,31 @@ Adding the following classes to the server:
 * DistanceRequest.java
 * Distance.java
 * TestDistanceRequest.java
+
 # Sprint 4 
+
+### User Interface
+
+During this sprint, the team will work on polishing features from the last sprint as well as add new features that will improve the usability of the site. 
+There will be 3 primary parts:
+* Save Trip
+* Shorter Trip
+* User Experience
+
+The user will be able to save trips created via the itinerary. The user will also be able to create shorter, more efficient trips. Overall user experience will also be improved via outside feedback.
+
+### Drawing for #529 Save Trip 
+
+### Drawing for #525 Shorter Trip
+
+### Drawing for #527 User Experience
+
+### Client Components
+
+We will be adding the following components to the client: 
+* File/functions to handle saving a trip from the intinerary
+* Testing files for save trip file/function
+
+### Server Classes
+
 # Sprint 5
