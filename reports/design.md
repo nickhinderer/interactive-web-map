@@ -286,6 +286,10 @@ We will improve this by adding an icon for the user to click. By doing so, we ar
 
 ### Drawing for #529 Save Trip 
 
+<img src="https://user-images.githubusercontent.com/82910022/138925322-f8c72516-2bf4-49ea-b8f0-33a3385a0dd8.jpg" width="525" alt="SaveFileDrawing"/>
+
+Changes to the User Interface are indicated by the lines and explanatory text. 
+
 ### Drawing for #525 Shorter Trip
 
 ### Drawing for #527 User Experience
