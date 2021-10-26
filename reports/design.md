@@ -271,6 +271,14 @@ Adding the following classes to the server:
 
 ### User Interface
 
+During this sprint, the team will work on polishing features from the last sprint as well as add new features that will improve the usability of the site. 
+There will be 3 primary parts:
+* Save Trip
+* Shorter Trip
+* User Experience
+
+The user will be able to save trips created via the itinerary. The user will also be able to create shorter, more efficient trips. Overall user experience will also be improved via outside feedback.
+
 ### Client Components
 
 ### Server Classes
