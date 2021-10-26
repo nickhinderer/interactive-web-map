@@ -277,10 +277,12 @@ There will be 3 primary parts:
 * Shorter Trip
 * User Experience
 
-The "Choose File" button to upload a file is not the most appealing feature compared to the other hamburger options in the "My Trip" dropdown. 
-We will improve this by adding an icon for the user to click. By doing so, we are enhancing the overall User Interface. 
-
 The user will be able to save trips created via the itinerary. The user will also be able to create shorter, more efficient trips. Overall user experience will also be improved via outside feedback.
+
+#### UI Improvements
+
+The "Choose File" button to upload a file is not the most appealing feature compared to the other hamburger options in the "My Trip" dropdown. 
+We will improve this by adding an icon for the user to click. By doing so, we are enhancing the overall User Interface.
 
 ### Drawing for #529 Save Trip 
 
