@@ -287,6 +287,13 @@ We will improve this by adding an icon for the user to click. By doing so, we ar
 Changes to the User Interface are indicated by the lines and explanatory text. 
 
 ### Drawing for #525 Shorter Trip
+![tour](../images/tour.jpg)
+This epic interface will add a popup when a shorter trip is found compared to the current one. The map and the trip column will update the shortest trip when the user chooses to apply the shorter trip. And all the formats will keep the same when the user click the discard button.We will change the code by :
+* Add a new class to hanlde or store the shorter trip data
+* Add a new class for pop-up alert
+* Update Itinerary for showing the new trip
+
+
 
 ### Drawing for #527 User Experience
 
