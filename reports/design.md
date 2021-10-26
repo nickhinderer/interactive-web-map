@@ -287,7 +287,10 @@ The user will be able to save trips created via the itinerary. The user will als
 
 ### Client Components
 
-### Server Classes
+We will be adding the following components to the client: 
+* File/functions to handle saving a trip from the intinerary
+* Testing files for save trip file/function
 
+### Server Classes
 
 # Sprint 5
