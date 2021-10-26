@@ -297,5 +297,10 @@ We will be adding the following components to the client:
 * Testing files for save trip file/function
 
 ### Server Classes
-
+![server_classes](../images/Sprint4ServerClassDiagram.png)
+Adding the following classes
+* TourRequest.java
+* Tour.java
+* TestTourRequest.java
+* TestTour.java
 # Sprint 5
