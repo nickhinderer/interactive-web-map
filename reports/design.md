@@ -287,7 +287,8 @@ We will improve this by adding an icon for the user to click. By doing so, we ar
 Changes to the User Interface are indicated by the lines and explanatory text. 
 
 ### Drawing for #525 Shorter Trip
-![tour](../images/tour.jpg)
+<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/4e991b461922453123b640d643d81d575da6a18f/images/tour.jpg" width="525" alt="tour"/>
+
 This epic interface will add a popup when a shorter trip is found compared to the current one. The map and the trip column will update the shortest trip when the user chooses to apply the shorter trip. And all the formats will keep the same when the user click the discard button.We will change the code by :
 * Add a new class to hanlde or store the shorter trip data
 * Add a new class for pop-up alert
@@ -298,10 +299,13 @@ This epic interface will add a popup when a shorter trip is found compared to th
 ### Drawing for #527 User Experience
 
 ### Client Components
+![sp4components](../images/Sprint4Components.png)
 
 We will be adding the following components to the client: 
 * File/functions to handle saving a trip from the intinerary
 * Testing files for save trip file/function
+* File/functions to handle shorter trip
+* Testing files for shorter trip
 
 ### Server Classes
 ![server_classes](../images/Sprint4ServerClassDiagram.png)
