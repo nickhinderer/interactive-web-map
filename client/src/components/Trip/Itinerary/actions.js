@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonGroup, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { FaHome, FaTrash, FaTrashAlt } from 'react-icons/fa';
+import { FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
 import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
 
 const FILE_FORMATS = ".json, .csv, application/json, text/csv";
@@ -24,6 +24,9 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
             <Input type="file" accept={FILE_FORMATS} onChange={handleFileUpload}>
             </Input>
+            <DropdownItem data-testid='save-trip-button'>
+                <FaFileDownload />
+            </DropdownItem>
         </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
     );
 }
