@@ -4,7 +4,7 @@ import { reverseGeocode } from '../utils/reverseGeocode';
 import { LOG } from '../utils/constants';
 import { isJsonResponseValid } from '../utils/restfulAPI';
 import * as tripFileSchema from '../../schemas/TripFile';
-import Papa from 'papaparse'
+import Papa from 'papaparse';
 
 export function usePlaces() {
     const [places, setPlaces] = useState([]);
@@ -143,3 +143,5 @@ function readFile(fileName, fileObject, context) {
     }
   }
 }
+
+/* Functions for Save File */
