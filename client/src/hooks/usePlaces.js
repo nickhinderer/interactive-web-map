@@ -145,3 +145,9 @@ function readFile(fileName, fileObject, context) {
 }
 
 /* Functions for Save File */
+function downloadFile(fileNameWithExtension, mimeType, fileText) {
+  const file = new Blob([fileText], {type: mimeType});
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(file);
+  
+}
