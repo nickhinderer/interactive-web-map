@@ -24,7 +24,7 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
             <Input type="file" accept={FILE_FORMATS} onChange={handleFileUpload}>
             </Input>
-            <DropdownItem onClick={} data-testid='save-trip-button'>
+            <DropdownItem data-testid='save-trip-button'>
                 <FaFileDownload />
             </DropdownItem>
         </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
