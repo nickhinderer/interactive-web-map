@@ -55,7 +55,7 @@
 ## Scrums
 
 | Date | Tasks closed  | Tasks in progress | Impediments |
-| :--- | :--- | :--- | :--- |
+| :10/27 | :#560 | :#538, #535, #539, #537, #536 | :--- |
 | *date* | *#task, ...* | *#task, ...* |  | 
 
 
