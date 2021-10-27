@@ -6,28 +6,6 @@ import { FaFileUpload, FaHome, FaTrash, FaTrashAlt } from 'react-icons/fa';
 const FILE_FORMATS = ".json, .csv, application/json, text/csv";
 
 export function ItineraryActionsDropdown(props) {
-    
-    return (
-        <ActionsDropdown {...props}>
-            <DropdownItem onClick={() => props.placeActions.moveToHome()} data-testid='home-button'>
-                <FaHome />
-            </DropdownItem>
-            <DropdownItem onClick={() => props.placeActions.removeAll()} data-testid='delete-all-button'>
-                <FaTrashAlt />
-            </DropdownItem>
-            <DropdownItem>
-                <LoadFileButton placeActions={props.placeActions}/>
-            </DropdownItem>
-        </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
-    );
-}
-function LoadFileButton(props) {
-
-    function handleFileUpload(event) {
-        const fileName = event.target.files[0].name;
-        const fileObject = event.target.files[0];
-        props.placeActions.readFile(fileName, fileObject)
-    }
 
     const iconClick = () => {
         const input = document.getElementById('file-upload');
@@ -39,12 +17,17 @@ function LoadFileButton(props) {
     }
 
     return (
-        <React.Fragment>
-            <DropdownItem onClick={() => iconClick()} >
-                <FaFileUpload style={{ width: 64 }}/>            
+        <ActionsDropdown {...props}>
+            <DropdownItem onClick={() => props.placeActions.moveToHome()} data-testid='home-button'>
+                <FaHome />
             </DropdownItem>
-            <Input style={{ display: 'none' }} id='file-upload' type="file" accept={FILE_FORMATS} onChange={(e) => handleFileUpload(e)}/>
-        </React.Fragment>
+            <DropdownItem onClick={() => props.placeActions.removeAll()} data-testid='delete-all-button'>
+                <FaTrashAlt />
+            </DropdownItem>
+            <DropdownItem onClick={iconClick}>
+                <FaFileUpload/>
+            </DropdownItem>
+        </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
     );
 }
 
