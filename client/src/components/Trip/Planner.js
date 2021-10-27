@@ -5,6 +5,8 @@ import Map from './Map/Map';
 import Itinerary from './Itinerary/Itinerary';
 import { usePlaces } from '../../hooks/usePlaces';
 
+const FILE_FORMATS = ".json, .csv, application/json, text/csv";
+
 export default function Planner(props) {
     const {places, selectedIndex, placeActions} = usePlaces();
 
