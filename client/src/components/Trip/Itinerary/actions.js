@@ -15,9 +15,9 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => props.placeActions.removeAll()} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
-            <div>
+            <DropdownItem>
                 <LoadFileButton placeActions={props.placeActions}/>
-            </div>
+            </DropdownItem>
         </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
     );
 }
@@ -29,8 +29,22 @@ function LoadFileButton(props) {
         props.placeActions.readFile(fileName, fileObject)
     }
 
+    const iconClick = () => {
+        const input = document.getElementById('file-upload');
+
+        if (input) {
+            console.log('clicked' + input);
+            input.click();
+        }
+    }
+
     return (
-        <Input type="file" accept={FILE_FORMATS} onChange={handleFileUpload}/>
+        <React.Fragment>
+            <DropdownItem onClick={() => iconClick()} >
+                <FaFileUpload style={{ width: 64 }}/>            
+            </DropdownItem>
+            <Input style={{ display: 'none' }} id='file-upload' type="file" accept={FILE_FORMATS} onChange={(e) => handleFileUpload(e)}/>
+        </React.Fragment>
     );
 }
 
