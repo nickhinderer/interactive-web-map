@@ -1,9 +1,7 @@
 import React from 'react';
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { FaFileUpload, FaHome, FaTrash, FaTrashAlt } from 'react-icons/fa';
-
-const FILE_FORMATS = ".json, .csv, application/json, text/csv";
+import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
 
 export function ItineraryActionsDropdown(props) {
 
@@ -27,7 +25,10 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={iconClick}>
                 <FaFileUpload/>
             </DropdownItem>
-        </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
+            <DropdownItem data-testid='save-trip-button'>
+                <FaFileDownload />
+            </DropdownItem>
+        </ActionsDropdown> 
     );
 }
 

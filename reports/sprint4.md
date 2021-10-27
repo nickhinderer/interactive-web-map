@@ -37,21 +37,25 @@
 
 
 ## Planned Epics
+* Shorter Trip - The first epic we plan on completing is the shorter trip epic. The application will allow the user to be able to check and see if a shorter route exists for an existing trip. If a shorter route exists for an existing trip, the route will be displayed on the map, and the user will be prompted to select whether they want to use the new route or retain the original. The calculation for the shorter trip route should take less than a second.
 
+* Save Trip - The second epic we plan on completing is the save trip epic. We will be adding a feature that allows the user to be able to use the application to save an existing trip to a file locally to their machine so that it can be pulled up at a later time during another session and all the information from the current trip will be reloaded into the new session. The saved trip file will be in a format which can be loaded into different applications like excel or google sheets. 
+
+* User Experience - The third epic we plan on completing is the user experience epic. Each member of our team will ask someone from outside the course (not including people who have already taken the course) to use the app and provide feedback and pointers on areas we can work on to improve overall user experience. We will document the feedback and implement the specific points we get as tasks to work on during sprint 4. Areas we will improve may include, but are not limited to, removing clutter, simplifying user interface, progressive disclosure, minimizing scrolling, and adding necessary icons and labels.
 
 ## Metrics
 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
-| Epics | *count* | *count* |
-| Tasks |  *count*   | *count* | 
-| Story Points |  *sum*  | *sum* | 
+| Epics | *3* | *count* |
+| Tasks |  *31*   | *count* | 
+| Story Points |  *42*  | *sum* | 
 
 
 ## Scrums
 
 | Date | Tasks closed  | Tasks in progress | Impediments |
-| :--- | :--- | :--- | :--- |
+| :10/27 | :#560 | :#538, #535, #539, #537, #536 | :--- |
 | *date* | *#task, ...* | *#task, ...* |  | 
 
 

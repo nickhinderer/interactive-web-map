@@ -4,7 +4,7 @@ import { reverseGeocode } from '../utils/reverseGeocode';
 import { LOG } from '../utils/constants';
 import { isJsonResponseValid } from '../utils/restfulAPI';
 import * as tripFileSchema from '../../schemas/TripFile';
-import Papa from 'papaparse'
+import Papa from 'papaparse';
 
 export function usePlaces() {
     const [places, setPlaces] = useState([]);
@@ -142,4 +142,23 @@ function readFile(fileName, fileObject, context) {
       setSelectedIndex(newPlaces.length - 1); 
     }
   }
+}
+
+/* Functions for Save File */
+function downloadFile(fileNameWithExtension, mimeType, fileText) {
+  const file = new Blob([fileText], { type: mimeType });
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(file);
+
+  link.href = url;
+  link.download = fileNameWithExtension;
+
+  document.body.appendChild(link);
+  
+  link.click();
+  
+  setTimeout(function() {
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  }, 0)
 }
