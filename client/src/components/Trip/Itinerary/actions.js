@@ -1,8 +1,7 @@
 import React from 'react';
-import { ButtonGroup, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { FaHome, FaTrash, FaTrashAlt } from 'react-icons/fa';
-import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
+import { FaFileUpload, FaHome, FaTrash, FaTrashAlt } from 'react-icons/fa';
 
 const FILE_FORMATS = ".json, .csv, application/json, text/csv";
 
