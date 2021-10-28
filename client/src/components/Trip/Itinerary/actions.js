@@ -1,17 +1,17 @@
 import React from 'react';
-import { ButtonGroup, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
-import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
-
-const FILE_FORMATS = ".json, .csv, application/json, text/csv";
+import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
 
 export function ItineraryActionsDropdown(props) {
-    
-    function handleFileUpload(event) {
-        const fileName = event.target.files[0].name;
-        const fileObject = event.target.files[0];
-        props.placeActions.readFile(fileName, fileObject)
+
+    const iconClick = () => {
+        const input = document.getElementById('file-upload');
+
+        if (input) {
+            console.log('clicked' + input);
+            input.click();
+        }
     }
 
     return (
@@ -22,12 +22,13 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => props.placeActions.removeAll()} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
-            <Input type="file" accept={FILE_FORMATS} onChange={handleFileUpload}>
-            </Input>
+            <DropdownItem onClick={iconClick}>
+                <FaFileUpload/>
+            </DropdownItem>
             <DropdownItem data-testid='save-trip-button'>
                 <FaFileDownload />
             </DropdownItem>
-        </ActionsDropdown> //need parent tag, react fragment doesnt change the formatting & in line
+        </ActionsDropdown> 
     );
 }
 
