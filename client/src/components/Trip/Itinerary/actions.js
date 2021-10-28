@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Input, InputGroup } from 'reactstrap';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
 
@@ -9,7 +9,6 @@ export function ItineraryActionsDropdown(props) {
         const input = document.getElementById('file-upload');
 
         if (input) {
-            console.log('clicked' + input);
             input.click();
         }
     }
@@ -49,12 +48,9 @@ function ActionsDropdown(props) {
                 <BiDotsVerticalRounded size="1.5em" />
             </DropdownToggle >
             <DropdownMenu>
-                {/*<ButtonGroup >
+                <ButtonGroup >
                     {props.children}
-                </ButtonGroup> */}
-                <InputGroup >
-                    {props.children}
-                </InputGroup>
+                </ButtonGroup>
             </DropdownMenu>
         </UncontrolledDropdown>
     );
