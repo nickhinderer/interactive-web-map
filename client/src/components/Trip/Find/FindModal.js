@@ -21,14 +21,8 @@ export default function FindModal(props) {
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
-                    <InputGroup>
-                        <Input placeholder={"Place..."} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
-                        <InputGroupAddon addonType="append">
-                            <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search </Button>
-                        </InputGroupAddon>
-                    </InputGroup>
-                    {display? <List match={match} places={props.places} placeActions={props.placeActions}/> :<div></div>}
-                    
+                {FindInput(setDisplay, setMatch)}
+                {display? <List match={match} places={props.places} placeActions={props.placeActions}/> :<div></div>}
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={toggle}><img src={check}/> Done </Button>{' '}
@@ -36,6 +30,18 @@ export default function FindModal(props) {
                 </ModalFooter>
             </Modal>
         </div>
+    );
+}
+
+function FindInput(setDisplay, setMatch){
+
+    return (
+        <InputGroup>
+            <Input placeholder={"Place..."} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
+                <InputGroupAddon addonType="append">
+                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search </Button>
+                </InputGroupAddon>
+        </InputGroup>
     );
 }
 
