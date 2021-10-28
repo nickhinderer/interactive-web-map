@@ -70,16 +70,16 @@ function Header(props) {
 
 function Body(props) {
 
-
+    /*
     function hanldeChange() {
         const trip = [];
         props.places.map((place) => trip.push({ "name": place.name.split(",")[0], "latitude": place.lat.toString(), "longitude": place.lng.toString() }));
         const size = trip.length; 
         props.trips(trip, size);
-    }
+    } */
 
     return (
-        <tbody onChange={hanldeChange()}>
+        <tbody>
             {props.places.map((place, index) =>
                 <TableRow
                     key={`table-${JSON.stringify(place)}-${index}`}

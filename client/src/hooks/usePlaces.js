@@ -110,8 +110,8 @@ function readFile(fileName, fileObject, context) {
         var jsonList = JSON.parse(file.text);
 
         for (var i = 0; i < jsonList.places.length; i++) {
-          const fullPlace = await reverseGeocode(placeToLatLng(jsonList.places[i]));
-          newPlaces.push(fullPlace);
+          const latLng = placeToLatLng(jsonList.places[i]);
+          newPlaces.push(latLng);
         }
 
         setPlaces(newPlaces);
@@ -122,8 +122,6 @@ function readFile(fileName, fileObject, context) {
 
       var indPlace = {};   
       var csvList = Papa.parse(file.text);
-      var csvList;
-      console.log(csvList);
       
       var numItems = csvList.data[0].length;
       var items = csvList.data[0];
@@ -133,8 +131,8 @@ function readFile(fileName, fileObject, context) {
           indPlace[items[j]] = csvList.data[i][j];
         }
 
-        const fullPlace = await reverseGeocode(placeToLatLng(indPlace));
-        newPlaces.push(fullPlace);
+        const latLng = placeToLatLng(indPlace);
+        newPlaces.push(latLng);
         indPlace = {};
       }
       
