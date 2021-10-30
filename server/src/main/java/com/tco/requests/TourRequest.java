@@ -14,4 +14,13 @@ public class TourRequest extends Request {
         this.requestType = "tour";
 
     }
+
+    /* The following methods exist only for testing purposes and are not used
+  during normal execution, including the constructor. */
+    public TourRequest() {
+        this.requestType = "tour";
+        this.earthRadius = 1.0;
+        this.response = 1.0;
+        this.places = new Places();
+    }
 }
