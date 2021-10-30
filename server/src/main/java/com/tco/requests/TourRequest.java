@@ -23,4 +23,16 @@ public class TourRequest extends Request {
         this.response = 1.0;
         this.places = new Places();
     }
+
+    public Double getEarthRadius() {
+        return earthRadius;
+    }
+
+    public Double getResponse() {
+        return response;
+    }
+
+    public Places getPlaces() {
+        return places;
+    }
 }
