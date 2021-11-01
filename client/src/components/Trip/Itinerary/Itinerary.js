@@ -8,21 +8,12 @@ import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 
 export default function Itinerary(props) {
-    const [trips, setTrips] = useState([]);
     const [err, setErr] = useState(true);
     const [distances, setDistances]=useState([]);
 
 
 
-    function hanldeTrips(trip, size) {
-
-        useEffect(() => {
-            setTrips(trip);
-            //this is for test purpose
-            console.log(trips);
-        }, [size != trips.length]);
-    }
-
+   
     async function sendDistancesRequest(data){
 
         const serverUrl = getOriginalServerUrl();
@@ -30,36 +21,24 @@ export default function Itinerary(props) {
         if (distancesResponse!=null) {
             distancesResponse.distances.length==0? setErr(true):setErr(false),setDistances(distancesResponse.distances); 
         }
-    
-        //For testing purposes
-        //LOG.info(distancesResponse);
-        //LOG.info(distances);
     }
 
     return (
         <Table responsive striped>
-            <Header placeActions={props.placeActions} send={sendDistancesRequest} trips={trips} />
+            <Header placeActions={props.placeActions} />
             <TotalDistance distances={distances} err={err}/>
-            <Body trips={hanldeTrips} places={props.places} placeActions={props.placeActions} distances={distances} />
+            <Body send={sendDistancesRequest} places={props.places} placeActions={props.placeActions} distances={distances} />
         </Table>
     );
 }
 
 function Header(props) {
-    
-    function hanldeChange(data){
-        props.send(data);
-    }
 
     return (
         <thead>
             <tr>
                 <th>My Trip</th>
-                <th>
-                    <Button id="Popover1" type="button" size="sm" onClick={() => hanldeChange(props.trips)}>
-                        Find Distances
-                    </Button>
-                </th> 
+                <th> Distances</th> 
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
                 </th>
@@ -70,16 +49,20 @@ function Header(props) {
 
 function Body(props) {
 
-    /*
+    function hanldeDistance(data){
+        props.send(data);
+    }
+
     function hanldeChange() {
         const trip = [];
         props.places.map((place) => trip.push({ "name": place.name.split(",")[0], "latitude": place.lat.toString(), "longitude": place.lng.toString() }));
-        const size = trip.length; 
-        props.trips(trip, size);
-    } */
+        hanldeDistance(trip)
+    }
+
+    
 
     return (
-        <tbody>
+        <tbody onChange={hanldeChange()}>
             {props.places.map((place, index) =>
                 <TableRow
                     key={`table-${JSON.stringify(place)}-${index}`}
@@ -101,7 +84,7 @@ function TableRow(props) {
     return (
         <tr>
             <th scope="row">{props.index + 1}</th>
-            <td>{ props.index != 0 && distance != 0 ? distance : 0} Mile(s)</td>
+            <td>{distance!=null ? distance : 0} Mile(s)</td>
             <td>
                 {name}
                 <br />
