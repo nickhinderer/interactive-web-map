@@ -22,6 +22,8 @@ Consider this a failure when it happens.
 5. check features
 6. Find the total distance of the trip
 7. Find your location
+8. Upload test file
+9. View as mobile device
 
 ### Demographics
 
