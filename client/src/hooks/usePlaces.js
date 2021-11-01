@@ -18,10 +18,12 @@ export function usePlaces() {
         removeAtIndex: (index) => removeAtIndex(index, context),
         removeAll: () => removeAll(context),
         selectIndex: (index) => selectIndex(index, context),
-        readFile: (fileName, fileObject) => readFile(fileName, fileObject, context)
+        readFile: (fileName, fileObject) => readFile(fileName, fileObject, context),
+        buildTripJSON: () => buildTripJSON(context),
+        downloadFile: (fullFileName, mimeType, fileText) => downloadFile(fullFileName, mimeType, fileText, context)
     };
 
-    return {places, selectedIndex, placeActions};
+    return {places, selectedIndex, placeActions}; 
 }
 
 async function append(place, context) {
@@ -143,13 +145,13 @@ function readFile(fileName, fileObject, context) {
 }
 
 /* Functions for Save File */
-function downloadFile(fileNameWithExtension, mimeType, fileText) {
+function downloadFile(fullFileName, mimeType, fileText) {
   const file = new Blob([fileText], { type: mimeType });
   const link = document.createElement("a");
   const url = URL.createObjectURL(file);
 
   link.href = url;
-  link.download = fileNameWithExtension;
+  link.download = fullFileName;
 
   document.body.appendChild(link);
   
@@ -159,4 +161,21 @@ function downloadFile(fileNameWithExtension, mimeType, fileText) {
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
   }, 0)
+}
+
+function buildTripJSON() {
+  // Pass in your actual trip values to use. These are hardcoded for this example.
+  const tripJSON = {
+    earthRadius: 6371.0,
+    units: "km",
+    places: [
+      { name: "place1", latitude: "40.6", longitude: "-105.1" },
+      { name: "place2", latitude: "-33.9", longitude: "151.2" },
+      { name: "place3", latitude: "-57.9", longitude: "175.2" }
+    ],
+    distances: [1034, 785, 1503] 
+  };
+  
+  // Turn the object into a string with a spacing of 2 for readability.
+  return JSON.stringify(tripJSON, null, 2);
 }
