@@ -4,7 +4,7 @@ import { reverseGeocode } from '../utils/reverseGeocode';
 import { LOG } from '../utils/constants';
 import { isJsonResponseValid } from '../utils/restfulAPI';
 import * as tripFileSchema from '../../schemas/TripFile';
-//import Papa from 'papaparse';
+import Papa from 'papaparse';
 
 export function usePlaces() {
     const [places, setPlaces] = useState([]);
@@ -141,23 +141,8 @@ function readFile(fileName, fileObject, context) {
     }
   }
 }
+
 /* Functions for Save File */
-function FileSavingApp() {
-  function handleJSONSave() {
-    const tripJSON = buildTripJSON();
-    const fileName = tripName.replace(/ /g, "_").toLowerCase();
-    downloadFile(fileName + ".json", MIME_TYPE.JSON, tripJSON);
-  }
-  
-  return (
-    <Container>
-      <h3 className="font-weight-bold mt-4 mb-3">Save your trip to the file system.</h3>
-      <Button onClick={handleJSONSave}>
-        Download Trip
-      </Button>
-    </Container>
-  );
-}
 function downloadFile(fileNameWithExtension, mimeType, fileText) {
   const file = new Blob([fileText], { type: mimeType });
   const link = document.createElement("a");
