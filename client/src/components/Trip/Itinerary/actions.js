@@ -13,6 +13,12 @@ export function ItineraryActionsDropdown(props) {
         }
     }
 
+    function handleJSONSave() {
+        const tripJSON = props.placeActions.buildTripJSON();
+        const fileName = tripName.replace(/ /g, "_").toLowerCase();
+        props.placeActions.downloadFile(fileName + ".json", MIME_TYPE.JSON, tripJSON);
+    }
+
     return (
         <ActionsDropdown {...props}>
             <DropdownItem onClick={() => props.placeActions.moveToHome()} data-testid='home-button'>
@@ -24,7 +30,7 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={iconClick}>
                 <FaFileUpload/>
             </DropdownItem>
-            <DropdownItem data-testid='save-trip-button'>
+            <DropdownItem onClick={handleJSONSave} data-testid='save-trip-button'>
                 <FaFileDownload />
             </DropdownItem>
         </ActionsDropdown> 
