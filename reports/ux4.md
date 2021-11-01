@@ -16,6 +16,8 @@ Consider this a failure when it happens.
 
 1. Search for a place
 1. Add place to itinerary 
+2. zoom out map
+3. delete place
 
 ### Demographics
 
