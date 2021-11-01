@@ -3,7 +3,7 @@ import { act, render, screen, waitFor,fireEvent,userEvent  } from '@testing-libr
 import user from '@testing-library/user-event';
 import { VALID_FIND_RESPONSE } from '../../sharedMocks';
 import { beforeEach, describe, expect, it} from '@jest/globals';
-import FindModal from '../../../src/components/Trip/Find/FindModal';
+import FindModal, { FindInput } from '../../../src/components/Trip/Find/FindModal';
 
 describe('FindModal', () =>{
     const places=[];
@@ -42,9 +42,14 @@ describe('FindModal', () =>{
 
 	});
 
-    
+    it('renders an input box', () =>{
+        const display = false;
+        const match = "";
+        const setDisplay = (bool) => {display = bool};
+        const setMatch = (val) => {match = val};
+        const input = FindInput(setDisplay, setMatch);
+        expect(input).toBeDefined();
+    });
 
-
-
-
+    //need test for lines 28, 40-42
 });
