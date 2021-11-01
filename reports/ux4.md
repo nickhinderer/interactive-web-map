@@ -14,8 +14,8 @@ Each user should complete the following tasks in 10 minutes.
 Developers should not guide the user, but the user may ask for help as a last resort.  
 Consider this a failure when it happens.  
 
-1. 
-1. 
+1. Search for a place
+1. Add place to itinerary 
 
 ### Demographics
 
