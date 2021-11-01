@@ -20,6 +20,8 @@ Consider this a failure when it happens.
 3. delete place
 4. change server
 5. check features
+6. Find the total distance of the trip
+7. Find your location
 
 ### Demographics
 
