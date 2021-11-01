@@ -18,6 +18,8 @@ Consider this a failure when it happens.
 1. Add place to itinerary 
 2. zoom out map
 3. delete place
+4. change server
+5. check features
 
 ### Demographics
 
