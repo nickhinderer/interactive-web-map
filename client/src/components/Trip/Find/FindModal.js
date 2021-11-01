@@ -25,7 +25,7 @@ export default function FindModal(props) {
                 {display? <List match={match} places={props.places} placeActions={props.placeActions}/> :<div></div>}
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={() => {setDisplay(false); toggle();}}><img src={check}/> Done </Button>{' '}
+                    <Button color="primary" onClick={() => {setDisplay(false); toggle();}}><img src={check}/> Done </Button>
                     <Button color="danger" onClick={toggle}><img src={x}/> Cancel </Button>
                 </ModalFooter>
             </Modal>
@@ -33,7 +33,7 @@ export default function FindModal(props) {
     );
 }
 
-function FindInput(setDisplay, setMatch){
+export function FindInput(setDisplay, setMatch){
 
     return (
         <InputGroup>
@@ -44,4 +44,3 @@ function FindInput(setDisplay, setMatch){
         </InputGroup>
     );
 }
-
