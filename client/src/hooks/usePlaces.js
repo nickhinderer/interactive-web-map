@@ -169,7 +169,7 @@ function buildTripJSON(context) {
   const tripJson = {
     places: []
   };
-
+  var placesJson = tripJson.places;
 
   // Turn the object into a string with a spacing of 2 for readability.
   return JSON.stringify(tripJson, null, 2);
