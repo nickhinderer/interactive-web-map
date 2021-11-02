@@ -11,6 +11,7 @@ This table lists each student in the team, the team they verified interoperabili
 
 | Name | Team | Time |
 | ---- | ---- | ---- |
+| Jacki | 23 | 25 min |
 |  |  | |
 
 
@@ -20,6 +21,7 @@ We found these problems when connecting our client to another team's server.
 
 | team | problem | github# |
 | :--- |  :--- | --- |
+| 23 | error: Site breaks when dave's is input in search bar | #621 |
 |  |  |  |
 
 
@@ -29,4 +31,5 @@ We found these problems when connecting the other team's client to our server.
 
 | team |  problem | github# |
 | :--- |  :--- | --- |
+| 23 | error: React failed to build DOM, when dave's is input into search bar | #621 |
 |  |  |  |
