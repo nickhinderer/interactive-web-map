@@ -3,6 +3,13 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Butto
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
 
+const MIME_TYPE = {
+    JSON: "application/json",
+    CSV: "text/csv",
+    SVG: "image/svg+xml",
+    KML: "application/vnd.google-earth.kml+xml"
+};
+
 const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
