@@ -15,6 +15,7 @@ We note the amount of time each person spent reviewing the code in preparation f
 
 | Name | Preparation Time |
 | ---- | ---- |
+| Jacki | 40 min |
 |  |  |
 
 
