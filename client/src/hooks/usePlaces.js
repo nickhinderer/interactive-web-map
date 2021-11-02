@@ -166,18 +166,11 @@ function downloadFile(fullFileName, mimeType, fileText) {
 function buildTripJSON(context) {
   const { places, selectedIndex } = context;
   
-  // Pass in your actual trip values to use. These are hardcoded for this example.
-  const tripJSON = {
-    earthRadius: 6371.0,
-    units: "km",
-    places: [
-      { name: "place1", latitude: "40.6", longitude: "-105.1" },
-      { name: "place2", latitude: "-33.9", longitude: "151.2" },
-      { name: "place3", latitude: "-57.9", longitude: "175.2" }
-    ],
-    distances: [1034, 785, 1503] 
+  const tripJson = {
+    places: []
   };
-  
+
+
   // Turn the object into a string with a spacing of 2 for readability.
-  return JSON.stringify(tripJSON, null, 2);
+  return JSON.stringify(tripJson, null, 2);
 }
