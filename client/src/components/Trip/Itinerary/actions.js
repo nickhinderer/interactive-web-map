@@ -3,6 +3,8 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Butto
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
 
+const tripName = "My Trip";
+
 export function ItineraryActionsDropdown(props) {
 
     const iconClick = () => {
