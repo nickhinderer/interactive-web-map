@@ -26,4 +26,5 @@ We add a GitHub issue for each defect that requires a modification to the system
 
 | file:line | problem | hi/med/low | who found | github#  |
 | --- | --- | :---: | :---: | --- |
+| usePlaces.js: 103 | no error handling for file parsing | low | Jacki | |
 |  | | | | |
