@@ -6,7 +6,7 @@ We first identify the code we wish to inspect, determine the time we wish to mee
 |  | Details |
 | ----- | ----- |
 | Subject | *usePlaces.js and actions.js* |
-| Meeting | *date, time, location* |
+| Meeting | *11/04/21, 4:00PM, Morgan Library - Group Study Room 112* |
 | Checklist | *[checklist.md](https://github.com/CSU-CS-314-Fall-2021/t04/blob/main/reports/checklist.md)* |
 
 ### Roles
