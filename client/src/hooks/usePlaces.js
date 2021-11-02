@@ -20,7 +20,7 @@ export function usePlaces() {
         selectIndex: (index) => selectIndex(index, context),
         readFile: (fileName, fileObject) => readFile(fileName, fileObject, context),
         buildTripJSON: () => buildTripJSON(context),
-        downloadFile: (fullFileName, mimeType, fileText) => downloadFile(fullFileName, mimeType, fileText, context)
+        downloadFile: (fullFileName, mimeType, fileText) => downloadFile(fullFileName, mimeType, fileText)
     };
 
     return {places, selectedIndex, placeActions}; 
@@ -163,19 +163,22 @@ function downloadFile(fullFileName, mimeType, fileText) {
   }, 0)
 }
 
-function buildTripJSON() {
-  // Pass in your actual trip values to use. These are hardcoded for this example.
-  const tripJSON = {
-    earthRadius: 6371.0,
-    units: "km",
-    places: [
-      { name: "place1", latitude: "40.6", longitude: "-105.1" },
-      { name: "place2", latitude: "-33.9", longitude: "151.2" },
-      { name: "place3", latitude: "-57.9", longitude: "175.2" }
-    ],
-    distances: [1034, 785, 1503] 
+function buildTripJSON(context) {
+  const { places, selectedIndex } = context;
+  
+  const tripJson = {
+    places: []
   };
+  var placesJson = tripJson.places;
+  places.map((place) =>
+    placesJson.push(
+      { "name": place.name,
+        "latitude": place.lat,
+        "longitude": place.lng 
+      }
+    )
+  );
   
   // Turn the object into a string with a spacing of 2 for readability.
-  return JSON.stringify(tripJSON, null, 2);
+  return JSON.stringify(tripJson, null, 2);
 }
