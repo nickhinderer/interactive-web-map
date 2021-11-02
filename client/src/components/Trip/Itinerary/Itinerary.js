@@ -1,27 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Button} from 'reactstrap';
 import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
-import { latLngToText } from '../../../utils/transformers';
+import { latLngToPlace, latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
 import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 
 export default function Itinerary(props) {
-    const [trips, setTrips] = useState([]);
     const [err, setErr] = useState(true);
     const [distances, setDistances]=useState([]);
-
-
-
-    function hanldeTrips(trip, size) {
-
-        useEffect(() => {
-            setTrips(trip);
-            //this is for test purpose
-            console.log(trips);
-        }, [size != trips.length]);
-    }
 
     async function sendDistancesRequest(data){
 
@@ -30,25 +18,26 @@ export default function Itinerary(props) {
         if (distancesResponse!=null) {
             distancesResponse.distances.length==0? setErr(true):setErr(false),setDistances(distancesResponse.distances); 
         }
-    
-        //For testing purposes
-        //LOG.info(distancesResponse);
-        //LOG.info(distances);
     }
 
     return (
         <Table responsive striped>
-            <Header placeActions={props.placeActions} send={sendDistancesRequest} trips={trips} />
+            <Header places={props.places} placeActions={props.placeActions} send={(places) => sendDistancesRequest(places)} />
             <TotalDistance distances={distances} err={err}/>
-            <Body trips={hanldeTrips} places={props.places} placeActions={props.placeActions} distances={distances} />
+            <Body places={props.places} placeActions={props.placeActions} distances={distances} />
         </Table>
     );
 }
 
 function Header(props) {
     
-    function hanldeChange(data){
-        props.send(data);
+    function handleChange(places) {
+        const newPlaces = [];
+        for (var i = 0; i < places.length; i++) {          
+            const matchingType = latLngToPlace(places[i]);
+            newPlaces.push(matchingType);
+        }
+        props.send(newPlaces);
     }
 
     return (
@@ -56,7 +45,7 @@ function Header(props) {
             <tr>
                 <th>My Trip</th>
                 <th>
-                    <Button id="Popover1" type="button" size="sm" onClick={() => hanldeChange(props.trips)}>
+                    <Button id="Popover1" type="button" size="sm" onClick={() => handleChange(props.places)}>
                         Find Distances
                     </Button>
                 </th> 
@@ -69,14 +58,6 @@ function Header(props) {
 }
 
 function Body(props) {
-
-    /*
-    function hanldeChange() {
-        const trip = [];
-        props.places.map((place) => trip.push({ "name": place.name.split(",")[0], "latitude": place.lat.toString(), "longitude": place.lng.toString() }));
-        const size = trip.length; 
-        props.trips(trip, size);
-    } */
 
     return (
         <tbody>
