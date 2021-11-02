@@ -7,7 +7,7 @@ We first identify the code we wish to inspect, determine the time we wish to mee
 | ----- | ----- |
 | Subject | *usePlaces.js and actions.js* |
 | Meeting | *date, time, location* |
-| Checklist | *[checklist.md](reports/checklist.md)* |
+| Checklist | *[checklist.md](https://github.com/CSU-CS-314-Fall-2021/t04/blob/main/reports/checklist.md)* |
 
 ### Roles
 
