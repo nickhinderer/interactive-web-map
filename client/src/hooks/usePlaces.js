@@ -170,7 +170,15 @@ function buildTripJSON(context) {
     places: []
   };
   var placesJson = tripJson.places;
-
+  places.map((place) =>
+    placesJson.push(
+      { "name": place.name,
+        "latitude": place.lat,
+        "longitude": place.lng 
+      }
+    )
+  );
+  
   // Turn the object into a string with a spacing of 2 for readability.
   return JSON.stringify(tripJson, null, 2);
 }
