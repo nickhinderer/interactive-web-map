@@ -5,9 +5,9 @@ We first identify the code we wish to inspect, determine the time we wish to mee
 
 |  | Details |
 | ----- | ----- |
-| Subject | *file and methods/line range to review for meeting* |
+| Subject | *usePlaces.js and actions.js* |
 | Meeting | *date, time, location* |
-| Checklist | *reference, URL, etc.* |
+| Checklist | *checklist.md* |
 
 ### Roles
 
