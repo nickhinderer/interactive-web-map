@@ -15,6 +15,7 @@ We note the amount of time each person spent reviewing the code in preparation f
 
 | Name | Preparation Time |
 | ---- | ---- |
+| Jacki | 40 min |
 |  |  |
 
 
@@ -25,4 +26,6 @@ We add a GitHub issue for each defect that requires a modification to the system
 
 | file:line | problem | hi/med/low | who found | github#  |
 | --- | --- | :---: | :---: | --- |
+| usePlaces.js: 103 | no error handling for file parsing | low | Jacki | |
+| usePlaces.js: 115, 136 | similar const variable used for latlng | low | Jacki | |
 |  | | | | |
