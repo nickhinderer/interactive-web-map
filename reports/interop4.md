@@ -12,7 +12,7 @@ This table lists each student in the team, the team they verified interoperabili
 | Name | Team | Time |
 | ---- | ---- | ---- |
 | Jacki | 23 | 25 min |
-|  |  | |
+| Abby | 24 | 20 min |
 
 
 ### Client Problems found
