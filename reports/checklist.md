@@ -48,3 +48,4 @@ The checklist will be updated as we identify new faults in our code that we wish
 
 ### Implementation faults
 * Does similar functionality already exist in the codebase? If so, why isn’t this functionality reused?
+* Do all functions stay within the allowed Cognitive Complexity level?
