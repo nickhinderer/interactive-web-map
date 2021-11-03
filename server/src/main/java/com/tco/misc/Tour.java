@@ -1,5 +1,7 @@
 package com.tco.misc;
 
+import java.util.Arrays;
+
 public class Tour {
     private Places places;
     private final double earthRadius;
@@ -26,6 +28,19 @@ public class Tour {
 
     public void optimizeTour() {
 
+    }
+
+    private void createNearestNeighborTour() {
+        long bestTourDistance = Long.MAX_VALUE;
+        for (Place startingCity : places) {
+            Arrays.fill(visited, false); //reset trip
+            currentCity = startingCity;
+            long currentTourDistance = calculateNearestNeighborTourDistance();
+            if (currentTourDistance < bestTourDistance) {
+                bestTourDistance = currentTourDistance;
+                bestTour = currentTour.clone();
+            }
+        }
     }
 
     private long calculateNearestNeighborTourDistance() {
