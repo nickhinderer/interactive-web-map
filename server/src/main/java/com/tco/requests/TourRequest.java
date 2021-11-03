@@ -2,6 +2,7 @@ package com.tco.requests;
 
 import com.tco.misc.BadRequestException;
 import com.tco.misc.Places;
+import com.tco.misc.Tour;
 
 public class TourRequest extends Request {
 
@@ -12,7 +13,8 @@ public class TourRequest extends Request {
     @Override
     public void buildResponse() {
         this.requestType = "tour";
-
+        Tour tour = new Tour(places, earthRadius, response);
+        places = tour.optimizeTour();
     }
 
     /* The following methods exist only for testing purposes and are not used
