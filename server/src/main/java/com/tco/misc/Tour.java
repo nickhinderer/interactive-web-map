@@ -11,6 +11,10 @@ public class Tour {
         this.response = response;
     }
 
+    public void optimizeTour() {
+
+    }
+
     /* The following methods exist only for testing purposes and are not used
        during normal execution */
     public Tour() {
@@ -30,5 +34,5 @@ public class Tour {
     public Double getResponse() {
         return response;
     }
-    
+
 }
