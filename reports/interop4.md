@@ -14,6 +14,7 @@ This table lists each student in the team, the team they verified interoperabili
 | Jacki | 23 | 25 min |
 | Abby | 24 | 20 min |
 |  Kay | 21 | 20 min |
+| Mallory | 2 | 20 min |
 
 
 ### Client Problems found
@@ -25,6 +26,7 @@ We found these problems when connecting our client to another team's server.
 | 23 | error: Site breaks when dave's is input in search bar | #621 |
 | 24 | Bug in interop popup which doesn't allow t24's server to connect to our client | #629 |
 | 21 | error: Site breaks when dave's is input in search bar | #621 |
+| 2 | None found | #644 |
 
 
 ### Server Problems found
@@ -36,3 +38,4 @@ We found these problems when connecting the other team's client to our server.
 | 23 | error: React failed to build DOM, when dave's is input into search bar | #621 |
 | 24 | No UI feature for shorter trips requests | #629 |
 | 21 | bundle.js:2 Uncaught (in promise) TypeError: Cannot read properties of null (reading 'found') (checking the postman found out required type "places" missing with input dave's) | #631 |
+| 2 | None found | #644 |
