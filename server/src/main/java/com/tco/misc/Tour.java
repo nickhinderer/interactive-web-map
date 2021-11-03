@@ -5,13 +5,23 @@ public class Tour {
     private final double earthRadius;
     private final Double response;
 
-    private int[] bestTour;
     private long[][] distancesMatrix;
+    private boolean[] visited;
+
+    private Place currentCity;
+    private int[] currentTour;
+    private int[] bestTour;
+
 
     public Tour(Places places, double earthRadius, Double response) {
         this.places = places;
         this.earthRadius = earthRadius;
         this.response = response;
+
+        distancesMatrix = new long[places.size()][places.size()];
+        visited = new boolean[places.size()];
+        currentTour = new int[places.size()];
+        bestTour = new int[places.size()];
     }
 
     public void optimizeTour() {
