@@ -22,7 +22,7 @@ We found these problems when connecting our client to another team's server.
 | team | problem | github# |
 | :--- |  :--- | --- |
 | 23 | error: Site breaks when dave's is input in search bar | #621 |
-|  |  |  |
+| 24 | No UI feature for shorter trips requests | #629 |
 
 
 ### Server Problems found
