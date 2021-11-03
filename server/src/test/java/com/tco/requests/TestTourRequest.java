@@ -28,4 +28,10 @@ public class TestTourRequest {
         assertEquals(-1.0, tour.getEarthRadius());
     }
 
+    @Test
+    @DisplayName("response is correct")
+    public void testResponse() {
+        assertEquals(-1.0, tour.getResponse());
+    }
+
 }
