@@ -115,4 +115,67 @@ public class TestTour {
 
         //assertEquals(27766l, tour.getTourDistance());
     }
+
+    @Test
+    @DisplayName("third test case succeeded")
+    public void testOptimizeTourCase3() {
+        Places case3 = new Places();
+
+        Place place1 = new Place();
+        place1.put("latitude", "46.09126");
+        place1.put("longitude", "-123.22489");
+
+        Place place2 = new Place();
+        place2.put("latitude", "42.63692");
+        place2.put("longitude", "-123.31278");
+
+        Place place3 = new Place();
+        place3.put("latitude", "39.18429");
+        place3.put("longitude", "-121.99442");
+        Place place4 = new Place();
+        place4.put("latitude", "35.41024");
+        place4.put("longitude", "-119.62137");
+
+        Place place5 = new Place();
+        place5.put("latitude", "31.37583");
+        place5.put("longitude", "-115.75419");
+
+        Place place6 = new Place();
+        place6.put("latitude", "27.31679");
+        place6.put("longitude", "-113.20536");
+
+        Place place7 = new Place();
+        place7.put("latitude", "23.50724");
+        place7.put("longitude", "-110.04129");
+
+        Place place8 = new Place();
+        place8.put("latitude", "17.75252");
+        place8.put("longitude", "-99.75809");
+
+        Place place9 = new Place();
+        place9.put("latitude", "21.14974");
+        place9.put("longitude", "-87.98075");
+
+        Place place10 = new Place();
+        place10.put("latitude", "25.90238");
+        place10.put("longitude", "-80.86161");
+
+        //random ordering
+        case3.add(place1);
+        case3.add(place9);
+        case3.add(place2);
+        case3.add(place6);
+        case3.add(place10);
+        case3.add(place7);
+        case3.add(place3);
+        case3.add(place5);
+        case3.add(place4);
+        case3.add(place8);
+
+        tour.setPlaces(case3);
+        tour.optimizeTour();
+
+        //assertEquals(7075l, tour.getTourDistance());
+
+    }
 }
