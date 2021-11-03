@@ -1,0 +1,21 @@
+package com.tco.misc;
+
+public class Tour {
+    private Places places;
+    private double earthRadius;
+    private Double response;
+
+    public Tour(Places places, double earthRadius, Double response) {
+        this.places = places;
+        this.earthRadius = earthRadius;
+        this.response = response;
+    }
+
+    /* The following methods exist only for testing purposes and are not used
+       during normal execution */
+    public Tour() {
+        this.places = new Places();
+        this.earthRadius = 3958.8;
+        this.response = 1.0;
+    }
+}
