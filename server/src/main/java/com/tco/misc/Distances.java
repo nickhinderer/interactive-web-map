@@ -15,7 +15,7 @@ public class Distances {
         this.distances = new ArrayList<>();
     }
 
-    private double computeCentralAngle(HashMap<String, Double> coordinates) {
+    public static double computeCentralAngle(HashMap<String, Double> coordinates) {
         double latitude1 = coordinates.get("latitude1");
         double latitude2 = coordinates.get("latitude2");
         double longitudeDifference = Math.abs(coordinates.get("longitude1") - coordinates.get("longitude2"));
