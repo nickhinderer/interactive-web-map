@@ -10,7 +10,7 @@ public class TourRequest extends Request {
     private Places places;
 
     @Override
-    public void buildResponse() throws BadRequestException {
+    public void buildResponse() {
         this.requestType = "tour";
 
     }
@@ -19,8 +19,8 @@ public class TourRequest extends Request {
   during normal execution, including the constructor. */
     public TourRequest() {
         this.requestType = "tour";
-        this.earthRadius = 1.0;
-        this.response = 1.0;
+        this.earthRadius = -1.0;
+        this.response = -1.0;
         this.places = new Places();
     }
 
