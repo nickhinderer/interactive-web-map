@@ -35,4 +35,8 @@ public class Tour {
         return response;
     }
 
+    public void setPlaces(Places places) {
+        this.places = places;
+    }
+
 }
