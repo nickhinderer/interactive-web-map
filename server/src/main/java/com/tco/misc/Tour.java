@@ -11,4 +11,11 @@ public class Tour {
         this.response = response;
     }
 
+    /* The following methods exist only for testing purposes and are not used
+       during normal execution */
+    public Tour() {
+        this.places = new Places();
+        this.earthRadius = 3958.8;
+        this.response = 1.0;
+    }
 }
