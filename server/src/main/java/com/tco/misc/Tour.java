@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Tour {
     private Places places;
     private final double earthRadius;
-    private final Double response;
+    private Double response;
 
     private long[][] distancesMatrix;
     private boolean[] visited;
@@ -28,7 +28,16 @@ public class Tour {
     }
 
     public void optimizeTour() {
+        calculateDistancesMatrix();
 
+        long startTime = System.currentTimeMillis();
+        response *= 1000;
+        long endTime = startTime + response.longValue(); //subtract the overhead for calculateDistancesMatrix and updateTourOrder (even though it is minuscule, it is still non-zero)
+
+        while (System.currentTimeMillis() < endTime)
+            createNearestNeighborTour();
+
+        updateTourOrder();
     }
 
     private void calculateDistancesMatrix() {
