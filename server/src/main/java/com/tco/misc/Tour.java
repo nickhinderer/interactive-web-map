@@ -18,4 +18,17 @@ public class Tour {
         this.earthRadius = 3958.8;
         this.response = 1.0;
     }
+
+    public Places getPlaces() {
+        return places;
+    }
+
+    public double getEarthRadius() {
+        return earthRadius;
+    }
+
+    public Double getResponse() {
+        return response;
+    }
+    
 }
