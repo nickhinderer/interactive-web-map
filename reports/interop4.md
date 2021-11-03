@@ -12,7 +12,7 @@ This table lists each student in the team, the team they verified interoperabili
 | Name | Team | Time |
 | ---- | ---- | ---- |
 | Jacki | 23 | 25 min |
-|  |  | |
+|  Kay | 21 | 20 min |
 
 
 ### Client Problems found
@@ -22,7 +22,7 @@ We found these problems when connecting our client to another team's server.
 | team | problem | github# |
 | :--- |  :--- | --- |
 | 23 | error: Site breaks when dave's is input in search bar | #621 |
-|  |  |  |
+| 21 | error: Site breaks when dave's is input in search bar | #621 |
 
 
 ### Server Problems found
@@ -32,4 +32,4 @@ We found these problems when connecting the other team's client to our server.
 | team |  problem | github# |
 | :--- |  :--- | --- |
 | 23 | error: React failed to build DOM, when dave's is input into search bar | #621 |
-|  |  |  |
+| 21 | bundle.js:2 Uncaught (in promise) TypeError: Cannot read properties of null (reading 'found') (checking the postman found out required type "places" missing with input dave's) | #631 |
