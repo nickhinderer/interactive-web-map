@@ -1,6 +1,7 @@
 package com.tco.misc;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Tour {
     private Places places;
@@ -28,6 +29,22 @@ public class Tour {
 
     public void optimizeTour() {
 
+    }
+
+    private void calculateDistancesMatrix() {
+        for (int i = 0; i < places.size(); ++i) {
+            for (int j = i + 1; j < places.size(); ++j) {
+                HashMap<String, Double> coordinates = new HashMap<>();
+                coordinates.put("latitude1", Double.valueOf(places.get(i).get("latitude")));
+                coordinates.put("latitude2", Double.valueOf(places.get(j).get("latitude")));
+                coordinates.put("longitude1", Double.valueOf(places.get(i).get("longitude")));
+                coordinates.put("longitude2", Double.valueOf(places.get(j).get("longitude")));
+                distancesMatrix[i][j] = Math.round(Math.abs(earthRadius * Distances.computeCentralAngle(coordinates)));
+                distancesMatrix[j][i] = distancesMatrix[i][j];
+                distancesMatrix[i][i] = 0l;
+                distancesMatrix[j][j] = 0l;
+            }
+        }
     }
 
     private void createNearestNeighborTour() {
