@@ -32,4 +32,4 @@ We found these problems when connecting the other team's client to our server.
 | team |  problem | github# |
 | :--- |  :--- | --- |
 | 23 | error: React failed to build DOM, when dave's is input into search bar | #621 |
-|  |  |  |
+| 24 | Bug in interop popup which doesn't allow t24's server to connect to our client | #629 |
