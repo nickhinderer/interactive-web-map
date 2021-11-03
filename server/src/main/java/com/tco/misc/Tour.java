@@ -28,6 +28,23 @@ public class Tour {
 
     }
 
+    private long calculateNearestNeighborTourDistance() {
+        long tourDistance = 0l;
+        for (int i = 0; i < places.size(); i++) {
+            visited[places.indexOf(currentCity)] = true;
+            currentTour[i] = places.indexOf(currentCity);
+            int indexOfShortestDistance = calculateNearestNeighborIndex();
+            if (indexOfShortestDistance == -1) { //case: all destinations have been visited
+                tourDistance += distancesMatrix[currentTour[0]][currentTour[places.size() - 1]]; //add return leg
+            } else {
+                tourDistance += distancesMatrix[places.indexOf(currentCity)][indexOfShortestDistance];
+                visited[indexOfShortestDistance] = true; //mark city as visited
+                currentCity = places.get(indexOfShortestDistance); //move to next city
+            }
+        }
+        return tourDistance;
+    }
+
     private int calculateNearestNeighborIndex() {
         int indexOfCurrent = 0, indexOfShortestDistance = -1;
         long shortestDistance = Long.MAX_VALUE;
