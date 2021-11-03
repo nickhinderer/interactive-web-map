@@ -28,6 +28,13 @@ public class Tour {
 
     }
 
+    private void updateTourOrder() {
+        Places newTrip = new Places();
+        for (int i = 0; i < places.size(); i++)
+            newTrip.add(places.get(bestTour[i]));
+        places = newTrip;
+    }
+
     /* The following methods exist only for testing purposes and are not used
        during normal execution */
     public Tour() {
