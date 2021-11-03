@@ -44,15 +44,21 @@ function placesList(flagResponse, places, placeActions){
             {flagResponse? 
                 places.map((place) => (
                      <div key={place.index}>
-                        <ul><Button color='primary' onClick={() => placeActions.append(place)}><img src={bookmark} alt='add'/> Add </Button>
-                        <div><b>Name:</b> {place.name}</div>
-                        <div><b>Latitude:</b> {place.latitude}</div>
-                        <div><b>Longitude:</b> {place.longitude}</div>
-                        <div><b>Country:</b> {place.country}</div></ul>
+                        {listElement(placeActions, place)}
                     </div>
         )) : <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}> 
                 <p> No results found </p> 
              </div>}
         </div>
+    );
+}
+
+function listElement(placeActions, place){
+    return(
+        <ul><Button color='primary' onClick={() => placeActions.append(place)}><img src={bookmark} alt='add'/> Add </Button>
+        <div><b>Name:</b> {place.name}</div>
+        <div><b>Latitude:</b> {place.latitude}</div>
+        <div><b>Longitude:</b> {place.longitude}</div>
+        <div><b>Country:</b> {place.country}</div></ul>
     );
 }
