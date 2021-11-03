@@ -46,7 +46,7 @@ function placesList(flagResponse, places, placeActions){
                      <div key={place.index}>
                         {listElement(placeActions, place)}
                     </div>
-        )) : noResult()}
+                )) : noResult()}
         </div>
     );
 }
