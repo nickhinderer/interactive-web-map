@@ -1,5 +1,6 @@
 package com.tco.requests;
 
+import com.tco.misc.BadRequestException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ public class TestTourRequest {
     @BeforeEach
     public void createConfigurationForTestCases() {
         tour = new TourRequest();
+        tour.buildResponse();
     }
 
     @Test
@@ -19,4 +21,11 @@ public class TestTourRequest {
     public void testType() {
         assertEquals("tour", tour.getRequestType());
     }
+
+    @Test
+    @DisplayName("earthRadius is correct")
+    public void testEarthRadius() {
+        assertEquals(-1.0, tour.getEarthRadius());
+    }
+
 }

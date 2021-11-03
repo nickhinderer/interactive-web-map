@@ -10,7 +10,7 @@ public class TourRequest extends Request {
     private Places places;
 
     @Override
-    public void buildResponse() throws BadRequestException {
+    public void buildResponse() {
         this.requestType = "tour";
 
     }
