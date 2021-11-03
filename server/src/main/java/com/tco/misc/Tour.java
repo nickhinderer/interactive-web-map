@@ -143,4 +143,11 @@ public class Tour {
         return totalDistance;
     }
 
+    public void setInstanceVariables() {
+        distancesMatrix = new long[places.size()][places.size()];
+        visited = new boolean[places.size()];
+        currentTour = new int[places.size()];
+        bestTour = new int[places.size()];
+    }
+
 }
