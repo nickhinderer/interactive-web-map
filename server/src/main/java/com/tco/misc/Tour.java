@@ -37,7 +37,8 @@ public class Tour {
         while (System.currentTimeMillis() < endTime)
             createNearestNeighborTour();
 
-        updateTourOrder();
+        if(response != 0.0)
+            updateTourOrder();
         return places;
     }
 
