@@ -18,10 +18,24 @@ export const VALID_FIND_RESPONSE = JSON.stringify({
 	"requestType": "find"
 
 })
+
+export const VALID_TOUR_RESPONSE = JSON.stringify({
+    "requestType"    : "tour", 
+    "earthRadius"    : 3959.0,
+    "response": 1,
+    "places"         : [{"name":"Denver",       "latitude": "39.7", "longitude": "-105.0", "notes":"The big city"},
+                        {"name":"Fort Collins", "latitude": "40.6", "longitude": "-105.1", "notes":"Home of CSU"},
+                        {"name":"Boulder",      "latitude": "40.0", "longitude": "-105.4", "notes":"Home of CU"}]
+});
+
 export const INVALID_REQUEST = JSON.stringify({
     invalid: 'this is an invalid response to fail the schema'
 });
 
+export const MOCK_NEWPLACES= [{"name":"Denver",       "latitude": "39.7", "longitude": "-105.0", "notes":"The big city"},
+                              {"name":"Fort Collins", "latitude": "40.6", "longitude": "-105.1", "notes":"Home of CSU"},
+                              {"name":"Boulder",      "latitude": "40.0", "longitude": "-105.4", "notes":"Home of CU"}]
+                              
 export const MOCK_PLACES = [
     { name: 'Place A', lat: 40.0, lng: 50.0 },
     { name: 'Place B', lat: 45.0, lng: 55.0 }
