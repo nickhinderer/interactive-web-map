@@ -27,7 +27,7 @@ public class Tour {
         bestTour = new int[places.size()];
     }
 
-    public void optimizeTour() {
+    public Places optimizeTour() {
         calculateDistancesMatrix();
 
         long startTime = System.currentTimeMillis();
@@ -38,6 +38,7 @@ public class Tour {
             createNearestNeighborTour();
 
         updateTourOrder();
+        return places;
     }
 
     private void calculateDistancesMatrix() {
