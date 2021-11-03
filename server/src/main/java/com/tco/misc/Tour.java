@@ -45,8 +45,8 @@ public class Tour {
             for (int j = i + 1; j < places.size(); ++j) {
                 HashMap<String, Double> coordinates = new HashMap<>();
                 coordinates.put("latitude1", Double.valueOf(places.get(i).get("latitude")));
-                coordinates.put("latitude2", Double.valueOf(places.get(j).get("latitude")));
                 coordinates.put("longitude1", Double.valueOf(places.get(i).get("longitude")));
+                coordinates.put("latitude2", Double.valueOf(places.get(j).get("latitude")));
                 coordinates.put("longitude2", Double.valueOf(places.get(j).get("longitude")));
                 distancesMatrix[i][j] = Math.round(Math.abs(earthRadius * Distances.computeCentralAngle(coordinates)));
                 distancesMatrix[j][i] = distancesMatrix[i][j];
