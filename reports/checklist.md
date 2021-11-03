@@ -39,13 +39,6 @@ The checklist will be updated as we identify new faults in our code that we wish
 * Have all possible error conditions been considered?
 * Are error messages user-friendly?
 
-### Testing and Coverage
-* Are there some test cases, input, or edge cases that should be tested in addition?
-* Do the existing tests reasonably cover the code change?
-
-### User Interface and Accessibility
-* Does the UI accommodate for color blindness?
-
 ### Implementation faults
 * Does similar functionality already exist in the codebase? If so, why isn’t this functionality reused?
 * Do all functions stay within the allowed Cognitive Complexity level?
