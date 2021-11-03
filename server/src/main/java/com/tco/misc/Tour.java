@@ -5,6 +5,9 @@ public class Tour {
     private final double earthRadius;
     private final Double response;
 
+    private int[] bestTour;
+    private long[][] distancesMatrix;
+
     public Tour(Places places, double earthRadius, Double response) {
         this.places = places;
         this.earthRadius = earthRadius;
@@ -37,6 +40,17 @@ public class Tour {
 
     public void setPlaces(Places places) {
         this.places = places;
+    }
+
+    public long getTourDistance() {
+        long totalDistance = 0;
+        for (int i = 0; i < places.size(); i++) {
+            if (i != places.size() - 1)
+                totalDistance += distancesMatrix[bestTour[i]][bestTour[i + 1]];
+            else
+                totalDistance += distancesMatrix[bestTour[i]][bestTour[0]];
+        }
+        return totalDistance;
     }
 
 }
