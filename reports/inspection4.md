@@ -19,6 +19,7 @@ We note the amount of time each person spent reviewing the code in preparation f
 | Mallory | 30 min |
 | Kay | 30 min |
 | Abby | 25 min |
+| Nick | 30 min |
 
 
 ### Problems found
@@ -33,3 +34,4 @@ We add a GitHub issue for each defect that requires a modification to the system
 | usePlaces.js: 93 | readFile function has a cognitive complexity of 17; should be refactored | med | Mallory | |
 | usePlaces.js: 103-145 | file parsing function split into mutiple function | low | Kay | |
 | usePlaces.js: 148-184 | Testing coverage for save file functions & splitting up | low | Abby | #674 |
+| actions.js: 15-47 | ItineraryActionsDropdown function violates Single Resonsibility principle. Could be split further to reduce complexity | low | Nick |  |
