@@ -34,4 +34,10 @@ public class TestTourRequest {
         assertEquals(-1.0, tour.getResponse());
     }
 
+    @Test
+    @DisplayName("places is correct")
+    public void testPlaces() {
+        assertNotNull(tour.getPlaces());
+    }
+
 }
