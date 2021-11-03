@@ -29,7 +29,7 @@ public class TestTour {
     @Test
     @DisplayName("response is correct")
     public void testResponse() {
-        assertEquals(1.0, tour.getResponse());
+        assertEquals(0.1, tour.getResponse());
     }
 
     @Test
@@ -72,7 +72,7 @@ public class TestTour {
         tour.setInstanceVariables();
         tour.optimizeTour();
 
-        assertEquals(188l, tour.getTourDistance());
+        assertEquals(188L, tour.getTourDistance());
     }
 
     @Test
@@ -115,7 +115,7 @@ public class TestTour {
         tour.setInstanceVariables();
         tour.optimizeTour();
 
-        assertEquals(26766l, tour.getTourDistance());
+        assertEquals(26766L, tour.getTourDistance());
     }
 
     @Test
@@ -178,7 +178,7 @@ public class TestTour {
         tour.setInstanceVariables();
         tour.optimizeTour();
 
-        assertEquals(6623l, tour.getTourDistance());
+        assertEquals(6623L, tour.getTourDistance());
 
     }
 }

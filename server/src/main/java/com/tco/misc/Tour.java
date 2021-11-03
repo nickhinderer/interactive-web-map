@@ -50,8 +50,8 @@ public class Tour {
                 coordinates.put("longitude2", Double.valueOf(places.get(j).get("longitude")));
                 distancesMatrix[i][j] = Math.round(Math.abs(earthRadius * Distances.computeCentralAngle(coordinates)));
                 distancesMatrix[j][i] = distancesMatrix[i][j];
-                distancesMatrix[i][i] = 0l;
-                distancesMatrix[j][j] = 0l;
+                distancesMatrix[i][i] = 0L;
+                distancesMatrix[j][j] = 0L;
             }
         }
     }
@@ -70,7 +70,7 @@ public class Tour {
     }
 
     private long calculateNearestNeighborTourDistance() {
-        long tourDistance = 0l;
+        long tourDistance = 0L;
         for (int i = 0; i < places.size(); i++) {
             visited[places.indexOf(currentCity)] = true;
             currentTour[i] = places.indexOf(currentCity);
@@ -113,7 +113,7 @@ public class Tour {
     public Tour() {
         this.places = new Places();
         this.earthRadius = 3958.8;
-        this.response = 1.0;
+        this.response = 0.1;
     }
 
     public Places getPlaces() {
