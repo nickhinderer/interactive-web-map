@@ -28,6 +28,21 @@ public class Tour {
 
     }
 
+    private int calculateNearestNeighborIndex() {
+        int indexOfCurrent = 0, indexOfShortestDistance = -1;
+        long shortestDistance = Long.MAX_VALUE;
+
+        for (long currentDistance : distancesMatrix[places.indexOf(currentCity)]) {
+            if (!visited[indexOfCurrent] && currentDistance < shortestDistance) {
+                shortestDistance = currentDistance;
+                indexOfShortestDistance = indexOfCurrent;
+            }
+            indexOfCurrent++;
+        }
+
+        return indexOfShortestDistance;
+    }
+
     private void updateTourOrder() {
         Places newTrip = new Places();
         for (int i = 0; i < places.size(); i++)
