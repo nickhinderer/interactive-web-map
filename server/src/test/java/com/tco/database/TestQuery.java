@@ -71,4 +71,13 @@ public class TestQuery {
     public void testFindNumberOfMatches() throws BadRequestException {
         assertEquals(0, query.testFindNumberOfMatches());
     }
+
+    @Test
+    @DisplayName("query constructor works")
+    public void testQueryConstructor() {
+        Query constructorTest = new Query("", 0);
+        assertNotNull(constructorTest);
+        assertEquals("", constructorTest.getMatch());
+        assertEquals(0, constructorTest.getLimit());
+    }
 }
