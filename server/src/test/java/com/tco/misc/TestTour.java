@@ -178,4 +178,15 @@ public class TestTour {
         //assertEquals(7075l, tour.getTourDistance());
 
     }
+
+    @Test
+    @DisplayName("constructor works correctly")
+    public void testTourConstructor() {
+        Tour constructorTest = new Tour(new Places(), 0.0, 0.0);
+        assertNotNull(constructorTest);
+        assertEquals(new Places(), constructorTest.getPlaces());
+        assertEquals(0.0, constructorTest.getEarthRadius());
+        assertEquals(0.0, constructorTest.getResponse());
+    }
+
 }
