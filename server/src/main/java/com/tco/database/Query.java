@@ -16,25 +16,25 @@ public class Query {
     }
 
     public Places findMatchingPlaces() throws BadRequestException {
-        if(match.equals("_TEST_VALUE_"))
+        if (match.equals("_TEST_VALUE_"))
             return new Places();
-        if(limit == 0)
+        if (limit == 0)
             limit = 100;
         sql = getMatchingSQL(this.match, this.limit);
         return (Places) database.query(sql);
     }
 
     public Places findRandomPlaces() throws BadRequestException {
-        if(match.equals("_TEST_VALUE_"))
+        if (match.equals("_TEST_VALUE_"))
             return new Places();
-        if(limit == 0)
+        if (limit == 0)
             limit = 100;
         sql = getRandomSQL(this.limit);
         return (Places) database.query(sql);
     }
 
     public Integer findNumberOfMatches() throws BadRequestException {
-        if(match.equals("_TEST_VALUE_"))
+        if (match.equals("_TEST_VALUE_"))
             return 0;
         sql = getCountSQL(this.match);
         return (Integer) database.query(sql);
@@ -63,7 +63,7 @@ public class Query {
                         + "INNER JOIN country ON world.iso_country = country.id "
                         + "INNER JOIN region ON world.iso_region = region.id "
                         + "ORDER BY RAND() "
-                        + "LIMIT "  + limit.toString()  + ";";
+                        + "LIMIT " + limit.toString() + ";";
     }
 
     private static String getCountSQL(String match) {
@@ -88,11 +88,17 @@ public class Query {
         this.database = new Database();
     }
 
-    public String getMatch() { return match; }
+    public String getMatch() {
+        return match;
+    }
 
-    public Integer getLimit() { return limit; }
+    public Integer getLimit() {
+        return limit;
+    }
 
-    public Database getDatabase() { return database; }
+    public Database getDatabase() {
+        return database;
+    }
 
     public String testRandomSQL() {
         return getRandomSQL(limit);
@@ -106,27 +112,15 @@ public class Query {
         return getCountSQL(match);
     }
 
-    public Places testFindMatchingPlaces() {
-        try {
-            return this.findMatchingPlaces();
-        } catch (BadRequestException e) {
-            return null;
-        }
+    public Places testFindMatchingPlaces() throws BadRequestException {
+        return this.findMatchingPlaces();
     }
 
-    public Places testFindRandomPlaces() {
-        try {
-            return this.findRandomPlaces();
-        } catch (BadRequestException e) {
-            return null;
-        }
+    public Places testFindRandomPlaces() throws BadRequestException {
+        return this.findRandomPlaces();
     }
 
-    public Integer testFindNumberOfMatches() {
-        try {
-            return this.findNumberOfMatches();
-        } catch (BadRequestException e) {
-            return null;
-        }
+    public Integer testFindNumberOfMatches() throws BadRequestException {
+        return this.findNumberOfMatches();
     }
 }

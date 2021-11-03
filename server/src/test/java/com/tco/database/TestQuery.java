@@ -2,6 +2,7 @@ package com.tco.database;
 
 import com.tco.database.Query;
 
+import com.tco.misc.BadRequestException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -55,19 +56,28 @@ public class TestQuery {
 
     @Test
     @DisplayName("findMatchingPlaces works")
-    public void testFindMatchingPlaces() {
+    public void testFindMatchingPlaces() throws BadRequestException {
         assertNotNull(query.testFindMatchingPlaces());
     }
 
     @Test
     @DisplayName("findRandomPlaces works")
-    public void testFindRandomPlaces() {
+    public void testFindRandomPlaces() throws BadRequestException {
         assertNotNull(query.testFindRandomPlaces());
     }
 
     @Test
     @DisplayName("findNumberOfMatches works")
-    public void testFindNumberOfMatches() {
+    public void testFindNumberOfMatches() throws BadRequestException {
         assertEquals(0, query.testFindNumberOfMatches());
+    }
+
+    @Test
+    @DisplayName("query constructor works")
+    public void testQueryConstructor() {
+        Query constructorTest = new Query("", 0);
+        assertNotNull(constructorTest);
+        assertEquals("", constructorTest.getMatch());
+        assertEquals(0, constructorTest.getLimit());
     }
 }
