@@ -34,19 +34,37 @@ export default function display(props) {
 
 // this part for render the found place.
     return(
+       placesList(flagResponse, places, props.placeActions)
+    );
+}
+
+function placesList(flagResponse, places, placeActions){
+    return (
         <div className='List'>
             {flagResponse? 
-            places.map((place) => (
-                <div key={place.index}>
-                    <ul><Button color='primary' onClick={() => props.placeActions.append(place)}><img src={bookmark} alt='add'/> Add </Button>
-                    <div><b>Name:</b> {place.name}</div>
-                    <div><b>Latitude:</b> {place.latitude}</div>
-                    <div><b>Longitude:</b> {place.longitude}</div>
-                    <div><b>Country:</b> {place.country}</div></ul>
-                </div>
-            )) : <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}> 
-                    <p> No results found </p> 
-                 </div>}
+                places.map((place) => (
+                     <div key={place.index}>
+                        {listElement(placeActions, place)}
+                    </div>
+                )) : noResult()}
+        </div>
+    );
+}
+
+function listElement(placeActions, place){
+    return(
+        <ul><Button color='primary' onClick={() => placeActions.append(place)}><img src={bookmark} alt='add'/> Add </Button>
+        <div><b>Name:</b> {place.name}</div>
+        <div><b>Latitude:</b> {place.latitude}</div>
+        <div><b>Longitude:</b> {place.longitude}</div>
+        <div><b>Country:</b> {place.country}</div></ul>
+    );
+}
+
+function noResult(){
+    return(
+        <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}> 
+            <p> No results found </p> 
         </div>
     );
 }
