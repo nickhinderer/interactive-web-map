@@ -46,9 +46,7 @@ function placesList(flagResponse, places, placeActions){
                      <div key={place.index}>
                         {listElement(placeActions, place)}
                     </div>
-        )) : <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}> 
-                <p> No results found </p> 
-             </div>}
+        )) : noResult()}
         </div>
     );
 }
@@ -60,5 +58,13 @@ function listElement(placeActions, place){
         <div><b>Latitude:</b> {place.latitude}</div>
         <div><b>Longitude:</b> {place.longitude}</div>
         <div><b>Country:</b> {place.country}</div></ul>
+    );
+}
+
+function noResult(){
+    return(
+        <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}> 
+            <p> No results found </p> 
+        </div>
     );
 }
