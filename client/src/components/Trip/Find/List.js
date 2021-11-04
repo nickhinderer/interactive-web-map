@@ -13,13 +13,7 @@ export default function display(props) {
         
         const serverUrl = getOriginalServerUrl();
         const findResponse = await sendAPIRequest({ requestType: "find", match:props.match, limit: 10 }, serverUrl);
-        /*if(findResponse) {   
-            checkFind(findResponse, setFlagResponse, setPlaces);
-        }
-        else {
-            setPlaces(null);
-            showMessage('Find Request failed with' + findResponse + '.', "error");
-        }*/
+
         checkResponse(findResponse, setFlagResponse, setPlaces);
 
       },[])
