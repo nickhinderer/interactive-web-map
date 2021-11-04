@@ -14,14 +14,7 @@ export default function display(props) {
         const serverUrl = getOriginalServerUrl();
         const findResponse = await sendAPIRequest({ requestType: "find", match:props.match, limit: 10 }, serverUrl);
         if(findResponse) {   
-            /*if (findResponse.found == 0) {
-                setFlagResponse(false);
-            }*/
             checkFind(findResponse, setFlagResponse, setPlaces);
-            //setPlaces(findResponse.places);
-            /*
-            console.log(findResponse);
-            */
         }
         else {
             setPlaces(null);
