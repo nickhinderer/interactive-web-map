@@ -14,9 +14,10 @@ export default function display(props) {
         const serverUrl = getOriginalServerUrl();
         const findResponse = await sendAPIRequest({ requestType: "find", match:props.match, limit: 10 }, serverUrl);
         if(findResponse) {   
-            if (findResponse.found == 0) {
+            /*if (findResponse.found == 0) {
                 setFlagResponse(false);
-            }
+            }*/
+            checkFind(findResponse, setFlagResponse);
             setPlaces(findResponse.places);
             console.log(findResponse);
         }
@@ -36,6 +37,12 @@ export default function display(props) {
     return(
        placesList(flagResponse, places, props.placeActions)
     );
+}
+
+function checkFind(findResponse, setFlagResponse){
+    if (findResponse.found == 0) {
+        setFlagResponse(false);
+    }
 }
 
 function placesList(flagResponse, places, placeActions){
