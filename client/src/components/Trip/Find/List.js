@@ -17,9 +17,11 @@ export default function display(props) {
             /*if (findResponse.found == 0) {
                 setFlagResponse(false);
             }*/
-            checkFind(findResponse, setFlagResponse);
-            setPlaces(findResponse.places);
+            checkFind(findResponse, setFlagResponse, setPlaces);
+            //setPlaces(findResponse.places);
+            /*
             console.log(findResponse);
+            */
         }
         else {
             setPlaces(null);
@@ -39,10 +41,16 @@ export default function display(props) {
     );
 }
 
-function checkFind(findResponse, setFlagResponse){
+function checkFind(findResponse, setFlagResponse, setPlaces){
     if (findResponse.found == 0) {
         setFlagResponse(false);
     }
+    setFound(findResponse, setPlaces)
+}
+
+function setFound(findResponse, setPlaces){
+    setPlaces(findResponse.places);
+    //console.log(findResponse);
 }
 
 function placesList(flagResponse, places, placeActions){
