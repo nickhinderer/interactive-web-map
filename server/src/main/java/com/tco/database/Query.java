@@ -10,6 +10,8 @@ public class Query {
     private String sql;
 
     public Query(String match, Integer limit) {
+        if(match.contains("'"))
+            match = match.substring(0, match.indexOf("'")) + "'" + match.substring(match.indexOf("'"));
         this.match = match;
         this.limit = limit;
         this.database = new Database();
