@@ -13,17 +13,8 @@ export default function display(props) {
         
         const serverUrl = getOriginalServerUrl();
         const findResponse = await sendAPIRequest({ requestType: "find", match:props.match, limit: 10 }, serverUrl);
-        if(findResponse) {   
-            if (findResponse.found == 0) {
-                setFlagResponse(false);
-            }
-            setPlaces(findResponse.places);
-            console.log(findResponse);
-        }
-        else {
-            setPlaces(null);
-            showMessage('Find Request failed with' + findResponse + '.', "error");
-        }
+
+        checkResponse(findResponse, setFlagResponse, setPlaces);
 
       },[])
 
@@ -36,6 +27,28 @@ export default function display(props) {
     return(
        placesList(flagResponse, places, props.placeActions)
     );
+}
+
+function checkResponse(findResponse, setFlagResponse, setPlaces){
+    if(findResponse) {   
+        checkFind(findResponse, setFlagResponse, setPlaces);
+    }
+    else {
+        setPlaces(null);
+        showMessage('Find Request failed with' + findResponse + '.', "error");
+    }
+}
+
+function checkFind(findResponse, setFlagResponse, setPlaces){
+    if (findResponse.found == 0) {
+        setFlagResponse(false);
+    }
+    setFound(findResponse, setPlaces)
+}
+
+function setFound(findResponse, setPlaces){
+    setPlaces(findResponse.places);
+    //console.log(findResponse);
 }
 
 function placesList(flagResponse, places, placeActions){
