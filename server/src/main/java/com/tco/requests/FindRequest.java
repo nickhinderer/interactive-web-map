@@ -7,14 +7,16 @@ import org.slf4j.LoggerFactory;
 import com.tco.misc.BadRequestException;
 import com.tco.database.*;
 
+import java.util.ArrayList;
+
 public class FindRequest extends Request {
 
     private final transient Logger log = LoggerFactory.getLogger(FindRequest.class);
 
     private String match;
     private Integer limit;
-    private String type;
-    private String where;
+    private ArrayList<String> type;
+    private ArrayList<String> where;
     private Integer found;
     private Places places;
 
