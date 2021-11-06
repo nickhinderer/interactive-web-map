@@ -28,12 +28,15 @@ export function ItineraryActionsDropdown(props) {
         props.placeActions.downloadFile(fileName + ".json", MIME_TYPE.JSON, tripJSON);
     }
 
+    function moveToHome() { props.placeActions.moveToHome(); }
+    function removeAll() { props.placeActions.removeAll(); }
+
     return (
         <ActionsDropdown {...props}>
-            <DropdownItem onClick={() => props.placeActions.moveToHome()} data-testid='home-button'>
+            <DropdownItem onClick={moveToHome} data-testid='home-button'>
                 <FaHome />
             </DropdownItem>
-            <DropdownItem onClick={() => props.placeActions.removeAll()} data-testid='delete-all-button'>
+            <DropdownItem onClick={removeAll} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
             <DropdownItem onClick={iconClick}>
