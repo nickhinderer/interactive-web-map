@@ -14,13 +14,13 @@ const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
 
-    const iconClick = () => {
+    /*const iconClick = () => {
         const input = document.getElementById('file-upload');
 
         if (input) {
             input.click();
         }
-    }
+    }*/
 
     function handleJSONSave() {
         const tripJSON = props.placeActions.buildTripJSON();
@@ -47,6 +47,14 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
         </ActionsDropdown> 
     );
+}
+
+function iconClick(){
+    const input = document.getElementById('file-upload');
+
+    if (input) {
+        input.click();
+    }
 }
 
 export function PlaceActionsDropdown(props) {
