@@ -14,14 +14,6 @@ const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
 
-    /*const iconClick = () => {
-        const input = document.getElementById('file-upload');
-
-        if (input) {
-            input.click();
-        }
-    }*/
-
     function handleJSONSave() {
         const tripJSON = props.placeActions.buildTripJSON();
         const fileName = tripName.replace(/ /g, "_").toLowerCase();
