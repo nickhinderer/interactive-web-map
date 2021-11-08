@@ -15,15 +15,15 @@ Developers should not guide the user, but the user may ask for help as a last re
 Consider this a failure when it happens.  
 
 1. Search for a place
-1. Add place to itinerary 
-2. zoom out map
-3. delete place
-4. change server
-5. check features
-6. Find the total distance of the trip
-7. Find your location
-8. Upload test file
-9. View as mobile device
+2. Add place to itinerary 
+3. zoom out map
+4. delete place
+5. change server
+6. check features
+7. Find the total distance of the trip
+8. Find your location
+9. Upload test file
+10. View as mobile device
 
 ### Demographics
 
@@ -31,6 +31,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 
 | Pseudonym | Demographics |
 | :--- | :--- |
+| Stilgar | Age: 31, Nationality: American, Job: Fabricator/Welder |
 |  |  |
 
 
@@ -43,4 +44,9 @@ Add issues to GitHub for any changes necessary to the system.
 
 | Task | problem, aid, observation | hi/med/low | github#  |
 | :--- | :--- | :---: | :---: | 
+| 2 | Stilgar: Didn't understand what/where the itinerary was, suggested labeling it | med | |
+| 5 | Stilgar: Had a hard time finding where to change server at | low | |
+| 6 | Stilgar: Didn't understand what features referred to, had to ask for help | low | |
+| 7 | Stilgar: Found it accidentally early on then had a hard time finding it again | med | |
+| 10 | Stilgar: Ran out of time to get to this task | low | |
 | | | | | 
