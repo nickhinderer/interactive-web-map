@@ -15,15 +15,15 @@ Developers should not guide the user, but the user may ask for help as a last re
 Consider this a failure when it happens.  
 
 1. Search for a place
-1. Add place to itinerary 
-2. zoom out map
-3. delete place
-4. change server
-5. check features
-6. Find the total distance of the trip
-7. Find your location
-8. Upload test file
-9. View as mobile device
+2. Add place to itinerary 
+3. zoom out map
+4. delete place
+5. change server
+6. check features
+7. Find the total distance of the trip
+8. Find your location
+9. Upload test file
+10. View as mobile device
 
 ### Demographics
 
