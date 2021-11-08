@@ -44,9 +44,9 @@ Add issues to GitHub for any changes necessary to the system.
 
 | Task | problem, aid, observation | hi/med/low | github#  |
 | :--- | :--- | :---: | :---: | 
-| 2 | Didn't understand what/where the itinerary was, suggested labeling it | med | |
-| 5 | Had a hard time finding where to change server at | low | |
-| 6 | Didn't understand what features referred to, had to ask for help | low | |
-| 7 | Found it accidentally early on then had a hard time finding it again | med | |
-| 10 | Ran out of time to get to this task | low | |
+| 2 | Stilgar: Didn't understand what/where the itinerary was, suggested labeling it | med | |
+| 5 | Stilgar: Had a hard time finding where to change server at | low | |
+| 6 | Stilgar: Didn't understand what features referred to, had to ask for help | low | |
+| 7 | Stilgar: Found it accidentally early on then had a hard time finding it again | med | |
+| 10 | Stilgar: Ran out of time to get to this task | low | |
 | | | | | 
