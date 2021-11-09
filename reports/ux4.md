@@ -32,6 +32,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 | Pseudonym | Demographics |
 | :--- | :--- |
 | Stilgar | Age: 31, Nationality: American, Job: Fabricator/Welder |
+| Karo B! | Age: 21, Nationality: American, Major: Equine Science |
 |  |  |
 
 
