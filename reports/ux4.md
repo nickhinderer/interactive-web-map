@@ -22,7 +22,7 @@ Consider this a failure when it happens.
 6. check features
 7. Find the total distance of the trip
 8. Find your location
-9. Upload test file
+9. Upload and save test file
 10. View as mobile device
 
 ### Demographics
@@ -32,6 +32,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 | Pseudonym | Demographics |
 | :--- | :--- |
 | Stilgar | Age: 31, Nationality: American, Job: Fabricator/Welder |
+| Karo B! | Age: 21, Nationality: American, Major: Equine Science |
 |  |  |
 
 
@@ -50,3 +51,7 @@ Add issues to GitHub for any changes necessary to the system.
 | 7 | Stilgar: Found it accidentally early on then had a hard time finding it again | med | |
 | 10 | Stilgar: Ran out of time to get to this task | low | |
 | | | | | 
+| 2 | Karo B: Didn't like add feature, suggested changing bookmark icon to a simple plus sign | low | #697 | 
+| 5 | Karo B: Couldn't figure out where/how to change the server | low | #697 | 
+| 7 | Karo B: Encountered bug - distances aren't cleared after trip is deleted | med | #698 | 
+| 9 | Karo B: Encountered bug - couldn't upload the same file she saved; only my test files worked | med | #699 | 
