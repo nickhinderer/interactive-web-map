@@ -51,3 +51,7 @@ Add issues to GitHub for any changes necessary to the system.
 | 7 | Stilgar: Found it accidentally early on then had a hard time finding it again | med | |
 | 10 | Stilgar: Ran out of time to get to this task | low | |
 | | | | | 
+| 2 | Karo B: Didn't like add feature, suggested changing bookmark icon to a simple plus sign | low | | 
+| 5 | Karo B: Couldn't figure out where/how to change the server | low | | 
+| 7 | Karo B: Encountered bug - distances aren't cleared after trip is deleted | med | | 
+| 9 | Karo B: Encountered bug - couldn't upload the same file she saved; only my test files worked | med | | 
