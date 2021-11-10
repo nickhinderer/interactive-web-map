@@ -34,6 +34,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 | Stilgar | Age: 31, Nationality: American, Job: Fabricator/Welder |
 | Karo B! | Age: 21, Nationality: American, Major: Equine Science |
 | Sersi | Age: 20, Nationality: American, Major: Theatre |
+| Kelly | Age: 22, Nationality: China, Major: Statistics |
 
 
 ### Observations
@@ -59,3 +60,7 @@ Add issues to GitHub for any changes necessary to the system.
 | 1 | Sersi: Clicked Done button instead of Search when looking up a location; search button is white vs. green done button | med | |
 | 5 | Sersi: Didn't know how to change the server | low | |
 | 9 | Sersi: Confusion between similar looking load and save file buttons | low | |
+| | | | | 
+| 1 | Kelly: Had hard time to find "Search" icon; Press the enter keyboard instead of click seach button; Click done insteaf of search button.| med | |
+| 5 | Kelly: Had hard time to find where to change server | low | |
+| 6 | Kelly: Don't understand what features means and features disapear after reopen the modal| med | |
