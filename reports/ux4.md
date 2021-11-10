@@ -55,3 +55,7 @@ Add issues to GitHub for any changes necessary to the system.
 | 5 | Karo B: Couldn't figure out where/how to change the server | low | #697 | 
 | 7 | Karo B: Encountered bug - distances aren't cleared after trip is deleted | med | #698 | 
 | 9 | Karo B: Encountered bug - couldn't upload the same file she saved; only my test files worked | med | #699 | 
+| | | | | 
+| 1 | Sersi: Clicked Done button instead of Search when looking up a location | low | |
+| 5 | Sersi: Didn't know how to change the server | low | |
+| 9 | Sersi: Confusion between similar looking load and save file buttons | low | |
