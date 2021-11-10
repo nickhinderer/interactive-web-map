@@ -45,10 +45,10 @@ Add issues to GitHub for any changes necessary to the system.
 
 | Task | problem, aid, observation | hi/med/low | github#  |
 | :--- | :--- | :---: | :---: | 
-| 2 | Stilgar: Didn't understand what/where the itinerary was, suggested labeling it | med | |
+| 2 | Stilgar: Didn't understand what/where the itinerary was, suggested labeling it | med | #556 |
 | 5 | Stilgar: Had a hard time finding where to change server at | low | |
 | 6 | Stilgar: Didn't understand what features referred to, had to ask for help | low | |
-| 7 | Stilgar: Found it accidentally early on then had a hard time finding it again | med | |
+| 7 | Stilgar: Found it accidentally early on then had a hard time finding it again | med | #556 |
 | 10 | Stilgar: Ran out of time to get to this task | low | |
 | | | | | 
 | 2 | Karo B: Didn't like add feature, suggested changing bookmark icon to a simple plus sign | low | #697 | 
