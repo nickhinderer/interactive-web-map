@@ -14,6 +14,7 @@ export function usePlaces() {
 
     const placeActions = {
         append: async (place) => append(place, context),
+        update: (newPlaces)=>setPlaces(newPlaces),
         moveToHome: async () => moveToHome(context),
         removeAtIndex: (index) => removeAtIndex(index, context),
         removeAll: () => removeAll(context),
@@ -27,6 +28,7 @@ export function usePlaces() {
 }
 
 async function append(place, context) {
+    
     const { places, setPlaces, setSelectedIndex } = context;
 
     const newPlaces = [...places];
@@ -74,7 +76,7 @@ function removeAtIndex(index, context) {
 
 function removeAll(context) {
     const { setPlaces, setSelectedIndex } = context;
-
+    
     setPlaces([]);
     setSelectedIndex(-1);
 }
