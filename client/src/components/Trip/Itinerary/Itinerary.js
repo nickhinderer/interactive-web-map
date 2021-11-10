@@ -25,7 +25,6 @@ export default function Itinerary(props) {
         <Table responsive striped>
             <Header places={props.places} placeActions={props.placeActions} send={(places) => sendDistancesRequest(places)} />
             <TotalDistance distances={distances} err={err}/>
-            <Tour places={props.places} placeActions={props.placeActions}/>
             <Body places={props.places} placeActions={props.placeActions} distances={distances} onChange={sendTourRequest(props.places,getOriginalServerUrl())} />
         </Table>
     );
@@ -51,6 +50,9 @@ function Header(props) {
                         Find Distances
                     </Button>
                 </th> 
+                <th>
+                    <Tour places={props.places} placeActions={props.placeActions}/>
+                </th>
                 <th>
                     <ItineraryActionsDropdown placeActions={props.placeActions} />
                 </th>
