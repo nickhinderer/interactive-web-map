@@ -6,6 +6,7 @@ import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI'
 import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
+import Tour,{sendTourRequest} from '../../Tour/Tour.js';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
@@ -24,7 +25,8 @@ export default function Itinerary(props) {
         <Table responsive striped>
             <Header places={props.places} placeActions={props.placeActions} send={(places) => sendDistancesRequest(places)} />
             <TotalDistance distances={distances} err={err}/>
-            <Body places={props.places} placeActions={props.placeActions} distances={distances} />
+            <Tour places={props.places} placeActions={props.placeActions}/>
+            <Body places={props.places} placeActions={props.placeActions} distances={distances} onChange={sendTourRequest(props.places,getOriginalServerUrl())} />
         </Table>
     );
 }
@@ -35,7 +37,7 @@ function Header(props) {
         const newPlaces = [];
         for (var i = 0; i < places.length; i++) {          
             const matchingType = latLngToPlace(places[i]);
-            newPlaces.push(matchingType);
+            newPlaces.push(matchingType);       
         }
         props.send(newPlaces);
     }
