@@ -63,4 +63,4 @@ Add issues to GitHub for any changes necessary to the system.
 | | | | | 
 | 1 | Kelly: Had hard time to find "Search" icon; Press the enter keyboard instead of click seach button; Click done insteaf of search button.| med | |
 | 5 | Kelly: Had hard time to find where to change server | low | |
-| 6 | Kelly: Don't understand what features means and features disapear after reopen the modal| med | |
+| 6 | Kelly: Don't understand what features means and features disapear after reopen the modal| med | #712 |
