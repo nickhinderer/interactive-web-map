@@ -4,8 +4,7 @@ import { useServerInputValidation } from '../../hooks/useServerInputValidation';
 import ListServer from './ListServer';
 
 export default function ServerSettings(props) {
-    const [serverInput, setServerInput, config, validServer, resetModal]
-        = useServerInputValidation(props.serverSettings.serverUrl, props.toggleOpen);
+    const [serverInput, setServerInput, config, validServer, resetModal] = useServerInputValidation(props.serverSettings.serverUrl, props.toggleOpen);
 
         function closeModalWithoutSaving() {
             resetModal(props.serverSettings.serverUrl);
