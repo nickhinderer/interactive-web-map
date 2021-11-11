@@ -38,7 +38,7 @@ export function FindInput(setDisplay, setMatch){
         <InputGroup>
             <Input placeholder={"Place..."} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
                 <InputGroupAddon addonType="append">
-                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search </Button>
+                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search</Button>
                 </InputGroupAddon>
         </InputGroup>
     );
