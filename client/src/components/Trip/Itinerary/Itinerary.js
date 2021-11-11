@@ -30,23 +30,24 @@ export default function Itinerary(props) {
     );
 }
 
+function handleChange(places, send) {
+    const newPlaces = [];
+    for (var i = 0; i < places.length; i++) {          
+        const matchingType = latLngToPlace(places[i]);
+        newPlaces.push(matchingType);       
+    }
+    send(newPlaces);
+}
+
 function Header(props) {
     
-    function handleChange(places) {
-        const newPlaces = [];
-        for (var i = 0; i < places.length; i++) {          
-            const matchingType = latLngToPlace(places[i]);
-            newPlaces.push(matchingType);       
-        }
-        props.send(newPlaces);
-    }
 
     return (
         <thead>
             <tr>
                 <th>My Trip</th>
                 <th>
-                    <Button id="Popover1" type="button" size="sm" onClick={() => handleChange(props.places)}>
+                    <Button id="Popover1" type="button" size="sm" onClick={() => handleChange(props.places, props.send)}>
                         Find Distances
                     </Button>
                 </th> 
