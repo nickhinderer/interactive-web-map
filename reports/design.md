@@ -298,6 +298,10 @@ This epic interface will add a popup when a shorter trip is found compared to th
 
 ### Drawing for #527 User Experience
 
+![UX_AddArrow](../images/TripArrow.jpg)
+
+![UX_instructions](../images/ChangeIconAddInstructions.jpg)
+
 After receiving feedback, changes were made to the icons used for adding a place to the trip. We also added an arrow icon that points down toward the itinerary in order to make it more clear where added places will show up. In order to clear up some confusion about the searching functionality, simple instructions were added to the modal above the input box. 
 
 ### Client Components
