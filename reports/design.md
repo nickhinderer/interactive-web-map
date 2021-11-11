@@ -290,13 +290,15 @@ Changes to the User Interface are indicated by the lines and explanatory text.
 <img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/4e991b461922453123b640d643d81d575da6a18f/images/tour.jpg" width="525" alt="tour"/>
 
 This epic interface will add a popup when a shorter trip is found compared to the current one. The map and the trip column will update the shortest trip when the user chooses to apply the shorter trip. And all the formats will keep the same when the user click the discard button.We will change the code by :
-* Add a new class to hanlde or store the shorter trip data
+* Add a new class to handle or store the shorter trip data
 * Add a new class for pop-up alert
 * Update Itinerary for showing the new trip
 
 
 
 ### Drawing for #527 User Experience
+
+After receiving feedback, changes were made to the icons used for adding a place to the trip. We also added an arrow icon that points down toward the itinerary in order to make it more clear where added places will show up. In order to clear up some confusion about the searching functionality, simple instructions were added to the modal above the input box. 
 
 ### Client Components
 ![sp4components](../images/Sprint4Components.png)
