@@ -83,7 +83,7 @@ export async function sendTourRequest(places,serverUrl){
     const OptmizationResponse = await sendAPIRequest({ requestType: "tour", earthRadius: 3959, response: 1.0,  places: Places  }, serverUrl);
     if (OptmizationResponse) {   
         var newPlaces = hanldePlaces(OptmizationResponse.places,'new');  
-        if(JSON. stringify(Places)!=JSON. stringify(newPlaces)){
+        if(JSON.stringify(Places)!=JSON.stringify(newPlaces)){
             setNewPlaces(newPlaces);      
         }else
         setNewPlaces([]);
