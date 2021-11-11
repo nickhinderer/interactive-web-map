@@ -12,8 +12,6 @@ export default function FindModal(props) {
     const [display, setDisplay] = useState(false);
     const [match, setMatch] = useState("");
 
- 
-   
     return (
 
         <div className="searchButton">
@@ -21,6 +19,7 @@ export default function FindModal(props) {
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
+                <b>Type</b> and <b>Click</b> to add a place to itinerary
                 {FindInput(setDisplay, setMatch)}
                 {display? <List match={match} places={props.places} placeActions={props.placeActions}/> :<div></div>}
                 </ModalBody>
