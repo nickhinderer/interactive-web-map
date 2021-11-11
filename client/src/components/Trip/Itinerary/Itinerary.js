@@ -7,6 +7,7 @@ import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
+import { FaArrowCircleDown } from 'react-icons/fa';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
@@ -45,7 +46,7 @@ function Header(props) {
     return (
         <thead>
             <tr>
-                <th>My Trip</th>
+                <th>My Trip <FaArrowCircleDown/></th>
                 <th>
                     <Button id="Popover1" type="button" size="sm" onClick={() => handleChange(props.places, props.send)}>
                         Find Distances

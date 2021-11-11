@@ -1,7 +1,7 @@
 import React from 'react';
 import  { useCallback,useEffect,useState } from 'react';
 import { getOriginalServerUrl, sendAPIRequest }  from '../../../utils/restfulAPI';
-import bookmark from '../../../static/images/bookmark-plus-fill.svg';
+import { FaPlus } from 'react-icons/fa';
 import { Button } from 'reactstrap';
 
 export default function display(props) {
@@ -66,7 +66,7 @@ function placesList(flagResponse, places, placeActions){
 
 function listElement(placeActions, place){
     return(
-        <ul><Button color='primary' onClick={() => placeActions.append(place)}><img src={bookmark} alt='add'/> Add </Button>
+        <ul><Button color='primary' onClick={() => placeActions.append(place)}><FaPlus/> Add </Button>
         <div><b>Name:</b> {place.name}</div>
         <div><b>Latitude:</b> {place.latitude}</div>
         <div><b>Longitude:</b> {place.longitude}</div>

@@ -12,8 +12,6 @@ export default function FindModal(props) {
     const [display, setDisplay] = useState(false);
     const [match, setMatch] = useState("");
 
- 
-   
     return (
 
         <div className="searchButton">
@@ -21,6 +19,7 @@ export default function FindModal(props) {
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader>Find Places</ModalHeader>
                 <ModalBody>
+                <b>Type</b> and <b>Click Search</b> to add a place to itinerary
                 {FindInput(setDisplay, setMatch)}
                 {display? <List match={match} places={props.places} placeActions={props.placeActions}/> :<div></div>}
                 </ModalBody>
@@ -39,7 +38,7 @@ export function FindInput(setDisplay, setMatch){
         <InputGroup>
             <Input placeholder={"Place..."} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
                 <InputGroupAddon addonType="append">
-                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search </Button>
+                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search</Button>
                 </InputGroupAddon>
         </InputGroup>
     );
