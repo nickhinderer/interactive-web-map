@@ -35,6 +35,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 | Karo B! | Age: 21, Nationality: American, Major: Equine Science |
 | Sersi | Age: 20, Nationality: American, Major: Theatre |
 | Kelly | Age: 22, Nationality: China, Major: Statistics |
+| Joe | Age: 21, Nationality: American, Major: Business |
 
 
 ### Observations
@@ -64,3 +65,7 @@ Add issues to GitHub for any changes necessary to the system.
 | 1 | Kelly: Had hard time to find "Search" icon; Press the enter keyboard instead of click seach button; Click done insteaf of search button.| med | |
 | 5 | Kelly: Had hard time to find where to change server | low | |
 | 6 | Kelly: Don't understand what features means and features disapear after reopen the modal| med | #712 |
+| 4 | Joe: Deleted whole trip instead of 1 place | med | #713 |
+| 5 | Joe: Didn't know where or how to change server | low |  |
+| 7 | Joe: Didn't know what hamburger dots did | low |  |
+| 2 | Joe: Didn't know how to actually add a place | low |  |
