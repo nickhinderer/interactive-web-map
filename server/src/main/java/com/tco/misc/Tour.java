@@ -116,7 +116,7 @@ public class Tour {
     public Tour() {
         this.places = new Places();
         this.earthRadius = 3958.8;
-        this.response = 0.1;
+        this.response = 0.2;
     }
 
     public Places getPlaces() {
