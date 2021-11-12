@@ -14,15 +14,12 @@ const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
 
-    function moveToHome() { props.placeActions.moveToHome(); }
-    function removeAll() { props.placeActions.removeAll(); }
-
     return (
         <ActionsDropdown {...props}>
-            <DropdownItem onClick={moveToHome} data-testid='home-button'>
+            <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
                 <FaHome />
             </DropdownItem>
-            <DropdownItem onClick={removeAll} data-testid='delete-all-button'>
+            <DropdownItem onClick={() => removeAll(props)} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
             <DropdownItem onClick={iconClick}>
@@ -34,6 +31,9 @@ export function ItineraryActionsDropdown(props) {
         </ActionsDropdown> 
     );
 }
+
+function moveToHome(props) { props.placeActions.moveToHome(); }
+function removeAll(props) { props.placeActions.removeAll(); }
 
 function iconClick(){
     const input = document.getElementById('file-upload');
