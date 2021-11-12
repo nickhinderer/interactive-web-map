@@ -99,10 +99,10 @@ function readFile(fileName, fileObject, context) {
     const file = { name: fileName, text: event.target.result };
 
     parseFile(file, context);
-
   };
-  
-  function parseFile(file, context) {
+}
+
+function parseFile(file, context) {
     const { setPlaces, setSelectedIndex } = context;
     var newPlaces = [];
 
@@ -143,7 +143,6 @@ function readFile(fileName, fileObject, context) {
       setPlaces(newPlaces);
       setSelectedIndex(newPlaces.length - 1); 
     }
-  }
 }
 
 /* Functions for Save File */
