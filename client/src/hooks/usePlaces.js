@@ -102,7 +102,7 @@ function readFile(fileName, fileObject, context) {
 
   };
   
-  async function parseFile(file, context) {
+  function parseFile(file, context) {
     const { setPlaces, setSelectedIndex } = context;
     var newPlaces = [];
 
