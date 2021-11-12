@@ -29,7 +29,7 @@ public class TestTour {
     @Test
     @DisplayName("response is correct")
     public void testResponse() {
-        assertEquals(0.1, tour.getResponse());
+        assertEquals(0.2, tour.getResponse());
     }
 
     @Test
