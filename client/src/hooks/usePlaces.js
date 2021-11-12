@@ -123,8 +123,8 @@ function loadJson(file, context) {
       jsonList.places.map((place) =>
         newPlaces.push(
           { "name": place.name,
-            "lat": place.latitude,
-            "lng": place.longitude               
+            "lat": parseFloat(place.latitude),
+            "lng": parseFloat(place.longitude)               
           }
         )
       );
