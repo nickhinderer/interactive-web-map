@@ -103,16 +103,15 @@ function readFile(fileName, fileObject, context) {
 }
 
 function parseFile(file, context) {
-
-    const extension = file.name.split('.').pop();
+    const extension = file.name.split('.').pop();    
     if (extension === "json") { 
-      
+      loadJson(file, context);
     } else if (extension === "csv") {
-      
+      loadCsv(file, context);
     }
 }
 
-function loadJson(file, tripFileSchema, context) {
+function loadJson(file, context) {
     const { setPlaces, setSelectedIndex } = context;
     var newPlaces = [];
     
@@ -176,7 +175,7 @@ function downloadFile(fullFileName, mimeType, fileText) {
 }
 
 function buildTripJSON(context) {
-  const { places, selectedIndex } = context;
+  const { places } = context;
   
   const tripJson = {
     places: []
