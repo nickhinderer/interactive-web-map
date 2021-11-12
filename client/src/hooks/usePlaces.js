@@ -103,8 +103,6 @@ function readFile(fileName, fileObject, context) {
 }
 
 function parseFile(file, context) {
-    const { setPlaces, setSelectedIndex } = context;
-    var newPlaces = [];
 
     const extension = file.name.split('.').pop();
     if (extension === "json") { 
@@ -145,8 +143,14 @@ function parseFile(file, context) {
     }
 }
 
-function loadJson(file, tripFileSchema, context) {}
-function loadCsv(file, context) {}
+function loadJson(file, tripFileSchema, context) {
+    const { setPlaces, setSelectedIndex } = context;
+    var newPlaces = [];
+}
+function loadCsv(file, context) {
+  const { setPlaces, setSelectedIndex } = context;
+  var newPlaces = [];
+}
 
 /* Functions for Save File */
 function downloadFile(fullFileName, mimeType, fileText) {
