@@ -145,6 +145,9 @@ function parseFile(file, context) {
     }
 }
 
+function loadJson(file, tripFileSchema, context) {}
+function loadCsv(file, context) {}
+
 /* Functions for Save File */
 function downloadFile(fullFileName, mimeType, fileText) {
   const file = new Blob([fileText], { type: mimeType });
