@@ -99,51 +99,60 @@ function readFile(fileName, fileObject, context) {
     const file = { name: fileName, text: event.target.result };
 
     parseFile(file, context);
-
   };
-  
-  async function parseFile(file, context) {
+}
+
+function parseFile(file, context) {
+    const extension = file.name.split('.').pop();    
+    if (extension === "json") { 
+      loadJson(file, context);
+    } else if (extension === "csv") {
+      loadCsv(file, context);
+    }
+}
+
+function loadJson(file, context) {
     const { setPlaces, setSelectedIndex } = context;
     var newPlaces = [];
-
-    const extension = file.name.split('.').pop();
-    if (extension === "json") { 
-      if (isJsonResponseValid(JSON.parse(file.text), tripFileSchema)) {
-        console.log("Building trip from JSON file.");
-        
-        var jsonList = JSON.parse(file.text);
-
-        for (var i = 0; i < jsonList.places.length; i++) {
-          const latLng = placeToLatLng(jsonList.places[i]);
-          newPlaces.push(latLng);
-        }
-
-        setPlaces(newPlaces);
-        setSelectedIndex(newPlaces.length - 1);
-      }
-    } else if (extension === "csv") {
-      console.log("Building trip from CSV file.");
-
-      var indPlace = {};   
-      var csvList = Papa.parse(file.text);
+    
+    if (isJsonResponseValid(JSON.parse(file.text), tripFileSchema)) {
+      console.log("Building trip from JSON file.");
       
-      var numItems = csvList.data[0].length;
-      var items = csvList.data[0];
-      for (var i = 1; i < csvList.data.length; i++) {
+      var jsonList = JSON.parse(file.text);
 
-        for (var j = 0; j < numItems; j++) {
-          indPlace[items[j]] = csvList.data[i][j];
-        }
-
-        const latLng = placeToLatLng(indPlace);
+      for (var i = 0; i < jsonList.places.length; i++) {
+        const latLng = placeToLatLng(jsonList.places[i]);
         newPlaces.push(latLng);
-        indPlace = {};
       }
-      
+
       setPlaces(newPlaces);
-      setSelectedIndex(newPlaces.length - 1); 
+      setSelectedIndex(newPlaces.length - 1);
     }
-  }
+}
+function loadCsv(file, context) {
+  const { setPlaces, setSelectedIndex } = context;
+  var newPlaces = [];
+
+  console.log("Building trip from CSV file.");
+
+    var indPlace = {};   
+    var csvList = Papa.parse(file.text);
+    
+    var numItems = csvList.data[0].length;
+    var items = csvList.data[0];
+    for (var i = 1; i < csvList.data.length; i++) {
+
+      for (var j = 0; j < numItems; j++) {
+        indPlace[items[j]] = csvList.data[i][j];
+      }
+
+      const latLng = placeToLatLng(indPlace);
+      newPlaces.push(latLng);
+      indPlace = {};
+    }
+    
+    setPlaces(newPlaces);
+    setSelectedIndex(newPlaces.length - 1); 
 }
 
 /* Functions for Save File */
@@ -166,7 +175,7 @@ function downloadFile(fullFileName, mimeType, fileText) {
 }
 
 function buildTripJSON(context) {
-  const { places, selectedIndex } = context;
+  const { places } = context;
   
   const tripJson = {
     places: []
