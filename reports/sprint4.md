@@ -70,13 +70,18 @@
 ## Review
 
 ### Epics completed  
+We finished the nearest-neighbor optimization of the shorter trip epic. We also finished the save trip epic. The user is able to save their trip as a JSON file. Also, we finished the user feedback portion of the UX epic.
 
 ### Epics not completed 
+We finished all the epics we planned at the beginning of the sprint.
 
 ## Retrospective
 
 ### Things that went well
+Our team did a good job of working incrementally. We did a good job of making a realistic estimation of the amount of work we would be able to complete considering we got all of our epics done. Our team communicated well with each other. We also got our work started relatively early. Also, as always we did a good job of dividing the work amongst ourselves. Everyone contributed a good amount this sprint
 
 ### Things we need to improve
+The only thing that comes to mind is that we could have more structured scrum meetings. Our scrum meetings at the beginning of class are typically more casual. If we could have our scrum meetings look more like the ones we have the TA's observe where we all speak sequentially and we concisely say what we are working on, then I think we could be more productive in less time. 
 
 ### One thing we will change next time
+As I stated previously, we could work on having more formal scrum meetings at the beginning of class. What we did worked, but it couldn't hurt to improve in this area. 
