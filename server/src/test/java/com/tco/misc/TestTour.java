@@ -40,6 +40,7 @@ public class TestTour {
         Place place1 = new Place();
         place1.put("latitude", "47.90596");
         place1.put("longitude", "-89.90065");
+        place1.put("index", "0");
 
         Place place2 = new Place();
         place2.put("latitude", "47.6679");
