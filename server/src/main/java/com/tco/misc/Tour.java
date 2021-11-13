@@ -38,7 +38,7 @@ public class Tour {
         while (System.currentTimeMillis() < endTime)
             createNearestNeighborTour();
 
-        if(response > 0.0)
+        if (response > 0.0)
             updateTourOrder();
         return places;
     }
@@ -106,9 +106,18 @@ public class Tour {
 
     private void updateTourOrder() {
         Places newTrip = new Places();
+        int startingIndex = getStartingIndex();
         for (int i = 0; i < places.size(); i++)
-            newTrip.add(places.get(bestTour[i]));
+            newTrip.add(places.get(bestTour[(startingIndex + i) % bestTour.length]));
         places = newTrip;
+    }
+
+    private int getStartingIndex() {
+        Integer[] searchArray = new Integer[bestTour.length];
+        int i = 0;
+        for (int value : bestTour)
+            searchArray[i++] = value;
+        return Arrays.asList(searchArray).indexOf(0);
     }
 
     /* The following methods exist only for testing purposes and are not used
