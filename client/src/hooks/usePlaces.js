@@ -120,10 +120,14 @@ function loadJson(file, context) {
       
       var jsonList = JSON.parse(file.text);
 
-      for (var i = 0; i < jsonList.places.length; i++) {
-        const latLng = placeToLatLng(jsonList.places[i]);
-        newPlaces.push(latLng);
-      }
+      jsonList.places.map((place) =>
+        newPlaces.push(
+          { "name": place.name,
+            "lat": parseFloat(place.latitude),
+            "lng": parseFloat(place.longitude)               
+          }
+        )
+      );
 
       setPlaces(newPlaces);
       setSelectedIndex(newPlaces.length - 1);
