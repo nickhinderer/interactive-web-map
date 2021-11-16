@@ -188,8 +188,8 @@ function buildTripJSON(context) {
   places.map((place) =>
     placesJson.push(
       { "name": place.name,
-        "latitude": place.lat,
-        "longitude": place.lng 
+        "latitude": place.lat.toString(),
+        "longitude": place.lng.toString() 
       }
     )
   );
