@@ -73,7 +73,7 @@ function Body(props) {
                     place={place}
                     placeActions={props.placeActions}
                     index={index}
-                    distance={props.distances[index]}
+                    distance={props.distances[index-1]}
                 />
             )}
         </tbody>
