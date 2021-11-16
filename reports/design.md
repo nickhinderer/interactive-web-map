@@ -325,6 +325,12 @@ Adding the following classes
 
 ### User Interface
 
+### Drawing for #68 Highlight Place
+
+### Drawing for #743 Save Trip
+
+### Drawing for #744 User Experience
+
 ### Client Components
 
 ### Server Classes
