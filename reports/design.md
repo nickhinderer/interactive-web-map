@@ -320,4 +320,11 @@ Adding the following classes
 * Tour.java
 * TestTourRequest.java
 * TestTour.java
+
 # Sprint 5
+
+### User Interface
+
+### Client Components
+
+### Server Classes
