@@ -362,11 +362,11 @@ This modal will display simliar to the one from the "Find Places" epic.
 This feature will send frequent requests to the server to send an option list to the modal. Options will appear syncronously while the user is typing in the search engine.
 
 ### Drawing for #764 Trip Name
-<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/4e991b461922453123b640d643d81d575da6a18f/images/TripName.jpg" width="525" alt="tour"/>
+<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/e4d5f752ae7d397775dd2cc38fbeee6f58f7cf4e/images/TripName.jpg" width="525" alt="tour"/>
 This epic will add a input line for user to modify the trip name by cilck pen icon.
 
 ### Drawing for #790 Random Places
-<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/4e991b461922453123b640d643d81d575da6a18f/images/Random.jpg" width="525" alt="tour"/>
+<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/bb12edf75164840750086d78c962aec9d4368173/images/Random.jpg" width="525" alt="tour"/>
 This epic will add a random places icon to the search bar for user to click to get some random places.
 
 ### Client Components
