@@ -1,10 +1,10 @@
-# Sprint 5 - *your team number* - *your team name*
+# Sprint 5 - *T04* - *Geek Velocity*
 
 ## Goal
 ### *Release!*
 
 ## Sprint Leader: 
-### *firstname lastname*
+### *Mallory Cahill*
 
 ## Definition of Done
 
@@ -43,9 +43,9 @@
 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
-| Epics | *count* | *count* |
-| Tasks |  *count*   | *count* | 
-| Story Points |  *sum*  | *sum* | 
+| Epics | *5* | *count* |
+| Tasks |  *49*   | *count* | 
+| Story Points |  *60*  | *sum* | 
 
 
 ## Scrums
