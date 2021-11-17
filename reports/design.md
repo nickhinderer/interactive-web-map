@@ -324,10 +324,14 @@ Adding the following classes
 # Sprint 5
 
 ### User Interface
-During this sprint, the team will work on getting the site ready for release. This includes adding in some minor functionality through simple features and refining the features already present. There will be 3 major parts:
+During this sprint, the team will work on getting the site ready for release. This includes adding in some minor functionality through simple features and refining the features already present. There will be 7 major parts:
 * Highlight Place
 * Save Trip
 * User Experience
+* Trip Name
+* Maps
+* Where is?
+* Random Places
 
 ### UI Improvements
 The 'Find Distances' and 'Find Shorter Trip' buttons aren't the most appealing to the eye. For this sprint we will work on making distances auto complete when a new place is added to the itinerary, and remove the need for a button. We will also change the trip button to a more UI friendly design and possibly add it into the hamburger icon in order to ensure progressive disclosure on our site. 
@@ -344,5 +348,9 @@ This epic will add the functionality of being able to click a place in the itine
 ### Drawing for #744 User Experience
 
 ### Client Components
+
+<img src="https://user-images.githubusercontent.com/74014694/142088674-e422e90c-e271-48c0-8e1d-092d72e91d36.jpg" alt="Sprint5ClientComponents">
+
+On the client side, we will be adding in new functions to handle changing the map background, changing the trip name, moving the map marker when a certain place is clicked and adding a new input box/button for the where is epic. 
 
 ### Server Classes
