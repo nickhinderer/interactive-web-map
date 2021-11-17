@@ -347,6 +347,14 @@ This epic will add the functionality of being able to click a place in the itine
 
 ### Drawing for #744 User Experience
 
+### Drawing for #764 Trip Name
+<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/4e991b461922453123b640d643d81d575da6a18f/images/TripName.jpg" width="525" alt="tour"/>
+This epic will add a input line for user to modify the trip name by cilck pen icon.
+
+### Drawing for #790 Random Places
+<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/4e991b461922453123b640d643d81d575da6a18f/images/Random.jpg" width="525" alt="tour"/>
+This epic will add a random places icon to the search bar for user to click to get some random places.
+
 ### Client Components
 
 <img src="https://user-images.githubusercontent.com/74014694/142088674-e422e90c-e271-48c0-8e1d-092d72e91d36.jpg" alt="Sprint5ClientComponents">
