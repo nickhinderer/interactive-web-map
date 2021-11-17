@@ -359,3 +359,8 @@ This epic will add the functionality of being able to click a place in the itine
 On the client side, we will be adding in new functions to handle changing the map background, changing the trip name, moving the map marker when a certain place is clicked and adding a new input box/button for the where is epic. 
 
 ### Server Classes
+![server_classes](../images/Sprint4ServerClassDiagram.png)
+Server classes will remain the same. The following methods will be added to tour: 
+* 2opt
+* 2optImproves
+* 2optReverse
