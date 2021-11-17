@@ -7,7 +7,7 @@ import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
-import { FaArrowCircleDown } from 'react-icons/fa';
+import { FaArrowCircleDown, FaTelegramPlane } from 'react-icons/fa';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
@@ -85,6 +85,10 @@ function TableRow(props) {
     const location = latLngToText(props.place);
     const distance = props.distance;
 
+    function moveMarker(){
+        props.placeActions.selectIndex(props.index);
+    }
+
     return (
         <tr>
             <th scope="row">{props.index + 1}</th>
@@ -93,6 +97,9 @@ function TableRow(props) {
                 {name}
                 <br />
                 <small className="text-muted">{location}</small>
+            </td>
+            <td>
+                <FaTelegramPlane onClick={() => moveMarker()}/>
             </td>
             <td>
                 <PlaceActionsDropdown placeActions={props.placeActions} index={props.index} />
