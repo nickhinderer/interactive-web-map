@@ -324,10 +324,14 @@ Adding the following classes
 # Sprint 5
 
 ### User Interface
-During this sprint, the team will work on getting the site ready for release. This includes adding in some minor functionality through simple features and refining the features already present. There will be 3 major parts:
+During this sprint, the team will work on getting the site ready for release. This includes adding in some minor functionality through simple features and refining the features already present. There will be 7 major parts:
 * Highlight Place
 * Save Trip
 * User Experience
+* Trip Name
+* Maps
+* Where is?
+* Random Places
 
 ### UI Improvements
 The 'Find Distances' and 'Find Shorter Trip' buttons aren't the most appealing to the eye. For this sprint we will work on making distances auto complete when a new place is added to the itinerary, and remove the need for a button. We will also change the trip button to a more UI friendly design and possibly add it into the hamburger icon in order to ensure progressive disclosure on our site. 
