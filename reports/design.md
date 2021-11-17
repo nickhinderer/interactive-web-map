@@ -347,6 +347,10 @@ This epic will add the functionality of being able to click a place in the itine
 
 ### Drawing for #744 User Experience
 
+### Drawing for #768 Where Is
+
+### Drawing for #7687 Progressive Disclosure
+
 ### Client Components
 
 <img src="https://user-images.githubusercontent.com/74014694/142088674-e422e90c-e271-48c0-8e1d-092d72e91d36.jpg" alt="Sprint5ClientComponents">
