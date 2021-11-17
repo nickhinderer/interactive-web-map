@@ -346,6 +346,7 @@ This epic will add the functionality of being able to click a place in the itine
 ### Drawing for #743 Save Trip
 
 ### Drawing for #744 User Experience
+<img src="https://user-images.githubusercontent.com/82910022/142093710-4da69a27-90d7-4170-b35e-33516b0b8db9.jpg" width="525" alt="Where Is Img">
 
 ### Drawing for #768 Where Is
 
