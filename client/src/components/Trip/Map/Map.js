@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map as LeafletMap, Polyline, TileLayer } from 'react-leaflet';
+import { Map as LeafletMap, Polyline, TileLayer, LayersControl } from 'react-leaflet';
 import Marker from './Marker';
 import { latLngToPlace, placeToLatLng } from '../../../utils/transformers';
 import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
@@ -10,6 +10,26 @@ const MAP_LAYER_ATTRIBUTION = "&copy; <a href=&quot;http://osm.org/copyright&quo
 const MAP_LAYER_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const MAP_MIN_ZOOM = 1;
 const MAP_MAX_ZOOM = 19;
+const MAP_LAYERS = [
+    {
+      selected: true,
+      name: "OpenStreetMap.Mapnik",
+      attribution: "&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors",
+      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    },
+     {
+      selected: false,
+      name: "Stadia.OSMBright",
+      attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+      url: "https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png",
+    },
+    {
+      selected: false,
+      name: "Esri.WorldImagery",
+      attribution: "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    },
+  ];
 
 export default function Map(props) {
     function handleMapClick(mapClickInfo) {
