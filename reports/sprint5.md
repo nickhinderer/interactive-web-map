@@ -66,7 +66,7 @@
 
 | Date | Tasks closed  | Tasks in progress | Impediments |
 | :--- | :--- | :--- | :--- |
-| *date* | *#task, ...* | *#task, ...* |  | 
+| *11/16* | *#752, #749, #742, #784, #783, #777, #788* | *#759, #740, #741, #767* |  | 
 
 
 ## Review
