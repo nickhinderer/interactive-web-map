@@ -343,11 +343,6 @@ The 'Find Distances' and 'Find Shorter Trip' buttons aren't the most appealing t
 
 This epic will add the functionality of being able to click a place in the itinerary list and see it highlighted on the map with a marker. It will also highlight the item in the list in a different color from the original table row.
 
-### Drawing for #768 Where Is
-<img src="https://user-images.githubusercontent.com/82910022/142093710-4da69a27-90d7-4170-b35e-33516b0b8db9.jpg" width="525" alt="Where Is Img">
-
-### Drawing for #767 Progressive Disclosure
-
 ### Drawing for #743 Save Trip
 
 ### Drawing for #744 User Experience
