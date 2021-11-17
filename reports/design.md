@@ -351,6 +351,11 @@ This epic will add the functionality of being able to click a place in the itine
 ### Drawing for #768 Where Is
 <img src="https://user-images.githubusercontent.com/82910022/142130727-f71a6eca-5655-4b56-a8f3-d0f3a3a5d8ea.jpg" width="525" alt="Progressive Disclosure Img">
 
+A new icon button will be added to the hamburger Dropdown Menu on the righthand side of the interface.
+When a user clicks this button, a modal will pop up prompting them to fill in latitude and longitude 
+for the desired place they are trying to find.
+This modal will display simliar to the one from the "Find Places" epic.
+
 ### Drawing for #7687 Progressive Disclosure
 
 ### Client Components
