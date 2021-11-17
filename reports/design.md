@@ -346,10 +346,10 @@ This epic will add the functionality of being able to click a place in the itine
 ### Drawing for #743 Save Trip
 
 ### Drawing for #744 User Experience
-<img src="https://user-images.githubusercontent.com/82910022/142093710-4da69a27-90d7-4170-b35e-33516b0b8db9.jpg" width="525" alt="Where Is Img">
+<img src="https://user-images.githubusercontent.com/82910022/142093710-4da69a27-90d7-4170-b35e-33516b0b8db9.jpg" width="525" alt="User Experience Img">
 
 ### Drawing for #768 Where Is
-<img src="https://user-images.githubusercontent.com/82910022/142130727-f71a6eca-5655-4b56-a8f3-d0f3a3a5d8ea.jpg" width="525" alt="Progressive Disclosure Img">
+<img src="https://user-images.githubusercontent.com/82910022/142131065-533f2277-83e5-4bfa-a857-1191ebe1d37e.jpg" width="525" alt="Where Is Img">
 
 A new icon button will be added to the hamburger Dropdown Menu on the righthand side of the interface.
 When a user clicks this button, a modal will pop up prompting them to fill in latitude and longitude 
@@ -357,6 +357,8 @@ for the desired place they are trying to find.
 This modal will display simliar to the one from the "Find Places" epic.
 
 ### Drawing for #7687 Progressive Disclosure
+<img src="https://user-images.githubusercontent.com/82910022/142130727-f71a6eca-5655-4b56-a8f3-d0f3a3a5d8ea.jpg" width="525" alt="Progressive Disclosure Img">
+
 
 ### Client Components
 
