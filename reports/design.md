@@ -349,4 +349,8 @@ This epic will add the functionality of being able to click a place in the itine
 
 ### Client Components
 
+<img src="https://user-images.githubusercontent.com/74014694/142088674-e422e90c-e271-48c0-8e1d-092d72e91d36.jpg" alt="Sprint5ClientComponents">
+
+On the client side, we will be adding in new functions to handle changing the map background, changing the trip name, moving the map marker when a certain place is clicked and adding a new input box/button for the where is epic. 
+
 ### Server Classes
