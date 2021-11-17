@@ -359,6 +359,7 @@ This modal will display simliar to the one from the "Find Places" epic.
 ### Drawing for #7687 Progressive Disclosure
 <img src="https://user-images.githubusercontent.com/82910022/142130727-f71a6eca-5655-4b56-a8f3-d0f3a3a5d8ea.jpg" width="525" alt="Progressive Disclosure Img">
 
+This feature will send frequent requests to the server to send an option list to the modal. Options will appear syncronously while the user is typing in the search engine.
 
 ### Client Components
 
