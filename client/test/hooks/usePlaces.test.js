@@ -138,4 +138,8 @@ describe('usePlaces', () => {
         });
         expect(hook.current.places).toEqual([]);
     });
+
+    it('file uploads from onload event', async () => {
+
+    });
 });
