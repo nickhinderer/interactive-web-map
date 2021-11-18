@@ -1,0 +1,19 @@
+{
+    "places": [
+       {
+           "name": "Eagles Landing Heliport",
+           "latitude": "35.92250061035156",
+           "longitude": "-83.57939910888672"
+       },
+       {
+           "name": "Nest of Eagles Airport",
+           "latitude": "45.83549880981445",
+           "longitude": "-91.80269622802734"
+       },
+       {
+           "name": "Eagles Ridge Airport",
+           "latitude": "30.353200912475586",
+           "longitude": "-89.913101"
+       }
+   ]
+}
