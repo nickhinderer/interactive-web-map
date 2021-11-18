@@ -6,6 +6,7 @@ import { REVERSE_GEOCODE_RESPONSE } from '../sharedMocks';
 import { LOG } from '../../src/utils/constants';
 import { usePlaces } from '../../src/hooks/usePlaces';
 
+
 describe('usePlaces', () => {
     const mockPlace = {latitude: "40.570", longitude: "-105.085"};
     const mockPlaceResponse = {
@@ -140,6 +141,6 @@ describe('usePlaces', () => {
     });
 
     it('file uploads from onload event', async () => {
-
+        
     });
 });
