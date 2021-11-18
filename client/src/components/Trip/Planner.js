@@ -36,7 +36,7 @@ function Section(props) {
     );
 }
 
-function LoadFileInput(props) {
+export function LoadFileInput(props) {
     function handleFileUpload(event) {
         const fileName = event.target.files[0].name;
         const fileObject = event.target.files[0];
@@ -44,6 +44,6 @@ function LoadFileInput(props) {
     }
 
     return (
-        <Input id="file-upload" type="file" accept={FILE_FORMATS} onChange={handleFileUpload} hidden />
+        <Input data-testid="file-upload" type="file" accept={FILE_FORMATS} onChange={handleFileUpload} hidden />
     );
 }

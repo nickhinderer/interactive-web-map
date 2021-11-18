@@ -1,11 +1,15 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import {act, renderHook} from '@testing-library/react-hooks';
-import { beforeEach, describe, expect, it } from '@jest/globals';
+import {act, renderHook } from '@testing-library/react-hooks';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { REVERSE_GEOCODE_RESPONSE } from '../sharedMocks';
 import { LOG } from '../../src/utils/constants';
 import { usePlaces } from '../../src/hooks/usePlaces';
 import * as mockFile from '../../test/hooks/exampleFiles/loadExampleJson';
+import {screen} from '@testing-library/dom'
+import { LoadFileInput } from '../../src/components/Trip/Planner';
+
+const someValues = [{ name: 'Livin on a Prayer' }]
 
 describe('usePlaces', () => {
     const mockPlace = {latitude: "40.570", longitude: "-105.085"};
@@ -140,7 +144,12 @@ describe('usePlaces', () => {
         expect(hook.current.places).toEqual([]);
     });
 
+
     it('file uploads from onload event', async () => {
-        
+        const str = JSON.stringify(someValues);
+        const blob = new Blob([str]);
+        const file = new File([blob], 'places.json', 
+            { type: 'application/JSON',});
+        File.prototype.text = jest.fn().mockResolvedValueOnce(str);
     });
 });

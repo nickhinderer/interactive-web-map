@@ -27,4 +27,6 @@ describe('Itinerary', () => {
         user.click(dropdown);
         expect(dropdown.getAttribute('aria-expanded')).toEqual('true');
     });
+
+    
 });
