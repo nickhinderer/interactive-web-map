@@ -26,8 +26,14 @@ public class Database {
         }
     }
 
-    public Object query(String sql) throws BadRequestException {//think about what type of exception to throw
+    public boolean check(String sql){ // hoping moving this will help lower the cognitive complexity
         if(sql.contains("_QUERY_TEST_VALUE_") || sql.contains("ORDER BY RAND() LIMIT -1"))
+            return true;
+        return false;
+    }
+
+    public Object query(String sql) throws BadRequestException {//think about what type of exception to throw
+        if(check(sql))
             if(sql.contains("COUNT(*)"))
                 return 0;
             else
