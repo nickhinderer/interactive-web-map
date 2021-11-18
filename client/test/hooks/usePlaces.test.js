@@ -5,7 +5,7 @@ import { beforeEach, describe, expect, it } from '@jest/globals';
 import { REVERSE_GEOCODE_RESPONSE } from '../sharedMocks';
 import { LOG } from '../../src/utils/constants';
 import { usePlaces } from '../../src/hooks/usePlaces';
-
+import * as mockFile from '../../test/hooks/exampleFiles/loadExampleJson';
 
 describe('usePlaces', () => {
     const mockPlace = {latitude: "40.570", longitude: "-105.085"};
