@@ -6,11 +6,11 @@ import { beforeEach, describe, it, jest } from '@jest/globals';
 import { ItineraryActionsDropdown } from '../../../src/components/Trip/Itinerary/actions.js';
 
 describe('Dropdown', () => {
-    beforeEach(() =>{
+    beforeEach(() => {
         render(<ItineraryActionsDropdown/>)
     });
     it('contains a search Dropdown', () =>{
-        //expect(screen.findByRole('Dropdown')).toBeDefined();
+        expect(screen.findByRole('Dropdown')).toBeDefined();
     });
 });
     
