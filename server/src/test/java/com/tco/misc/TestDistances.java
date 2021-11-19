@@ -39,4 +39,13 @@ public class TestDistances {
         assertEquals(0, conf.getDistances().get(0));
     }
 
+    @Test
+    @DisplayName("constructor works properly")
+    public void testConstructor() {
+        Distances constructorTest = new Distances(new Places(), 0.0);
+        assertNotNull(constructorTest);
+        assertEquals(new Places(), constructorTest.getPlaces());
+        assertEquals(0.0, constructorTest.getEarthRadius());
+    }
+
 }
