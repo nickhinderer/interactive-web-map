@@ -85,6 +85,8 @@ function TableRow(props) {
     const location = latLngToText(props.place);
     const distance = props.distance;
 
+    const [bgColor, setColor] = useState('white');
+
     function moveMarker(){
         props.placeActions.selectIndex(props.index);
     }
