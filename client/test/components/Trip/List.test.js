@@ -17,7 +17,7 @@ describe('List', () =>{
 
     // need to test lines 37-38, 44, 78
 
-    it('contains a list', () => {
+    it('renders a list', () => {
         expect(screen.findByRole('List')).toBeDefined();
     });
 
