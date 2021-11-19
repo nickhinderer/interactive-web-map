@@ -23,7 +23,7 @@ export default function Itinerary(props) {
     }
 
     return (
-        <Table responsive striped>
+        <Table responsive >
             <Header places={props.places} placeActions={props.placeActions} send={(places) => sendDistancesRequest(places)} />
             <TotalDistance distances={distances} err={err}/>
             <Body places={props.places} placeActions={props.placeActions} distances={distances} onChange={sendTourRequest(props.places,getOriginalServerUrl())} />
@@ -85,12 +85,20 @@ function TableRow(props) {
     const location = latLngToText(props.place);
     const distance = props.distance;
 
+    const [bgColor, setColor] = useState('white');
+
     function moveMarker(){
         props.placeActions.selectIndex(props.index);
+        changeColor();
+    }
+
+    function changeColor(){
+        console.log("Changing Color");
+        setColor('#D3D3D3');
     }
 
     return (
-        <tr>
+        <tr bgcolor={bgColor}>
             <th scope="row">{props.index + 1}</th>
             <td>{ props.index != 0 && distance != 0 ? distance : 0} Mile(s)</td>
             <td>
