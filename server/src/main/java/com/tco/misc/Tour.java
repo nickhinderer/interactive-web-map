@@ -111,6 +111,10 @@ public class Tour {
         places = newTrip;
     }
 
+    private int getStartingIndex() {
+        return 0;
+    }
+
     /* The following methods exist only for testing purposes and are not used
        during normal execution */
     public Tour() {
