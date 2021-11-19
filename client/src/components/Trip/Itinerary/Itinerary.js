@@ -94,7 +94,7 @@ function TableRow(props) {
 
     function changeColor(){
         console.log("Changing Color");
-        setColor('grey');
+        setColor('#D3D3D3');
     }
 
     return (
