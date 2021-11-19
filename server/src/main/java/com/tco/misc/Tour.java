@@ -106,6 +106,7 @@ public class Tour {
 
     private void updateTourOrder() {
         Places newTrip = new Places();
+        int startingIndex = getStartingIndex();
         for (int i = 0; i < places.size(); i++)
             newTrip.add(places.get(bestTour[i]));
         places = newTrip;
