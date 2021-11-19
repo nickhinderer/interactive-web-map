@@ -24,11 +24,11 @@ describe('List', () =>{
         expect(screen.findByTestId('Add')).toBeDefined();
     });
 
-    it('renders list info', () =>{
+    it('renders list info for fort gordon', () =>{
         expect(screen.findByText(/Name: fort gordon/i)).toBeDefined();
         expect(screen.findByText(/Country: united states/i)).toBeDefined();
-        //expect(screen.findByText(/Latitude:/i));
-        //expect(screen.findByText(/Latitude:/i));
+        expect(screen.findByText(/Latitude: 33.420398/i)).toBeDefined();
+        expect(screen.findByText(/Latitude: -82.139602/i)).toBeDefined();
     });
 
     it('contain not result found', async () => {
