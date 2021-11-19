@@ -39,4 +39,10 @@ public class TestDistances {
         assertEquals(0, conf.getDistances().get(0));
     }
 
+    @Test
+    @DisplayName("constructor works properly")
+    public void testConstructor() {
+
+    }
+
 }
