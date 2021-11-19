@@ -89,10 +89,16 @@ function TableRow(props) {
 
     function moveMarker(){
         props.placeActions.selectIndex(props.index);
+        changeColor();
+    }
+
+    function changeColor(){
+        console.log("Changing Color");
+        setColor('primary');
     }
 
     return (
-        <tr>
+        <tr bgcolor={bgColor}>
             <th scope="row">{props.index + 1}</th>
             <td>{ props.index != 0 && distance != 0 ? distance : 0} Mile(s)</td>
             <td>
