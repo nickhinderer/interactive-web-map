@@ -28,4 +28,8 @@ describe('Dropdown', () => {
         const icon = screen.findByTestId('save-trip-button');
         expect(icon).toBeDefined();
     });
+
+    it('Save File icon click', async () => {
+
+    });
 });
