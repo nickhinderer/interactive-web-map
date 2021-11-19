@@ -9,8 +9,16 @@ describe('Dropdown', () => {
     beforeEach(() => {
         render(<ItineraryActionsDropdown/>)
     });
-    it('contains a search Dropdown', () =>{
+
+    it('contains a search Dropdown', () => {
         expect(screen.findByRole('Dropdown')).toBeDefined();
     });
-});
     
+    it('contains Load File button', async () => {
+        
+    });
+});
+/*
+    const button = screen.findByTestId('load-trip-icon');
+    expect(button).toBeDefined();    
+*/ 
