@@ -10,29 +10,29 @@ describe('List', () =>{
     beforeEach(() =>{
         fetch.resetMocks();
         fetch.mockResponse(VALID_FIND_RESPONSE);
-        render(<List/>)
+        render(<List match={"Fort Gordon"} places={[{"name":"Fort Gordon Hqs Helipad Heliport", 
+                            "latitude":"33.420398", "longitude":"-82.139602", "country":"United States"}]} 
+                            placeActions={jest.fn()}/>)
     });
 
-    //still need a fake request to test line 16-25
+    // need to test lines 37-38, 44, 69-78
+    it('contains a list', () => {
+        expect(screen.findByRole('List')).toBeDefined();
+    });
 
     it('renders buttons', async ()=> {
-        expect(screen.findByRole('button', { name: /Add/i }));
-        expect(screen.findByText(/Name:/i));
-        expect(screen.findByText(/Country:/i));
-        expect(screen.findByText(/Latitude:/i));
-        expect(screen.findByText(/Latitude:/i));
-             
-     
-        
+        expect(screen.findByTestId('Add')).toBeDefined();
     });
 
-
-   
-             
-    
+    it('renders list info', () =>{
+        expect(screen.findByText(/Name: fort gordon/i)).toBeDefined();
+        expect(screen.findByText(/Country: united states/i)).toBeDefined();
+        //expect(screen.findByText(/Latitude:/i));
+        //expect(screen.findByText(/Latitude:/i));
+    });
 
     it('contain not result found', async () => {
-        expect( screen.findByText(/No results found /i));
+        expect(screen.findByText(/No results found /i));
              
     });
 
