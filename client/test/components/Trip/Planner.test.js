@@ -16,4 +16,6 @@ describe('Planner', () => {
     it('renders trip table', async () => {
         screen.getByText('My Trip');
     });
+
+    
 });
