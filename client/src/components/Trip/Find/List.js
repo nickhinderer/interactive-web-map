@@ -66,7 +66,7 @@ function placesList(flagResponse, places, placeActions){
 
 function listElement(placeActions, place){
     return(
-        <ul><Button color='primary' onClick={() => placeActions.append(place)}><FaPlus/> Add </Button>
+        <ul><Button color='primary' onClick={() => placeActions.append(place)} data-testid="Add"><FaPlus/> Add </Button>
         <div><b>Name:</b> {place.name}</div>
         <div><b>Latitude:</b> {place.latitude}</div>
         <div><b>Longitude:</b> {place.longitude}</div>
