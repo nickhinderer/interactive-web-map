@@ -38,7 +38,7 @@ public class Tour {
         while (System.currentTimeMillis() < endTime)
             createNearestNeighborTour();
 
-        if(response > 0.0)
+        if (response > 0.0)
             updateTourOrder();
         return places;
     }
@@ -108,7 +108,7 @@ public class Tour {
         Places newTrip = new Places();
         int startingIndex = getStartingIndex();
         for (int i = 0; i < places.size(); i++)
-            newTrip.add(places.get(bestTour[i]));
+            newTrip.add(places.get(bestTour[(startingIndex + i) % bestTour.length]));
         places = newTrip;
     }
 
