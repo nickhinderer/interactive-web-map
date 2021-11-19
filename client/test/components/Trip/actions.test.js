@@ -23,4 +23,8 @@ describe('Dropdown', () => {
         fireEvent.click(await screen.findByTestId('load-trip-icon')); // Use fireEvent or user
         expect(screen.getByTestId('load-trip-icon')).toBeTruthy();
     });
+
+    it('contains Save File icon', async () => {
+
+    });
 });
