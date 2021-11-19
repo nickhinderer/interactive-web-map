@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import user from '@testing-library/user-event';
-import { beforeEach, describe, it, jest } from '@jest/globals';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { ItineraryActionsDropdown } from '../../../src/components/Trip/Itinerary/actions.js';
 
 describe('Dropdown', () => {
@@ -19,7 +19,8 @@ describe('Dropdown', () => {
         expect(button).toBeDefined(); 
     });
 
-    it('Load File Icon click', async () => {
+    it('Load File Icon click', async () => { 
         fireEvent.click(await screen.findByTestId('load-trip-icon'));
+        expect(screen.getByTestId('load-trip-icon')).toBeTruthy();
     });
 });
