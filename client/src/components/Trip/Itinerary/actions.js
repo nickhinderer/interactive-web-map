@@ -22,7 +22,7 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => removeAll(props)} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
-            <DropdownItem onClick={iconClick}>
+            <DropdownItem onClick={iconClick} data-testid='load-trip-icon'>
                 <FaFileUpload/>
             </DropdownItem>
             <DropdownItem onClick={() => handleJSONSave(props)} data-testid='save-trip-button'>
