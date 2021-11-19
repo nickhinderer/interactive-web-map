@@ -15,8 +15,8 @@ describe('Dropdown', () => {
     });
     
     it('contains Load File icon', async () => {
-        const button = screen.findByTestId('load-trip-icon');
-        expect(button).toBeDefined(); 
+        const icon = screen.findByTestId('load-trip-icon');
+        expect(icon).toBeDefined(); 
     });
 
     it('Load File Icon click', async () => { 
@@ -25,6 +25,7 @@ describe('Dropdown', () => {
     });
 
     it('contains Save File icon', async () => {
-
+        const icon = screen.findByTestId('save-trip-button');
+        expect(icon).toBeDefined();
     });
 });
