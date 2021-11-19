@@ -15,10 +15,7 @@ describe('Dropdown', () => {
     });
     
     it('contains Load File button', async () => {
-        
+        const button = screen.findByTestId('load-trip-icon');
+        expect(button).toBeDefined(); 
     });
 });
-/*
-    const button = screen.findByTestId('load-trip-icon');
-    expect(button).toBeDefined();    
-*/ 
