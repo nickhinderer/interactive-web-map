@@ -112,7 +112,11 @@ public class Tour {
     }
 
     private int getStartingIndex() {
-        return 0;
+        Integer[] searchArray = new Integer[bestTour.length];
+        int i = 0;
+        for (int value : bestTour)
+            searchArray[i++] = value;
+        return Arrays.asList(searchArray).indexOf(0);
     }
 
     /* The following methods exist only for testing purposes and are not used
