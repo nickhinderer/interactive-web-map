@@ -23,7 +23,7 @@ export default function Itinerary(props) {
     }
 
     return (
-        <Table responsive striped>
+        <Table responsive >
             <Header places={props.places} placeActions={props.placeActions} send={(places) => sendDistancesRequest(places)} />
             <TotalDistance distances={distances} err={err}/>
             <Body places={props.places} placeActions={props.placeActions} distances={distances} onChange={sendTourRequest(props.places,getOriginalServerUrl())} />
@@ -94,7 +94,7 @@ function TableRow(props) {
 
     function changeColor(){
         console.log("Changing Color");
-        setColor('primary');
+        setColor('grey');
     }
 
     return (
