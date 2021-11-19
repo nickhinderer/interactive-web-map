@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import user from '@testing-library/user-event';
 import { beforeEach, describe, it, jest } from '@jest/globals';
@@ -14,8 +14,12 @@ describe('Dropdown', () => {
         expect(screen.findByRole('Dropdown')).toBeDefined();
     });
     
-    it('contains Load File button', async () => {
+    it('contains Load File icon', async () => {
         const button = screen.findByTestId('load-trip-icon');
         expect(button).toBeDefined(); 
+    });
+
+    it('Load File Icon click', async () => {
+        fireEvent.click(await screen.findByTestId('load-trip-icon'));
     });
 });
