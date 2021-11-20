@@ -4,6 +4,7 @@ import Marker from './Marker';
 import { latLngToPlace, placeToLatLng } from '../../../utils/transformers';
 import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
 import 'leaflet/dist/leaflet.css';
+import ReactDOM from 'react-dom';
 
 const MAP_BOUNDS = [[-90, -180], [90, 180]];
 const MAP_LAYER_ATTRIBUTION = "&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors";
@@ -31,6 +32,35 @@ const MAP_LAYERS = [
     },
   ];
 
+  function MapLayers() {
+    return (
+      <LeafletMap 
+        center={placeToLatLng(DEFAULT_STARTING_PLACE)} 
+        zoom={15}
+        minZomo={1}
+        maxZoom={19}
+      >
+        <LayersControl position="topright">
+          {MAP_LAYERS.map(
+            layerData => renderMapLayer(layerData)
+          )}
+        </LayersControl>
+      </LeafletMap>
+    );
+  }
+
+  function renderMapLayer(layerData) {
+          return (
+      <LayersControl.BaseLayer checked={layerData.selected} name={layerData.name}>
+        <TileLayer {...layerData} />
+      </LayersControl.BaseLayer>
+    );
+  }
+  
+  //ReactDOM.render(<MapLayers/>, document.getElementById("root"));
+  // figure out why tests are failing
+
+  
 export default function Map(props) {
     function handleMapClick(mapClickInfo) {
         props.placeActions.append(latLngToPlace(mapClickInfo.latlng));
@@ -48,12 +78,12 @@ export default function Map(props) {
             center={placeToLatLng(DEFAULT_STARTING_PLACE)}
             onClick={handleMapClick}
             data-testid="Map"
-        >
+        > 
             <TileLayer url={MAP_LAYER_URL} attribution={MAP_LAYER_ATTRIBUTION} />
             <TripLines places={props.places} />
             <PlaceMarker places={props.places} selectedIndex={props.selectedIndex} />
         </LeafletMap>
-    );
+    ); 
 }
 
 function TripLines(props) {
