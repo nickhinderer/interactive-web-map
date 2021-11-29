@@ -98,7 +98,9 @@ function TableRow(props) {
     }
 
     function showLabel(){
-        <div>Highlight Place</div>
+        return (
+            <div>Highlight Place</div>
+        );
     }
 
     return (
