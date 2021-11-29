@@ -107,10 +107,9 @@ function TableRow(props) {
                 <small className="text-muted">{location}</small>
             </td>
             <td>
-                <FaTelegramPlane onClick={() => moveMarker()}/>
-            </td>
-            <td>
                 <PlaceActionsDropdown placeActions={props.placeActions} index={props.index} />
+                <br/>
+                <FaTelegramPlane onClick={() => moveMarker()}/>
             </td>
         </tr>
     );
