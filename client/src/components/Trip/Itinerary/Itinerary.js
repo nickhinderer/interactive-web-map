@@ -97,6 +97,10 @@ function TableRow(props) {
         setColor('#D3D3D3');
     }
 
+    function showLabel(){
+        <div>Highlight Place</div>
+    }
+
     return (
         <tr bgcolor={bgColor}>
             <th scope="row">{props.index + 1}</th>
@@ -109,7 +113,7 @@ function TableRow(props) {
             <td>
                 <PlaceActionsDropdown placeActions={props.placeActions} index={props.index} />
                 <br/>
-                <FaTelegramPlane onClick={() => moveMarker()}/>
+                <FaTelegramPlane onClick={() => moveMarker()} onMouseOver={() => showLabel()}/>
             </td>
         </tr>
     );
