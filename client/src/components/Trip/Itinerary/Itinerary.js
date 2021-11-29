@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button} from 'reactstrap';
+import { Table, Button, Modal } from 'reactstrap';
 import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToPlace, latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
-import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
 import { FaArrowCircleDown, FaTelegramPlane } from 'react-icons/fa';
+import { BiTargetLock } from 'react-icons/bi';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
@@ -98,8 +98,10 @@ function TableRow(props) {
     }
 
     function showLabel(){
+        console.log("Hovering");
+        // need to figure out how to get some sort of popup with text to appear 
         return (
-            <div>Highlight Place</div>
+            <div>place holder text</div>
         );
     }
 
