@@ -32,7 +32,7 @@ public class Database {
         return false;
     }
 
-    public boolean countCheck(String sql){// testing that moving this will lower the complexity
+    public boolean countCheck(String sql){// testing that moving this will lower the complexity again
         if(sql.contains("COUNT(*)"))
             return true;
         return false;
