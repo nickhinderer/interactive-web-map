@@ -24,6 +24,7 @@ Consider this a failure when it happens.
 8. Find your location
 9. Upload and save test file
 10. View as mobile device 
+11. Optimize Trip
 
 ### Demographics
 
