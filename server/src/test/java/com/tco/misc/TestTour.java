@@ -183,6 +183,12 @@ public class TestTour {
     }
 
     @Test
+    @DisplayName("fourth test case succeeded")
+    public void testOptimizeTourCase4() {
+
+    }
+
+    @Test
     @DisplayName("constructor works correctly")
     public void testTourConstructor() {
         Tour constructorTest = new Tour(new Places(), 0.0, 0.0);
