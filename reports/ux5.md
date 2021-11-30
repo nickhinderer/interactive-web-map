@@ -44,4 +44,8 @@ Add issues to GitHub for any changes necessary to the system.
 
 | Task | problem, aid, observation | hi/med/low | github#  |
 | :--- | :--- | :---: | :---: | 
-| | | | | 
+| 1 | G Sili: Took a few seconds to find the search bar, label search icon | low |  | 
+|  |  |  |  | 
+|  |  |  |  | 
+|  |  |  |  | 
+|  |  |  |  | 
