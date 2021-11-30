@@ -53,7 +53,7 @@ P Jam needed help with a few of the harder tasks, and got confused by a few of t
 | 5 | G Sili: Had a hard time finding where to change the server, hinted that it was in the margins | low |  | 
 | 5 | P Jam: Had a hard time understanding the task and how to do it, needed hint to look at footer | low | |
 | 6 | P Jam: Needed another hint for this task as they had closed the server modal | low | |
-| 9 | P Jam: Accidentally saved a file first when asked to upload one, then realized how to upload a file | med | |
+| 9 | P Jam: Accidentally saved a file first when asked to upload one, then realized how to upload a file | med | #842 |
 | 10 | P Jam: Needed a bit of prompting on what mobile format meant, thought they were looking for a button | low | |
 |  |  |  |  | 
 |  |  |  |  | 
