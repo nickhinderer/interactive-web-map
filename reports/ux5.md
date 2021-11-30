@@ -34,6 +34,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 | Pseudonym | Demographics |
 | :--- | :--- |
 | G Sili | Age: 20, Nationality: American, Job: Learning Assistant |
+| P Jam | Age: 24, Nationality: American, Job: Research Assistant, Major: Math/Biology |
 
 
 ### Observations
@@ -44,11 +45,16 @@ Note any aid that wass given along with anything you notice from their use of th
 Add issues to GitHub for any changes necessary to the system.
 
 G Sili was able to complete all the tasks in efficient time since she is fairly tech savy. 
+P Jam needed help with a few of the harder tasks, and got confused by a few of the icons used but was able to complete all tasks 
 
 | Task | problem, aid, observation | hi/med/low | github#  |
 | :--- | :--- | :---: | :---: | 
 | 1 | G Sili: Took a few seconds to find where to search, label search icon | low |  | 
 | 5 | G Sili: Had a hard time finding where to change the server, hinted that it was in the margins | low |  | 
+| 5 | P Jam: Had a hard time understanding the task and how to do it, needed hint to look at footer | low | |
+| 6 | P Jam: Needed another hint for this task as they had closed the server modal | low | |
+| 9 | P Jam: Accidentally saved a file first when asked to upload one, then realized how to upload a file | med | |
+| 10 | P Jam: Needed a bit of prompting on what mobile format meant, thought they were looking for a button | low | |
 |  |  |  |  | 
 |  |  |  |  | 
 |  |  |  |  | 
