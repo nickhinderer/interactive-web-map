@@ -35,7 +35,7 @@ export default function Tour(props) {
     }
 
     return (
-        <div className="searchButton">
+        <div className="Tour-modal">
            <Button data-testid="shorter-trip" size="sm" outline-color="secondary" onClick={toggle}>Find Shorter Trip</Button>
             <Modal data-testid="modal" isOpen={modal} >
             <Body data-testid="body" newplace = {props.newTirp} hanldeModal ={hanldeModal} placeActions={props.placeActions} toggle={toggle}></Body>       
