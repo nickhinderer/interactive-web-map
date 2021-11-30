@@ -42,7 +42,7 @@ Record the success, failures, and problems the user encountered for each task.
 Note any aid that wass given along with anything you notice from their use of the application.
 Add issues to GitHub for any changes necessary to the system.
 
-G Sili was pretty familiar with all the tasks and was able to complete everything in efficient time. 
+G Sili was able to complete all the tasks in efficient time since she is fairly tech savy. 
 
 | Task | problem, aid, observation | hi/med/low | github#  |
 | :--- | :--- | :---: | :---: | 
