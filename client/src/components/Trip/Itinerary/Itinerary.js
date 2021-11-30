@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button, Modal } from 'reactstrap';
+import { Table, Button, Modal, Label } from 'reactstrap';
 import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToPlace, latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
@@ -93,20 +93,11 @@ function TableRow(props) {
     }
 
     function changeColor(){
-        console.log("Changing Color");
         setColor('#D3D3D3');
     }
 
-    function showLabel(){
-        console.log("Hovering");
-        // need to figure out how to get some sort of popup with text to appear 
-        return (
-            <div>place holder text</div>
-        );
-    }
-
     return (
-        <tr bgcolor={bgColor}>
+        <tr bgcolor={bgColor} onClick={() => moveMarker()} onMouseLeave={() => setColor('white')}>
             <th scope="row">{props.index + 1}</th>
             <td>{ props.index != 0 && distance != 0 ? distance : 0} Mile(s)</td>
             <td>
@@ -116,8 +107,6 @@ function TableRow(props) {
             </td>
             <td>
                 <PlaceActionsDropdown placeActions={props.placeActions} index={props.index} />
-                <br/>
-                <FaTelegramPlane onClick={() => moveMarker()} onMouseOver={() => showLabel()}/>
             </td>
         </tr>
     );
