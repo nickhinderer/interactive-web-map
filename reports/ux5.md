@@ -42,10 +42,12 @@ Record the success, failures, and problems the user encountered for each task.
 Note any aid that wass given along with anything you notice from their use of the application.
 Add issues to GitHub for any changes necessary to the system.
 
+G Sili was pretty familiar with all the tasks and was able to complete everything in efficient time. 
+
 | Task | problem, aid, observation | hi/med/low | github#  |
 | :--- | :--- | :---: | :---: | 
-| 1 | G Sili: Took a few seconds to find the search bar, label search icon | low |  | 
-|  |  |  |  | 
+| 1 | G Sili: Took a few seconds to find where to search, label search icon | low |  | 
+| 5 | G Sili: Had a hard time finding where to change the server, hinted that it was in the margins | low |  | 
 |  |  |  |  | 
 |  |  |  |  | 
 |  |  |  |  | 
