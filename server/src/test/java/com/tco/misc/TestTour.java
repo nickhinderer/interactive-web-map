@@ -949,6 +949,12 @@ public class TestTour {
         case5.add(place97);
         case5.add(place98);
         case5.add(place99);
+
+        tour.setPlaces(case5);
+        tour.setInstanceVariables();
+        tour.optimizeTour();
+
+        assertEquals(40894L, tour.getTourDistance());
     }
 
     @Test
