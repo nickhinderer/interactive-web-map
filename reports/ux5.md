@@ -14,8 +14,16 @@ Each user should complete the following tasks in 10 minutes.
 Developers should not guide the user, but the user may ask for help as a last resort.  
 Consider this a failure when it happens.  
 
-1. 
-1. 
+1. Search for a place
+2. Add place to itinerary 
+3. zoom out map
+4. delete place
+5. change server
+6. check features
+7. Find the total distance of the trip
+8. Find your location
+9. Upload and save test file
+10. View as mobile device 
 
 ### Demographics
 
