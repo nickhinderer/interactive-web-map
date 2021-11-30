@@ -1,5 +1,5 @@
-import React from 'react';
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup } from 'reactstrap';
+import React, {useState} from 'react';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup, Popover } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
 
@@ -13,7 +13,10 @@ const MIME_TYPE = {
 const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
-
+    const [popover, setPopover] = useState(false);
+    function toggle(){
+        setPopover(!popover);
+    }
     return (
         <ActionsDropdown {...props}>
             <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
@@ -25,8 +28,9 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={iconClick} data-testid='load-trip-icon'>
                 <FaFileUpload/>
             </DropdownItem>
-            <DropdownItem onClick={() => handleJSONSave(props)} data-testid='save-trip-button'>
-                <FaFileDownload />
+            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={toggle} onMouseLeave={toggle} data-testid='save-trip-button'>
+                <FaFileDownload id="down"/>
+                <Popover style={{backgroundColor: '#D3D3D3'}} target="down" placement="bottom" isOpen={popover} toggle={toggle}> <b>Save</b> </Popover>
             </DropdownItem>
         </ActionsDropdown> 
     );
