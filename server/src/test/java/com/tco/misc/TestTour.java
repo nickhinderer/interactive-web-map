@@ -3,6 +3,9 @@ package com.tco.misc;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestTour {
@@ -449,512 +452,416 @@ public class TestTour {
     @DisplayName("fourth test case succeeded")
     public void testOptimizeTourCase5() {
         Places case5 = new Places();
-        Place place0 = new Place();
-        place0.put("latitude", "12.396551");
-        place0.put("longitude", "58.977234");
-
-        Place place1 = new Place();
-        place1.put("latitude", "73.950015");
-        place1.put("longitude", "78.924435");
-
-        Place place2 = new Place();
-        place2.put("latitude", "20.27533");
-        place2.put("longitude", "82.218138");
-
-        Place place3 = new Place();
-        place3.put("latitude", "49.216469");
-        place3.put("longitude", "28.070283");
-
-        Place place4 = new Place();
-        place4.put("latitude", "39.504374");
-        place4.put("longitude", "73.062942");
-
-        Place place5 = new Place();
-        place5.put("latitude", "20.721909");
-        place5.put("longitude", "6.902326");
-
-        Place place6 = new Place();
-        place6.put("latitude", "50.771374");
-        place6.put("longitude", "75.294857");
-
-        Place place7 = new Place();
-        place7.put("latitude", "8.553455");
-        place7.put("longitude", "20.917302");
-
-        Place place8 = new Place();
-        place8.put("latitude", "17.799173");
-        place8.put("longitude", "53.002051");
-
-        Place place9 = new Place();
-        place9.put("latitude", "35.522846");
-        place9.put("longitude", "4.161539");
-
-        Place place10 = new Place();
-        place10.put("latitude", "72.153274");
-        place10.put("longitude", "55.853584");
-
-        Place place11 = new Place();
-        place11.put("latitude", "17.919214");
-        place11.put("longitude", "79.409721");
-
-        Place place12 = new Place();
-        place12.put("latitude", "32.860069");
-        place12.put("longitude", "10.692299");
-
-        Place place13 = new Place();
-        place13.put("latitude", "87.200165");
-        place13.put("longitude", "84.568532");
-
-        Place place14 = new Place();
-        place14.put("latitude", "13.089355");
-        place14.put("longitude", "25.586993");
-
-        Place place15 = new Place();
-        place15.put("latitude", "75.444259");
-        place15.put("longitude", "41.346253");
-
-        Place place16 = new Place();
-        place16.put("latitude", "81.095115");
-        place16.put("longitude", "1.473926");
-
-        Place place17 = new Place();
-        place17.put("latitude", "49.184952");
-        place17.put("longitude", "16.405196");
-
-        Place place18 = new Place();
-        place18.put("latitude", "47.35083");
-        place18.put("longitude", "76.834222");
-
-        Place place19 = new Place();
-        place19.put("latitude", "16.411393");
-        place19.put("longitude", "41.597281");
-
-        Place place20 = new Place();
-        place20.put("latitude", "4.718924");
-        place20.put("longitude", "42.275507");
-
-        Place place21 = new Place();
-        place21.put("latitude", "6.812075");
-        place21.put("longitude", "77.605228");
-
-        Place place22 = new Place();
-        place22.put("latitude", "75.849855");
-        place22.put("longitude", "85.988023");
-
-        Place place23 = new Place();
-        place23.put("latitude", "3.248633");
-        place23.put("longitude", "39.859358");
-
-        Place place24 = new Place();
-        place24.put("latitude", "61.103063");
-        place24.put("longitude", "50.778391");
-
-        Place place25 = new Place();
-        place25.put("latitude", "57.346782");
-        place25.put("longitude", "73.938615");
-
-        Place place26 = new Place();
-        place26.put("latitude", "48.760925");
-        place26.put("longitude", "17.307245");
-
-        Place place27 = new Place();
-        place27.put("latitude", "18.326711");
-        place27.put("longitude", "89.847857");
-
-        Place place28 = new Place();
-        place28.put("latitude", "56.799227");
-        place28.put("longitude", "37.808699");
-
-        Place place29 = new Place();
-        place29.put("latitude", "81.096633");
-        place29.put("longitude", "86.798788");
-
-        Place place30 = new Place();
-        place30.put("latitude", "17.155355");
-        place30.put("longitude", "71.76933");
-
-        Place place31 = new Place();
-        place31.put("latitude", "6.715165");
-        place31.put("longitude", "45.529085");
-
-        Place place32 = new Place();
-        place32.put("latitude", "42.07598");
-        place32.put("longitude", "63.319673");
-
-        Place place33 = new Place();
-        place33.put("latitude", "31.200651");
-        place33.put("longitude", "65.493132");
-
-        Place place34 = new Place();
-        place34.put("latitude", "69.134748");
-        place34.put("longitude", "17.854384");
-
-        Place place35 = new Place();
-        place35.put("latitude", "56.454551");
-        place35.put("longitude", "5.63791");
-
-        Place place36 = new Place();
-        place36.put("latitude", "41.944466");
-        place36.put("longitude", "9.379444");
-
-        Place place37 = new Place();
-        place37.put("latitude", "72.337118");
-        place37.put("longitude", "87.922647");
-
-        Place place38 = new Place();
-        place38.put("latitude", "15.630077");
-        place38.put("longitude", "42.256149");
-
-        Place place39 = new Place();
-        place39.put("latitude", "70.315664");
-        place39.put("longitude", "53.551049");
-
-        Place place40 = new Place();
-        place40.put("latitude", "6.507134");
-        place40.put("longitude", "11.782032");
-
-        Place place41 = new Place();
-        place41.put("latitude", "48.529476");
-        place41.put("longitude", "0.1565");
-
-        Place place42 = new Place();
-        place42.put("latitude", "8.725333");
-        place42.put("longitude", "18.31315");
-
-        Place place43 = new Place();
-        place43.put("latitude", "78.359853");
-        place43.put("longitude", "40.464292");
-
-        Place place44 = new Place();
-        place44.put("latitude", "25.630931");
-        place44.put("longitude", "49.742288");
-
-        Place place45 = new Place();
-        place45.put("latitude", "35.791447");
-        place45.put("longitude", "79.732427");
-
-        Place place46 = new Place();
-        place46.put("latitude", "57.775003");
-        place46.put("longitude", "40.164929");
-
-        Place place47 = new Place();
-        place47.put("latitude", "15.77859");
-        place47.put("longitude", "67.621366");
-
-        Place place48 = new Place();
-        place48.put("latitude", "61.663366");
-        place48.put("longitude", "89.155929");
-
-        Place place49 = new Place();
-        place49.put("latitude", "32.842163");
-        place49.put("longitude", "45.759398");
-
-        Place place50 = new Place();
-        place50.put("latitude", "39.362442");
-        place50.put("longitude", "24.130129");
-
-        Place place51 = new Place();
-        place51.put("latitude", "30.279143");
-        place51.put("longitude", "76.697138");
-
-        Place place52 = new Place();
-        place52.put("latitude", "42.450033");
-        place52.put("longitude", "26.135405");
-
-        Place place53 = new Place();
-        place53.put("latitude", "12.51879");
-        place53.put("longitude", "9.361456");
-
-        Place place54 = new Place();
-        place54.put("latitude", "10.643903");
-        place54.put("longitude", "88.623959");
-
-        Place place55 = new Place();
-        place55.put("latitude", "89.389666");
-        place55.put("longitude", "62.874083");
-
-        Place place56 = new Place();
-        place56.put("latitude", "34.073853");
-        place56.put("longitude", "71.607422");
-
-        Place place57 = new Place();
-        place57.put("latitude", "17.225218");
-        place57.put("longitude", "44.113416");
-
-        Place place58 = new Place();
-        place58.put("latitude", "40.275685");
-        place58.put("longitude", "52.372055");
-
-        Place place59 = new Place();
-        place59.put("latitude", "55.844656");
-        place59.put("longitude", "66.392516");
-
-        Place place60 = new Place();
-        place60.put("latitude", "23.702995");
-        place60.put("longitude", "38.071615");
-
-        Place place61 = new Place();
-        place61.put("latitude", "79.660016");
-        place61.put("longitude", "48.652203");
-
-        Place place62 = new Place();
-        place62.put("latitude", "52.64062");
-        place62.put("longitude", "4.161717");
-
-        Place place63 = new Place();
-        place63.put("latitude", "2.834511");
-        place63.put("longitude", "30.44883");
-
-        Place place64 = new Place();
-        place64.put("latitude", "15.205584");
-        place64.put("longitude", "44.054619");
-
-        Place place65 = new Place();
-        place65.put("latitude", "11.172963");
-        place65.put("longitude", "11.039271");
-
-        Place place66 = new Place();
-        place66.put("latitude", "18.631053");
-        place66.put("longitude", "80.560141");
-
-        Place place67 = new Place();
-        place67.put("latitude", "27.425039");
-        place67.put("longitude", "68.922031");
-
-        Place place68 = new Place();
-        place68.put("latitude", "70.686335");
-        place68.put("longitude", "81.854514");
-
-        Place place69 = new Place();
-        place69.put("latitude", "31.962702");
-        place69.put("longitude", "47.8891");
-
-        Place place70 = new Place();
-        place70.put("latitude", "7.172103");
-        place70.put("longitude", "52.487478");
-
-        Place place71 = new Place();
-        place71.put("latitude", "67.588768");
-        place71.put("longitude", "10.093113");
-
-        Place place72 = new Place();
-        place72.put("latitude", "83.196041");
-        place72.put("longitude", "52.493102");
-
-        Place place73 = new Place();
-        place73.put("latitude", "41.388557");
-        place73.put("longitude", "87.194174");
-
-        Place place74 = new Place();
-        place74.put("latitude", "47.835588");
-        place74.put("longitude", "34.014169");
-
-        Place place75 = new Place();
-        place75.put("latitude", "72.522427");
-        place75.put("longitude", "20.990685");
-
-        Place place76 = new Place();
-        place76.put("latitude", "27.518665");
-        place76.put("longitude", "54.425894");
-
-        Place place77 = new Place();
-        place77.put("latitude", "8.921601");
-        place77.put("longitude", "43.497212");
-
-        Place place78 = new Place();
-        place78.put("latitude", "80.92929");
-        place78.put("longitude", "3.108405");
-
-        Place place79 = new Place();
-        place79.put("latitude", "77.687869");
-        place79.put("longitude", "25.072905");
-
-        Place place80 = new Place();
-        place80.put("latitude", "11.316759");
-        place80.put("longitude", "37.130243");
-
-        Place place81 = new Place();
-        place81.put("latitude", "87.908796");
-        place81.put("longitude", "35.304679");
-
-        Place place82 = new Place();
-        place82.put("latitude", "32.744598");
-        place82.put("longitude", "42.978156");
-
-        Place place83 = new Place();
-        place83.put("latitude", "41.441539");
-        place83.put("longitude", "42.035697");
-
-        Place place84 = new Place();
-        place84.put("latitude", "79.886194");
-        place84.put("longitude", "65.19966");
-
-        Place place85 = new Place();
-        place85.put("latitude", "5.345536");
-        place85.put("longitude", "66.728973");
-
-        Place place86 = new Place();
-        place86.put("latitude", "45.939473");
-        place86.put("longitude", "3.140703");
-
-        Place place87 = new Place();
-        place87.put("latitude", "49.421035");
-        place87.put("longitude", "35.042261");
-
-        Place place88 = new Place();
-        place88.put("latitude", "80.540198");
-        place88.put("longitude", "72.295023");
-
-        Place place89 = new Place();
-        place89.put("latitude", "84.311368");
-        place89.put("longitude", "7.125397");
-
-        Place place90 = new Place();
-        place90.put("latitude", "61.114039");
-        place90.put("longitude", "39.358703");
-
-        Place place91 = new Place();
-        place91.put("latitude", "60.256642");
-        place91.put("longitude", "46.017377");
-
-        Place place92 = new Place();
-        place92.put("latitude", "2.266473");
-        place92.put("longitude", "19.567203");
-
-        Place place93 = new Place();
-        place93.put("latitude", "80.24978");
-        place93.put("longitude", "87.572953");
-
-        Place place94 = new Place();
-        place94.put("latitude", "89.013886");
-        place94.put("longitude", "42.27376");
-
-        Place place95 = new Place();
-        place95.put("latitude", "45.881946");
-        place95.put("longitude", "28.901496");
-
-        Place place96 = new Place();
-        place96.put("latitude", "46.89905");
-        place96.put("longitude", "44.638149");
-
-        Place place97 = new Place();
-        place97.put("latitude", "13.6624");
-        place97.put("longitude", "38.560606");
-
-        Place place98 = new Place();
-        place98.put("latitude", "49.391147");
-        place98.put("longitude", "48.292029");
-
-        Place place99 = new Place();
-        place99.put("latitude", "39.54984");
-        place99.put("longitude", "36.071483");
-
-        case5.add(place0);
-        case5.add(place1);
-        case5.add(place2);
-        case5.add(place3);
-        case5.add(place4);
-        case5.add(place5);
-        case5.add(place6);
-        case5.add(place7);
-        case5.add(place8);
-        case5.add(place9);
-        case5.add(place10);
-        case5.add(place11);
-        case5.add(place12);
-        case5.add(place13);
-        case5.add(place14);
-        case5.add(place15);
-        case5.add(place16);
-        case5.add(place17);
-        case5.add(place18);
-        case5.add(place19);
-        case5.add(place20);
-        case5.add(place21);
-        case5.add(place22);
-        case5.add(place23);
-        case5.add(place24);
-        case5.add(place25);
-        case5.add(place26);
-        case5.add(place27);
-        case5.add(place28);
-        case5.add(place29);
-        case5.add(place30);
-        case5.add(place31);
-        case5.add(place32);
-        case5.add(place33);
-        case5.add(place34);
-        case5.add(place35);
-        case5.add(place36);
-        case5.add(place37);
-        case5.add(place38);
-        case5.add(place39);
-        case5.add(place40);
-        case5.add(place41);
-        case5.add(place42);
-        case5.add(place43);
-        case5.add(place44);
-        case5.add(place45);
-        case5.add(place46);
-        case5.add(place47);
-        case5.add(place48);
-        case5.add(place49);
-        case5.add(place50);
-        case5.add(place51);
-        case5.add(place52);
-        case5.add(place53);
-        case5.add(place54);
-        case5.add(place55);
-        case5.add(place56);
-        case5.add(place57);
-        case5.add(place58);
-        case5.add(place59);
-        case5.add(place60);
-        case5.add(place61);
-        case5.add(place62);
-        case5.add(place63);
-        case5.add(place64);
-        case5.add(place65);
-        case5.add(place66);
-        case5.add(place67);
-        case5.add(place68);
-        case5.add(place69);
-        case5.add(place70);
-        case5.add(place71);
-        case5.add(place72);
-        case5.add(place73);
-        case5.add(place74);
-        case5.add(place75);
-        case5.add(place76);
-        case5.add(place77);
-        case5.add(place78);
-        case5.add(place79);
-        case5.add(place80);
-        case5.add(place81);
-        case5.add(place82);
-        case5.add(place83);
-        case5.add(place84);
-        case5.add(place85);
-        case5.add(place86);
-        case5.add(place87);
-        case5.add(place88);
-        case5.add(place89);
-        case5.add(place90);
-        case5.add(place91);
-        case5.add(place92);
-        case5.add(place93);
-        case5.add(place94);
-        case5.add(place95);
-        case5.add(place96);
-        case5.add(place97);
-        case5.add(place98);
-        case5.add(place99);
+        Place[] placeArr = new Place[100];
+
+        placeArr[0] = new Place();
+        placeArr[0].put("latitude", "45.046333");
+        placeArr[0].put("longitude", "17.468747");
+
+        placeArr[1] = new Place();
+        placeArr[1].put("latitude", "25.767409");
+        placeArr[1].put("longitude", "42.602702");
+
+        placeArr[2] = new Place();
+        placeArr[2].put("latitude", "16.838649");
+        placeArr[2].put("longitude", "50.403591");
+
+        placeArr[3] = new Place();
+        placeArr[3].put("latitude", "83.306177");
+        placeArr[3].put("longitude", "48.917132");
+
+        placeArr[4] = new Place();
+        placeArr[4].put("latitude", "45.885267");
+        placeArr[4].put("longitude", "6.722862");
+
+        placeArr[5] = new Place();
+        placeArr[5].put("latitude", "79.686651");
+        placeArr[5].put("longitude", "43.661283");
+
+        placeArr[6] = new Place();
+        placeArr[6].put("latitude", "25.157554");
+        placeArr[6].put("longitude", "37.30931");
+
+        placeArr[7] = new Place();
+        placeArr[7].put("latitude", "66.770892");
+        placeArr[7].put("longitude", "82.988125");
+
+        placeArr[8] = new Place();
+        placeArr[8].put("latitude", "27.111899");
+        placeArr[8].put("longitude", "30.647088");
+
+        placeArr[9] = new Place();
+        placeArr[9].put("latitude", "66.08594");
+        placeArr[9].put("longitude", "6.435964");
+
+        placeArr[10] = new Place();
+        placeArr[10].put("latitude", "44.321511");
+        placeArr[10].put("longitude", "36.265928");
+
+        placeArr[11] = new Place();
+        placeArr[11].put("latitude", "34.78082");
+        placeArr[11].put("longitude", "28.14778");
+
+        placeArr[12] = new Place();
+        placeArr[12].put("latitude", "15.319564");
+        placeArr[12].put("longitude", "36.609988");
+
+        placeArr[13] = new Place();
+        placeArr[13].put("latitude", "82.418822");
+        placeArr[13].put("longitude", "66.852821");
+
+        placeArr[14] = new Place();
+        placeArr[14].put("latitude", "63.03285");
+        placeArr[14].put("longitude", "10.123213");
+
+        placeArr[15] = new Place();
+        placeArr[15].put("latitude", "50.590168");
+        placeArr[15].put("longitude", "49.011204");
+
+        placeArr[16] = new Place();
+        placeArr[16].put("latitude", "15.182159");
+        placeArr[16].put("longitude", "54.618849");
+
+        placeArr[17] = new Place();
+        placeArr[17].put("latitude", "12.016493");
+        placeArr[17].put("longitude", "1.064721");
+
+        placeArr[18] = new Place();
+        placeArr[18].put("latitude", "84.32543");
+        placeArr[18].put("longitude", "51.774197");
+
+        placeArr[19] = new Place();
+        placeArr[19].put("latitude", "13.532683");
+        placeArr[19].put("longitude", "33.637888");
+
+        placeArr[20] = new Place();
+        placeArr[20].put("latitude", "19.800494");
+        placeArr[20].put("longitude", "78.147803");
+
+        placeArr[21] = new Place();
+        placeArr[21].put("latitude", "60.776592");
+        placeArr[21].put("longitude", "8.117689");
+
+        placeArr[22] = new Place();
+        placeArr[22].put("latitude", "75.096749");
+        placeArr[22].put("longitude", "8.528924");
+
+        placeArr[23] = new Place();
+        placeArr[23].put("latitude", "3.722064");
+        placeArr[23].put("longitude", "66.939323");
+
+        placeArr[24] = new Place();
+        placeArr[24].put("latitude", "41.973895");
+        placeArr[24].put("longitude", "73.368577");
+
+        placeArr[25] = new Place();
+        placeArr[25].put("latitude", "7.900924");
+        placeArr[25].put("longitude", "69.871083");
+
+        placeArr[26] = new Place();
+        placeArr[26].put("latitude", "71.344329");
+        placeArr[26].put("longitude", "14.670298");
+
+        placeArr[27] = new Place();
+        placeArr[27].put("latitude", "43.964861");
+        placeArr[27].put("longitude", "55.490313");
+
+        placeArr[28] = new Place();
+        placeArr[28].put("latitude", "3.180456");
+        placeArr[28].put("longitude", "5.548452");
+
+        placeArr[29] = new Place();
+        placeArr[29].put("latitude", "87.665449");
+        placeArr[29].put("longitude", "77.853612");
+
+        placeArr[30] = new Place();
+        placeArr[30].put("latitude", "30.310107");
+        placeArr[30].put("longitude", "53.707625");
+
+        placeArr[31] = new Place();
+        placeArr[31].put("latitude", "18.489351");
+        placeArr[31].put("longitude", "88.876229");
+
+        placeArr[32] = new Place();
+        placeArr[32].put("latitude", "43.940242");
+        placeArr[32].put("longitude", "31.116928");
+
+        placeArr[33] = new Place();
+        placeArr[33].put("latitude", "43.295011");
+        placeArr[33].put("longitude", "46.64675");
+
+        placeArr[34] = new Place();
+        placeArr[34].put("latitude", "69.898087");
+        placeArr[34].put("longitude", "76.47915");
+
+        placeArr[35] = new Place();
+        placeArr[35].put("latitude", "46.776306");
+        placeArr[35].put("longitude", "51.753484");
+
+        placeArr[36] = new Place();
+        placeArr[36].put("latitude", "59.053346");
+        placeArr[36].put("longitude", "22.791177");
+
+        placeArr[37] = new Place();
+        placeArr[37].put("latitude", "7.495702");
+        placeArr[37].put("longitude", "70.960952");
+
+        placeArr[38] = new Place();
+        placeArr[38].put("latitude", "74.008916");
+        placeArr[38].put("longitude", "3.790936");
+
+        placeArr[39] = new Place();
+        placeArr[39].put("latitude", "40.549915");
+        placeArr[39].put("longitude", "18.05287");
+
+        placeArr[40] = new Place();
+        placeArr[40].put("latitude", "9.278382");
+        placeArr[40].put("longitude", "26.334186");
+
+        placeArr[41] = new Place();
+        placeArr[41].put("latitude", "13.384286");
+        placeArr[41].put("longitude", "38.787263");
+
+        placeArr[42] = new Place();
+        placeArr[42].put("latitude", "49.847376");
+        placeArr[42].put("longitude", "27.9305");
+
+        placeArr[43] = new Place();
+        placeArr[43].put("latitude", "84.104884");
+        placeArr[43].put("longitude", "68.027393");
+
+        placeArr[44] = new Place();
+        placeArr[44].put("latitude", "16.478871");
+        placeArr[44].put("longitude", "21.919314");
+
+        placeArr[45] = new Place();
+        placeArr[45].put("latitude", "7.877129");
+        placeArr[45].put("longitude", "6.697516");
+
+        placeArr[46] = new Place();
+        placeArr[46].put("latitude", "12.252519");
+        placeArr[46].put("longitude", "84.448522");
+
+        placeArr[47] = new Place();
+        placeArr[47].put("latitude", "71.531579");
+        placeArr[47].put("longitude", "13.262196");
+
+        placeArr[48] = new Place();
+        placeArr[48].put("latitude", "41.510618");
+        placeArr[48].put("longitude", "69.187727");
+
+        placeArr[49] = new Place();
+        placeArr[49].put("latitude", "74.247552");
+        placeArr[49].put("longitude", "24.576456");
+
+        placeArr[50] = new Place();
+        placeArr[50].put("latitude", "66.541938");
+        placeArr[50].put("longitude", "57.102417");
+
+        placeArr[51] = new Place();
+        placeArr[51].put("latitude", "9.247722");
+        placeArr[51].put("longitude", "0.217574");
+
+        placeArr[52] = new Place();
+        placeArr[52].put("latitude", "64.866472");
+        placeArr[52].put("longitude", "53.289254");
+
+        placeArr[53] = new Place();
+        placeArr[53].put("latitude", "56.206121");
+        placeArr[53].put("longitude", "54.716744");
+
+        placeArr[54] = new Place();
+        placeArr[54].put("latitude", "7.304835");
+        placeArr[54].put("longitude", "36.087148");
+
+        placeArr[55] = new Place();
+        placeArr[55].put("latitude", "75.151189");
+        placeArr[55].put("longitude", "46.051441");
+
+        placeArr[56] = new Place();
+        placeArr[56].put("latitude", "56.387565");
+        placeArr[56].put("longitude", "50.370318");
+
+        placeArr[57] = new Place();
+        placeArr[57].put("latitude", "50.500536");
+        placeArr[57].put("longitude", "32.368541");
+
+        placeArr[58] = new Place();
+        placeArr[58].put("latitude", "39.076314");
+        placeArr[58].put("longitude", "85.087765");
+
+        placeArr[59] = new Place();
+        placeArr[59].put("latitude", "77.163713");
+        placeArr[59].put("longitude", "67.075207");
+
+        placeArr[60] = new Place();
+        placeArr[60].put("latitude", "26.109505");
+        placeArr[60].put("longitude", "89.287977");
+
+        placeArr[61] = new Place();
+        placeArr[61].put("latitude", "4.140946");
+        placeArr[61].put("longitude", "78.359245");
+
+        placeArr[62] = new Place();
+        placeArr[62].put("latitude", "69.34464");
+        placeArr[62].put("longitude", "77.648278");
+
+        placeArr[63] = new Place();
+        placeArr[63].put("latitude", "21.194132");
+        placeArr[63].put("longitude", "86.971614");
+
+        placeArr[64] = new Place();
+        placeArr[64].put("latitude", "3.552155");
+        placeArr[64].put("longitude", "45.348515");
+
+        placeArr[65] = new Place();
+        placeArr[65].put("latitude", "47.653385");
+        placeArr[65].put("longitude", "67.386868");
+
+        placeArr[66] = new Place();
+        placeArr[66].put("latitude", "25.791342");
+        placeArr[66].put("longitude", "77.793328");
+
+        placeArr[67] = new Place();
+        placeArr[67].put("latitude", "62.165074");
+        placeArr[67].put("longitude", "79.977732");
+
+        placeArr[68] = new Place();
+        placeArr[68].put("latitude", "47.691956");
+        placeArr[68].put("longitude", "18.384412");
+
+        placeArr[69] = new Place();
+        placeArr[69].put("latitude", "16.874252");
+        placeArr[69].put("longitude", "27.364868");
+
+        placeArr[70] = new Place();
+        placeArr[70].put("latitude", "47.001606");
+        placeArr[70].put("longitude", "9.661247");
+
+        placeArr[71] = new Place();
+        placeArr[71].put("latitude", "57.181686");
+        placeArr[71].put("longitude", "72.109622");
+
+        placeArr[72] = new Place();
+        placeArr[72].put("latitude", "22.384461");
+        placeArr[72].put("longitude", "40.892839");
+
+        placeArr[73] = new Place();
+        placeArr[73].put("latitude", "81.097712");
+        placeArr[73].put("longitude", "45.800738");
+
+        placeArr[74] = new Place();
+        placeArr[74].put("latitude", "8.637265");
+        placeArr[74].put("longitude", "86.389382");
+
+        placeArr[75] = new Place();
+        placeArr[75].put("latitude", "12.499716");
+        placeArr[75].put("longitude", "44.879424");
+
+        placeArr[76] = new Place();
+        placeArr[76].put("latitude", "48.633424");
+        placeArr[76].put("longitude", "88.457878");
+
+        placeArr[77] = new Place();
+        placeArr[77].put("latitude", "31.431471");
+        placeArr[77].put("longitude", "23.221402");
+
+        placeArr[78] = new Place();
+        placeArr[78].put("latitude", "65.601693");
+        placeArr[78].put("longitude", "61.9629");
+
+        placeArr[79] = new Place();
+        placeArr[79].put("latitude", "87.350356");
+        placeArr[79].put("longitude", "12.570338");
+
+        placeArr[80] = new Place();
+        placeArr[80].put("latitude", "86.263335");
+        placeArr[80].put("longitude", "17.633863");
+
+        placeArr[81] = new Place();
+        placeArr[81].put("latitude", "37.734175");
+        placeArr[81].put("longitude", "1.99177");
+
+        placeArr[82] = new Place();
+        placeArr[82].put("latitude", "54.17788");
+        placeArr[82].put("longitude", "80.53734");
+
+        placeArr[83] = new Place();
+        placeArr[83].put("latitude", "22.945745");
+        placeArr[83].put("longitude", "10.5546");
+
+        placeArr[84] = new Place();
+        placeArr[84].put("latitude", "10.662848");
+        placeArr[84].put("longitude", "71.06894");
+
+        placeArr[85] = new Place();
+        placeArr[85].put("latitude", "66.047602");
+        placeArr[85].put("longitude", "75.511605");
+
+        placeArr[86] = new Place();
+        placeArr[86].put("latitude", "20.253485");
+        placeArr[86].put("longitude", "52.94177");
+
+        placeArr[87] = new Place();
+        placeArr[87].put("latitude", "75.642605");
+        placeArr[87].put("longitude", "15.002414");
+
+        placeArr[88] = new Place();
+        placeArr[88].put("latitude", "72.801827");
+        placeArr[88].put("longitude", "27.897445");
+
+        placeArr[89] = new Place();
+        placeArr[89].put("latitude", "59.355774");
+        placeArr[89].put("longitude", "6.672899");
+
+        placeArr[90] = new Place();
+        placeArr[90].put("latitude", "73.853122");
+        placeArr[90].put("longitude", "71.101273");
+
+        placeArr[91] = new Place();
+        placeArr[91].put("latitude", "7.095625");
+        placeArr[91].put("longitude", "13.510319");
+
+        placeArr[92] = new Place();
+        placeArr[92].put("latitude", "53.204066");
+        placeArr[92].put("longitude", "50.968835");
+
+        placeArr[93] = new Place();
+        placeArr[93].put("latitude", "83.104954");
+        placeArr[93].put("longitude", "56.46325");
+
+        placeArr[94] = new Place();
+        placeArr[94].put("latitude", "24.512615");
+        placeArr[94].put("longitude", "16.478091");
+
+        placeArr[95] = new Place();
+        placeArr[95].put("latitude", "50.462307");
+        placeArr[95].put("longitude", "16.701406");
+
+        placeArr[96] = new Place();
+        placeArr[96].put("latitude", "28.698354");
+        placeArr[96].put("longitude", "9.484357");
+
+        placeArr[97] = new Place();
+        placeArr[97].put("latitude", "70.531188");
+        placeArr[97].put("longitude", "69.309897");
+
+        placeArr[98] = new Place();
+        placeArr[98].put("latitude", "16.744732");
+        placeArr[98].put("longitude", "56.876322");
+
+        placeArr[99] = new Place();
+        placeArr[99].put("latitude", "83.817508");
+        placeArr[99].put("longitude", "10.77347");
+
+
+        case5.addAll(Arrays.asList(placeArr).subList(0, 100));
 
         tour.setPlaces(case5);
         tour.setInstanceVariables();
         tour.optimizeTour();
 
-        assertEquals(40894L, tour.getTourDistance());
+        assertEquals(41952L, tour.getTourDistance());
     }
 
     @Test
