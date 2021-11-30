@@ -26,15 +26,21 @@ public class Database {
         }
     }
 
-    public boolean check(String sql){ // hoping moving this will help lower the cognitive complexity
+    public boolean check(String sql){
         if(sql.contains("_QUERY_TEST_VALUE_") || sql.contains("ORDER BY RAND() LIMIT -1"))
+            return true;
+        return false;
+    }
+
+    public boolean countCheck(String sql){// testing that moving this will lower the complexity again
+        if(sql.contains("COUNT(*)"))
             return true;
         return false;
     }
 
     public Object query(String sql) throws BadRequestException {//think about what type of exception to throw
         if(check(sql))
-            if(sql.contains("COUNT(*)"))
+            if(countCheck(sql))
                 return 0;
             else
                 return new Places();

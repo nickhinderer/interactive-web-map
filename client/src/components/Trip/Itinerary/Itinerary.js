@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button} from 'reactstrap';
+import { Table, Button, Modal } from 'reactstrap';
 import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToPlace, latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
-import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
 import { FaArrowCircleDown, FaTelegramPlane } from 'react-icons/fa';
+import { BiTargetLock } from 'react-icons/bi';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
@@ -97,6 +97,14 @@ function TableRow(props) {
         setColor('#D3D3D3');
     }
 
+    function showLabel(){
+        console.log("Hovering");
+        // need to figure out how to get some sort of popup with text to appear 
+        return (
+            <div>place holder text</div>
+        );
+    }
+
     return (
         <tr bgcolor={bgColor}>
             <th scope="row">{props.index + 1}</th>
@@ -107,10 +115,9 @@ function TableRow(props) {
                 <small className="text-muted">{location}</small>
             </td>
             <td>
-                <FaTelegramPlane onClick={() => moveMarker()}/>
-            </td>
-            <td>
                 <PlaceActionsDropdown placeActions={props.placeActions} index={props.index} />
+                <br/>
+                <FaTelegramPlane onClick={() => moveMarker()} onMouseOver={() => showLabel()}/>
             </td>
         </tr>
     );
