@@ -116,7 +116,7 @@ function TableRow(props) {
             <td>
                 <PlaceActionsDropdown placeActions={props.placeActions} index={props.index} />
                 <br/>
-                <FaTelegramPlane onClick={() => moveMarker()} onMouseEnter={() => showLabel()} onMouseLeave={() => showLabel()}/>
+                <FaTelegramPlane onClick={() => moveMarker()} onMouseDown={() => showLabel()} onMouseUp={() => showLabel()}/>
                 {label ? <Label pointing="bottom"><small><b>Highlight Place</b></small></Label> : <div></div>}
             </td>
         </tr>
