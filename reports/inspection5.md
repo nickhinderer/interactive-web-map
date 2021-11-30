@@ -16,6 +16,9 @@ We note the amount of time each person spent reviewing the code in preparation f
 | Name | Preparation Time |
 | ---- | ---- |
 | Jacki | 30 Min. |
+| Abby | 25 min |
+|  |  |
+|  |  |
 |  |  |
 
 
@@ -28,4 +31,6 @@ We add a GitHub issue for each defect that requires a modification to the system
 | --- | --- | :---: | :---: | --- |
 | Tour.js | 97-101 | Code Duplication in Code Climate | med | Jacki | #720 |
 | Tour.js | ... | Function order could be reorganized for better flow/understanding | low | Jacki | |
-|  | | | | |
+| Tour.js: 38 | ClassName property name does not correspond to the function of the return | low | Abby | #846 |
+| Tour.js: ... | Reuse base code; use "places" state variable from usePlaces instead of creating a "newTrip" array | low | Abby | #847 |
+|  |  |  |  |  |
