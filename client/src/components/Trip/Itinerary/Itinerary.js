@@ -98,12 +98,6 @@ function TableRow(props) {
         setColor('#D3D3D3');
     }
 
-    function showLabel(){
-        console.log("Hovering");
-        // need to figure out how to get some sort of popup with text to appear 
-        setLabel(!label);
-    }
-
     return (
         <tr bgcolor={bgColor} onClick={() => moveMarker()} onMouseLeave={() => setColor('white')}>
             <th scope="row">{props.index + 1}</th>
