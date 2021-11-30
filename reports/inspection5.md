@@ -15,6 +15,7 @@ We note the amount of time each person spent reviewing the code in preparation f
 
 | Name | Preparation Time |
 | ---- | ---- |
+| Jacki | 30 Min. |
 |  |  |
 
 
@@ -25,4 +26,6 @@ We add a GitHub issue for each defect that requires a modification to the system
 
 | file:line | problem | hi/med/low | who found | github#  |
 | --- | --- | :---: | :---: | --- |
+| Tour.js | 97-101 | Code Duplication in Code Climate | med | Jacki | #720 |
+| Tour.js | ... | Function order could be reorganized for better flow/understanding | low | Jacki | |
 |  | | | | |
