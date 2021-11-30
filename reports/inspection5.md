@@ -18,7 +18,7 @@ We note the amount of time each person spent reviewing the code in preparation f
 | Jacki | 30 Min. |
 | Abby | 25 min |
 | Nick | 30 min |
-|  |  |
+| Mallory | 30 min |
 |  |  |
 
 
@@ -35,4 +35,4 @@ We add a GitHub issue for each defect that requires a modification to the system
 | Tour.js: ... | Reuse base code; use "places" state variable from usePlaces instead of creating a "newTrip" array | low | Abby | #847 |
 | Tour.js: 58-71 | Nested function. Violates single responsibility principle. Could be split into two seperate functions | low | Nick | |
 | Tour.js: 81-93 | Nested if statements. Could reduce cognitive complexity by splitting into multiple functions | low | Nick |  |
-| | | | | |
+| Tour.js: 29-47 | Nested functions that could be split up | low | Mallory |  |
