@@ -105,7 +105,7 @@ function TableRow(props) {
     }
 
     return (
-        <tr bgcolor={bgColor}>
+        <tr bgcolor={bgColor} onClick={() => moveMarker()} onMouseLeave={() => setColor('white')}>
             <th scope="row">{props.index + 1}</th>
             <td>{ props.index != 0 && distance != 0 ? distance : 0} Mile(s)</td>
             <td>
@@ -115,9 +115,6 @@ function TableRow(props) {
             </td>
             <td>
                 <PlaceActionsDropdown placeActions={props.placeActions} index={props.index} />
-                <br/>
-                <FaTelegramPlane onClick={() => moveMarker()} onMouseDown={() => showLabel()} onMouseUp={() => showLabel()}/>
-                {label ? <Label pointing="bottom"><small><b>Highlight Place</b></small></Label> : <div></div>}
             </td>
         </tr>
     );
