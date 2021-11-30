@@ -33,4 +33,5 @@ We add a GitHub issue for each defect that requires a modification to the system
 | Tour.js | ... | Function order could be reorganized for better flow/understanding | low | Jacki | |
 | Tour.js: 38 | ClassName property name does not correspond to the function of the return | low | Abby | #846 |
 | Tour.js: ... | Reuse base code; use "places" state variable from usePlaces instead of creating a "newTrip" array | low | Abby | #847 |
+| Tour.js: 58-71 | Nested function. Violates single responsibility principle. Could be split into two seperate functions | low | Nick | |
 |  |  |  |  |  |
