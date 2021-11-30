@@ -16,7 +16,7 @@ We note the amount of time each person spent reviewing the code in preparation f
 | Name | Preparation Time |
 | ---- | ---- |
 | Jacki | 30 Min. |
-|  |  |
+| Nick | 30 min |
 
 
 ### Problems found
@@ -28,4 +28,4 @@ We add a GitHub issue for each defect that requires a modification to the system
 | --- | --- | :---: | :---: | --- |
 | Tour.js | 97-101 | Code Duplication in Code Climate | med | Jacki | #720 |
 | Tour.js | ... | Function order could be reorganized for better flow/understanding | low | Jacki | |
-|  | | | | |
+| Tour.js | 58-71 | Nested function. Violates single responsibility principle. Could be split into two seperate functions | low | Nick |
