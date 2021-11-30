@@ -25,6 +25,7 @@ Consider this a failure when it happens.
 9. Upload and save test file
 10. View as mobile device 
 11. Optimize Trip
+12. Highlight Place
 
 ### Demographics
 
