@@ -32,7 +32,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 
 | Pseudonym | Demographics |
 | :--- | :--- |
-|  |  |
+| G Sili | Age: 20, Nationality: American, Job: Learning Assistant |
 
 
 ### Observations
