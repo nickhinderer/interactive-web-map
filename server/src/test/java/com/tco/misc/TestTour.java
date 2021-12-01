@@ -868,6 +868,55 @@ public class TestTour {
     @Test
     @DisplayName("sixth test case succeeded")
     public void testOptimizeTourCase6() {
+        Places case6 = new Places();
+        Place[] placeArr = new Place[10];
+        placeArr[0] = new Place();
+        placeArr[0].put("latitude", "-87.096572");
+        placeArr[0].put("longitude", "85.304818");
+
+        placeArr[1] = new Place();
+        placeArr[1].put("latitude", "-71.537628");
+        placeArr[1].put("longitude", "-47.967134");
+
+        placeArr[2] = new Place();
+        placeArr[2].put("latitude", "42.884313");
+        placeArr[2].put("longitude", "-8.340171");
+
+        placeArr[3] = new Place();
+        placeArr[3].put("latitude", "13.537647");
+        placeArr[3].put("longitude", "-8.681641");
+
+        placeArr[4] = new Place();
+        placeArr[4].put("latitude", "-56.831889");
+        placeArr[4].put("longitude", "1.794362");
+
+        placeArr[5] = new Place();
+        placeArr[5].put("latitude", "-87.135496");
+        placeArr[5].put("longitude", "2.856679");
+
+        placeArr[6] = new Place();
+        placeArr[6].put("latitude", "61.285901");
+        placeArr[6].put("longitude", "27.708075");
+
+        placeArr[7] = new Place();
+        placeArr[7].put("latitude", "-32.850581");
+        placeArr[7].put("longitude", "-65.613929");
+
+        placeArr[8] = new Place();
+        placeArr[8].put("latitude", "-47.229753");
+        placeArr[8].put("longitude", "65.571733");
+
+        placeArr[9] = new Place();
+        placeArr[9].put("latitude", "-3.762393");
+        placeArr[9].put("longitude", "73.502143");
+
+
+        case6.addAll(Arrays.asList(placeArr).subList(0, 10));
+
+        tour.setPlaces(case6);
+        tour.setInstanceVariables();
+        tour.optimizeTour();
+
 
 
     }
