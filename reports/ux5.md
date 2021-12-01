@@ -35,6 +35,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 | :--- | :--- |
 | G Sili | Age: 20, Nationality: American, Job: Learning Assistant |
 | P Jam | Age: 24, Nationality: American, Job: Research Assistant, Major: Math/Biology |
+| Crystal Deng  | Age: 24, Nationality: China, Job: Student, Major: English |
 
 
 ### Observations
@@ -55,6 +56,7 @@ P Jam needed help with a few of the harder tasks, and got confused by a few of t
 | 6 | P Jam: Needed another hint for this task as they had closed the server modal | low | |
 | 9 | P Jam: Accidentally saved a file first when asked to upload one, then realized how to upload a file | med | #842 |
 | 10 | P Jam: Needed a bit of prompting on what mobile format meant, thought they were looking for a button | low | |
-|  |  |  |  | 
-|  |  |  |  | 
-|  |  |  |  | 
+| 11 |  Crystal Deng | Don't understand what features means| low |  |
+| 12 |  Crystal Deng | Had a hard time to find where to change server  | low |  |
+| 13 |  Crystal Deng | Confused about highlight places since the highlighted color gone after move the mouse to the other place | med | #870 |
+ #842 |
