@@ -917,7 +917,7 @@ public class TestTour {
         tour.setInstanceVariables();
         tour.optimizeTour();
 
-
+        assertEquals(26195L, tour.getTourDistance());
 
     }
 
