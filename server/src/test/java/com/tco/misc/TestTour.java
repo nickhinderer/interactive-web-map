@@ -864,6 +864,14 @@ public class TestTour {
         assertEquals(41952L, tour.getTourDistance());
     }
 
+
+    @Test
+    @DisplayName("sixth test case succeeded")
+    public void testOptimizeTourCase6() {
+
+
+    }
+
     @Test
     @DisplayName("constructor works correctly")
     public void testTourConstructor() {
