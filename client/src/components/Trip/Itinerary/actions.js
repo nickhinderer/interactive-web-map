@@ -34,21 +34,7 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
-                <Modal isOpen={whereIcon} toggle={toggle} data-testid='where-is-modal'>
-                    <ModalHeader>
-                        Coordinate Search    
-                    </ModalHeader>
-                        <ModalBody> 
-                            <InputGroup>
-                                <InputGroupAddon addonType="append"> Coordinates </InputGroupAddon>
-                                <Input placeholder={"latitude, longitude"} />
-                            </InputGroup>
-                        </ModalBody>
-                    <ModalFooter> 
-                        <Button color="primary" onClick={toggle}> <img src={check} /> </Button>
-                        <Button color="danger" onClick={toggle}> <img src={x} /> </Button>
-                    </ModalFooter>
-                </Modal>
+                <RenderModal whereIcon={whereIcon} setWhereIcon={setWhereIcon} toggle={toggle} />
             </DropdownItem>
         </ActionsDropdown> 
     );
@@ -69,6 +55,28 @@ function handleJSONSave(props) {
     const tripJSON = props.placeActions.buildTripJSON();
     const fileName = tripName.replace(/ /g, "_").toLowerCase();
     props.placeActions.downloadFile(fileName + ".json", MIME_TYPE.JSON, tripJSON);
+}
+
+function RenderModal(props) {
+    return (
+        <Modal isOpen={props.whereIcon} toggle={props.toggle} data-testid='where-is-modal'>
+            <ModalHeader>
+                Coordinate Search    
+            </ModalHeader> 
+
+                <ModalBody> 
+                    <InputGroup>
+                        <InputGroupAddon addonType="append"> Coordinates </InputGroupAddon>
+                        <Input placeholder={"latitude, longitude"} />
+                    </InputGroup>
+                </ModalBody>
+
+            <ModalFooter> 
+                <Button color="primary" onClick={props.toggle}> <img src={check} /> </Button>
+                <Button color="danger" onClick={props.toggle}> <img src={x} /> </Button>
+            </ModalFooter>
+        </Modal>
+    );
 }
 
 export function PlaceActionsDropdown(props) {
