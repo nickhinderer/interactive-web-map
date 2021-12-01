@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
@@ -13,7 +13,9 @@ const MIME_TYPE = {
 const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
-
+    const [whereIcon, setWhereIcon] = useState(false);
+    const toggle = () => setWhereIcon(!where);
+    
     return (
         <ActionsDropdown {...props}>
             <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
