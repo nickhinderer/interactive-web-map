@@ -13,10 +13,17 @@ const MIME_TYPE = {
 const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
-    const [popover, setPopover] = useState(false);
-    function toggle(){
-        setPopover(!popover);
+    const [savePopover, setSavPopover] = useState(false);
+    const [uploadPopover, setUpPopover] = useState(false);
+
+    function saveToggle(){
+        setSavPopover(!savePopover);
     }
+
+    function upToggle(){
+        setUpPopover(!uploadPopover);
+    }
+
     return (
         <ActionsDropdown {...props}>
             <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
@@ -25,16 +32,18 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => removeAll(props)} data-testid='delete-all-button'>
                 <FaTrashAlt />
             </DropdownItem>
-            <DropdownItem onClick={iconClick} data-testid='load-trip-icon'>
-                <FaFileUpload/>
+            <DropdownItem onClick={iconClick} onMouseEnter={upToggle} onMouseLeave={upToggle} data-testid='load-trip-icon'>
+                <FaFileUpload id="up"/>
+                <Popover style={{backgroundColor: '#D3D3D3'}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
             </DropdownItem>
-            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={toggle} onMouseLeave={toggle} data-testid='save-trip-button'>
+            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={saveToggle} data-testid='save-trip-button'>
                 <FaFileDownload id="down"/>
-                <Popover style={{backgroundColor: '#D3D3D3'}} target="down" placement="bottom" isOpen={popover} toggle={toggle}> <b>Save</b> </Popover>
+                <Popover style={{backgroundColor: '#D3D3D3'}} target="down" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
             </DropdownItem>
         </ActionsDropdown> 
     );
 }
+
 
 function moveToHome(props) { props.placeActions.moveToHome(); }
 function removeAll(props) { props.placeActions.removeAll(); }
