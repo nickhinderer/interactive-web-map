@@ -36,6 +36,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 | G Sili | Age: 20, Nationality: American, Job: Learning Assistant |
 | P Jam | Age: 24, Nationality: American, Job: Research Assistant, Major: Math/Biology |
 | Crystal Deng  | Age: 24, Nationality: China, Job: Student, Major: English |
+| Jake Jeppers | Age: 21, Nationality: America, Job: Student, Major: Construction Managment |
 
 
 ### Observations
@@ -47,6 +48,7 @@ Add issues to GitHub for any changes necessary to the system.
 
 G Sili was able to complete all the tasks in efficient time since she is fairly tech savy. 
 P Jam needed help with a few of the harder tasks, and got confused by a few of the icons used but was able to complete all tasks 
+
 
 | Task | problem, aid, observation | hi/med/low | github#  |
 | :--- | :--- | :---: | :---: | 
@@ -60,3 +62,7 @@ P Jam needed help with a few of the harder tasks, and got confused by a few of t
 | 12 |  Crystal Deng | Had a hard time to find where to change server  | low |  |
 | 13 |  Crystal Deng | Confused about highlight places since the highlighted color gone after move the mouse to the other place | med | #870 |
  #842 |
+| 4 | Jake Jeppers: Took a while to find out how to delete a place, first tried to delete the information about the place on the map, then deleted whole trip after. Only figuired out on third attempt | low |  |
+| 5 | Jake Jeppers: Did not know how to change server, ended up having to tell him how to do it | low |  |
+| 6 | Jake Jeppers: Didn't immediately know how to check features, ended up having to tell him how to do it | low |  |
+| 8 | Jake Jeppers: Tried to manually find location on the map (misunderstood task), was able to find after I clarified that it was a button | low |  |
