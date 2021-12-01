@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup, Popover } from 'reactstrap';
+
+import React, { useState } from 'react';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Button, ButtonGroup, Modal, ModalBody, ModalHeader, ModalFooter, Popover } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
+import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload, FaQuestion } from 'react-icons/fa';
+import check from '../../../static/images/check.svg';
+import x from '../../../static/images/x.svg';
 
 const MIME_TYPE = {
     JSON: "application/json",
@@ -13,6 +16,8 @@ const MIME_TYPE = {
 const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
+    const [whereIcon, setWhereIcon] = useState(false);
+    const toggle = () => setWhereIcon(!whereIcon);
     const [savePopover, setSavPopover] = useState(false);
     const [uploadPopover, setUpPopover] = useState(false);
 
@@ -39,6 +44,18 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={saveToggle} onMouseLeave={saveToggle} data-testid='save-trip-button'>
                 <FaFileDownload id="down"/>
                 <Popover style={{backgroundColor: '#D3D3D3'}} target="down" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
+            </DropdownItem>
+            <DropdownItem onClick={toggle} data-testid='where-is-icon'>
+                <FaQuestion/>
+                <Modal isOpen={whereIcon} toggle={toggle} data-testid='where-is-modal'>
+                    <ModalBody> 
+                        Here is my modal!
+                    </ModalBody>
+                    <ModalFooter> 
+                        <Button color="primary" onClick={toggle}> <img src={check} /> </Button>
+                        <Button color="danger" onClick={toggle}> <img src={x} /> </Button>
+                    </ModalFooter>
+                </Modal>
             </DropdownItem>
         </ActionsDropdown> 
     );
