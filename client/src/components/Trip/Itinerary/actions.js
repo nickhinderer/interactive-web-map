@@ -39,8 +39,8 @@ export function ItineraryActionsDropdown(props) {
                         Here is my modal!
                     </ModalBody>
                     <ModalFooter> 
-                        <Button onClick={toggle}> <img src={check} /> </Button>
-                        <Button onClick={toggle}> <img src={x} /> </Button>
+                        <Button color="primary" onClick={toggle}> <img src={check} /> </Button>
+                        <Button color="danger" onClick={toggle}> <img src={x} /> </Button>
                     </ModalFooter>
                 </Modal>
             </DropdownItem>
