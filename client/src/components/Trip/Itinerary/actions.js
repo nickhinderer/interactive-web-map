@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Button, ButtonGroup, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload, FaQuestion } from 'react-icons/fa';
+import check from '../../../static/images/check.svg';
+import x from '../../../static/images/x.svg';
 
 const MIME_TYPE = {
     JSON: "application/json",
@@ -14,7 +16,7 @@ const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
     const [whereIcon, setWhereIcon] = useState(false);
-    const toggle = () => setWhereIcon(!where);
+    const toggle = () => setWhereIcon(!whereIcon);
 
     return (
         <ActionsDropdown {...props}>
@@ -32,10 +34,14 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
-                <Modal isOpen={where} toggle={toggle} data-testid='where-is-modal'>
+                <Modal isOpen={whereIcon} toggle={toggle} data-testid='where-is-modal'>
                     <ModalBody> 
                         Here is my modal!
                     </ModalBody>
+                    <ModalFooter> 
+                        <Button onClick={toggle}> <img src={check} /> </Button>
+                        <Button onClick={toggle}> <img src={x} /> </Button>
+                    </ModalFooter>
                 </Modal>
             </DropdownItem>
         </ActionsDropdown> 
