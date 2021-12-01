@@ -35,9 +35,15 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
                 <Modal isOpen={whereIcon} toggle={toggle} data-testid='where-is-modal'>
-                    <ModalBody> 
-                        Here is my modal!
-                    </ModalBody>
+                    <ModalHeader>
+                        Coordinate Search    
+                    </ModalHeader>
+                        <ModalBody> 
+                            <InputGroup>
+                                <InputGroupAddon addonType="append"> Coordinates </InputGroupAddon>
+                                <Input placeholder={"latitude, longitude"} />
+                            </InputGroup>
+                        </ModalBody>
                     <ModalFooter> 
                         <Button color="primary" onClick={toggle}> <img src={check} /> </Button>
                         <Button color="danger" onClick={toggle}> <img src={x} /> </Button>
