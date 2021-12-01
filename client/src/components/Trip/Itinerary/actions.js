@@ -36,7 +36,7 @@ export function ItineraryActionsDropdown(props) {
                 <FaFileUpload id="up"/>
                 <Popover style={{backgroundColor: '#D3D3D3'}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
             </DropdownItem>
-            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={saveToggle} data-testid='save-trip-button'>
+            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={saveToggle} onMouseLeave={saveToggle} data-testid='save-trip-button'>
                 <FaFileDownload id="down"/>
                 <Popover style={{backgroundColor: '#D3D3D3'}} target="down" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
             </DropdownItem>
