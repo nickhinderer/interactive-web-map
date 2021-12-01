@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
+import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload, FaQuestion } from 'react-icons/fa';
 
 const MIME_TYPE = {
     JSON: "application/json",
@@ -15,7 +15,7 @@ const tripName = "My Trip";
 export function ItineraryActionsDropdown(props) {
     const [whereIcon, setWhereIcon] = useState(false);
     const toggle = () => setWhereIcon(!where);
-    
+
     return (
         <ActionsDropdown {...props}>
             <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
@@ -29,6 +29,9 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
             <DropdownItem onClick={() => handleJSONSave(props)} data-testid='save-trip-button'>
                 <FaFileDownload />
+            </DropdownItem>
+            <DropdownItem data-testid='where-is-icon'>
+                <FaQuestion/>
             </DropdownItem>
         </ActionsDropdown> 
     );
