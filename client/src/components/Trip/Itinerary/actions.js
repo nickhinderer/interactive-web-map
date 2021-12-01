@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup } from 'reactstrap';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload, FaQuestion } from 'react-icons/fa';
 
@@ -31,6 +31,7 @@ export function ItineraryActionsDropdown(props) {
                 <FaFileDownload />
             </DropdownItem>
             <DropdownItem data-testid='where-is-icon'>
+
                 <FaQuestion/>
             </DropdownItem>
         </ActionsDropdown> 
