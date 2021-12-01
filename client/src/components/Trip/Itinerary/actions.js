@@ -30,9 +30,13 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => handleJSONSave(props)} data-testid='save-trip-button'>
                 <FaFileDownload />
             </DropdownItem>
-            <DropdownItem data-testid='where-is-icon'>
-
+            <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
+                <Modal isOpen={where} toggle={toggle} data-testid='where-is-modal'>
+                    <ModalBody> 
+                        Here is my modal!
+                    </ModalBody>
+                </Modal>
             </DropdownItem>
         </ActionsDropdown> 
     );
