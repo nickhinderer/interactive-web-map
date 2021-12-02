@@ -72,6 +72,10 @@ function handleJSONSave(props) {
 }
 
 function RenderModal(props) {
+    const [display, setDisplay] = useState(false); // this is used to display response options after "find" button clicked
+                                                   // or once they hit enter
+                                                   // or once it is a valid set of coordinates (indicated by a checkmark)
+    const [match, setMatch] = useState(false); 
     return (
         <Modal isOpen={props.whereIcon} toggle={props.toggle} data-testid='where-is-modal'>
             <ModalHeader>
@@ -81,8 +85,11 @@ function RenderModal(props) {
                 <ModalBody> 
                     <InputGroup>
                         <InputGroupAddon addonType="append"> Coordinates </InputGroupAddon>
-                        <Input placeholder={"latitude, longitude"} />
+                        <Input placeholder={"latitude, longitude"} onChange={e => {
+                            setMatch(e.target.value); setDisplay(false);
+                        }}/>
                     </InputGroup>
+                    {display? <CoordinateSearch match={match} lat={props.places.latitude} lng={props.places.longitude} placeActions={props.placeActions}/> :<div></div>}
                 </ModalBody>
 
             <ModalFooter> 
