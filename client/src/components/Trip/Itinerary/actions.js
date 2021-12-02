@@ -20,6 +20,7 @@ export function ItineraryActionsDropdown(props) {
     const toggle = () => setWhereIcon(!whereIcon);
     const [savePopover, setSavPopover] = useState(false);
     const [uploadPopover, setUpPopover] = useState(false);
+    const [deletePopover, setDelPopover] = useState(false);
 
     function saveToggle(){
         setSavPopover(!savePopover);
@@ -29,13 +30,18 @@ export function ItineraryActionsDropdown(props) {
         setUpPopover(!uploadPopover);
     }
 
+    function delToggle(){
+        setDelPopover(!deletePopover);
+    }
+
     return (
         <ActionsDropdown {...props}>
             <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
                 <FaHome />
             </DropdownItem>
-            <DropdownItem onClick={() => removeAll(props)} data-testid='delete-all-button'>
-                <FaTrashAlt />
+            <DropdownItem onClick={() => removeAll(props)} onMouseEnter={delToggle} onMouseLeave={delToggle} data-testid='delete-all-button'>
+                <FaTrashAlt id="del"/>
+                <Popover style={{backgroundColor: '#D3D3D3'}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
             </DropdownItem>
             <DropdownItem onClick={iconClick} onMouseEnter={upToggle} onMouseLeave={upToggle} data-testid='load-trip-icon'>
                 <FaFileUpload id="up"/>
