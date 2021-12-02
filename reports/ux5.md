@@ -37,6 +37,7 @@ Age, nationality, and other background information can sometimes be helpful unde
 | P Jam | Age: 24, Nationality: American, Job: Research Assistant, Major: Math/Biology |
 | Crystal Deng  | Age: 24, Nationality: China, Job: Student, Major: English |
 | Jake Jeppers | Age: 21, Nationality: America, Job: Student, Major: Construction Managment |
+| Mark | Age: 24, Nationality: American, Major: Biology |
 
 
 ### Observations
@@ -66,3 +67,7 @@ P Jam needed help with a few of the harder tasks, and got confused by a few of t
 | 5 | Jake Jeppers: Did not know how to change server, ended up having to tell him how to do it | low |  |
 | 6 | Jake Jeppers: Didn't immediately know how to check features, ended up having to tell him how to do it | low |  |
 | 8 | Jake Jeppers: Tried to manually find location on the map (misunderstood task), was able to find after I clarified that it was a button | low |  |
+| 5 | Mark: Had trouble finding where to change the server | low | |
+| 8 | Mark: Had a hard time finding the home button | low | |
+| 10 | Mark: Didn't understand that they had to manually change the size of the browser | low | |
+| 11 | Mark: Didn't realize they had to press 'Find Distances' again after finding a shorter trip | low | |
