@@ -31,7 +31,7 @@ describe('Dropdown', () => {
         expect(screen.findByRole('Dropdown')).toBeDefined();
     });
 
-    // TODO: Testing for Home 
+    // Testing for Home 
     it('contains Home icon', async () => {
         const icon = screen.findByTestId('home-icon');
         expect(icon).toBeDefined(); 
@@ -43,7 +43,11 @@ describe('Dropdown', () => {
     });
 
     // TODO: Testing for Delete All
-    
+    it('contains Delete All icon', async () => {
+        const icon = screen.findByTestId('delete-all-icon');
+        expect(icon).toBeDefined(); 
+    });
+
     // Testing for Load
     it('contains Load File icon', async () => {
         const icon = screen.findByTestId('load-trip-icon');
