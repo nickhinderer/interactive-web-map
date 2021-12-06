@@ -16,7 +16,7 @@ export default function TripName(props) {
            
         );
     }
-    return <div data-testid = "displayfalse" onClick={()=>setDisplay(!display)}>{tripName}   <BsPencilFill/> </div>; 
+    return (<div data-testid = "displayfalse" onClick={()=>setDisplay(!display)}>{tripName}   <BsPencilFill/> </div>); 
 }
 
 
