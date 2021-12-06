@@ -8,7 +8,6 @@ import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
 import { FaArrowCircleDown, FaTelegramPlane } from 'react-icons/fa';
 import TripName from './TripName.js';
-import { BiTargetLock } from 'react-icons/bi';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
