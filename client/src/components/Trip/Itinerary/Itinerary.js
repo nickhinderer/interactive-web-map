@@ -7,7 +7,7 @@ import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
 import { FaArrowCircleDown, FaTelegramPlane } from 'react-icons/fa';
-import TripName from '../../../src/components/Trip/Itinerary/TripName.js';
+import TripName from '../TripName/TripName.js';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
