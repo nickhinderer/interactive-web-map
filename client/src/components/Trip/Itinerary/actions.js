@@ -1,7 +1,10 @@
-import React from 'react';
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup } from 'reactstrap';
+
+import React, { useState } from 'react';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Button, ButtonGroup, Modal, ModalBody, ModalHeader, ModalFooter, Popover, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload } from 'react-icons/fa';
+import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload, FaQuestion } from 'react-icons/fa';
+import check from '../../../static/images/check.svg';
+import x from '../../../static/images/x.svg';
 
 const MIME_TYPE = {
     JSON: "application/json",
@@ -13,20 +16,32 @@ const MIME_TYPE = {
 const tripName = "My Trip";
 
 export function ItineraryActionsDropdown(props) {
+    const [whereIcon, setWhereIcon] = useState(false);
+    const toggle = () => setWhereIcon(!whereIcon);
+    const [savePopover, setSavPopover] = useState(false);
+    const [uploadPopover, setUpPopover] = useState(false);
+    const [deletePopover, setDelPopover] = useState(false);
 
     return (
         <ActionsDropdown {...props}>
             <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
                 <FaHome />
             </DropdownItem>
-            <DropdownItem onClick={() => removeAll(props)} data-testid='delete-all-button'>
-                <FaTrashAlt />
+            <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-button'>
+                <FaTrashAlt id="del"/>
+                <Popover style={{backgroundColor: '#D3D3D3'}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
             </DropdownItem>
-            <DropdownItem onClick={iconClick} data-testid='load-trip-icon'>
-                <FaFileUpload/>
+            <DropdownItem onClick={iconClick} onMouseEnter={() => setUpPopover(!uploadPopover)} onMouseLeave={() => setUpPopover(!uploadPopover)} data-testid='load-trip-icon'>
+                <FaFileUpload id="up"/>
+                <Popover style={{backgroundColor: '#D3D3D3'}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
             </DropdownItem>
-            <DropdownItem onClick={() => handleJSONSave(props)} data-testid='save-trip-button'>
-                <FaFileDownload />
+            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={() => setSavPopover(!savePopover)} onMouseLeave={() => setSavPopover(!savePopover)} data-testid='save-trip-button'>
+                <FaFileDownload id="down"/>
+                <Popover style={{backgroundColor: '#D3D3D3'}} target="down" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
+            </DropdownItem>
+            <DropdownItem onClick={toggle} data-testid='where-is-icon'>
+                <FaQuestion/>
+                <RenderModal whereIcon={whereIcon} setWhereIcon={setWhereIcon} toggle={toggle} />
             </DropdownItem>
         </ActionsDropdown> 
     );
@@ -47,6 +62,28 @@ function handleJSONSave(props) {
     const tripJSON = props.placeActions.buildTripJSON();
     const fileName = tripName.replace(/ /g, "_").toLowerCase();
     props.placeActions.downloadFile(fileName + ".json", MIME_TYPE.JSON, tripJSON);
+}
+
+function RenderModal(props) {
+    return (
+        <Modal isOpen={props.whereIcon} toggle={props.toggle} data-testid='where-is-modal'>
+            <ModalHeader>
+                Coordinate Search    
+            </ModalHeader> 
+
+                <ModalBody> 
+                    <InputGroup>
+                        <InputGroupAddon addonType="append"> Coordinates </InputGroupAddon>
+                        <Input placeholder={"latitude, longitude"} />
+                    </InputGroup>
+                </ModalBody>
+
+            <ModalFooter> 
+                <Button color="primary" onClick={props.toggle}> <img src={check} /> </Button>
+                <Button color="danger" onClick={props.toggle}> <img src={x} /> </Button>
+            </ModalFooter>
+        </Modal>
+    );
 }
 
 export function PlaceActionsDropdown(props) {

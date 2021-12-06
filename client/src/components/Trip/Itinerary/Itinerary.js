@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button} from 'reactstrap';
+import { Table, Button, Modal, Label } from 'reactstrap';
 import { ItineraryActionsDropdown, PlaceActionsDropdown } from './actions.js';
 import { latLngToPlace, latLngToText } from '../../../utils/transformers';
 import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI';
-import { Handler } from 'leaflet';
 import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
 import { FaArrowCircleDown, FaTelegramPlane } from 'react-icons/fa';
 import TripName from './TripName.js';
+import { BiTargetLock } from 'react-icons/bi';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
@@ -94,21 +94,17 @@ function TableRow(props) {
     }
 
     function changeColor(){
-        console.log("Changing Color");
         setColor('#D3D3D3');
     }
 
     return (
-        <tr bgcolor={bgColor}>
+        <tr bgcolor={bgColor} onClick={() => moveMarker()} onMouseLeave={() => setColor('white')}>
             <th scope="row">{props.index + 1}</th>
             <td>{ props.index != 0 && distance != 0 ? distance : 0} Mile(s)</td>
             <td>
                 {name}
                 <br />
                 <small className="text-muted">{location}</small>
-            </td>
-            <td>
-                <FaTelegramPlane onClick={() => moveMarker()}/>
             </td>
             <td>
                 <PlaceActionsDropdown placeActions={props.placeActions} index={props.index} />

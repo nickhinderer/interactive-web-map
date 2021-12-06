@@ -5,6 +5,7 @@ import List from './List';
 import mag from '../../../static/images/search.svg';
 import check from '../../../static/images/check.svg';
 import x from '../../../static/images/x.svg';
+import {GiPerspectiveDiceSixFacesRandom} from "react-icons/gi"
 
 export default function FindModal(props) {
     const [modal, setModal] = useState(false);
@@ -38,6 +39,7 @@ export function FindInput(setDisplay, setMatch){
         <InputGroup>
             <Input placeholder={"Place..."} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
                 <InputGroupAddon addonType="append">
+                    <Button color="primary"  onClick={() =>{setDisplay(true)} }> <GiPerspectiveDiceSixFacesRandom/></Button>
                     <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search</Button>
                 </InputGroupAddon>
         </InputGroup>

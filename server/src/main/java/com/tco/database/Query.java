@@ -8,6 +8,7 @@ public class Query {
     private Integer limit;
     private Database database;
     private String sql;
+    private static String searchCriteria = "FROM world " + "INNER JOIN continent ON world.continent = continent.id " + "INNER JOIN country ON world.iso_country = country.id " + "INNER JOIN region ON world.iso_region = region.id ";
 
     public Query(String match, Integer limit) {
         if(match.contains("'"))
@@ -46,10 +47,7 @@ public class Query {
     private static String getMatchingSQL(String match, Integer limit) {
         return
                 "SELECT world.name, world.municipality, region.name as region, country.name as country, continent.name as continent, TRUNCATE(world.latitude,6) as latitude, TRUNCATE(world.longitude,6) as longitude, world.altitude, world.type, home_link "
-                        + "FROM world "
-                        + "INNER JOIN continent ON world.continent = continent.id "
-                        + "INNER JOIN country ON world.iso_country = country.id "
-                        + "INNER JOIN region ON world.iso_region = region.id "
+                        + searchCriteria
                         + "WHERE world.name LIKE '%" + match + "%' "
                         + "OR world.municipality LIKE '%" + match + "%' "
                         + "OR country.name LIKE '%" + match + "%' "
