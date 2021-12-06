@@ -1,7 +1,7 @@
 import React from 'react';
 import { Map as LeafletMap, Polyline, TileLayer, LayersControl } from 'react-leaflet';
 import Marker from './Marker';
-import { latLngToPlace, placeToLatLng } from '../../../utils/transformers';
+import { latLngToPlace } from '../../../utils/transformers';
 import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
 import 'leaflet/dist/leaflet.css';
 import ReactDOM from 'react-dom';
@@ -32,12 +32,12 @@ const MAP_LAYERS = [
     },
   ];
 
-  function MapLayers() {
+  /*export function MapLayers() {
     return (
       <LeafletMap 
         center={placeToLatLng(DEFAULT_STARTING_PLACE)} 
         zoom={15}
-        minZomo={1}
+        minZoom={1}
         maxZoom={19}
       >
         <LayersControl position="topright">
@@ -55,10 +55,10 @@ const MAP_LAYERS = [
         <TileLayer {...layerData} />
       </LayersControl.BaseLayer>
     );
+  } */
+  function placeToLatLng(place) {
+    return place ? { lat: parseFloat(place.latitude), lng: parseFloat(place.longitude) } : null;
   }
-  
-  //ReactDOM.render(<MapLayers/>, document.getElementById("root"));
-  // figure out why tests are failing
 
   
 export default function Map(props) {
@@ -79,11 +79,23 @@ export default function Map(props) {
             onClick={handleMapClick}
             data-testid="Map"
         > 
-            <TileLayer url={MAP_LAYER_URL} attribution={MAP_LAYER_ATTRIBUTION} />
-            <TripLines places={props.places} />
-            <PlaceMarker places={props.places} selectedIndex={props.selectedIndex} />
+        <TripLines places={props.places} />
+        <PlaceMarker places={props.places} selectedIndex={props.selectedIndex} />
+          <LayersControl position="topright">
+            {MAP_LAYERS.map(
+              layerData => renderMapLayer(props, layerData)
+            )}
+          </LayersControl>
         </LeafletMap>
     ); 
+}
+
+function renderMapLayer(props, layerData) {
+  return (
+    <LayersControl.BaseLayer checked={layerData.selected} name={layerData.name}>
+    <TileLayer {...layerData} />
+    </LayersControl.BaseLayer>
+);
 }
 
 function TripLines(props) {
