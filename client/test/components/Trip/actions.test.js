@@ -30,7 +30,16 @@ describe('Dropdown', () => {
     it('contains a search Dropdown', () => {
         expect(screen.findByRole('Dropdown')).toBeDefined();
     });
+
+    // TODO: Testing for Home 
+    it('contains Home icon', async () => {
+        const icon = screen.findByTestId('home-icon');
+        expect(icon).toBeDefined(); 
+    });
+
+    // TODO: Testing for Delete All
     
+    // Testing for Load
     it('contains Load File icon', async () => {
         const icon = screen.findByTestId('load-trip-icon');
         expect(icon).toBeDefined(); 
@@ -41,6 +50,7 @@ describe('Dropdown', () => {
         expect(screen.getByTestId('load-trip-icon')).toBeTruthy();
     });
 
+    // Testing for Save
     it('contains Save File icon', async () => {
         const icon = screen.findByTestId('save-trip-button');
         expect(icon).toBeDefined();
@@ -50,4 +60,6 @@ describe('Dropdown', () => {
         fireEvent.click(await screen.findByTestId('save-trip-icon')); 
         expect(screen.getByTestId('save-trip-icon')).toBeTruthy();
     });
+
+    // TODO: Testing for Where Is
 });

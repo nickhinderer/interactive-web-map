@@ -24,10 +24,10 @@ export function ItineraryActionsDropdown(props) {
 
     return (
         <ActionsDropdown {...props}>
-            <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
+            <DropdownItem onClick={() => moveToHome(props)} data-testid='home-icon'>
                 <FaHome />
             </DropdownItem>
-            <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-button'>
+            <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-icon'>
                 <FaTrashAlt id="del"/>
                 <Popover style={{backgroundColor: '#D3D3D3'}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
             </DropdownItem>
