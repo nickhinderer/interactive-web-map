@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen,fireEvent,waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
-import TripName,{checkInput} from '../../../src/components/Trip/TripName';
+import TripName,{checkInput} from '../../../src/components/Trip/Itinerary/TripName';
 import user from '@testing-library/user-event';
 import { Button } from 'reactstrap';
 
