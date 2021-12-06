@@ -11,9 +11,20 @@ describe('Dropdown', () => {
     const selectedIndex = 1;
     const validUrl = 'http://localhost:8000';
     const serverSettings = { 'serverUrl': validUrl, 'serverConfig': null};
+    const placeActions = { 
+        buildTripJSON: jest.fn(), 
+        append: jest.fn(), 
+        update: jest.fn(),                           
+        moveToHome: jest.fn(), 
+        removeAtIndex: jest.fn(), 
+        removeAll: jest.fn(), 
+        selectIndex: jest.fn(),
+        readFile: jest.fn(), 
+        downloadFile: jest.fn()
+    }
 
     beforeEach(() => {    
-        render(<ItineraryActionsDropdown selectedIndex={selectedIndex} placeActions={jest.fn()} serverSettings={serverSettings}/>)
+        render(<ItineraryActionsDropdown selectedIndex={selectedIndex} placeActions={placeActions} serverSettings={serverSettings} />)
     });
 
     it('contains a search Dropdown', () => {
@@ -26,7 +37,7 @@ describe('Dropdown', () => {
     });
 
     it('Load File Icon click', async () => { 
-        fireEvent.click(await screen.findByTestId('load-trip-icon')); // Use fireEvent or user
+        fireEvent.click(await screen.findByTestId('load-trip-icon')); // could use fireEvent or user
         expect(screen.getByTestId('load-trip-icon')).toBeTruthy();
     });
 
@@ -34,4 +45,5 @@ describe('Dropdown', () => {
         const icon = screen.findByTestId('save-trip-button');
         expect(icon).toBeDefined();
     });
+
 });
