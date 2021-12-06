@@ -7,7 +7,7 @@ import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
 import { FaArrowCircleDown, FaTelegramPlane } from 'react-icons/fa';
-import { BiTargetLock } from 'react-icons/bi';
+import TripName from './TripName.js';
 
 export default function Itinerary(props) {
     const [err, setErr] = useState(true);
@@ -24,7 +24,7 @@ export default function Itinerary(props) {
 
     return (
         <Table responsive >
-            <Header places={props.places} placeActions={props.placeActions} send={(places) => sendDistancesRequest(places)} />
+            <Header tripName={props.tripName} places={props.places} placeActions={props.placeActions} send={(places) => sendDistancesRequest(places)} />
             <TotalDistance distances={distances} err={err}/>
             <Body places={props.places} placeActions={props.placeActions} distances={distances} onChange={sendTourRequest(props.places,getOriginalServerUrl())} />
         </Table>
@@ -41,12 +41,12 @@ function handleChange(places, send) {
 }
 
 function Header(props) {
-    
-
+    var display = false;
     return (
         <thead>
+            
             <tr>
-                <th>My Trip <FaArrowCircleDown/></th>
+                <th><TripName   display = {display}/><FaArrowCircleDown/></th>
                 <th>
                     <Button id="Popover1" type="button" size="sm" onClick={() => handleChange(props.places, props.send)}>
                         Find Distances
