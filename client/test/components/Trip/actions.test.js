@@ -42,7 +42,7 @@ describe('Dropdown', () => {
         expect(screen.getByTestId('home-icon')).toBeTruthy();
     });
 
-    // TODO: Testing for Delete All
+    // Testing for Delete All
     it('contains Delete All icon', async () => {
         const icon = screen.findByTestId('delete-all-icon');
         expect(icon).toBeDefined(); 
