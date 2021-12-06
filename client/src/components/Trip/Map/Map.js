@@ -4,7 +4,6 @@ import Marker from './Marker';
 import { latLngToPlace } from '../../../utils/transformers';
 import { DEFAULT_STARTING_PLACE } from '../../../utils/constants';
 import 'leaflet/dist/leaflet.css';
-import ReactDOM from 'react-dom';
 
 const MAP_BOUNDS = [[-90, -180], [90, 180]];
 const MAP_LAYER_ATTRIBUTION = "&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors";
