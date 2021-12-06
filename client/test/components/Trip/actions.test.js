@@ -36,6 +36,11 @@ describe('Dropdown', () => {
         const icon = screen.findByTestId('home-icon');
         expect(icon).toBeDefined(); 
     });
+    
+    it('Where Am I? Home Icon click', async () => { 
+        fireEvent.click(await screen.findByTestId('home-icon')); 
+        expect(screen.getByTestId('home-icon')).toBeTruthy();
+    });
 
     // TODO: Testing for Delete All
     
