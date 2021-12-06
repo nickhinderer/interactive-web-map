@@ -32,30 +32,6 @@ const MAP_LAYERS = [
     },
   ];
 
-  /*export function MapLayers() {
-    return (
-      <LeafletMap 
-        center={placeToLatLng(DEFAULT_STARTING_PLACE)} 
-        zoom={15}
-        minZoom={1}
-        maxZoom={19}
-      >
-        <LayersControl position="topright">
-          {MAP_LAYERS.map(
-            layerData => renderMapLayer(layerData)
-          )}
-        </LayersControl>
-      </LeafletMap>
-    );
-  }
-
-  function renderMapLayer(layerData) {
-          return (
-      <LayersControl.BaseLayer checked={layerData.selected} name={layerData.name}>
-        <TileLayer {...layerData} />
-      </LayersControl.BaseLayer>
-    );
-  } */
   function placeToLatLng(place) {
     return place ? { lat: parseFloat(place.latitude), lng: parseFloat(place.longitude) } : null;
   }
