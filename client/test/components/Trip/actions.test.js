@@ -46,4 +46,8 @@ describe('Dropdown', () => {
         expect(icon).toBeDefined();
     });
 
+    it('Save File Icon click', async () => { 
+        fireEvent.click(await screen.findByTestId('save-trip-icon')); 
+        expect(screen.getByTestId('save-trip-icon')).toBeTruthy();
+    });
 });
