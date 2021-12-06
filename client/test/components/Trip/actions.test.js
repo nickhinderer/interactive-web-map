@@ -11,27 +11,69 @@ describe('Dropdown', () => {
     const selectedIndex = 1;
     const validUrl = 'http://localhost:8000';
     const serverSettings = { 'serverUrl': validUrl, 'serverConfig': null};
+    const placeActions = { 
+        buildTripJSON: jest.fn(), 
+        append: jest.fn(), 
+        update: jest.fn(),                           
+        moveToHome: jest.fn(), 
+        removeAtIndex: jest.fn(), 
+        removeAll: jest.fn(), 
+        selectIndex: jest.fn(),
+        readFile: jest.fn(), 
+        downloadFile: jest.fn()
+    }
 
     beforeEach(() => {    
-        render(<ItineraryActionsDropdown selectedIndex={selectedIndex} placeActions={jest.fn()} serverSettings={serverSettings}/>)
+        render(<ItineraryActionsDropdown selectedIndex={selectedIndex} placeActions={placeActions} serverSettings={serverSettings} />)
     });
 
     it('contains a search Dropdown', () => {
         expect(screen.findByRole('Dropdown')).toBeDefined();
     });
+
+    // Testing for Home 
+    it('contains Home icon', async () => {
+        const icon = screen.findByTestId('home-icon');
+        expect(icon).toBeDefined(); 
+    });
     
+    it('Where Am I? Home Icon click', async () => { 
+        fireEvent.click(await screen.findByTestId('home-icon')); 
+        expect(screen.getByTestId('home-icon')).toBeTruthy();
+    });
+
+    // Testing for Delete All
+    it('contains Delete All icon', async () => {
+        const icon = screen.findByTestId('delete-all-icon');
+        expect(icon).toBeDefined(); 
+    });
+    
+    it('Delete All Icon click', async () => { 
+        fireEvent.click(await screen.findByTestId('delete-all-icon')); 
+        expect(screen.getByTestId('delete-all-icon')).toBeTruthy();
+    });
+
+    // Testing for Load
     it('contains Load File icon', async () => {
         const icon = screen.findByTestId('load-trip-icon');
         expect(icon).toBeDefined(); 
     });
 
     it('Load File Icon click', async () => { 
-        fireEvent.click(await screen.findByTestId('load-trip-icon')); // Use fireEvent or user
+        fireEvent.click(await screen.findByTestId('load-trip-icon')); // could use fireEvent or user
         expect(screen.getByTestId('load-trip-icon')).toBeTruthy();
     });
 
+    // Testing for Save
     it('contains Save File icon', async () => {
         const icon = screen.findByTestId('save-trip-button');
         expect(icon).toBeDefined();
     });
+
+    it('Save File Icon click', async () => { 
+        fireEvent.click(await screen.findByTestId('save-trip-icon')); 
+        expect(screen.getByTestId('save-trip-icon')).toBeTruthy();
+    });
+
+    // TODO: Testing for Where Is
 });

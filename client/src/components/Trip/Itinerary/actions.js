@@ -24,10 +24,10 @@ export function ItineraryActionsDropdown(props) {
 
     return (
         <ActionsDropdown {...props}>
-            <DropdownItem onClick={() => moveToHome(props)} data-testid='home-button'>
+            <DropdownItem onClick={() => moveToHome(props)} data-testid='home-icon'>
                 <FaHome />
             </DropdownItem>
-            <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-button'>
+            <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-icon'>
                 <FaTrashAlt id="del"/>
                 <Popover style={{backgroundColor: '#D3D3D3'}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
             </DropdownItem>
@@ -35,7 +35,7 @@ export function ItineraryActionsDropdown(props) {
                 <FaFileUpload id="up"/>
                 <Popover style={{backgroundColor: '#D3D3D3'}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
             </DropdownItem>
-            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={() => setSavPopover(!savePopover)} onMouseLeave={() => setSavPopover(!savePopover)} data-testid='save-trip-button'>
+            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={() => setSavPopover(!savePopover)} onMouseLeave={() => setSavPopover(!savePopover)} data-testid='save-trip-icon'>
                 <FaFileDownload id="down"/>
                 <Popover style={{backgroundColor: '#D3D3D3'}} target="down" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
             </DropdownItem>
