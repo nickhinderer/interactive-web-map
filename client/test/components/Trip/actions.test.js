@@ -47,6 +47,11 @@ describe('Dropdown', () => {
         const icon = screen.findByTestId('delete-all-icon');
         expect(icon).toBeDefined(); 
     });
+    
+    it('Delete All Icon click', async () => { 
+        fireEvent.click(await screen.findByTestId('delete-all-icon')); 
+        expect(screen.getByTestId('delete-all-icon')).toBeTruthy();
+    });
 
     // Testing for Load
     it('contains Load File icon', async () => {
