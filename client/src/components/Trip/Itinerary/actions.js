@@ -21,6 +21,7 @@ export function ItineraryActionsDropdown(props) {
     const [savePopover, setSavPopover] = useState(false);
     const [uploadPopover, setUpPopover] = useState(false);
     const [deletePopover, setDelPopover] = useState(false);
+    const bgColor = '#D3D3D3';
 
     return (
         <ActionsDropdown {...props}>
@@ -29,15 +30,15 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
             <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-icon'>
                 <FaTrashAlt id="del"/>
-                <Popover style={{backgroundColor: '#D3D3D3'}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
+                <Popover style={{backgroundColor: bgColor}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
             </DropdownItem>
             <DropdownItem onClick={iconClick} onMouseEnter={() => setUpPopover(!uploadPopover)} onMouseLeave={() => setUpPopover(!uploadPopover)} data-testid='load-trip-icon'>
                 <FaFileUpload id="up"/>
-                <Popover style={{backgroundColor: '#D3D3D3'}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
+                <Popover style={{backgroundColor: bgColor}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
             </DropdownItem>
             <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={() => setSavPopover(!savePopover)} onMouseLeave={() => setSavPopover(!savePopover)} data-testid='save-trip-icon'>
                 <FaFileDownload id="down"/>
-                <Popover style={{backgroundColor: '#D3D3D3'}} target="down" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
+                <Popover style={{backgroundColor: bgColor}} target="down" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
             </DropdownItem>
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
