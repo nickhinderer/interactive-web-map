@@ -49,6 +49,7 @@ public class Tour {
 
     }
 
+
     private void twoOptReverse(int i1, int k) {
         while (i1 < k) {
             int temp = bestTour[i1];
@@ -57,6 +58,8 @@ public class Tour {
             i1++;
             k--;
         }
+        updateTourOrder();
+        calculateDistancesMatrix();
     }
     private void calculateDistancesMatrix() {
         for (int i = 0; i < places.size(); ++i) {
