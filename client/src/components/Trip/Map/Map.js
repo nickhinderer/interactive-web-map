@@ -29,6 +29,21 @@ const MAP_LAYERS = [
       attribution: "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
       url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
     },
+    { 
+      selected: false,
+      name: "Thunderforest.SpinalMap",
+      url: "https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=d239ae756cd243039b92303b5f509a76",
+  },
+  {
+      selected: false,
+      name: "Thunderforest.Pioneer",
+      url: "https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=d239ae756cd243039b92303b5f509a76",
+  },
+  {
+      selected: false,
+      name: "HikeBike.HikeBike",
+      url: "https://tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png",
+  },
   ];
 
   function placeToLatLng(place) {
