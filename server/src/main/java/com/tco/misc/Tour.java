@@ -50,7 +50,12 @@ public class Tour {
         while (improvement) {
             improvement = false;
             for (int i = 0; i <= places.size()-1 - 3; i++) {
-
+                for (int k = i + 2; k <= places.size()-1 - 1; k++) {
+                    if (twoOptImproves(i,k)){
+                        twoOptReverse(i + 1, k);
+                        improvement = true;
+                    }
+                }
             }
         }
     }
