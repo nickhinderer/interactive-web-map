@@ -35,8 +35,7 @@ export function ItineraryActionsDropdown(props) {
                 {uploadIcon(bgColor, uploadPopover)}
             </DropdownItem>
             <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={() => setSavPopover(!savePopover)} onMouseLeave={() => setSavPopover(!savePopover)} data-testid='save-trip-icon'>
-                <FaFileDownload id="down"/>
-                <Popover style={{backgroundColor: bgColor}} target="down" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
+                {saveIcon(bgColor, savePopover)}
             </DropdownItem>
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
@@ -60,6 +59,15 @@ function uploadIcon(bgColor, uploadPopover){
         <div>
             <FaFileUpload id="up"/>
             <Popover style={{backgroundColor: bgColor}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
+        </div>
+    );
+}
+
+function saveIcon(bgColor, savePopover){
+    return(
+        <div>
+            <FaFileDownload id="save"/>
+            <Popover style={{backgroundColor: bgColor}} target="save" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
         </div>
     );
 }
