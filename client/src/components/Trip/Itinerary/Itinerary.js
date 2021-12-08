@@ -6,7 +6,6 @@ import { getOriginalServerUrl, sendAPIRequest } from '../../../utils/restfulAPI'
 import TotalDistance from '../../Distances/TotalDistance.js';
 import { LOG } from '../../../utils/constants';
 import Tour,{sendTourRequest} from '../../Tour/Tour.js';
-import { FaArrowCircleDown, FaTelegramPlane } from 'react-icons/fa';
 import TripName from './TripName.js';
 
 export default function Itinerary(props) {
@@ -46,7 +45,7 @@ function Header(props) {
         <thead>
             
             <tr>
-                <th><TripName   display = {display}/><FaArrowCircleDown/></th>
+                <th><TripName   display = {display}/></th>
                 <th>
                     <Button id="Popover1" type="button" size="sm" onClick={() => handleChange(props.places, props.send)}>
                         Find Distances
