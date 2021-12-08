@@ -86,17 +86,8 @@ function TableRow(props) {
 
     const [bgColor, setColor] = useState('white');
 
-    function moveMarker(){
-        props.placeActions.selectIndex(props.index);
-        changeColor();
-    }
-
-    function changeColor(){
-        setColor('#D3D3D3');
-    }
-
     return (
-        <tr bgcolor={bgColor} onClick={() => moveMarker()} onMouseLeave={() => setColor('white')}>
+        <tr bgcolor={bgColor} onClick={() => moveMarker(setColor, props.placeActions, props.index)} onMouseLeave={() => setColor('white')}>
             <th scope="row">{props.index + 1}</th>
             <td>{ props.index != 0 && distance != 0 ? distance : 0} Mile(s)</td>
             <td>
@@ -109,4 +100,13 @@ function TableRow(props) {
             </td>
         </tr>
     );
+}
+
+function moveMarker(setColor, placeActions, index){
+    placeActions.selectIndex(index);
+    changeColor(setColor);
+}
+
+function changeColor(setColor){
+    setColor('#D3D3D3');
 }
