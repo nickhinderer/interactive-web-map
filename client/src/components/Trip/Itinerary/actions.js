@@ -29,8 +29,7 @@ export function ItineraryActionsDropdown(props) {
                 <FaHome />
             </DropdownItem>
             <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-icon'>
-                <FaTrashAlt id="del"/>
-                <Popover style={{backgroundColor: bgColor}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
+                {deleteIcon(bgColor, deletePopover)}
             </DropdownItem>
             <DropdownItem onClick={iconClick} onMouseEnter={() => setUpPopover(!uploadPopover)} onMouseLeave={() => setUpPopover(!uploadPopover)} data-testid='load-trip-icon'>
                 <FaFileUpload id="up"/>
@@ -45,6 +44,15 @@ export function ItineraryActionsDropdown(props) {
                 <RenderModal whereIcon={whereIcon} setWhereIcon={setWhereIcon} toggle={toggle} />
             </DropdownItem>
         </ActionsDropdown> 
+    );
+}
+
+function deleteIcon(bgColor, deletePopover){
+    return(
+        <div>
+            <FaTrashAlt id="del"/>
+            <Popover style={{backgroundColor: bgColor}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
+        </div>
     );
 }
 
