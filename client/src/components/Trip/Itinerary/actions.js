@@ -18,10 +18,6 @@ const tripName = "My Trip";
 export function ItineraryActionsDropdown(props) {
     const [whereIcon, setWhereIcon] = useState(false);
     const toggle = () => setWhereIcon(!whereIcon);
-    const [savePopover, setSavPopover] = useState(false);
-    const [uploadPopover, setUpPopover] = useState(false);
-    const [deletePopover, setDelPopover] = useState(false);
-    const bgColor = '#D3D3D3';
 
     return (
         <ActionsDropdown {...props}>
@@ -29,46 +25,19 @@ export function ItineraryActionsDropdown(props) {
                 <FaHome />
             </DropdownItem>
             <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-icon'>
-                {deleteIcon(bgColor, deletePopover)}
+                <FaTrashAlt/>
             </DropdownItem>
             <DropdownItem onClick={iconClick} onMouseEnter={() => setUpPopover(!uploadPopover)} onMouseLeave={() => setUpPopover(!uploadPopover)} data-testid='load-trip-icon'>
-                {uploadIcon(bgColor, uploadPopover)}
+                <FaFileUpload/>
             </DropdownItem>
             <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={() => setSavPopover(!savePopover)} onMouseLeave={() => setSavPopover(!savePopover)} data-testid='save-trip-icon'>
-                {saveIcon(bgColor, savePopover)}
+                <FaFileDownload/>
             </DropdownItem>
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
                 <RenderModal whereIcon={whereIcon} setWhereIcon={setWhereIcon} toggle={toggle} />
             </DropdownItem>
         </ActionsDropdown> 
-    );
-}
-
-function deleteIcon(bgColor, deletePopover){
-    return(
-        <div>
-            <FaTrashAlt id="del"/>
-            <Popover style={{backgroundColor: bgColor}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
-        </div>
-    );
-}
-
-function uploadIcon(bgColor, uploadPopover){
-    return(
-        <div>
-            <FaFileUpload id="up"/>
-            <Popover style={{backgroundColor: bgColor}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
-        </div>
-    );
-}
-
-function saveIcon(bgColor, savePopover){
-    return(
-        <div>
-            <FaFileDownload id="save"/>
-            <Popover style={{backgroundColor: bgColor}} target="save" placement="bottom" isOpen={savePopover}> <b>Save</b> </Popover>
-        </div>
     );
 }
 
