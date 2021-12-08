@@ -35,14 +35,19 @@ public class Tour {
         response -= 500;
         long endTime = startTime + response.longValue(); //subtract the overhead for calculateDistancesMatrix and updateTourOrder (even though it is minuscule, it is still non-zero)
 
-        while (System.currentTimeMillis() < endTime)
+        while (System.currentTimeMillis() < endTime) {
             createNearestNeighborTour();
+            twoOpt();
+        }
 
         if (response > 0.0)
             updateTourOrder();
         return places;
     }
 
+    private void twoOpt() {
+
+    }
     private void calculateDistancesMatrix() {
         for (int i = 0; i < places.size(); ++i) {
             for (int j = i + 1; j < places.size(); ++j) {
