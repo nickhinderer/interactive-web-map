@@ -1,5 +1,5 @@
 import React from 'react';
-import  { useCallback,useEffect, useState } from 'react';
+import  { useState } from 'react';
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import check from '../../../static/images/check.svg';
 import x from '../../../static/images/x.svg';
@@ -9,7 +9,7 @@ import { FaPlus } from 'react-icons/fa';
 export default function CoordinateSearch(props) {   
     const [display, setDisplay] = useState(false); // This will come into play later
 
-    //const { inputText, latLng, processInputChange } = useCoordinateValidation();
+    const { inputText, latLng, processInputChange } = useCoordinateValidation();
 
     return (
         <Modal isOpen={props.whereIcon} toggle={props.toggle} data-testid='where-is-modal'>
@@ -18,7 +18,11 @@ export default function CoordinateSearch(props) {
             </ModalHeader> 
 
                 <ModalBody> 
-                   
+                   <CoordinatesInput> 
+                        inputText={inputText}
+                        latLng={latLng}
+                        processInputChange={processInputChange}
+                   </CoordinatesInput>
                 </ModalBody>
 
             <ModalFooter> 
@@ -30,7 +34,14 @@ export default function CoordinateSearch(props) {
 }
 
 function useCoordinateValidation() {
-    return null;
+    const [inputText, setInputText] = useState("");
+    const [latLng, setLatLng] = useState(null);
+
+    function processInputChange(onChangeEvent) {
+        
+    }
+
+    return { inputText, latLng, processInputChange };
 }
 
 function CoordinatesInput() {

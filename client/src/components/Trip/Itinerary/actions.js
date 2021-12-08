@@ -46,7 +46,7 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
-                < CoordinateSearch whereIcon={whereIcon} setWhereIcon={setWhereIcon} toggle={toggle} />
+                < CoordinateSearch whereIcon={whereIcon} setWhereIcon={setWhereIcon} toggle={toggle} placesHook={props}/>
             </DropdownItem>
         </ActionsDropdown> 
     );
