@@ -48,18 +48,22 @@ function useCoordinateValidation() {
     return { inputText, latLng, processInputChange };
 }
 
+function getCoordinatesOrNull(coordinatesString) {
+    try {
+        const convertedCoordinates = new Coordinates(coordinatesString);
+        return {
+            lat: convertedCoordinates.getLatitude(),
+            lng: convertedCoordinates.getLongitude()
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
 function CoordinatesInput() {
     return null;
 }
 
 function DisplayResults() {
     return null;
-}
-
-function noResult(){
-    return (
-        <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}> 
-            <p> No results found </p> 
-        </div>
-    );
 }
