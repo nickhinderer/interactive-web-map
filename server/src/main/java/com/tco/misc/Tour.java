@@ -37,7 +37,7 @@ public class Tour {
 
         while (System.currentTimeMillis() < endTime) {
             createNearestNeighborTour();
-            twoOpt();
+            //twoOpt();
         }
 
         if (response > 0.0)
@@ -46,7 +46,10 @@ public class Tour {
     }
 
     private void twoOpt() {
+        boolean improvement = true;
+        while (improvement) {
 
+        }
     }
 
     private boolean twoOptImproves(int i, int k) {
