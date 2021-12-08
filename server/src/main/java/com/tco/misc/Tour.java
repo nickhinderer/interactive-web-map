@@ -48,7 +48,10 @@ public class Tour {
     private void twoOpt() {
         boolean improvement = true;
         while (improvement) {
+            improvement = false;
+            for (int i = 0; i <= places.size()-1 - 3; i++) {
 
+            }
         }
     }
 
