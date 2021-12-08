@@ -1,10 +1,9 @@
 
 import React, { useState } from 'react';
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, Button, ButtonGroup, Modal, ModalBody, ModalHeader, ModalFooter, Popover, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown, ButtonGroup, Popover, } from 'reactstrap';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { FaFileUpload, FaHome, FaTrash, FaTrashAlt, FaFileDownload, FaQuestion } from 'react-icons/fa';
-import check from '../../../static/images/check.svg';
-import x from '../../../static/images/x.svg';
+import CoordinateSearch from './CoodinateSearch';
 
 const MIME_TYPE = {
     JSON: "application/json",
@@ -47,12 +46,11 @@ export function ItineraryActionsDropdown(props) {
             </DropdownItem>
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
                 <FaQuestion/>
-                <RenderModal whereIcon={whereIcon} setWhereIcon={setWhereIcon} toggle={toggle} />
+                < CoordinateSearch whereIcon={whereIcon} setWhereIcon={setWhereIcon} toggle={toggle} />
             </DropdownItem>
         </ActionsDropdown> 
     );
 }
-
 
 function moveToHome(props) { props.placeActions.moveToHome(); }
 function removeAll(props) { props.placeActions.removeAll(); }
@@ -69,35 +67,6 @@ function handleJSONSave(props) {
     const tripJSON = props.placeActions.buildTripJSON();
     const fileName = tripName.replace(/ /g, "_").toLowerCase();
     props.placeActions.downloadFile(fileName + ".json", MIME_TYPE.JSON, tripJSON);
-}
-
-function RenderModal(props) {
-    const [display, setDisplay] = useState(false); // this is used to display response options after "find" button clicked
-                                                   // or once they hit enter
-                                                   // or once it is a valid set of coordinates (indicated by a checkmark)
-    const [match, setMatch] = useState(false); 
-    return (
-        <Modal isOpen={props.whereIcon} toggle={props.toggle} data-testid='where-is-modal'>
-            <ModalHeader>
-                Coordinate Search    
-            </ModalHeader> 
-
-                <ModalBody> 
-                    <InputGroup>
-                        <InputGroupAddon addonType="append"> Coordinates </InputGroupAddon>
-                        <Input placeholder={"latitude, longitude"} onChange={e => {
-                            setMatch(e.target.value); setDisplay(false);
-                        }}/>
-                    </InputGroup>
-                    {display? <CoordinateSearch match={match} lat={props.places.latitude} lng={props.places.longitude} placeActions={props.placeActions}/> :<div></div>}
-                </ModalBody>
-
-            <ModalFooter> 
-                <Button color="primary" onClick={props.toggle}> <img src={check} /> </Button>
-                <Button color="danger" onClick={props.toggle}> <img src={x} /> </Button>
-            </ModalFooter>
-        </Modal>
-    );
 }
 
 export function PlaceActionsDropdown(props) {

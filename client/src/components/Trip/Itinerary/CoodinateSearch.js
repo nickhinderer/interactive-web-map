@@ -1,19 +1,50 @@
 import React from 'react';
 import  { useCallback,useEffect, useState } from 'react';
-import { getOriginalServerUrl, sendAPIRequest }  from '../../../utils/restfulAPI';
+import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import check from '../../../static/images/check.svg';
+import x from '../../../static/images/x.svg';
+import Coordinates from 'coordinate-parser';
 import { FaPlus } from 'react-icons/fa';
-import { Button } from 'reactstrap';
 
-export default function CoordinateSearch(props) {
-    // this function could make the check whether the entered coordinates are valid
+export default function CoordinateSearch(props) {   
+    const [display, setDisplay] = useState(false); // This will come into play later
 
-    // make API requests for the props.match value from what they typed in
-
-    // once that value is found from the database, display it in the return
+    //const { inputText, latLng, processInputChange } = useCoordinateValidation();
 
     return (
-        <div>
-            To Find
+        <Modal isOpen={props.whereIcon} toggle={props.toggle} data-testid='where-is-modal'>
+            <ModalHeader>
+                Coordinate Search    
+            </ModalHeader> 
+
+                <ModalBody> 
+                   
+                </ModalBody>
+
+            <ModalFooter> 
+                <Button color="primary" onClick={props.toggle}> <img src={check} /> </Button>
+                <Button color="danger" onClick={props.toggle}> <img src={x} /> </Button>
+            </ModalFooter>
+        </Modal>
+    );
+}
+
+function useCoordinateValidation() {
+    return null;
+}
+
+function CoordinatesInput() {
+    return null;
+}
+
+function DisplayResults() {
+    return null;
+}
+
+function noResult(){
+    return (
+        <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}> 
+            <p> No results found </p> 
         </div>
     );
 }
