@@ -24,13 +24,13 @@ export function ItineraryActionsDropdown(props) {
             <DropdownItem onClick={() => moveToHome(props)} data-testid='home-icon'>
                 <FaHome />
             </DropdownItem>
-            <DropdownItem onClick={() => removeAll(props)} onMouseEnter={() => setDelPopover(!deletePopover)} onMouseLeave={() => setDelPopover(!deletePopover)} data-testid='delete-all-icon'>
+            <DropdownItem onClick={() => removeAll(props)} data-testid='delete-all-icon'>
                 <FaTrashAlt/>
             </DropdownItem>
-            <DropdownItem onClick={iconClick} onMouseEnter={() => setUpPopover(!uploadPopover)} onMouseLeave={() => setUpPopover(!uploadPopover)} data-testid='load-trip-icon'>
+            <DropdownItem onClick={iconClick} data-testid='load-trip-icon'>
                 <FaFileUpload/>
             </DropdownItem>
-            <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={() => setSavPopover(!savePopover)} onMouseLeave={() => setSavPopover(!savePopover)} data-testid='save-trip-icon'>
+            <DropdownItem onClick={() => handleJSONSave(props)} data-testid='save-trip-icon'>
                 <FaFileDownload/>
             </DropdownItem>
             <DropdownItem onClick={toggle} data-testid='where-is-icon'>
