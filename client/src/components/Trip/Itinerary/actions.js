@@ -32,8 +32,7 @@ export function ItineraryActionsDropdown(props) {
                 {deleteIcon(bgColor, deletePopover)}
             </DropdownItem>
             <DropdownItem onClick={iconClick} onMouseEnter={() => setUpPopover(!uploadPopover)} onMouseLeave={() => setUpPopover(!uploadPopover)} data-testid='load-trip-icon'>
-                <FaFileUpload id="up"/>
-                <Popover style={{backgroundColor: bgColor}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
+                {uploadIcon(bgColor, uploadPopover)}
             </DropdownItem>
             <DropdownItem onClick={() => handleJSONSave(props)} onMouseEnter={() => setSavPopover(!savePopover)} onMouseLeave={() => setSavPopover(!savePopover)} data-testid='save-trip-icon'>
                 <FaFileDownload id="down"/>
@@ -52,6 +51,15 @@ function deleteIcon(bgColor, deletePopover){
         <div>
             <FaTrashAlt id="del"/>
             <Popover style={{backgroundColor: bgColor}} target="del" placement="bottom" isOpen={deletePopover}> <b>Delete All</b> </Popover>
+        </div>
+    );
+}
+
+function uploadIcon(bgColor, uploadPopover){
+    return(
+        <div>
+            <FaFileUpload id="up"/>
+            <Popover style={{backgroundColor: bgColor}} target="up" placement="bottom" isOpen={uploadPopover}> <b>Upload</b> </Popover>
         </div>
     );
 }
