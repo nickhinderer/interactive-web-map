@@ -38,7 +38,11 @@ function useCoordinateValidation() {
     const [latLng, setLatLng] = useState(null);
 
     function processInputChange(onChangeEvent) {
-        
+        const newInputText = onChangeEvent.target.value;
+        const newLatLng = getCoordinatesOrNull(newInputText);
+
+        setInputText(newInputText);
+        setLatLng(newLatLng);
     }
 
     return { inputText, latLng, processInputChange };
