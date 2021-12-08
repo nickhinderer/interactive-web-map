@@ -50,7 +50,7 @@ public class Tour {
     }
 
     private boolean twoOptImproves(int i, int k) {
-        return false;
+        return distancesMatrix[i][k] + distancesMatrix[i+1][k+1] < distancesMatrix[i][i+1] + distancesMatrix[k][k+1];
     }
 
     private void twoOptReverse(int i1, int k) {
