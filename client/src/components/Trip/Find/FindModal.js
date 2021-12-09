@@ -26,7 +26,7 @@ export default function FindModal(props) {
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={() => {setDisplay(false); toggle();}}><img src={check}/> Done </Button>
-                    <Button color="danger" onClick={toggle}><img src={x}/> Cancel </Button>
+                    <Button color="danger" onClick={() => {setDisplay(false); toggle();}}><img src={x}/> Cancel </Button>
                 </ModalFooter>
             </Modal>
         </div>
@@ -34,13 +34,13 @@ export default function FindModal(props) {
 }
 
 export function FindInput(setDisplay, setMatch){
-
+  
     return (
         <InputGroup>
-            <Input placeholder={"Place..."} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
+            <Input placeholder={"Double Click Icon For Random Places"} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
                 <InputGroupAddon addonType="append">
-                    <Button color="primary"  onClick={() =>{setDisplay(true)} }> <GiPerspectiveDiceSixFacesRandom/></Button>
-                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)} }>Search</Button>
+                    <Button color="primary"  onClick={() =>{setDisplay(true),setMatch("")}} onMouseEnter={()=>setDisplay(false)}> <GiPerspectiveDiceSixFacesRandom /></Button>
+                    <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)}} onMouseEnter={()=>setDisplay(false)} >Search</Button>
                 </InputGroupAddon>
         </InputGroup>
     );
