@@ -74,6 +74,7 @@ function CoordinatesInput(props) {
                 onChange={props.processInputChange}
                 valid={validCoordinates}
                 invalid={!validCoordinates && !inputBoxEmpty}
+                data-testid='type-coords'
             />        
         </InputGroup>
     );
