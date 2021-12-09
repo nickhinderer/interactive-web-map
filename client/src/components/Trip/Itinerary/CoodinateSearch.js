@@ -3,13 +3,10 @@ import  { useState } from 'react';
 import { latLngToPlace } from '../../../utils/transformers'
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 import check from '../../../static/images/check.svg';
-import x from '../../../static/images/x.svg';
 import Coordinates from 'coordinate-parser';
 import { FaPlus } from 'react-icons/fa';
 
 export default function CoordinateSearch(props) {   
-    const [display, setDisplay] = useState(false); // This will come into play later
-
     const { inputText, latLng, processInputChange } = useCoordinateValidation();
 
     return (
@@ -29,7 +26,6 @@ export default function CoordinateSearch(props) {
 
             <ModalFooter> 
                 <Button color="primary" onClick={props.toggle}> <img src={check} /> </Button>
-                <Button color="danger" onClick={props.toggle}> <img src={x} /> </Button>
             </ModalFooter>
         </Modal>
     );
@@ -78,6 +74,7 @@ function CoordinatesInput(props) {
                 onChange={props.processInputChange}
                 valid={validCoordinates}
                 invalid={!validCoordinates && !inputBoxEmpty}
+                data-testid='type-coords'
             />        
         </InputGroup>
     );
