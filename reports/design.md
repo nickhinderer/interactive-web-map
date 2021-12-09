@@ -337,16 +337,18 @@ During this sprint, the team will work on getting the site ready for release. Th
 The 'Find Distances' and 'Find Shorter Trip' buttons aren't the most appealing to the eye. For this sprint we will work on making distances auto complete when a new place is added to the itinerary, and remove the need for a button. We will also change the trip button to a more UI friendly design and possibly add it into the hamburger icon in order to ensure progressive disclosure on our site. 
 
 ### Drawing for #68 Highlight Place
-<img src="https://user-images.githubusercontent.com/74014694/142018897-25d64bbc-a484-4753-8297-3f3a29451b04.jpg" width="525" alt="AddHighlight">
+<img src="https://user-images.githubusercontent.com/74014694/145433037-88609f50-1152-48cc-a426-6171fdabfb68.jpg" width="525" alt="AddHighlight">
 
 <img src="https://user-images.githubusercontent.com/74014694/142018967-79bc1d3a-0f51-4d98-9d8a-8ed4875abb3e.jpg" width="525" alt="MoveMarker">
 
-This epic will add the functionality of being able to click a place in the itinerary list and see it highlighted on the map with a marker. It will also highlight the item in the list in a different color from the original table row.
+This epic added the functionality of being able to click a place in the itinerary list and see it highlighted on the map with a marker. It also highlights the item in the list in a different color from the original table row, when the mouse is moved the table row returns to the original color. 
 
 ### Drawing for #743 Save Trip
 
 ### Drawing for #744 User Experience
-<img src="https://user-images.githubusercontent.com/82910022/142093710-4da69a27-90d7-4170-b35e-33516b0b8db9.jpg" width="525" alt="User Experience Img">
+<img src="https://user-images.githubusercontent.com/74014694/145432998-28e4ae20-78fa-4a84-9b73-5245070a464e.jpg" width="525" alt="Remove Clutter">
+
+One item we addressed for user experience this sprint was removing an extra icon that caused a bit of clutter on the web page. We did not address the issues with users finding where to change the server as this was decided to be low priority by the team. 
 
 ### Drawing for #768 Where Is
 <img src="https://user-images.githubusercontent.com/82910022/142131065-533f2277-83e5-4bfa-a857-1191ebe1d37e.jpg" width="525" alt="Where Is Img">
