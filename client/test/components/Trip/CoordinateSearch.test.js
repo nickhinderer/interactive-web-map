@@ -8,9 +8,29 @@ import { MOCK_PLACES } from '../../sharedMocks';
 
 describe('Coordinate Search', () => {
 
+    const placeActions = { 
+        buildTripJSON: jest.fn(), 
+        append: jest.fn(), 
+        update: jest.fn(),                           
+        moveToHome: jest.fn(), 
+        removeAtIndex: jest.fn(), 
+        removeAll: jest.fn(), 
+        selectIndex: jest.fn(),
+        readFile: jest.fn(), 
+        downloadFile: jest.fn()
+    }
+
     beforeEach(() => {
+        render(<CoordinateSearch placesHook={placeActions}/>);
     });
 
-    it('Renders a "Find by Coordinates Modal"', async () => {
+    it('renders a "Find by Coordinates Modal"', () => {
+        expect(screen.findByRole('Modal')).toBeDefined();
     });
+
+    it('modal toggles', () => {        
+        const modal = screen.findByTestId('where-is-modal');
+        expect(modal).toBeDefined();
+    });
+
 });
