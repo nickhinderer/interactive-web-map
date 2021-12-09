@@ -89,4 +89,9 @@ describe('Dropdown', () => {
         const icon = screen.findByTestId('where-is-icon');
         expect(icon).toBeDefined();
     });
+
+    it('Where Is? Icon click', async () => { 
+        fireEvent.click(await screen.findByTestId('where-is-icon')); 
+        expect(screen.getByTestId('where-is-icon')).toBeTruthy();
+    });
 });
