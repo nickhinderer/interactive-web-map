@@ -75,7 +75,7 @@ describe('Dropdown', () => {
 
     // Testing for Save
     it('contains Save File icon', async () => {
-        const icon = screen.findByTestId('save-trip-button');
+        const icon = screen.findByTestId('save-trip-icon');
         expect(icon).toBeDefined();
     });
 
@@ -85,4 +85,8 @@ describe('Dropdown', () => {
     });
 
     // TODO: Testing for Where Is
+    it('contains Where Is? icon', async () => {
+        const icon = screen.findByTestId('where-is-icon');
+        expect(icon).toBeDefined();
+    });
 });
