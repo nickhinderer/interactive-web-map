@@ -346,7 +346,9 @@ This epic added the functionality of being able to click a place in the itinerar
 ### Drawing for #743 Save Trip
 
 ### Drawing for #744 User Experience
-<img src="https://user-images.githubusercontent.com/82910022/142093710-4da69a27-90d7-4170-b35e-33516b0b8db9.jpg" width="525" alt="User Experience Img">
+<img src="https://user-images.githubusercontent.com/74014694/145432998-28e4ae20-78fa-4a84-9b73-5245070a464e.jpg" width="525" alt="Remove Clutter">
+
+One item we addressed for user experience this sprint was removing an extra icon that caused a bit of clutter on the web page. We did not address the issues with users finding where to change the server as this was decided to be low priority by the team. 
 
 ### Drawing for #768 Where Is
 <img src="https://user-images.githubusercontent.com/82910022/142131065-533f2277-83e5-4bfa-a857-1191ebe1d37e.jpg" width="525" alt="Where Is Img">
