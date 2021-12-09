@@ -37,7 +37,7 @@ export function FindInput(setDisplay, setMatch){
   
     return (
         <InputGroup>
-            <Input placeholder={"Double Click Icon For Random Places"} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
+            <Input placeholder={"Click Icon For Random Places"} onChange={e => {setMatch(e.target.value); setDisplay(false);}} />
                 <InputGroupAddon addonType="append">
                     <Button color="primary"  onClick={() =>{setDisplay(true),setMatch("")}} onMouseEnter={()=>setDisplay(false)}> <GiPerspectiveDiceSixFacesRandom /></Button>
                     <Button color="primary" id="button-addon1" outline type="button" onClick={() =>{setDisplay(true)}} onMouseEnter={()=>setDisplay(false)} >Search</Button>
