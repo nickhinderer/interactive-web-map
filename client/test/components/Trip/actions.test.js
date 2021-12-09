@@ -34,7 +34,11 @@ describe('Dropdown', () => {
         const dots = screen.findByTestId('row-toggle');
         expect(dots).toBeDefined();
     });
-
+    
+    it('Contains delete button for place in Itinerary', () => {
+        const trash = screen.findByTestId('delete-button');
+        expect(trash).toBeDefined();
+    });
 
     // Testing for Home 
     it('contains Home icon', async () => {
