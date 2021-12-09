@@ -1,6 +1,7 @@
 import React from 'react';
 import  { useState } from 'react';
-import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { latLngToPlace } from '../../../utils/transformers'
+import { Button, Modal, ModalBody, ModalHeader, ModalFooter, Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 import check from '../../../static/images/check.svg';
 import x from '../../../static/images/x.svg';
 import Coordinates from 'coordinate-parser';
@@ -18,11 +19,12 @@ export default function CoordinateSearch(props) {
             </ModalHeader> 
 
                 <ModalBody> 
-                   <CoordinatesInput> 
+                   <CoordinatesInput 
                         inputText={inputText}
                         latLng={latLng}
                         processInputChange={processInputChange}
-                   </CoordinatesInput>
+                    />
+                    <DisplayResults latLng={latLng} placeActions={props.placesHook.placeActions} />
                 </ModalBody>
 
             <ModalFooter> 
@@ -60,10 +62,38 @@ function getCoordinatesOrNull(coordinatesString) {
     }
 }
 
-function CoordinatesInput() {
-    return null;
+function CoordinatesInput(props) {
+    const validCoordinates = props.latLng != null;
+    const inputBoxEmpty = !props.inputText;
+    
+    return (
+        <InputGroup className="coords-input-box"> 
+
+            <InputGroupAddon addonType="prepend">
+                <InputGroupText> Coordinates </InputGroupText>                
+            </InputGroupAddon> 
+
+            <Input 
+                placeholder="Latitude, Longitude"
+                onChange={props.processInputChange}
+                valid={validCoordinates}
+                invalid={!validCoordinates && !inputBoxEmpty}
+            />        
+        </InputGroup>
+    );
 }
 
-function DisplayResults() {
-    return null;
+function DisplayResults(props) {
+    if (!props.latLng) 
+        return null
+    
+    const place = latLngToPlace(props.latLng);
+
+    return (
+        <Button color='primary'
+            onClick={() => props.placeActions.append(place) }
+            data-testid="add-coords-button">            
+            <FaPlus/> Add
+        </Button>
+    );
 }
