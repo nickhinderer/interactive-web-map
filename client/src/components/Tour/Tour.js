@@ -30,7 +30,7 @@ export default function Tour(props) {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     
-   function hanldeModal(){
+   function handleModal(){
         setModal(!modal);
     }
 
@@ -38,7 +38,7 @@ export default function Tour(props) {
         <div className="Tour-modal">
            <Button data-testid="shorter-trip" size="sm" outline-color="secondary" onClick={toggle}>Find Shorter Trip</Button>
             <Modal data-testid="modal" isOpen={modal} >
-            <Body data-testid="body" newplace = {props.newTrip} hanldeModal ={hanldeModal} placeActions={props.placeActions} toggle={toggle}></Body>       
+            <Body data-testid="body" newplace = {props.newTrip} handleModal ={handleModal} placeActions={props.placeActions} toggle={toggle}></Body>       
             </Modal>
         </div>
     );
@@ -48,7 +48,7 @@ export default function Tour(props) {
 
 function Body(props){
     function Toggle(){ 
-        props.hanldeModal();
+        props.handleModal();
     }
     return(      
             getSize()? <><ModalHeader>A shorter trip found.<br /> Apply shorter trip? </ModalHeader ><ApplyFooter placeActions={props.placeActions} toggle={props.toggle} Toggle={Toggle}/> </>:<><ModalHeader>Current Trip is the shortest trip.</ModalHeader>{ExitFooter (props.toggle)}</>
