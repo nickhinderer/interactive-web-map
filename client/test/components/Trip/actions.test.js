@@ -25,9 +25,16 @@ describe('Dropdown', () => {
         render(<ItineraryActionsDropdown selectedIndex={selectedIndex} placeActions={placeActions} serverSettings={serverSettings} />)
     });
 
+    //Testing for Dropdown related events
     it('contains a search Dropdown', () => {
         expect(screen.findByRole('Dropdown')).toBeDefined();
     });
+
+    it('Hamburger button toggle', () => {
+        const dots = screen.findByTestId('row-toggle');
+        expect(dots).toBeDefined();
+    });
+
 
     // Testing for Home 
     it('contains Home icon', async () => {
