@@ -337,11 +337,11 @@ During this sprint, the team will work on getting the site ready for release. Th
 The 'Find Distances' and 'Find Shorter Trip' buttons aren't the most appealing to the eye. For this sprint we will work on making distances auto complete when a new place is added to the itinerary, and remove the need for a button. We will also change the trip button to a more UI friendly design and possibly add it into the hamburger icon in order to ensure progressive disclosure on our site. 
 
 ### Drawing for #68 Highlight Place
-<img src="https://user-images.githubusercontent.com/74014694/142018897-25d64bbc-a484-4753-8297-3f3a29451b04.jpg" width="525" alt="AddHighlight">
+<img src="https://user-images.githubusercontent.com/74014694/145433037-88609f50-1152-48cc-a426-6171fdabfb68.jpg" width="525" alt="AddHighlight">
 
 <img src="https://user-images.githubusercontent.com/74014694/142018967-79bc1d3a-0f51-4d98-9d8a-8ed4875abb3e.jpg" width="525" alt="MoveMarker">
 
-This epic will add the functionality of being able to click a place in the itinerary list and see it highlighted on the map with a marker. It will also highlight the item in the list in a different color from the original table row.
+This epic added the functionality of being able to click a place in the itinerary list and see it highlighted on the map with a marker. It also highlights the item in the list in a different color from the original table row, when the mouse is moved the table row returns to the original color. 
 
 ### Drawing for #743 Save Trip
 
