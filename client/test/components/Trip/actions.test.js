@@ -1,10 +1,8 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import user from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ItineraryActionsDropdown } from '../../../src/components/Trip/Itinerary/actions.js';
-import { MOCK_PLACES } from '../../sharedMocks';
 
 describe('Dropdown', () => {
     

@@ -8,8 +8,6 @@ import Coordinates from 'coordinate-parser';
 import { FaPlus } from 'react-icons/fa';
 
 export default function CoordinateSearch(props) {   
-    const [display, setDisplay] = useState(false); // This will come into play later
-
     const { inputText, latLng, processInputChange } = useCoordinateValidation();
 
     return (
