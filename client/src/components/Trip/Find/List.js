@@ -1,5 +1,5 @@
 import React from 'react';
-import  { useCallback,useEffect,useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { getOriginalServerUrl, sendAPIRequest }  from '../../../utils/restfulAPI';
 import { FaPlus } from 'react-icons/fa';
 import { Button } from 'reactstrap';
@@ -9,21 +9,26 @@ export default function display(props) {
     // this part for sending the findrequest.
     const [flagResponse, setFlagResponse] = useState(true);
     const [places,setPlaces] = useState([]);
-    const sendFindRequest = useCallback(async() => {
+
+    useEffect(() => {
+        sendFindRequest()
+    }, [props.match])
+
+    async function sendFindRequest() {
         
         const serverUrl = getOriginalServerUrl();
         const findResponse = await sendAPIRequest({ requestType: "find", match:props.match, limit: 10 }, serverUrl);
 
         checkResponse(findResponse, setFlagResponse, setPlaces);
 
-      },[])
+    };
+    
+    if (!props.display) {
+        return (
+            <div></div>
+        );
+    }
 
-      useEffect(() => {
-        sendFindRequest()
-      }, [sendFindRequest])
-
-
-// this part for render the found place.
     return(
        placesList(flagResponse, places, props.placeActions)
     );
