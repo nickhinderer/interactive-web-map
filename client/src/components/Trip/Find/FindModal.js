@@ -26,12 +26,12 @@ export default function FindModal(props) {
                 <ModalBody>
                 <b>Type</b> and <b>Click Search</b> to add a place to itinerary
                 <FindInput setDisplay={setDisplay} setMatch={setMatch} />
-                {display? <List match={match} places={props.places} placeActions={props.placeActions}/> :<div></div>}
+                <List display={display} setDisplay={setDisplay} match={match} places={props.places} placeActions={props.placeActions}/>
                 </ModalBody>
 
                 <ModalFooter>
-                    <Button color="primary" onClick={() => {setDisplay(false); toggle();}}><img src={check}/> Done </Button>
-                    <Button color="danger" onClick={toggle}><img src={x}/> Cancel </Button>
+                    <Button color="primary" onClick={toggle}><img src={check}/> Done </Button>
+                    <Button color="danger" onClick={toggle}> <img src={x}/> Cancel </Button>
                 </ModalFooter>
             </Modal>
         </div>
