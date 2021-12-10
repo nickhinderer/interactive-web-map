@@ -57,9 +57,9 @@
 
 | Statistic | # Planned | # Completed |
 | --- | ---: | ---: |
-| Epics | *6* | *count* |
-| Tasks |  *54*   | *count* | 
-| Story Points |  *63*  | *sum* | 
+| Epics | *6* | *6* |
+| Tasks |  *54*   | *95* | 
+| Story Points |  *63*  | *87* | 
 
 
 ## Scrums
@@ -71,18 +71,24 @@
 | *11/19* | *#78, #635, #736, #751, #811 #816, #746* | *#814, #691, #759, #740, #741, #767, #778, #781*| N/A |
 | *11/30* | *#781, #688, #691, #790, #793, #824, #828, #829, #833, #747, #759, #814, #835, #837, #839, #844, #846, #848, #850, #854, #856, #859, #861* | *#740, #741, #767, #778* | N/A |
 | *12/6* | *#762, #769, #842, #865, #867, #872, #873, #874, #760, #713, #765, #778, #879, #882* | *#740, #741, #767, #806, #883* | N/A |
+| *12/9* | *#712, #753, #754, #755, #756, #887, #889, #892, #748, #806, #883, #899, #902, #903, #745, #767, #770, #771, #773, #774, #906* | *#740, #741, #772, #870* | N/A |
 
 
 ## Review
 
 ### Epics completed  
+We were able to complete all epics that we planned for at the beginning of the sprint: Trip Name, Highlight Place, Where Is, Maps, User Experience, and Random Places. Users are now able to customize the name of their trip, highlight a certain place on the map, search a latitude/longitude combination, change the map background, and generate a list of random places to add to their trip.
 
 ### Epics not completed 
+We were able to complete all epics.
 
 ## Retrospective
 
 ### Things that went well
+I think our team did a great job communicating with each other and listening to each other's ideas. Our scrum meetings were very helpful to see where we all were at. I think we also did a good job of each completing pull requests every day and working on small chunks of code every day so it wouldn't be last minute. Like the last few sprints, we also did a good job of splitting work up between each member so that we could finish more epics.
 
 ### Things we need to improve
+One of the main things we could've done better was just cutting out more time to complete work for this class. While we did finish all of our planned epics, I think it was easier to spend less time on this class because it was the last sprint and because finals are coming up. That being said, we have definitely improved our time management skills since the first sprint. 
 
 ### One thing we will change next time
+This is the last sprint, but for future classes, I think we could be better about testing our code; I think a lot of us struggled with that and it would be a good thing to do going forward.
