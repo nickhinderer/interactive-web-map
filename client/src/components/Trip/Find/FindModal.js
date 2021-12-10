@@ -24,7 +24,7 @@ export default function FindModal(props) {
                 <ModalHeader>Find Places</ModalHeader>
 
                 <ModalBody>
-                <b>Type</b> and <b>Click Search</b> to add a place to itinerary
+                <b>Type</b> to add a place to itinerary
                 <FindInput setDisplay={setDisplay} setMatch={setMatch} />
                 <List display={display} setDisplay={setDisplay} match={match} places={props.places} placeActions={props.placeActions}/>
                 </ModalBody>
@@ -42,9 +42,9 @@ export function FindInput(props){
 
     return (
         <InputGroup>
-            <Input placeholder={"Place..."} onChange={e => {props.setMatch(e.target.value); props.setDisplay(true);}} />
+            <Input placeholder={"Click Icon for Random Places"} onChange={e => {props.setMatch(e.target.value); props.setDisplay(true);}} />
                 <InputGroupAddon addonType="append">
-                    <Button color="primary"  onClick={() =>{props.setDisplay(true)} }> <GiPerspectiveDiceSixFacesRandom/></Button>
+                    <Button color="primary"  onClick={() =>{props.setMatch(String.fromCharCode(65+Math.floor(Math.random() * 26)));props.setDisplay(true)} }> <GiPerspectiveDiceSixFacesRandom/></Button>
                 </InputGroupAddon>
         </InputGroup>
     );
