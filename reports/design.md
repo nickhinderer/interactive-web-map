@@ -373,7 +373,7 @@ This epic will add a random places icon to the search bar for user to click to g
 
 ### Client Components
 
-<img src="https://user-images.githubusercontent.com/74014694/142088674-e422e90c-e271-48c0-8e1d-092d72e91d36.jpg" alt="Sprint5ClientComponents">
+![sp5components](../images/Sprint5Components.png)
 
 On the client side, we will be adding in new functions to handle changing the map background, changing the trip name, moving the map marker when a certain place is clicked and adding a new input box/button for the where is epic. 
 
