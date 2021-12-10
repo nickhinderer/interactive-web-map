@@ -364,7 +364,7 @@ This modal will display simliar to the one from the "Find Places" epic.
 This feature will send frequent requests to the server to send an option list to the modal. Options will appear syncronously while the user is typing in the search engine.
 
 ### Drawing for #764 Trip Name
-<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/e4d5f752ae7d397775dd2cc38fbeee6f58f7cf4e/images/TripName1.jpg" width="525" alt="tour"/>
+<img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/main/images/TripName1.jpg" width="525" alt="tour"/>
 <img src="https://github.com/CSU-CS-314-Fall-2021/t04/blob/e4d5f752ae7d397775dd2cc38fbeee6f58f7cf4e/images/TripName.jpg" width="525" alt="tour"/>
 This epic will popup a input box when user click the pen icon. After user done with modify the trip name, they can cilck pen icon to save the trip name.
 
